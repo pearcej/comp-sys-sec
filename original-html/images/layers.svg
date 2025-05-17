@@ -1,0 +1,133 @@
+<svg class='svgbob' height='224' preserveAspectRatio='xMidYMid meet' viewBox='0 0 328 224' width='328' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='224' width='328' x='0' y='0'/>
+  <text x='18' y='28'>Layer</text>
+  <text x='66' y='28'>5</text>
+  <text x='138' y='28'>Human</text>
+  <text x='186' y='28'>Monitoring</text>
+  <text x='18' y='60'>Layer</text>
+  <text x='66' y='60'>4</text>
+  <text x='98' y='60'>Intrusion</text>
+  <text x='178' y='60'>Detection</text>
+  <text x='258' y='60'>System</text>
+  <text x='18' y='92'>Layer</text>
+  <text x='66' y='92'>3</text>
+  <text x='170' y='92'>Firewall</text>
+  <text x='18' y='124'>Layer</text>
+  <text x='66' y='124'>2</text>
+  <text x='154' y='124'>Antimalware</text>
+  <text x='18' y='156'>Layer</text>
+  <text x='66' y='156'>1</text>
+  <text x='162' y='156'>Antivirus</text>
+  <text x='18' y='188'>Layer</text>
+  <text x='66' y='188'>0</text>
+  <text x='130' y='188'>Operating</text>
+  <text x='210' y='188'>System</text>
+  <g>
+    <line class='solid' x1='4' x2='316' y1='8' y2='8'/>
+    <line class='solid' x1='4' x2='4' y1='8' y2='200'/>
+    <line class='solid' x1='84' x2='84' y1='8' y2='200'/>
+    <line class='solid' x1='316' x2='316' y1='8' y2='200'/>
+    <line class='solid' x1='4' x2='316' y1='40' y2='40'/>
+    <line class='solid' x1='4' x2='316' y1='72' y2='72'/>
+    <line class='solid' x1='4' x2='316' y1='104' y2='104'/>
+    <line class='solid' x1='4' x2='316' y1='136' y2='136'/>
+    <line class='solid' x1='4' x2='316' y1='168' y2='168'/>
+    <line class='solid' x1='4' x2='316' y1='200' y2='200'/>
+  </g>
+</svg>

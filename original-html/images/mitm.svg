@@ -1,0 +1,137 @@
+<svg class='svgbob' height='144' preserveAspectRatio='xMidYMid meet' viewBox='0 0 424 144' width='424' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='144' width='424' x='0' y='0'/>
+  <rect class='solid nofill' height='32' rx='4' width='96' x='4' y='8'/>
+  <text x='34' y='28'>User</text>
+  <rect class='solid nofill' height='32' rx='4' width='104' x='308' y='8'/>
+  <text x='322' y='28'>Web</text>
+  <text x='354' y='28'>Server</text>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='124' y='72'/>
+  <text x='138' y='92'>Man</text>
+  <text x='170' y='92'>in</text>
+  <text x='194' y='92'>the</text>
+  <text x='226' y='92'>Middle</text>
+  <polygon class='filled' points='40,60 44,48 48,60'/>
+  <polygon class='filled' points='104,84 112,88 104,92'/>
+  <polygon class='filled' points='360,60 364,48 368,60'/>
+  <polygon class='filled' points='304,84 296,88 304,92'/>
+  <polygon class='filled' points='120,20 112,24 120,28'/>
+  <line class='solid' x1='120' x2='128' y1='24' y2='24'/>
+  <line class='solid' x1='136' x2='144' y1='24' y2='24'/>
+  <line class='solid' x1='152' x2='160' y1='24' y2='24'/>
+  <line class='solid' x1='168' x2='176' y1='24' y2='24'/>
+  <line class='solid' x1='184' x2='192' y1='24' y2='24'/>
+  <text x='202' y='28'>X</text>
+  <line class='solid' x1='216' x2='224' y1='24' y2='24'/>
+  <line class='solid' x1='232' x2='240' y1='24' y2='24'/>
+  <line class='solid' x1='248' x2='256' y1='24' y2='24'/>
+  <line class='solid' x1='264' x2='272' y1='24' y2='24'/>
+  <line class='solid' x1='280' x2='288' y1='24' y2='24'/>
+  <polygon class='filled' points='288,20 296,24 288,28'/>
+  <text x='154' y='124'>New</text>
+  <text x='186' y='124'>Connection</text>
+  <text x='146' y='44'>Old Connection</text>
+  <g>
+    <line class='solid' x1='44' x2='44' y1='60' y2='88'/>
+    <line class='solid' x1='44' x2='104' y1='88' y2='88'/>
+  </g>
+  <g>
+    <line class='solid' x1='364' x2='364' y1='60' y2='88'/>
+    <line class='solid' x1='304' x2='364' y1='88' y2='88'/>
+  </g>
+</svg>

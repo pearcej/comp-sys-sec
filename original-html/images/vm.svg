@@ -1,0 +1,169 @@
+<svg class='svgbob' height='704' preserveAspectRatio='xMidYMid meet' viewBox='0 0 400 704' width='400' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='704' width='400' x='0' y='0'/>
+  <rect class='solid nofill' height='48' rx='0' width='144' x='20' y='56'/>
+  <text x='34' y='76'>Actual</text>
+  <text x='90' y='76'>Hardware</text>
+  <text x='42' y='92'>(bare metal)</text>
+  <rect class='solid nofill' height='160' rx='0' width='176' x='4' y='152'/>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='184'/>
+  <text x='58' y='204'>OS</text>
+  <text x='82' y='204'>Kernel</text>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='264'/>
+  <text x='42' y='284'>OS</text>
+  <text x='66' y='284'>Userspace</text>
+  <text x='66' y='172'>Host</text>
+  <text x='106' y='172'>OS</text>
+  <line class='solid' x1='92' x2='92' y1='224' y2='244'/>
+  <polygon class='filled' points='88,244 96,244 92,256'/>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='360'/>
+  <text x='50' y='380'>VM</text>
+  <text x='74' y='380'>Software</text>
+  <rect class='solid nofill' height='160' rx='0' width='176' x='4' y='440'/>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='472'/>
+  <text x='58' y='492'>OS</text>
+  <text x='82' y='492'>Kernel</text>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='552'/>
+  <text x='42' y='572'>OS</text>
+  <text x='66' y='572'>Userspace</text>
+  <text x='58' y='460'>Guest</text>
+  <text x='106' y='460'>OS</text>
+  <line class='solid' x1='92' x2='92' y1='512' y2='532'/>
+  <polygon class='filled' points='88,532 96,532 92,544'/>
+  <rect class='solid nofill' height='32' rx='0' width='144' x='20' y='648'/>
+  <text x='50' y='668'>Application</text>
+  <rect class='solid nofill' height='48' rx='0' width='144' x='220' y='56'/>
+  <text x='234' y='76'>Actual</text>
+  <text x='290' y='76'>Hardware</text>
+  <text x='242' y='92'>(bare metal)</text>
+  <rect class='solid nofill' height='160' rx='0' width='184' x='204' y='152'/>
+  <rect class='solid nofill' height='32' rx='0' width='152' x='220' y='184'/>
+  <text x='258' y='204'>OS</text>
+  <text x='282' y='204'>Kernel</text>
+  <rect class='solid nofill' height='32' rx='0' width='152' x='220' y='264'/>
+  <text x='242' y='284'>OS</text>
+  <text x='266' y='284'>Userspace</text>
+  <text x='266' y='172'>Host</text>
+  <text x='306' y='172'>OS</text>
+  <line class='solid' x1='292' x2='292' y1='224' y2='244'/>
+  <polygon class='filled' points='288,244 296,244 292,256'/>
+  <rect class='solid nofill' height='32' rx='0' width='184' x='204' y='360'/>
+  <text x='226' y='380'>Container</text>
+  <text x='306' y='380'>Runtime</text>
+  <rect class='solid nofill' height='32' rx='0' width='128' x='228' y='440'/>
+  <text x='250' y='460'>Application</text>
+  <text x='34' y='12'>Virtual</text>
+  <text x='98' y='12'>Machine</text>
+  <text x='58' y='28'>Deployment</text>
+  <text x='218' y='12'>Container</text>
+  <text x='298' y='12'>Deployment</text>
+  <line class='solid' x1='92' x2='92' y1='112' y2='132'/>
+  <polygon class='filled' points='88,132 96,132 92,144'/>
+  <line class='solid' x1='92' x2='92' y1='320' y2='340'/>
+  <polygon class='filled' points='88,340 96,340 92,352'/>
+  <line class='solid' x1='92' x2='92' y1='400' y2='420'/>
+  <polygon class='filled' points='88,420 96,420 92,432'/>
+  <line class='solid' x1='92' x2='92' y1='608' y2='628'/>
+  <polygon class='filled' points='88,628 96,628 92,640'/>
+  <line class='solid' x1='292' x2='292' y1='112' y2='132'/>
+  <polygon class='filled' points='288,132 296,132 292,144'/>
+  <line class='solid' x1='292' x2='292' y1='320' y2='340'/>
+  <polygon class='filled' points='288,340 296,340 292,352'/>
+  <line class='solid' x1='292' x2='292' y1='400' y2='420'/>
+  <polygon class='filled' points='288,420 296,420 292,432'/>
+</svg>

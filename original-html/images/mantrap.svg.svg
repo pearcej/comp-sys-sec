@@ -1,0 +1,175 @@
+<svg class='svgbob' height='256' preserveAspectRatio='xMidYMid meet' viewBox='0 0 648 256' width='648' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='256' width='648' x='0' y='0'/>
+  <text x='266' y='12'>Door</text>
+  <text x='306' y='12'>1</text>
+  <text x='322' y='12'>Closes</text>
+  <text x='490' y='12'>Keycard</text>
+  <text x='554' y='12'>Accepted</text>
+  <text x='506' y='28'>Door</text>
+  <text x='546' y='28'>2</text>
+  <text x='562' y='28'>Opens</text>
+  <line class='solid' x1='484' x2='484' y1='80' y2='128'/>
+  <line class='solid' x1='612' x2='612' y1='128' y2='176'/>
+  <text x='42' y='28'>Ready</text>
+  <text x='90' y='28'>for</text>
+  <text x='122' y='28'>entry</text>
+  <line class='solid' x1='164' x2='164' y1='80' y2='128'/>
+  <line class='solid' x1='36' x2='36' y1='128' y2='176'/>
+  <polygon class='filled' points='160,156 164,144 168,156'/>
+  <line class='solid' x1='164' x2='164' y1='156' y2='192'/>
+  <polygon class='filled' points='96,188 100,176 104,188'/>
+  <line class='solid' x1='100' x2='100' y1='188' y2='208'/>
+  <text x='138' y='204'>Door</text>
+  <text x='74' y='220'>Keycard</text>
+  <text x='82' y='236'>Access</text>
+  <line class='solid' x1='252' x2='252' y1='80' y2='128'/>
+  <line class='solid' x1='380' x2='380' y1='80' y2='128'/>
+  <text x='18' y='108'>X</text>
+  <line class='solid' x1='32' x2='64' y1='104' y2='104'/>
+  <polygon class='filled' points='64,100 72,104 64,108'/>
+  <text x='314' y='108'>X</text>
+  <text x='586' y='108'>X</text>
+  <line class='solid' x1='600' x2='632' y1='104' y2='104'/>
+  <polygon class='filled' points='632,100 640,104 632,108'/>
+  <polygon class='filled' points='32,204 36,192 40,204'/>
+  <line class='solid' x1='36' x2='36' y1='204' y2='224'/>
+  <text x='10' y='236'>Door</text>
+  <text x='178' y='204'>2</text>
+  <text x='50' y='236'>1</text>
+  <text x='226' y='28'>Keycard Reader Activated</text>
+  <g>
+    <line class='solid' x1='492' x2='604' y1='40' y2='40'/>
+    <line class='solid' x1='492' x2='492' y1='40' y2='80'/>
+    <line class='solid' x1='604' x2='604' y1='40' y2='80'/>
+  </g>
+  <g>
+    <line class='solid' x1='492' x2='492' y1='128' y2='168'/>
+    <line class='solid' x1='540' x2='556' y1='144' y2='144'/>
+    <line class='solid' x1='540' x2='540' y1='144' y2='168'/>
+    <line class='solid' x1='556' x2='556' y1='144' y2='168'/>
+    <line class='solid' x1='604' x2='604' y1='128' y2='168'/>
+    <line class='solid' x1='492' x2='604' y1='168' y2='168'/>
+  </g>
+  <g>
+    <line class='solid' x1='44' x2='156' y1='40' y2='40'/>
+    <line class='solid' x1='44' x2='44' y1='40' y2='80'/>
+    <line class='solid' x1='156' x2='156' y1='40' y2='80'/>
+  </g>
+  <g>
+    <line class='solid' x1='44' x2='44' y1='128' y2='168'/>
+    <line class='solid' x1='92' x2='108' y1='144' y2='144'/>
+    <line class='solid' x1='92' x2='92' y1='144' y2='168'/>
+    <line class='solid' x1='108' x2='108' y1='144' y2='168'/>
+    <line class='solid' x1='156' x2='156' y1='128' y2='168'/>
+    <line class='solid' x1='44' x2='156' y1='168' y2='168'/>
+  </g>
+  <g>
+    <line class='solid' x1='260' x2='372' y1='40' y2='40'/>
+    <line class='solid' x1='260' x2='260' y1='40' y2='80'/>
+    <line class='solid' x1='372' x2='372' y1='40' y2='80'/>
+  </g>
+  <g>
+    <line class='solid' x1='260' x2='260' y1='128' y2='168'/>
+    <line class='solid' x1='308' x2='324' y1='144' y2='144'/>
+    <line class='solid' x1='308' x2='308' y1='144' y2='168'/>
+    <line class='solid' x1='324' x2='324' y1='144' y2='168'/>
+    <line class='solid' x1='372' x2='372' y1='128' y2='168'/>
+    <line class='solid' x1='260' x2='372' y1='168' y2='168'/>
+  </g>
+</svg>

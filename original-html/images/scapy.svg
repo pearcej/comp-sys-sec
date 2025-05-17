@@ -1,0 +1,145 @@
+<svg class='svgbob' height='352' preserveAspectRatio='xMidYMid meet' viewBox='0 0 656 352' width='656' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='352' width='656' x='0' y='0'/>
+  <line class='solid' x1='272' x2='280' y1='40' y2='40'/>
+  <text x='290' y='44'>X</text>
+  <line class='solid' x1='608' x2='616' y1='40' y2='40'/>
+  <text x='626' y='44'>X</text>
+  <line class='solid' x1='432' x2='440' y1='216' y2='216'/>
+  <text x='450' y='220'>X</text>
+  <text x='82' y='12'>docker-compose up</text>
+  <text x='458' y='12'>victim</text>
+  <text x='18' y='92'>$ docker-compose up</text>
+  <text x='354' y='92'>$ ssh server</text>
+  <text x='274' y='188'>attacker</text>
+  <text x='178' y='268'>$ scapy</text>
+  <text x='178' y='284'>&gt;&gt;&gt;</text>
+  <g>
+    <path class='nofill' d='M 8,24 A 4,4 0,0,0 4,28'/>
+    <line class='solid' x1='4' x2='4' y1='28' y2='148'/>
+    <line class='solid' x1='8' x2='304' y1='24' y2='24'/>
+    <path class='nofill' d='M 304,24 A 4,4 0,0,1 308,28'/>
+    <line class='solid' x1='308' x2='308' y1='28' y2='148'/>
+    <line class='solid' x1='4' x2='308' y1='56' y2='56'/>
+    <path class='nofill' d='M 4,148 A 4,4 0,0,0 8,152'/>
+    <line class='solid' x1='8' x2='304' y1='152' y2='152'/>
+    <path class='nofill' d='M 308,148 A 4,4 0,0,1 304,152'/>
+  </g>
+  <g>
+    <path class='nofill' d='M 344,24 A 4,4 0,0,0 340,28'/>
+    <line class='solid' x1='340' x2='340' y1='28' y2='148'/>
+    <line class='solid' x1='344' x2='640' y1='24' y2='24'/>
+    <path class='nofill' d='M 640,24 A 4,4 0,0,1 644,28'/>
+    <line class='solid' x1='644' x2='644' y1='28' y2='148'/>
+    <line class='solid' x1='340' x2='644' y1='56' y2='56'/>
+    <path class='nofill' d='M 340,148 A 4,4 0,0,0 344,152'/>
+    <line class='solid' x1='344' x2='640' y1='152' y2='152'/>
+    <path class='nofill' d='M 644,148 A 4,4 0,0,1 640,152'/>
+  </g>
+  <g>
+    <path class='nofill' d='M 168,200 A 4,4 0,0,0 164,204'/>
+    <line class='solid' x1='164' x2='164' y1='204' y2='324'/>
+    <line class='solid' x1='168' x2='464' y1='200' y2='200'/>
+    <path class='nofill' d='M 464,200 A 4,4 0,0,1 468,204'/>
+    <line class='solid' x1='468' x2='468' y1='204' y2='324'/>
+    <line class='solid' x1='164' x2='468' y1='232' y2='232'/>
+    <path class='nofill' d='M 164,324 A 4,4 0,0,0 168,328'/>
+    <line class='solid' x1='168' x2='464' y1='328' y2='328'/>
+    <path class='nofill' d='M 468,324 A 4,4 0,0,1 464,328'/>
+  </g>
+</svg>

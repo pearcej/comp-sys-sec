@@ -1,0 +1,142 @@
+<svg class='svgbob' height='240' preserveAspectRatio='xMidYMid meet' viewBox='0 0 408 240' width='408' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='240' width='408' x='0' y='0'/>
+  <rect class='solid nofill' height='112' rx='4' width='168' x='132' y='56'/>
+  <rect class='solid nofill' height='80' rx='0' width='136' x='148' y='72'/>
+  <text x='162' y='92'>[S]ecurity</text>
+  <text x='250' y='92'>and</text>
+  <text x='162' y='108'>[I]nformation</text>
+  <text x='162' y='124'>[E]vent</text>
+  <text x='162' y='140'>[M]anagement</text>
+  <text x='90' y='12'>Firewalls</text>
+  <polygon class='filled' points='200,36 208,36 204,48'/>
+  <polygon class='filled' points='224,36 232,36 228,48'/>
+  <line class='solid' x1='104' x2='120' y1='88' y2='88'/>
+  <polygon class='filled' points='120,84 128,88 120,92'/>
+  <polygon class='filled' points='312,84 304,88 312,92'/>
+  <line class='solid' x1='312' x2='328' y1='88' y2='88'/>
+  <line class='solid' x1='104' x2='120' y1='136' y2='136'/>
+  <polygon class='filled' points='120,132 128,136 120,140'/>
+  <polygon class='filled' points='312,132 304,136 312,140'/>
+  <line class='solid' x1='312' x2='328' y1='136' y2='136'/>
+  <polygon class='filled' points='200,188 204,176 208,188'/>
+  <polygon class='filled' points='224,188 228,176 232,188'/>
+  <text x='274' y='12'>Servers</text>
+  <text x='2' y='92'>Workstations</text>
+  <text x='338' y='92'>Switches</text>
+  <text x='42' y='140'>Routers</text>
+  <text x='338' y='140'>Proxies</text>
+  <text x='138' y='220'>IPS</text>
+  <text x='274' y='220'>DMARC</text>
+  <g>
+    <line class='solid' x1='168' x2='204' y1='8' y2='8'/>
+    <line class='solid' x1='204' x2='204' y1='8' y2='36'/>
+  </g>
+  <g>
+    <line class='solid' x1='228' x2='264' y1='8' y2='8'/>
+    <line class='solid' x1='228' x2='228' y1='8' y2='36'/>
+  </g>
+  <g>
+    <line class='solid' x1='204' x2='204' y1='188' y2='216'/>
+    <line class='solid' x1='168' x2='204' y1='216' y2='216'/>
+  </g>
+  <g>
+    <line class='solid' x1='228' x2='228' y1='188' y2='216'/>
+    <line class='solid' x1='228' x2='264' y1='216' y2='216'/>
+  </g>
+</svg>

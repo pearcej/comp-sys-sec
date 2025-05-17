@@ -1,0 +1,201 @@
+<svg class='svgbob' height='272' preserveAspectRatio='xMidYMid meet' viewBox='0 0 776 272' width='776' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='272' width='776' x='0' y='0'/>
+  <rect class='solid nofill' height='32' rx='4' width='40' x='308' y='168'/>
+  <text x='322' y='188'>PS</text>
+  <rect class='solid nofill' height='32' rx='4' width='40' x='172' y='168'/>
+  <text x='186' y='188'>JS</text>
+  <polygon class='filled' points='328,148 336,148 332,160'/>
+  <text x='650' y='188'>registry</text>
+  <text x='722' y='188'>entry</text>
+  <text x='226' y='220'>Shellcode</text>
+  <text x='306' y='220'>runs</text>
+  <text x='346' y='220'>Powershell</text>
+  <text x='226' y='236'>one</text>
+  <line class='solid' x1='248' x2='256' y1='232' y2='232'/>
+  <text x='258' y='236'>liner</text>
+  <text x='306' y='236'>to</text>
+  <text x='330' y='236'>download</text>
+  <text x='402' y='236'>and</text>
+  <text x='242' y='252'>run</text>
+  <text x='274' y='252'>payload</text>
+  <text x='338' y='252'>in</text>
+  <text x='362' y='252'>memory</text>
+  <text x='450' y='76'>Scripts</text>
+  <text x='514' y='76'>and</text>
+  <text x='546' y='76'>Executables</text>
+  <text x='474' y='92'>stored</text>
+  <text x='530' y='92'>remotely</text>
+  <polygon class='filled' points='536,132 544,132 540,144'/>
+  <text x='506' y='172'>Runtime</text>
+  <line class='solid' x1='360' x2='456' y1='184' y2='184'/>
+  <polygon class='filled' points='456,180 464,184 456,188'/>
+  <text x='490' y='188'>Environment</text>
+  <line class='solid' x1='592' x2='624' y1='184' y2='184'/>
+  <polygon class='filled' points='624,180 632,184 624,188'/>
+  <text x='458' y='220'>Payload</text>
+  <text x='522' y='220'>downloaded</text>
+  <text x='458' y='236'>and</text>
+  <text x='490' y='236'>run</text>
+  <text x='522' y='236'>in</text>
+  <text x='546' y='236'>memory</text>
+  <text x='138' y='140'>Website</text>
+  <text x='202' y='140'>loads</text>
+  <text x='122' y='156'>JavaScript</text>
+  <text x='210' y='156'>exploit</text>
+  <text x='2' y='220'>User</text>
+  <text x='42' y='220'>clicks</text>
+  <text x='98' y='220'>a</text>
+  <text x='114' y='220'>link</text>
+  <text x='18' y='236'>in</text>
+  <text x='42' y='236'>spam</text>
+  <text x='82' y='236'>email</text>
+  <line class='solid' x1='112' x2='152' y1='184' y2='184'/>
+  <polygon class='filled' points='152,180 160,184 152,188'/>
+  <line class='solid' x1='224' x2='288' y1='184' y2='184'/>
+  <polygon class='filled' points='288,180 296,184 288,188'/>
+  <text x='346' y='12'>If machine is restarted, payload is re-run</text>
+  <text x='650' y='172'>Auto-start</text>
+  <g>
+    <line class='solid' x1='332' x2='700' y1='24' y2='24'/>
+    <line class='solid' x1='332' x2='332' y1='24' y2='148'/>
+    <line class='solid' x1='700' x2='700' y1='24' y2='152'/>
+    <line class='solid' x1='644' x2='764' y1='152' y2='152'/>
+    <line class='solid' x1='644' x2='644' y1='152' y2='200'/>
+    <line class='solid' x1='764' x2='764' y1='152' y2='200'/>
+    <line class='solid' x1='644' x2='764' y1='200' y2='200'/>
+  </g>
+  <g>
+    <path class='nofill' d='M 440,56 A 4,4 0,0,0 436,60'/>
+    <line class='solid' x1='436' x2='436' y1='60' y2='100'/>
+    <line class='solid' x1='440' x2='632' y1='56' y2='56'/>
+    <path class='nofill' d='M 632,56 A 4,4 0,0,1 636,60'/>
+    <line class='solid' x1='636' x2='636' y1='60' y2='100'/>
+    <path class='nofill' d='M 436,100 A 4,4 0,0,0 440,104'/>
+    <line class='solid' x1='440' x2='632' y1='104' y2='104'/>
+    <line class='solid' x1='540' x2='540' y1='104' y2='132'/>
+    <path class='nofill' d='M 636,100 A 4,4 0,0,1 632,104'/>
+  </g>
+  <g>
+    <path class='nofill' d='M 496,152 A 8,8 0,0,0 490,156'/>
+    <line class='solid' x1='490' x2='470' y1='156' y2='196'/>
+    <line class='solid' x1='496' x2='592' y1='152' y2='152'/>
+    <path class='nofill' d='M 592,152 A 3,3 0,0,1 594,156'/>
+    <line class='solid' x1='594' x2='574' y1='156' y2='196'/>
+    <path class='nofill' d='M 470,196 A 3,3 0,0,0 472,200'/>
+    <line class='solid' x1='472' x2='568' y1='200' y2='200'/>
+    <path class='nofill' d='M 574,196 A 8,8 0,0,1 568,200'/>
+  </g>
+  <g>
+    <path class='nofill' d='M 32,152 A 4,4 0,0,0 28,156'/>
+    <path class='nofill' d='M 32,152 A 3,3 0,0,0 30,156'/>
+    <line class='solid' x1='28' x2='28' y1='156' y2='196'/>
+    <line class='solid' x1='30' x2='42' y1='156' y2='180'/>
+    <line class='solid' x1='32' x2='96' y1='152' y2='152'/>
+    <path class='nofill' d='M 96,152 A 3,3 0,0,1 98,156'/>
+    <path class='nofill' d='M 96,152 A 4,4 0,0,1 100,156'/>
+    <line class='solid' x1='98' x2='86' y1='156' y2='180'/>
+    <line class='solid' x1='100' x2='100' y1='156' y2='196'/>
+    <path class='nofill' d='M 42,180 A 8,8 0,0,0 48,184'/>
+    <line class='solid' x1='48' x2='80' y1='184' y2='184'/>
+    <path class='nofill' d='M 86,180 A 8,8 0,0,1 80,184'/>
+    <path class='nofill' d='M 28,196 A 4,4 0,0,0 32,200'/>
+    <line class='solid' x1='32' x2='96' y1='200' y2='200'/>
+    <path class='nofill' d='M 100,196 A 4,4 0,0,1 96,200'/>
+  </g>
+</svg>

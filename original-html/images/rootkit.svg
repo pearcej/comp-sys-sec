@@ -1,0 +1,132 @@
+<svg class='svgbob' height='384' preserveAspectRatio='xMidYMid meet' viewBox='0 0 368 384' width='368' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='384' width='368' x='0' y='0'/>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='4' y='8'/>
+  <text x='18' y='28'>Physical</text>
+  <text x='90' y='28'>Hardware</text>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='4' y='88'/>
+  <text x='50' y='108'>Firmware</text>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='4' y='168'/>
+  <text x='42' y='188'>Bootloader</text>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='4' y='248'/>
+  <text x='58' y='268'>Kernel</text>
+  <rect class='solid nofill' height='32' rx='4' width='160' x='4' y='328'/>
+  <text x='42' y='348'>User</text>
+  <text x='82' y='348'>Space</text>
+  <line class='solid' x1='84' x2='84' y1='48' y2='68'/>
+  <polygon class='filled' points='80,68 88,68 84,80'/>
+  <line class='solid' x1='84' x2='84' y1='128' y2='148'/>
+  <polygon class='filled' points='80,148 88,148 84,160'/>
+  <line class='solid' x1='84' x2='84' y1='208' y2='228'/>
+  <polygon class='filled' points='80,228 88,228 84,240'/>
+  <line class='solid' x1='84' x2='84' y1='288' y2='308'/>
+  <polygon class='filled' points='80,308 88,308 84,320'/>
+  <line class='solid' x1='176' x2='192' y1='104' y2='104'/>
+  <polygon class='filled' points='192,100 200,104 192,108'/>
+  <line class='solid' x1='176' x2='192' y1='184' y2='184'/>
+  <polygon class='filled' points='192,180 200,184 192,188'/>
+  <line class='solid' x1='176' x2='192' y1='264' y2='264'/>
+  <polygon class='filled' points='192,260 200,264 192,268'/>
+  <line class='solid' x1='176' x2='192' y1='344' y2='344'/>
+  <polygon class='filled' points='192,340 200,344 192,348'/>
+  <text x='210' y='348'>Application</text>
+  <text x='306' y='348'>Rootkit</text>
+  <text x='210' y='108'>Firmware Rootkit</text>
+  <text x='210' y='188'>Bootloader Rootkit</text>
+  <text x='210' y='268'>Kernel-mode Rootkit</text>
+</svg>

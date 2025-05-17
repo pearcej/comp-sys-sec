@@ -1,0 +1,163 @@
+<svg class='svgbob' height='304' preserveAspectRatio='xMidYMid meet' viewBox='0 0 488 304' width='488' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='304' width='488' x='0' y='0'/>
+  <text x='250' y='28'>Root</text>
+  <text x='82' y='140'>Organization</text>
+  <line class='solid' x1='184' x2='192' y1='136' y2='136'/>
+  <polygon class='filled' points='192,132 200,136 192,140'/>
+  <text x='10' y='188'>Organization</text>
+  <text x='42' y='204'>Unit</text>
+  <line class='solid' x1='112' x2='120' y1='200' y2='200'/>
+  <polygon class='filled' points='120,196 128,200 120,204'/>
+  <text x='34' y='268'>Person</text>
+  <line class='solid' x1='96' x2='104' y1='264' y2='264'/>
+  <polygon class='filled' points='104,260 112,264 104,268'/>
+  <text x='66' y='92'>dc=net</text>
+  <text x='234' y='92'>dc=com</text>
+  <text x='410' y='92'>dc=org</text>
+  <text x='218' y='140'>dc=example</text>
+  <text x='146' y='204'>ou=People</text>
+  <text x='306' y='204'>ou=Servers</text>
+  <text x='138' y='268'>udid=jsmith</text>
+  <g>
+    <line class='solid' x1='236' x2='300' y1='8' y2='8'/>
+    <line class='solid' x1='236' x2='236' y1='8' y2='40'/>
+    <line class='solid' x1='300' x2='300' y1='8' y2='40'/>
+    <line class='solid' x1='236' x2='300' y1='40' y2='40'/>
+    <line class='solid' x1='268' x2='268' y1='40' y2='72'/>
+    <line class='solid' x1='228' x2='300' y1='72' y2='72'/>
+    <line class='solid' x1='228' x2='228' y1='72' y2='104'/>
+    <line class='solid' x1='300' x2='300' y1='72' y2='104'/>
+    <line class='solid' x1='228' x2='300' y1='104' y2='104'/>
+    <line class='solid' x1='268' x2='268' y1='104' y2='120'/>
+    <line class='solid' x1='212' x2='316' y1='120' y2='120'/>
+    <line class='solid' x1='212' x2='212' y1='120' y2='152'/>
+    <line class='solid' x1='316' x2='316' y1='120' y2='152'/>
+    <line class='solid' x1='212' x2='316' y1='152' y2='152'/>
+    <line class='solid' x1='268' x2='268' y1='152' y2='168'/>
+    <line class='solid' x1='188' x2='356' y1='168' y2='168'/>
+    <line class='solid' x1='188' x2='188' y1='168' y2='184'/>
+    <line class='solid' x1='356' x2='356' y1='168' y2='184'/>
+    <line class='solid' x1='140' x2='236' y1='184' y2='184'/>
+    <line class='solid' x1='140' x2='140' y1='184' y2='216'/>
+    <line class='solid' x1='236' x2='236' y1='184' y2='216'/>
+    <line class='solid' x1='300' x2='404' y1='184' y2='184'/>
+    <line class='solid' x1='300' x2='300' y1='184' y2='216'/>
+    <line class='solid' x1='404' x2='404' y1='184' y2='216'/>
+    <line class='solid' x1='140' x2='236' y1='216' y2='216'/>
+    <line class='solid' x1='188' x2='188' y1='216' y2='248'/>
+    <line class='solid' x1='300' x2='404' y1='216' y2='216'/>
+    <line class='solid' x1='132' x2='244' y1='248' y2='248'/>
+    <line class='solid' x1='132' x2='132' y1='248' y2='280'/>
+    <line class='solid' x1='244' x2='244' y1='248' y2='280'/>
+    <line class='solid' x1='132' x2='244' y1='280' y2='280'/>
+  </g>
+  <g>
+    <line class='solid' x1='92' x2='436' y1='56' y2='56'/>
+    <line class='solid' x1='92' x2='92' y1='56' y2='72'/>
+    <line class='solid' x1='436' x2='436' y1='56' y2='72'/>
+    <line class='solid' x1='60' x2='132' y1='72' y2='72'/>
+    <line class='solid' x1='60' x2='60' y1='72' y2='104'/>
+    <line class='solid' x1='132' x2='132' y1='72' y2='104'/>
+    <line class='solid' x1='404' x2='476' y1='72' y2='72'/>
+    <line class='solid' x1='404' x2='404' y1='72' y2='104'/>
+    <line class='solid' x1='476' x2='476' y1='72' y2='104'/>
+    <line class='solid' x1='60' x2='132' y1='104' y2='104'/>
+    <line class='solid' x1='404' x2='476' y1='104' y2='104'/>
+  </g>
+</svg>

@@ -1,0 +1,192 @@
+<svg class='svgbob' height='272' preserveAspectRatio='xMidYMid meet' viewBox='0 0 608 272' width='608' xmlns='http://www.w3.org/2000/svg'>
+  <style>.svgbob line, .svgbob path, .svgbob circle, .svgbob rect, .svgbob polygon {
+  stroke: black;
+  stroke-width: 2;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+.svgbob text {
+  white-space: pre;
+  fill: black;
+  font-family: Iosevka Fixed, monospace;
+  font-size: 14px;
+}
+
+.svgbob rect.backdrop {
+  stroke: none;
+  fill: white;
+}
+
+.svgbob .broken {
+  stroke-dasharray: 8;
+}
+
+.svgbob .filled {
+  fill: black;
+}
+
+.svgbob .bg_filled {
+  fill: white;
+  stroke-width: 1;
+}
+
+.svgbob .nofill {
+  fill: white;
+}
+
+.svgbob .end_marked_arrow {
+  marker-end: url(#arrow);
+}
+
+.svgbob .start_marked_arrow {
+  marker-start: url(#arrow);
+}
+
+.svgbob .end_marked_diamond {
+  marker-end: url(#diamond);
+}
+
+.svgbob .start_marked_diamond {
+  marker-start: url(#diamond);
+}
+
+.svgbob .end_marked_circle {
+  marker-end: url(#circle);
+}
+
+.svgbob .start_marked_circle {
+  marker-start: url(#circle);
+}
+
+.svgbob .end_marked_open_circle {
+  marker-end: url(#open_circle);
+}
+
+.svgbob .start_marked_open_circle {
+  marker-start: url(#open_circle);
+}
+
+.svgbob .end_marked_big_open_circle {
+  marker-end: url(#big_open_circle);
+}
+
+.svgbob .start_marked_big_open_circle {
+  marker-start: url(#big_open_circle);
+}
+
+</style>
+  <defs>
+    <marker id='arrow' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,0 0,4 4,2 0,0'/>
+    </marker>
+    <marker id='diamond' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='2' viewBox='-2 -2 8 8'>
+      <polygon points='0,2 2,0 4,2 2,4 0,2'/>
+    </marker>
+    <marker id='circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='2'/>
+    </marker>
+    <marker id='big_open_circle' markerHeight='7' markerWidth='7' orient='auto-start-reverse' refX='4' refY='4' viewBox='0 0 8 8'>
+      <circle class='bg_filled' cx='4' cy='4' r='3'/>
+    </marker>
+  </defs>
+  <rect class='backdrop' height='272' width='608' x='0' y='0'/>
+  <rect class='solid nofill' height='80' rx='4' width='112' x='276' y='152'/>
+  <rect class='solid nofill' height='48' rx='0' width='80' x='292' y='168'/>
+  <text x='306' y='188'>0x31337</text>
+  <text x='306' y='204'>.......</text>
+  <circle class='nofill' cx='484' cy='192' r='36'/>
+  <text x='466' y='188'>C</text>
+  <text x='498' y='188'>C</text>
+  <text x='482' y='188'>&amp;</text>
+  <text x='10' y='12'>Recon</text>
+  <text x='186' y='12'>Delivery</text>
+  <polygon class='filled' points='159,108 166,100 166,111'/>
+  <line class='solid' x1='162' x2='152' y1='108' y2='128'/>
+  <text x='370' y='12'>Installation</text>
+  <text x='506' y='12'>Exfiltration</text>
+  <line class='solid' x1='56' x2='74' y1='96' y2='132'/>
+  <polygon class='filled' points='71,132 78,140 78,129'/>
+  <line class='solid' x1='256' x2='266' y1='112' y2='132'/>
+  <polygon class='filled' points='263,132 270,140 270,129'/>
+  <polygon class='filled' points='399,124 406,116 406,127'/>
+  <line class='solid' x1='402' x2='392' y1='124' y2='144'/>
+  <text x='290' y='252'>Exploitation</text>
+  <line class='solid' x1='432' x2='442' y1='112' y2='132'/>
+  <polygon class='filled' points='439,132 446,140 446,129'/>
+  <polygon class='filled' points='519,124 526,116 526,127'/>
+  <line class='solid' x1='522' x2='512' y1='124' y2='144'/>
+  <text x='66' y='252'>Weaponization</text>
+  <text x='410' y='252'>Command</text>
+  <text x='474' y='252'>and</text>
+  <text x='506' y='252'>Control</text>
+  <g>
+    <line class='solid' x1='16' x2='40' y1='24' y2='24'/>
+    <line class='solid' x1='28' x2='28' y1='24' y2='48'/>
+  </g>
+  <g>
+    <line class='solid' x1='4' x2='4' y1='48' y2='64'/>
+    <line class='solid' x1='4' x2='24' y1='56' y2='56'/>
+  </g>
+  <g>
+    <line class='solid' x1='32' x2='52' y1='56' y2='56'/>
+    <line class='solid' x1='52' x2='52' y1='48' y2='64'/>
+  </g>
+  <g>
+    <line class='solid' x1='28' x2='28' y1='64' y2='88'/>
+    <line class='solid' x1='16' x2='40' y1='88' y2='88'/>
+  </g>
+  <g>
+    <line class='solid' x1='172' x2='252' y1='24' y2='24'/>
+    <line class='solid' x1='172' x2='172' y1='24' y2='88'/>
+    <line class='solid' x1='172' x2='188' y1='24' y2='56'/>
+    <line class='solid' x1='252' x2='236' y1='24' y2='56'/>
+    <line class='solid' x1='252' x2='252' y1='24' y2='88'/>
+    <line class='solid' x1='188' x2='236' y1='56' y2='56'/>
+    <line class='solid' x1='172' x2='252' y1='88' y2='88'/>
+  </g>
+  <g>
+    <line class='solid' x1='416' x2='390' y1='16' y2='68'/>
+    <line class='solid' x1='416' x2='442' y1='16' y2='68'/>
+    <path class='nofill' d='M 390,68 A 3,3 0,0,0 392,72'/>
+    <line class='solid' x1='392' x2='404' y1='72' y2='72'/>
+    <line class='solid' x1='404' x2='404' y1='72' y2='96'/>
+    <line class='solid' x1='428' x2='440' y1='72' y2='72'/>
+    <line class='solid' x1='428' x2='428' y1='72' y2='96'/>
+    <path class='nofill' d='M 442,68 A 3,3 0,0,1 440,72'/>
+    <line class='solid' x1='404' x2='428' y1='96' y2='96'/>
+  </g>
+  <g>
+    <line class='solid' x1='520' x2='536' y1='32' y2='32'/>
+    <line class='solid' x1='520' x2='536' y1='32' y2='64'/>
+    <line class='solid' x1='536' x2='552' y1='32' y2='64'/>
+    <line class='solid' x1='536' x2='520' y1='64' y2='96'/>
+    <line class='solid' x1='552' x2='536' y1='64' y2='96'/>
+    <line class='solid' x1='520' x2='536' y1='96' y2='96'/>
+  </g>
+  <g>
+    <line class='solid' x1='552' x2='568' y1='32' y2='32'/>
+    <line class='solid' x1='552' x2='568' y1='32' y2='64'/>
+    <line class='solid' x1='568' x2='584' y1='32' y2='64'/>
+    <line class='solid' x1='568' x2='552' y1='64' y2='96'/>
+    <line class='solid' x1='584' x2='568' y1='64' y2='96'/>
+    <line class='solid' x1='552' x2='568' y1='96' y2='96'/>
+  </g>
+  <g>
+    <line class='solid' x1='84' x2='140' y1='152' y2='152'/>
+    <line class='solid' x1='84' x2='104' y1='152' y2='192'/>
+    <line class='solid' x1='140' x2='120' y1='152' y2='192'/>
+    <line class='solid' x1='104' x2='120' y1='192' y2='192'/>
+  </g>
+  <g>
+    <line class='solid' x1='104' x2='120' y1='208' y2='208'/>
+    <path class='nofill' d='M 104,208 A 16,16 0,0,0 104,224'/>
+    <line class='solid' x1='104' x2='120' y1='224' y2='224'/>
+    <path class='nofill' d='M 120,208 A 16,16 0,0,1 120,224'/>
+  </g>
+</svg>
