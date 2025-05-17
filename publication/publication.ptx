@@ -47,7 +47,7 @@
   <source>
     <!-- Paths to folders containing external assets and generated assets -->
     <!-- relative to your main source file.                               -->
-    <directories external="../assets" generated="../generated-assets" />
+    <directories external="../images" generated="../generated-assets" />
 
     <!-- Set which marked elements are included in this version: -->
     <!-- See
