@@ -16,7 +16,7 @@
     <xi:include href="./ch2-cryptography.ptx" />
     <xi:include href="./ch3-malware.ptx" />
     <xi:include href="./ch4-protocols.ptx" />
-
+    <xi:include href="./ch5-attacks.ptx" />
 
 
     <!-- Include backmatter -->
