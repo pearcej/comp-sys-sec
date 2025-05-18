@@ -18,6 +18,7 @@
     <xi:include href="./ch4-protocols.ptx" />
     <xi:include href="./ch5-attacks.ptx" />
     <xi:include href="./ch6-security-solutions.ptx" />
+    <xi:include href="./ch7-access-controls.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
