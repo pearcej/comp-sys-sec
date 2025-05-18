@@ -4,16 +4,11 @@
   <title>Cryptography</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+	<p>
+		This chapter is meant to serve as a brief and gentle introduction to the cryptographic concepts often encountered in the field of security. It is by no means exhaustive but it should provide a basis for a better understanding of why protocols are designed the way they are. Cryptography is a method of scrambling data into non-readable text. It allows us to transform data into a secure form so that unauthorized users cannot view it.
+	</p>
   </introduction>
 
-				<!-- div attr= class="sectionbody"-->
-				<!-- div attr= class="paragraph"-->
-				<p>
-				This chapter is meant to serve as a brief and gentle introduction to the cryptographic concepts often encountered in the field of security. It is by no means exhaustive but it should provide a basis for a better understanding of why protocols are designed the way they are. Cryptography is a method of scrambling data into non-readable text. It allows us to transform data into a secure form so that unauthorized users cannot view it.
-			</p>
-				<!--</div attr= class="paragraph">-->
-				<!-- div attr= class="sect2"-->
 				<section xml:id="why-do-we-need-cryptography-_why_do_we_need_cryptography">
 					<title>2.1. Why do we need cryptography? {#_why_do_we_need_cryptography}</title>
 					<!-- div attr= class="paragraph"-->
