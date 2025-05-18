@@ -20,6 +20,7 @@
     <xi:include href="./ch6-security-solutions.ptx" />
     <xi:include href="./ch7-access-controls.ptx" />
     <xi:include href="./ch8-vulnerability-management.ptx" />
+    <xi:include href="./ch9-incident-response.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
