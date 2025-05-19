@@ -223,11 +223,9 @@
 						<url href="https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html">A simplified version of the algorithm</url> is shown below:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<program>
-    <input>
+
 KEY GENERATION
 p = a random prime number
 q = a random prime number
@@ -238,7 +236,7 @@ e = a factor of K that doesn't share factors with N
 d = another factor of K that doesn't share factors with N
 Your public key is N and e
 Your private key is N and d
-
+					
 ENCRYPTION
 ciphertext = (cleartext**e)%N
 
@@ -258,11 +256,9 @@ Private Key = 91, 29
 cleartext = 72 ('H' in ASCII)
 ciphertext = (72**5)%91 = 11 (encrypted using N and e)
 cleartext = (11**29)%91 = 72 (decrypted using N and d)
-    </input>
-  </program>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
+					</program>
+
 					<p>
 					In order to 
 						<em>crack</em> RSA you would need to be able to factor N into its two prime numbers. While it is trivial in our simple example, imagine how difficult it would be to 
