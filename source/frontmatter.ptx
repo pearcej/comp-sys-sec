@@ -77,8 +77,7 @@
 						<url href="https://www.comptia.jp/pdf/CompTIA%20Security+%20SY0-601%20Exam%20Objectives%20(3.0).pdf">CompTIA Security+ SY0-601</url> exam. The objectives are reproduced here for reference:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="ulist"-->
+
 					<p>
 						<ul>
 							<li>
@@ -258,6 +257,137 @@
 							</li>
 						</ul>
 					</p>
+        </paragraphs>
+
+        <paragraphs xml:id="example-schedule">
+					<title>Example Schedule</title>
+					<p>
+					A sample schedule utilizing these resources in a 15 week semester is shown below:
+				</p>
+          <table>
+  <title>Example Schedule</title>
+  <tabular halign="center">
+    <row header="yes" bottom="minor" >
+      <cell>Week</cell>
+      <cell>Chapters</cell>
+      <cell>Assignments</cell>
+      <cell>Learning Outcomes</cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell><xref ref="ch1-introduction">Introduction</xref> </cell>
+      <cell><xref ref="lab-think-like-a-hacker">Lab: Think like a Hacker</xref>, 
+<xref ref="intro_review">Introduction Review Questions</xref></cell>
+      <cell><xref ref="managing-risk" />, <xref ref="learning-the-lingo" />, <xref ref="tools-of-the-trade" />, <xref ref="asymmetric-encryption" /></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><xref ref="ch2-cryptography">Cryptography</xref></cell>
+      <cell>Lab: Hash it Out, Cryptography Review Questions</cell>
+      <cell>1.2, 1.3, 1.6, 2.1, 2.4, 2.5, 2.8, 3.9</cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>Malware</cell>
+      <cell>Lab: Malware Analysis, Malware Review Questions</cell>
+      <cell>1.2, 1.3, 1.4, 2.5, 4.1, 4.3, 4.5</cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell>Protocols</cell>
+      <cell>Lab: Scanning with nmap, Protocols Review Questions</cell>
+      <cell>1.3, 1.6, 1.7, 3.1, 3.2, 4.1</cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>Attacks</cell>
+      <cell>Quiz 1, Attacks Review Questions</cell>
+      <cell>1.2, 1.3, 1.4, 1.8, 3.3, 3.4, 4.1, 4.2</cell>
+    </row>    
+	<row>
+      <cell>6</cell>
+      <cell>Introduction
+Cryptography
+Malware
+Protocols
+Attacks</cell>
+      <cell>Midterm Review, Lab: MitM with Scapy</cell>
+      <cell>1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.4, 2.5, 2.7, 2.8, 3.1, 3.2, 3.3, 3.4, 3.8, 3.9, 4.1, 4.2, 4.3, 4.5</cell>
+    </row>    
+	<row>
+      <cell>7</cell>
+      <cell>Introduction
+Cryptography
+Malware
+Protocols
+Attacks</cell>
+      <cell>Midterm</cell>
+      <cell>1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.4, 2.5, 2.7, 2.8, 3.1, 3.2, 3.3, 3.4, 3.8, 3.9, 4.1, 4.2, 4.3, 4.5</cell>
+    </row>
+	<row>
+      <cell>8</cell>
+      <cell>Security Solutions</cell>
+      <cell>Lab: Exploiting log4j, Security Solutions Review Questions
+</cell>
+      <cell>3.1, 3.2, 3.3, 3.6, 4.1, 4.2</cell>
+    </row>
+	<row>
+      <cell>9</cell>
+      <cell>Access Controls</cell>
+      <cell>
+Lab: Linux File Permissions, Access Controls Review Questions</cell>
+      <cell>2.1, 2.2, 2.4, 2.7, 3.3, 3.4, 3.8, 5.1</cell>
+    </row>
+	<row>
+      <cell>10</cell>
+      <cell>Vulnerability Management and Compliance</cell>
+      <cell>Lab: Scanning with Nessus, Vulnerability Management and Compliance Review Questions</cell>
+      <cell>5.1, 5.2, 5.3, 5.4, 5.5</cell>
+    </row>
+	<row>
+      <cell>11</cell>
+      <cell>Incident Response and Continuity</cell>
+      <cell>Lab: Reporting on the 2014 Sony Pictures Hack, Incident Response and Recovery Review Questions</cell>
+      <cell>1.2, 1.3, 1.4, 1.7, 1.8, 2.3, 2.5, 3.1, 3.2, 3.3, 3.4, 4.1, 4.2, 4.3, 4.4, 4.5, 5.3, 5.4, 5.5</cell>
+    </row>
+	<row>
+      <cell>12</cell>
+      <cell>Virtualization</cell>
+      <cell>Lab: Malicious Containers, Virtualization Review Questions</cell>
+      <cell>2.3, 3.6, 3.6</cell>
+    </row>
+	<row>
+      <cell>13</cell>
+      <cell>Mobile Solutions</cell>
+      <cell>Quiz 2</cell>
+      <cell>3.5</cell>
+    </row>
+	<row>
+      <cell>14</cell>
+      <cell>Security Solutions
+Access Controls
+Vulnerability Management and Compliance
+Incident Response and Continuity
+Virtualization
+Mobile Solutions</cell>
+      <cell>Final Review</cell>
+      <cell>1.2, 1.3, 1.4, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 4.1, 4.2, 4.3, 4.4, 4.5, 5.1, 5.2, 5.3, 5.4, 5.5</cell>
+    </row>
+	<row>
+      <cell>15</cell>
+      <cell>Security Solutions
+Access Controls
+Vulnerability Management and Compliance
+Incident Response and Continuity
+Virtualization
+Mobile Solutions</cell>
+      <cell>Final Exam</cell>
+      <cell>1.2, 1.3, 1.4, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 4.1, 4.2, 4.3, 4.4, 4.5, 5.1, 5.2, 5.3, 5.4, 5.5</cell>
+    </row>
+
+  </tabular>
+
+</table>
         </paragraphs>
 				</preface>
 

@@ -380,8 +380,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="asymmetric-encryption-_asymmetric_encryption">
-					<title>2.7. Asymmetric Encryption {#_asymmetric_encryption}</title>
+				<section xml:id="asymmetric-encryption">
+					<title>2.7. Asymmetric Encryption</title>
 					<!-- div attr= class="imageblock"-->
 					<!-- div attr= class="content"-->
 					<figure>

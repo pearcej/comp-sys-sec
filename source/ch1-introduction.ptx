@@ -2,10 +2,9 @@
 
 <chapter xml:id="ch1-introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
-				<section xml:id="managing-risk-_managing_risk">
-					<title>1.1. Managing Risk {#_managing_risk}</title>
-					<!-- div attr= class="imageblock left"-->
-					<!-- div attr= class="content"-->
+				<section xml:id="managing-risk">
+					<title>Managing Risk</title>
+
 					<figure>
 						<image source="db-locked.png"/>
 						<caption>db locked</caption>
@@ -33,13 +32,11 @@
 						<em>system failure</em> may occur either as an intended (as is the case in Denial of Service (DoS) attacks) or unintended consequence. This means the system will no longer be able to perform its intended purpose. System failure is a serious risk that needs to be managed.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="learning-the-lingo-_learning_the_lingo">
-					<title>1.2. Learning the Lingo {#_learning_the_lingo}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="learning-the-lingo">
+					<title>Learning the Lingo</title>
+
 					<p>
 					In general, the technical fields are laden with acronyms and obtuse vocabulary. Unfortunately security is no exception to this rule. Three of the most important acronyms you should be aware of to start are 
 						<em>CIA</em>, 
@@ -319,9 +316,9 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="tools-of-the-trade-_tools_of_the_trade">
-					<title>1.6. Tools of the Trade {#_tools_of_the_trade}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="tools-of-the-trade">
+					<title>Tools of the Trade</title>
+
 					<p>
 					With all of this talk regarding how and why hackers attack systems, the question remains, "What can be done?" There are a few tools the security professional employs that are worth mentioning at this juncture including: 
 						<em>user awareness</em>, 
@@ -364,8 +361,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="lab-think-like-a-hacker-_lab_think_like_a_hacker">
-					<title>1.7. Lab: Think Like a Hacker {#_lab_think_like_a_hacker}</title>
+				<section xml:id="lab-think-like-a-hacker">
+					<title>1.7. Lab: Think Like a Hacker</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					For this lab, we will be engaging in a thought experiment. Imagine you are at a university that is having a student appreciation breakfast. At the entrance to the cafeteria an attendant has a clipboard with all of the student IDs listed. Students line up, show their ID, and their ID number is crossed off of the list.
