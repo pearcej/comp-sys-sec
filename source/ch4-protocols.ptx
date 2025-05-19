@@ -23,9 +23,9 @@
 					<paragraphs xml:id="arp-_arp">
 						<title>4.1.1. ARP {#_arp}</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>gratuitous arp</idx>
+						<p>
 						Address Resolution Protocol (ARP) is used on the local ethernet segment to resolve IP addresses to MAC addresses. Since this protocol functions at the ethernet segment level, security was not a primary concern. Unfortunately this means that ARP communications can be easily spoofed to cause a MitM scenario. A malicious actor simply sends out several ARP packets, 
-							<term>gratuitous arp</term>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
+							<em>gratuitous arp</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -83,9 +83,9 @@
 					<paragraphs xml:id="ip-_ip">
 						<title>4.2.1. IP {#_ip}</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>routing</idx>
+						<p>
 						IP stands for internet protocol and it was devised to allow creating a network of networks. The network of networks that uses it primarily is the Internet, although you could use IP in other scenarios as well. IP is largely concerned with 
-							<term>routing</term> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
+							<em>routing</em> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -99,7 +99,7 @@
 						<!-- div attr= class="title"-->
 						<p>
 						IPv6 Security Implications
-						</p>
+					</p>
 						<!--</div attr= class="title">-->
 						<!-- div attr= class="paragraph"-->
 						<p>
@@ -108,10 +108,9 @@
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="paragraph"-->
 						<p>
-
 						With IPv6 addresses each host on that same 
-							<term>internal</term> network can be given an external IPv6 address. A 
-							<term>basic</term> IPv6 router may simply pass the packets to the network without blocking connections to the internal network. If the machines are not hardened or a firewall is not put in place/enabled the machines could be subject to attack.
+							<em>internal</em> network can be given an external IPv6 address. A 
+							<em>basic</em> IPv6 router may simply pass the packets to the network without blocking connections to the internal network. If the machines are not hardened or a firewall is not put in place/enabled the machines could be subject to attack.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -128,9 +127,9 @@
 					<paragraphs xml:id="icmp-_icmp">
 						<title>4.2.2. ICMP {#_icmp}</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>destination unreachable</idx>
+						<p>
 						Internet Control Message Protocol (ICMP) is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
-							<term>Destination Unreachable</term> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
+							<em>Destination Unreachable</em> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -143,11 +142,11 @@
 						</p>
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="paragraph"-->
-						<p><idx>TTL exeeded</idx>
+						<p>
 						ICMP is also used in the 
 							<c>traceroute</c> command. 
 							<c>traceroute</c> incrementally increase the Time To Live (TTL) field of ICMP packets and watches for 
-							<term>TTL Exceeded</term> messages to determine what route packets are taking to get to a host. Example 
+							<em>TTL Exceeded</em> messages to determine what route packets are taking to get to a host. Example 
 							<c>traceroute</c> output is shown below:
 					
 						</p>
@@ -269,7 +268,7 @@
 						<!-- div attr= class="paragraph"-->
 						<p>
 						Port numbers are used in a transport layer connection to specify which service to connect to. This allows a single host to have multiple services running on it. Ports 0 to 1023 are 
-							<term>well-known ports</term> and typically support a commonly used service. In most operating systems it takes administrative privileges to bind to a Well-known port and listen for connections. Registered ports range from 1024 to 49151 and do not require administrative privileges to run a service on. You may find many things listening on these ports as any user can have a service on them. Lastly ports 49152 to 65535 are used dynamically by applications as needed.
+							<em>well-known ports</em> and typically support a commonly used service. In most operating systems it takes administrative privileges to bind to a Well-known port and listen for connections. Registered ports range from 1024 to 49151 and do not require administrative privileges to run a service on. You may find many things listening on these ports as any user can have a service on them. Lastly ports 49152 to 65535 are used dynamically by applications as needed.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -308,15 +307,12 @@
 					<paragraphs xml:id="http-_http">
 						<title>4.4.2. HTTP {#_http}</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>request</idx>
-							<idx>response</idx>
-							<idx>method</idx>
-							<idx>path</idx>
+						<p>
 						Hypertext Transfer Protocol (HTTP) is a text based protocol that governs how web traffic moves. It is built on the concept of a 
-							<term>request</term> and a 
-							<term>response</term>. A typical request has an 
-							<term>method</term> and a 
-							<term>path</term>, such as 
+							<em>request</em> and a 
+							<em>response</em>. A typical request has an 
+							<em>method</em> and a 
+							<em>path</em>, such as 
 							<c>GET /index.html</c> which would retrieve the landing page of a website. Responses have a code, message, and optionally data. Some standard responses are shown below:
 					
 						</p>
@@ -369,9 +365,9 @@
 							</tabular>
 						</table>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>headers</idx>
+						<p>
 						Both requests and responses can take advantage of 
-							<term>headers</term>, arbitrary lines of text following the initial request or response. Since headers were designed to be open-ended, many new headers have been added over time. A modern web request/response usually has far more information in the headers than just the basics defined in HTTP 1.1. Unencrypted HTTP traffic is sent over port 80 and is vulnerable to attack as all information is sent in cleartext.
+							<em>headers</em>, arbitrary lines of text following the initial request or response. Since headers were designed to be open-ended, many new headers have been added over time. A modern web request/response usually has far more information in the headers than just the basics defined in HTTP 1.1. Unencrypted HTTP traffic is sent over port 80 and is vulnerable to attack as all information is sent in cleartext.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -521,7 +517,7 @@
 						<!-- div attr= class="paragraph"-->
 						<p>
 						Simple Mail Transfer Protocol is used for sending/forwarding email. As it states, it is a simple protocol consisting of lines of text. Basic SMTP used TCP on port 25. SMTP was later expanded to support authentication and finally wrapped in TLS still using TCP on port 587. SMTP servers accept outgoing mail from (hopefully) authenticated clients, route mail to other SMTP servers based on the Mail Exchange (MX) information in DNS records, and accept mail for their domain from other SMTP servers. Various checks have been implemented in SMTP servers to ensure that messages from domains 
-							<term>actually</term> come from those domains. This is largely used to combat spam, which continues to be a problem.
+							<em>actually</em> come from those domains. This is largely used to combat spam, which continues to be a problem.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -679,7 +675,7 @@ root@7b6d733cc03a:/(1)</pre>
 									<term>1</term>
 								</cell>
 								<cell halign="left">Notice the prompt change. We are now 
-									<term>inside</term> the 
+									<em>inside</em> the 
 									<c>scanner</c> container running BASH.
 								</cell>
 							</row>
@@ -718,7 +714,7 @@ root@7b6d733cc03a:/(1)</pre>
 						<c>/24</c>). You may notice that we are actually on a 
 						<c>/16</c> subnet, but by limiting ourselves to 
 						<c>/24</c> the scan will go 
-						<term>much</term> faster.
+						<em>much</em> faster.
 				
 					</p>
 					<!--</div attr= class="paragraph">-->
@@ -782,7 +778,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1.84 seconds</pre>
 					<!-- div attr= class="admonitionblock important deliverable"-->
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | What ports are open on the victim | | | machine? Why is 
-						<term>this</term> particular | | | protocol insecure? | | | ::: | +———————————–+———————————–+
+						<em>this</em> particular | | | protocol insecure? | | | ::: | +———————————–+———————————–+
 				
 					</p>
 					<!--</div attr= class="admonitionblock important deliverable">-->
@@ -848,7 +844,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					<!-- div attr= class="admonitionblock important deliverable"-->
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: Remembering what you | | | learned in the 
-						<term>Hash it Out</term> lab, | | | what is the root password on the | | | victim machine? | | | ::: | +———————————–+———————————–+
+						<em>Hash it Out</em> lab, | | | what is the root password on the | | | victim machine? | | | ::: | +———————————–+———————————–+
 				
 					</p>
 					<!--</div attr= class="admonitionblock important deliverable">-->
@@ -877,17 +873,17 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 						<ol>
 							<li>
 								<p>
-									<term>Compare and contrast SSH and Telnet. If you had to make a recommendation for which one to use, what would you choose and why?</term>
+									<em>Compare and contrast SSH and Telnet. If you had to make a recommendation for which one to use, what would you choose and why?</em>
 								</p>
 							</li>
 							<li>
 								<p>
-									<term>What are some security concerns associated with ARP? What steps can be taken to mitigate them?</term>
+									<em>What are some security concerns associated with ARP? What steps can be taken to mitigate them?</em>
 								</p>
 							</li>
 							<li>
 								<p>
-									<term>Describe three protocols used to send or receive email.</term>
+									<em>Describe three protocols used to send or receive email.</em>
 								</p>
 							</li>
 						</ol>
