@@ -218,7 +218,7 @@
 		<p></p>
 		<figure>
 			<caption>Hat Scale</caption>
-			<image source="hats.png" width="40%">
+			<image source="hats.png" width="100%">
                 <shortdescription>Alignment chart classifying hacker types (White, Black, Gray Hat) on Legal/Illegal and Malicious/Benevolent axes.</shortdescription>
                 <description>
                     <p>The image, captioned 'Hacker Hats,' is an alignment chart that classifies different types of hackers using two axes. The horizontal axis ranges from 'Malicious' on the left to 'Benevolent' on the right. The vertical axis ranges from 'Legal' at the top to 'Illegal' at the bottom, creating four quadrants.</p>
