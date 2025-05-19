@@ -1,431 +1,429 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch1-introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Introduction</title>
-				<section xml:id="managing-risk">
-					<title>Managing Risk</title>
-
-					<figure>
-						<image source="db-locked.png"/>
-						<caption>db locked</caption>
-					</figure>
-					<!--</div attr= class="content">-->
-					<!-- div attr= class="title"-->
-					<p>
-						<url href="https://commons.wikimedia.org/wiki/File:Database-locked.svg">RRZEicons</url>, 
-						<url href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</url>, via Wikimedia Commons
+<chapter xml:id="ch1-introduction"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Introduction</title>
+	<section xml:id="managing-risk">
+		<title>Managing Risk</title>
+		<figure>
+			<image source="db-locked.png" width="40%" decorative="yes"/>
+			<caption>
+				<url href="https://commons.wikimedia.org/wiki/File:Database-locked.svg">RRZEicons</url>, 
+						
 				
-					</p>
-					<!--</div attr= class="title">-->
-					<!--</div attr= class="imageblock left">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
-						<em>Information security</em> (infosec) is largely the practice of preventing 
-						<em>unauthorized access</em> to data. Unauthorized access is when an actor gains access to data that they do not have the permissions to access. The system is often used in an unintended manner to provide such access. Data has become an increasingly valuable asset and the 
-						<em>risks</em> of others having access to data are incredibly high. Because of this, information security typically falls under the risk-management plan of a company and its importance cannot be understated. This is evidenced by the fact that information technology’s (IT) typical role in a company has migrated from a basic service provider to directorships with a seat at the highest decision making table. This is directly due to the fact that IT assets have become the most valuable things many companies own. Guarding these assets and managing the inherent risk of their loss is the job of information security professionals.
+				<url href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</url>, 
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
-						<em>Malicious software</em>, also referred to as malware, is often employed to help an attacker gain access to a system. Many types of malicious software exist, but the common thread is that they perform actions that cause harm to a computer system or network. In the case of many attacks, 
-						<em>system failure</em> may occur either as an intended (as is the case in Denial of Service (DoS) attacks) or unintended consequence. This means the system will no longer be able to perform its intended purpose. System failure is a serious risk that needs to be managed.
-				
-					</p>
-
-				</section>
-				<section xml:id="learning-the-lingo">
-					<title>Learning the Lingo</title>
-
-					<p>
+				<em>via Wikimedia Commons</em>
+			</caption>
+		</figure>
+		<p>
+			<idx>information security</idx>
+			<idx>infosec</idx>
+			<term>Information security</term> (
+			
+			<term>infosec</term>) is largely the practice of preventing 
+						
+			
+			<term>unauthorized access</term> to data. 
+			
+			<idx>unauthorized access</idx> Unauthorized access is when an actor gains access to data that they do not have the permissions to access. The system is often used in an unintended manner to provide such access. Data has become an increasingly valuable asset and the 
+						
+			
+			<term>risks</term> of others having access to data are incredibly high. 
+			
+			<idx>risks</idx> Because of this, information security typically falls under the risk-management plan of a company and its importance cannot be understated. This is evidenced by the fact that information technology’s (IT) typical role in a company has migrated from a basic service provider to directorships with a seat at the highest decision making table. This is directly due to the fact that IT assets have become the most valuable things many companies own. Guarding these assets and managing the inherent risk of their loss is the job of information security professionals.
+		
+		</p>
+		<p>
+			<idx>malicious software</idx>
+			<term>Malicious software</term>, also referred to as 
+			
+			<term>malware</term>, is often employed to help an attacker gain access to a system. Many types of malicious software exist, but the common thread is that they perform actions that cause harm to a computer system or network. In the case of many attacks, 
+			
+			<term>system failure</term> may occur either as an intended (as is the case in Denial of Service (DoS) attacks) or unintended consequence. This means the system will no longer be able to perform its intended purpose. System failure is a serious risk that needs to be managed. 
+			
+			<idx>system failure</idx>
+		</p>
+	</section>
+	<section xml:id="learning-the-lingo">
+		<title>Learning the Lingo</title>
+		<p>
 					In general, the technical fields are laden with acronyms and obtuse vocabulary. Unfortunately security is no exception to this rule. Three of the most important acronyms you should be aware of to start are 
-						<em>CIA</em>, 
-						<em>AAA</em>, and 
-						<em>DRY</em>.
+						
+			
+			<em>CIA</em>, 
+						
+			
+			<em>AAA</em>, and 
+						
+			
+			<em>DRY</em>.
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="cia-_cia">
-						<title>1.2.1. CIA {#_cia}</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
-						<figure>
-							<image source="cia.svg"/>
-							<caption>cia</caption>
-						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
+					
+		
+		</p>
+		<paragraphs xml:id="cia">
+			<title>CIA</title>
+			<image source="cia.svg" width="70%" />
+			<p>
 						While the Central Intelligence Agency does have a role to play in information security, for our purposes CIA is an acronym used to remember the three foundational information security principles: confidentiality, integrity, and availability. These ideas form the cornerstone of security and should be ever-present in your thoughts.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-							<em>Confidentiality</em> refers to the practice of keeping secret information secret. For example, if an e-commerce site stores credit card numbers (a questionable practice to begin with) those credit card numbers should be kept 
-							<em>confidential</em>. You would not want other users of the site or outsiders to have access to your credit card number. Many steps could be taken to ensure the confidentiality of user credit card numbers, but at this point it is enough to understand that maintaining confidentiality is a principle of security.
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-							<em>Integrity</em> is an assurance that data has not been corrupted or purposefully tampered with. As we discussed previously, data is very valuable, but how valuable is it if you can’t be sure it is intact and reliable? In security we strive to maintain integrity so that the system and even the controls we have in place to guard the system can be trusted. Imagine that e-commerce site again. What would happen if an attacker could arbitrarily change delivery addresses stored in the system? Packages could be routed to improper addresses and stolen and honest customers would not receive what they ordered, all because of an integrity violation.
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-							<em>Availability</em> means that a system should remain up and running to ensure that valid users have access to the data when needed. In the simplest sense, you could ensure confidentiality and integrity by simply taking the system off line and not allowing any access. Such a system would be useless and this final principle addresses that. Systems are designed to be accessible and part of your security plan should be ensuring that they are. You will need to account for the costs of implementing confidentiality and integrity and make sure that the resources are available to keep the system working. In an extreme case, denial of service (DoS) attacks can actually target availability. By keeping this principle in mind, hopefully you can mitigate some of those risks.
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="aaa-_aaa">
-						<title>1.2.2. AAA {#_aaa}</title>
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
-						<figure>
-							<image source="aaa.svg"/>
-							<caption>aaa</caption>
-						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Another acronym you’re going to encounter in many different contexts is AAA. It stands for 
-							<em>Authentication</em>, 
-							<em>Authorization</em>, and 
-							<em>Accounting</em> and it is used in designing and implementing protocols. These concepts should be remembered when designing security plans.
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Authentication is the process of confirming someone’s identity. This may be done with user names and passwords or more frequently via multi-factor authentication (MFA) which requires not only something you know, but something you have (fingerprints, key fob, etc.).
-					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Authorization refers to keeping track of which resources an entity has access to. This can be done via a permission scheme or access control list (ACL). Occasionally you will encounter something more exotic where authorization limits users to interactions during a particular time of day or from a particular IP address.
-					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Accounting refers to tracking the usage of resources. This may be as simple as noting in a log file when a user has logged in to keeping track of exactly which services and user uses and how long they use them. Accounting is incredibly important because it allows you to not only monitor for possible problems, but also inspect what has occurred 
-							<em>after</em> a problem is encountered. Accounting also allows system administrators to show irrefutably what actions a user has taken. This can be very important evidence in a court of law.
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="dry-_dry">
-						<title>1.2.3. DRY {#_dry}</title>
-						<!-- div attr= class="paragraph"-->
-						<p>
-						While we’re dispensing knowledge in the form of three letter acronyms (TLAs), another important acronym to keep in mind is DRY: Don’t Repeat Yourself.
-					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="quoteblock"-->
-						<blockquote>
-							<p>
-						Say something once, why say it again?^[
-								<url href="index.html#_footnotedef_1">1</url>{#_footnoteref_1 .footnote}]^
-					
-							</p>
-						</blockquote>
-						<!-- div attr= class="attribution"-->
-						<p>
-						— Talking Heads
-							<!-- linebreak -->Psycho Killer
-					
-						</p>
-						<!--</div attr= class="attribution">-->
-						<!--</div attr= class="quoteblock">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						This is of course not entirely literal. Just because you’ve explained something to a coworker once does 
-							<em>not</em> mean that you shouldn’t explain it again. It is meant as more of a guide for how you make use of 
-							<em>automation</em> and how you design systems. Increasingly security experts are not being asked to analyze a single system, but a network of hundreds if not thousands of systems. In this case you should make use of scripts and tools to make sure you are not manually doing the same thing over and over. Have you found a good way of testing to see if a part of a system is secure? Put it in a script so that you can reuse the test on other systems. This same logic applies to how systems are designed. Do you have a database of user login info? Reuse that database across multiple systems. In short, "Don’t repeat yourself!"
-					
-						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
-				</section>
-				<section xml:id="hacker-culture-_hacker_culture">
-					<title>1.3. Hacker Culture {#_hacker_culture}</title>
-					<!-- div attr= class="paragraph"-->
-					<p>
-					The term 
-						<em>hacker</em> comes from the sound that programmers would make when typing or 
-						<em>hacking</em> away at keyboards. Originally a hacker was anyone who worked feverishly at a problem on a computer and the term 
-						<em>cracker</em> was used to define people who attempted to bypass security systems. The distinction was eventually lost and a hacker has come to be the popular term for someone attempting to gain unauthorized access to data. For an interesting glimpse into early hacker culture/reasoning read 
-						<url href="https://archive.org/stream/The_Conscience_of_a_Hacker/hackersmanifesto.txt">The Conscience of a Hacker</url> by The Mentor originally published in Phrack Magazine 1986.
+			<p>
+				<idx>confidentiality</idx>
+				<term>Confidentiality</term> refers to the practice of keeping secret information secret. For example, if an e-commerce site stores credit card numbers (a questionable practice to begin with) those credit card numbers should be kept 
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sidebarblock"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="title"-->
-					<p>
-					Hacker Hats
+				<term>confidential</term>. You would not want other users of the site or outsiders to have access to your credit card number. Many steps could be taken to ensure the confidentiality of user credit card numbers, but at this point it is enough to understand that maintaining confidentiality is a principle of security.
+					
+						
+			
+			</p>
+			<p>
+				<idx>integrity</idx>
+				<term>Integrity</term> is an assurance that data has not been corrupted or purposefully tampered with. As we discussed previously, data is very valuable, but how valuable is it if you can’t be sure it is intact and reliable? In security we strive to maintain integrity so that the system and even the controls we have in place to guard the system can be trusted. Imagine that e-commerce site again. What would happen if an attacker could arbitrarily change delivery addresses stored in the system? Packages could be routed to improper addresses and stolen and honest customers would not receive what they ordered, all because of an integrity violation.
+					
+						
+			
+			</p>
+			<p>
+				<idx>availability</idx>
+				<term>Availability</term> means that a system should remain up and running to ensure that valid users have access to the data when needed. In the simplest sense, you could ensure confidentiality and integrity by simply taking the system off line and not allowing any access. Such a system would be useless and this final principle addresses that. Systems are designed to be accessible and part of your security plan should be ensuring that they are. You will need to account for the costs of implementing confidentiality and integrity and make sure that the resources are available to keep the system working. In an extreme case, denial of service (DoS) attacks can actually target availability. By keeping this principle in mind, hopefully you can mitigate some of those risks.
+					
+						
+			
+			</p>
+		</paragraphs>
+		<paragraphs xml:id="aaa">
+			<title>AAA </title>
+			<image source="aaa.svg" width="40%" decorative="yes" />
+			<p>
+				<idx>AAA</idx>
+						Another acronym you’re going to encounter in many different contexts is 
+				
+				<term>AAA</term>. It stands for 
+							
+				
+				<em>Authentication</em>, 
+							
+				
+				<em>Authorization</em>, and 
+							
+				
+				<em>Accounting</em> and it is used in designing and implementing protocols. These concepts should be remembered when designing security plans.
+					
+						
+			
+			</p>
+			<p>
+				<idx>multi-factor authentication</idx>
+				<idx>MFA</idx>
+				<term>Authentication</term> is the process of confirming someone’s identity. This may be done with user names and passwords or more frequently via 
+				
+				<term>multi-factor authentication</term> (
+				
+				<term>MFA</term>) which requires not only something you know, but something you have (fingerprints, key fob, etc.).
+					
+			
+			</p>
+			<p>
+				<idx>access control list</idx>
+				<idx>ACL</idx>
+				<term>Authorization</term> refers to keeping track of which resources an entity has access to. This can be done via a permission scheme or 
+				
+				<term>access control list</term> (
+				
+				<term>ACL</term>). Occasionally you will encounter something more exotic where authorization limits users to interactions during a particular time of day or from a particular IP address.
+					
+			
+			</p>
+			<p>
+				<idx>accounting</idx>
+				<term>Accounting</term> refers to tracking the usage of resources. This may be as simple as noting in a log file when a user has logged in to keeping track of exactly which services and user uses and how long they use them. Accounting is incredibly important because it allows you to not only monitor for possible problems, but also inspect what has occurred 
+				
+				<em>after</em> a problem is encountered. Accounting also allows system administrators to show irrefutably what actions a user has taken. This can be very important evidence in a court of law.
+					
+						
+			
+			</p>
+		</paragraphs>
+		<paragraphs xml:id="dry">
+			<title>DRY</title>
+			<p>
+				<idx>DRY</idx>
+				<idx>don’t repeat yourself.</idx>
+						While we’re dispensing knowledge in the form of three letter acronyms (TLAs), another important acronym to keep in mind is 
+				
+				<term>DRY</term>: 
+				
+				<term>Don’t Repeat Yourself.</term>
+			</p>
+			<blockquote>
+				<p>
+						"Say something once, why say it again?"
+							</p>
+				<p>
+								— Talking Heads, 
+					
+					<em>Psycho Killer</em>
+					<fn>Talking Heads. (1977). Psycho killer [song]. On Talking Heads:77. Sire Records.</fn>
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="imageblock right"-->
-					<!-- div attr= class="content"-->
-					<figure>
-						<image source="hats.png"/>
-						<caption>hats</caption>
-					</figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock right">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+			</blockquote>
+			<p></p>
+			<p>
+						This is of course not entirely literal. Just because you’ve explained something to a coworker once does 
+							
+				
+				<em>not</em> mean that you shouldn’t explain it again. It is meant as more of a guide for how you make use of 
+							
+				
+				<em>automation</em> and how you design systems. Increasingly security experts are not being asked to analyze a single system, but a network of hundreds if not thousands of systems. In this case you should make use of scripts and tools to make sure you are not manually doing the same thing over and over. Have you found a good way of testing to see if a part of a system is secure? Put it in a script so that you can reuse the test on other systems. This same logic applies to how systems are designed. Do you have a database of user login info? Reuse that database across multiple systems. In short, "Don’t repeat yourself!"
+					
+						
+			
+			</p>
+		</paragraphs>
+	</section>
+	<section xml:id="hacker-culture">
+		<title>Hacker Culture</title>
+		<p>
+			<idx>hacker</idx>
+			<idx>hacking</idx>
+			<idx>cracker</idx> 
+					The term 
+						
+			
+			<term>hacker</term> comes from the sound that programmers would make when typing or 
+						
+			
+			<term>hacking</term> away at keyboards. Originally a hacker was anyone who worked feverishly at a problem on a computer and the term 
+						
+			
+			<term>cracker</term> was used to define people who attempted to bypass security systems. The distinction was eventually lost and a hacker has come to be the popular term for someone attempting to gain unauthorized access to data. For an interesting glimpse into early hacker culture/reasoning read 
+						
+			
+			<url href="https://archive.org/stream/The_Conscience_of_a_Hacker/hackersmanifesto.txt">The Conscience of a Hacker</url> by The Mentor originally published in Phrack Magazine 1986.
+				
+					
+		
+		</p>
+		<p></p>
+		<figure>
+			<image source="hats.png"/>
+			<caption>Hacker Hats</caption>
+		</figure>
+		<p>,
+			
+			<idx>hacker hats</idx>
 					An early attempt at classifying hackers involved assigning hat colors according to their motivations. This harkens back to the old western movies where the bad guys wore black hats and the good guys wore white hats. Just as in real life nothing is clearly black and white, as such we’ve laid the traditional roles on a two-axis continuum from malicious to benevolent and illegal to legal.
-				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="dlist"-->
-					<dl>
-						<dt>White Hat</dt>
-						<dd>
-							<p>
-					These hackers are typically employed by a company to test the security of their systems. They operate legally with the intent of ultimately improving security.
-				</p>
-						</dd>
-						<dt>Black Hat</dt>
-						<dd>
-							<p>
-					These hackers operate outside the bounds of the law, and as such are subject to prosecution. Their intent is nefarious usually involving personal profit, malice, or some combination of the two.
-				</p>
-						</dd>
-						<dt>Gray Hat</dt>
-						<dd>
-							<p>
-					A gray hat hacker operates illegally but ultimately wants to improve the security of the system. They may inform administrators of the details of their breach or they may be acting to force a group to better secure their system. In rare circumstances a gray hat hacker may actually exploit a system for the purposes of hardening it once they have gained administrative access. It should be noted that despite the good intentions, gray hat hackers are still operating illegally and may be subject to prosecution.
-				</p>
-						</dd>
-					</dl>
-					<!--</div attr= class="dlist">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+				
+		
+		</p>
+		<p>
+			<idx>white hat</idx>
+			<term>White Hat</term>:	These hackers are typically employed by a company to test the security of their systems. They operate legally with the intent of ultimately improving security.
+				
+		
+		</p>
+		<p>
+			<term>Black Hat</term>:	These hackers operate outside the bounds of the law, and as such are subject to prosecution. Their intent is nefarious usually involving personal profit, malice, or some combination of the two.
+				
+		
+		</p>
+		<p>
+			<idx>Gray Hat</idx>
+			<term>Gray Hat</term>: A gray hat hacker operates illegally but ultimately wants to improve the security of the system. They may inform administrators of the details of their breach or they may be acting to force a group to better secure their system. In rare circumstances a gray hat hacker may actually exploit a system for the purposes of hardening it once they have gained administrative access. It should be noted that despite the good intentions, gray hat hackers are still operating illegally and may be subject to prosecution.
+				
+		
+		</p>
+		<p>
 					There are several more hat distinctions (blue hats, green hats, etc.) with mixed meanings. For example a blue hat may refer to an external entity hired by a company to test the security of a component, as is the case in Microsoft, or it may refer to a hacker motivated by revenge. It is also worth nothing that the second quadrant of our graph is empty, but this does not mean that there aren’t malicious, legal hackers. These may be software developers exploiting legal loopholes or possibly even individuals working for another government engaged in cyber warfare.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="sidebarblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</section>
-				<section xml:id="threat-actors-_threat_actors">
-					<title>1.4. Threat Actors {#_threat_actors}</title>
-					<!-- div attr= class="imageblock right"-->
-					<!-- div attr= class="content"-->
-					<p>
-						<url href="https://en.wikipedia.org/wiki/Guy_Fawkes_mask#Anonymous">
-							<image source='anonymous.svg'/>
-						</url>
-					</p>
-					<!--</div attr= class="content">-->
-					<!-- div attr= class="title"-->
-					<p>
+	</section>
+	<section xml:id="threat-actors">
+		<title>Threat Actors</title>
+		<p>
+			<url href="https://en.wikipedia.org/wiki/Guy_Fawkes_mask#Anonymous" >
+				<figure xml:id="guy_fawkes_mask">
+					<caption>
 						<url href="https://pixabay.com/illustrations/anonymous-revolution-guy-fawkes-1235169/">Anonymous Revolution Guy Fawkes</url> is used under 
+						
 						<url href="https://pixabay.com/service/license/">Pixabay License</url>
-					</p>
-					<!--</div attr= class="title">-->
-					<!--</div attr= class="imageblock right">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+					</caption>
+					<image source="anonymous.svg" width="40%" />
+				</figure>
+			</url>
+		</p>
+		<p>
 					To better be able to manage the risks of a data breach, it helps to be able to identify/understand the attacker or threat actor involved. Just as there are many reasons an actor may attempt to gain unauthorized access there are also many groups of threat actors.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+		<p>
+			<idx>script kiddies</idx>
 					Neophytes making use of automated tools that they may not fully understand are often referred to a 
-						<em>script kiddies</em>. You may hear other pejorative names as well such as lamer, noob, or luser, but the common thread is that these threat actors are 
-						<em>not</em> highly sophisticated. The same techniques used for automating defensive security can also be applied to automating attacks. Unfortunately this means that you may encounter actors "punching above their weight" or using complex tools while having only a rudimentary understanding of what they do.
+			
+			<term>script kiddies</term>. You may hear other pejorative names as well such as lamer, noob, or luser, but the common thread is that these threat actors are 
+			
+			<em>not</em> highly sophisticated. The same techniques used for automating defensive security can also be applied to automating attacks. Unfortunately this means that you may encounter actors "punching above their weight" or using complex tools while having only a rudimentary understanding of what they do.
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
-					Hacktivist are threat actors that attack to further social or political ends. These groups can be very sophisticated. The most well known hacktivist group is 
-						<em>Anonymous</em> which has been linked to several politically motivated attacks.
+					
+		
+		</p>
+		<p>
+			<idx>hacktivists</idx>
+			<idx>Anonymous</idx>
+			<term>Hacktivists</term> are threat actors that attack to further social or political ends. These groups can be very sophisticated. The most well known hacktivist group is 
+						
+			
+			<term>Anonymous</term> which has been linked to several politically motivated attacks.
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+					
+		
+		</p>
+		<p>
 					Organized crime is another element which may employ or support threat actors typically to make money. These groups typically have access to more resources and contacts than a solo actor. It is important to note that threat actors with roots in organized crime may find it easier to migrate into other areas of crime due to their proximity to a large criminal enterprise. For example, while it may be difficult for a script kiddie to broker the sale of valuable data, a hacker working with an organized crime syndicate may have people close to them that are familiar with the sale of stolen goods.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+		<p>
 					The last group of threat actors, and arguably the group with the most resources, are threat actors working with or for governments and nation states. These groups may have the explicit or implicit permission of their country to commit cyber crimes targeting other nations. Given the constant threat and resources available to these groups, they are referred to as an advanced persistent threat (APT). By utilizing the resources of a nation (often including its intelligence and military resources) APTs are a severe threat.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</section>
-				<section xml:id="security-plans-_security_plans">
-					<title>1.5. Security Plans {#_security_plans}</title>
-					<!-- div attr= class="paragraph"-->
-					<p>
+	</section>
+	<section xml:id="security-plans">
+		<title>Security Plans</title>
+		<p>
+			<idx>security plan</idx>
 					While confronting such a diverse array of actors can seem daunting at first, the key element to being successful is having a plan. A 
-						<em>security plan</em> analyzes the risks, details the resources that need to be protected, and presents a clear path to protecting them. Typically a security plan utilizes the three types of security controls available: physical, administrative, and technical.
+			
+			<term>security plan</term> analyzes the risks, details the resources that need to be protected, and presents a clear path to protecting them. Typically a security plan utilizes the three types of security controls available: physical, administrative, and technical.
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="ulist"-->
+					
+		
+		</p>
+		<p>
+			<ul>
+				<li>
 					<p>
-						<ul>
-							<li>
-								<p>
-										Physical controls are things like door locks, cameras, or even the way rooms in a building are laid out. These things can have a dramatic impact on the overall security and should not be overlooked!
-									</p>
-							</li>
-							<li>
-								<p>
-										Administrative controls include human resources policies (HR), classifying and limiting access to data, and separating duties. It helps to have a whole-organization understanding of security to make it easier to put these controls in place.
-									</p>
-							</li>
-							<li>
-								<p>
-										Technical controls are often what new security professionals think of first. These are things like intrusion detection systems (IDS), firewalls, anti-malware software, etc. While these are an important segment of security and they are the segment that falls almost entirely within the purview of IT, it is critical to remember that these are only as strong as the physical and administrative controls that support them!
-									</p>
-							</li>
-						</ul>
+						<idx>Physical controls</idx>
+						<term>Physical controls</term>	 are things like door locks, cameras, or even the way rooms in a building are laid out. These things can have a dramatic impact on the overall security and should not be overlooked!
+									
+					
 					</p>
-					<!--</div attr= class="ulist">-->
-					<!-- div attr= class="admonitionblock warning"-->
-					<table>
-						<title></title>
-						<tabular>
-							<row class="odd">
-								<cell halign="left"></cell>
-								<cell halign="left">Physical controls definitely lack the cool factor that technical controls have. Movies typically show security professionals hunched over laptops typing frantically or scrolling rapidly through pages and pages of logs on a giant screen. Rarely do they show them filling out a purchase order (PO) to have a locksmith come in and re-key the locks to the data closet. Just because it isn’t cool doesn’t mean it isn’t important! Remember, once an attacker has physical access, anything is possible.</cell>
-							</row>
-						</tabular>
-					</table>
-					<!--</div attr= class="admonitionblock warning">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</section>
-				<section xml:id="tools-of-the-trade">
-					<title>Tools of the Trade</title>
-
+				</li>
+				<li>
 					<p>
+						<idx>Administrative controls</idx>
+						<term>Administrative controls</term> include human resources policies (HR), classifying and limiting access to data, and separating duties. It helps to have a whole-organization understanding of security to make it easier to put these controls in place.
+									
+					
+					</p>
+				</li>
+				<li>
+					<p>
+						<idx>Technical controls</idx>
+						<term>Technical controls</term>	 are often what new security professionals think of first. These are things like intrusion detection systems (IDS), firewalls, anti-malware software, etc. While these are an important segment of security and they are the segment that falls almost entirely within the purview of IT, it is critical to remember that these are only as strong as the physical and administrative controls that support them!
+									
+					
+					</p>
+				</li>
+			</ul>
+		</p>
+		<p>
+			<em>Note: Physical controls definitely lack the cool factor that technical controls have. Movies typically show security professionals hunched over laptops typing frantically or scrolling rapidly through pages and pages of logs on a giant screen. Rarely do they show them filling out a purchase order (PO) to have a locksmith come in and re-key the locks to the data closet. Just because it isn’t cool doesn’t mean it isn’t important! Remember, once an attacker has physical access, anything is possible.</em>
+		</p>
+	</section>
+	<section xml:id="tools-of-the-trade">
+		<title>Tools of the Trade</title>
+		<p>
 					With all of this talk regarding how and why hackers attack systems, the question remains, "What can be done?" There are a few tools the security professional employs that are worth mentioning at this juncture including: 
-						<em>user awareness</em>, 
-						<em>anti-malware software</em>, 
-						<em>backups</em>, and 
-						<em>encryption</em>.
+						
+			
+			<em>user awareness</em>, 
+						
+			
+			<em>anti-malware software</em>, 
+						
+			
+			<em>backups</em>, and 
+						
+			
+			<em>encryption</em>.
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="dlist"-->
-					<dl>
-						<dt>User Awareness</dt>
-						<dd>
-							<p>
-					A major risk, some would argue the biggest risk, is that unprepared users will run malware programs or perform other harmful actions as directed by actors looking to gain access. These actors may impersonate others or perform other 
-								<em>social engineering</em> tactics to cause users to do as they say. Probably the scariest statistic is the ease with which a massive attack requiring little effort can be performed. Threat actors do not even need to personally reach out to users, they could simply send a mass email. Through training programs and other methods of interaction a security professional can make users aware of these threats and train them to act accordingly. Raising user awareness is a critical component of any security plan.
+					
+		
+		</p>
+		<p>
+			<idx>User Awareness</idx>
+			<term>User Awareness</term>: A major risk, some would argue the biggest risk, is that unprepared users will run malware programs or perform other harmful actions as directed by actors looking to gain access. These actors may impersonate others or perform other 
+			
+			<term>
+				<idx>social engineering</idx>
+			</term> tactics to cause users to do as they say. Probably the scariest statistic is the ease with which a massive attack requiring little effort can be performed. Threat actors do not even need to personally reach out to users, they could simply send a mass email. Through training programs and other methods of interaction a security professional can make users aware of these threats and train them to act accordingly. Raising user awareness is a critical component of any security plan.
 				
-							</p>
-						</dd>
-						<dt>Anti-Malware Software</dt>
-						<dd>
-							<p>
-					Given how prevalent the use of malware is a host of tools have been developed to prevent its usage. These tools may filter download requests to prevent downloading malware, monitor network traffic to detect active malware patterns, scan files for malware signatures, or harden operating system loopholes used by malware. A security plan will typically detail the type of anti-malware software being used as well as the intended purpose of its usage.
-				</p>
-						</dd>
-						<dt>Backups</dt>
-						<dd>
-							<p>
-					Maintaining a copy of the data used by a system can be a quick solution to the problems of ransomware and other attacks aimed at causing or threatening system failure. While a backup does not solve the problem of the data being sold or used by others, it does allow for a quick recovery in many instances and should be part of a security plan.
-				</p>
-						</dd>
-						<dt>Encryption</dt>
-						<dd>
-							<p>
-					At its most simple, encryption obfuscates data and requires a key to make it useful. Encryption can be employed to make copies of data obtained through unauthorized access useless to attackers that do not have the key. Often, encryption and backups complement each other and fill in the use cases that each lacks individually. As such, encryption will show up multiple times and in multiple ways in an average security plan.
-				</p>
-						</dd>
-					</dl>
-					<!--</div attr= class="dlist">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</section>
-				<section xml:id="lab-think-like-a-hacker">
-					<title>1.7. Lab: Think Like a Hacker</title>
-					<!-- div attr= class="paragraph"-->
-					<p>
+							
+		
+		</p>
+		<p>
+			<idx>Anti-Malware Software</idx>
+			<term>Anti-Malware Software</term>: Given how prevalent the use of malware is a host of tools have been developed to prevent its usage. These tools may filter download requests to prevent downloading malware, monitor network traffic to detect active malware patterns, scan files for malware signatures, or harden operating system loopholes used by malware. A security plan will typically detail the type of anti-malware software being used as well as the intended purpose of its usage.
+				
+		
+		</p>
+		<p>
+			<idx>Backups</idx>
+			<term>Backups</term>: Maintaining a copy of the data used by a system can be a quick solution to the problems of ransomware and other attacks aimed at causing or threatening system failure. While a backup does not solve the problem of the data being sold or used by others, it does allow for a quick recovery in many instances and should be part of a security plan.
+				
+		
+		</p>
+		<p>
+			<idx>Encryption</idx>
+			<term>Encryption</term>: At its most simple, encryption obfuscates data and requires a key to make it useful. Encryption can be employed to make copies of data obtained through unauthorized access useless to attackers that do not have the key. Often, encryption and backups complement each other and fill in the use cases that each lacks individually. As such, encryption will show up multiple times and in multiple ways in an average security plan.
+				
+		
+		</p>
+	</section>
+	<section xml:id="lab-think-like-a-hacker">
+		<title>Lab: Think Like a Hacker</title>
+		<p>
 					For this lab, we will be engaging in a thought experiment. Imagine you are at a university that is having a student appreciation breakfast. At the entrance to the cafeteria an attendant has a clipboard with all of the student IDs listed. Students line up, show their ID, and their ID number is crossed off of the list.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+		<p>
 					Thinking like a hacker, how would you exploit this system to get extra free breakfasts? Feel free to think outside the box and make multiple plans depending on the circumstances you would encounter when go the breakfast.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+		<p>
 					Here is an example that you 
-						<em>can not</em> use:
+						
+			
+			<em>can not</em> use:
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sidebarblock"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="paragraph"-->
+					
+		
+		</p>
+		<blockquote>
+			<p>
+				<em>I would tell the attendant that I forgot my ID, but I know my number and then give someone elses number. This is very similar to logging in to systems by claiming the user has forgotten their password and then knowing the answers to the security questions required to change the password.</em>
+			</p>
+		</blockquote>
+		<exercise>
+			<p>
+								Come up with at least five different ways of getting free breakfasts and map them to real-world information security attacks. If you are unfamiliar with any information security attacks, you may want to start by researching attacks and then mapping them to free breakfast ideas.
+							</p>
+		</exercise>
+	</section>
+	<section xml:id="intro_review">
+		<title>Review Questions</title>
+		<p>
+			<ol>
+				<li>
 					<p>
-					I would tell the attendant that I forgot my ID, but I know my number and then give someone elses number. This is very similar to logging in to systems by claiming the user has forgotten their password and then knowing the answers to the security questions required to change the password.
-				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="sidebarblock">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Come up with at least five | | | different ways of getting free | | | breakfasts and map them to | | | real-world information security | | | attacks. If you are unfamiliar | | | with 
-						<em>any</em> information security | | | attacks, you may want to start by | | | researching attacks and then | | | mapping them to free breakfast | | | ideas. | | | ::: | +———————————–+———————————–+
-				
+						<em>In terms of information security, what does CIA stand for? What do each of the principles mean?</em>
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</section>
-				<section xml:id="intro_review">
-					<title>1.8. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
+				</li>
+				<li>
 					<p>
-						<ol>
-							<li>
-								<p>
-									<em>In terms of information security, what does CIA stand for? What do each of the principles mean?</em>
-								</p>
-							</li>
-							<li>
-								<p>
-									<em>Why is it important to have a security plan? What types of controls can a security plan make use of? Give an example of each.</em>
-								</p>
-							</li>
-							<li>
-								<p>
-									<em>How do backups and encryped data compliment eachother? Explain.</em>
-								</p>
-							</li>
-						</ol>
+						<em>Why is it important to have a security plan? What types of controls can a security plan make use of? Give an example of each.</em>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
-				</section>
-
+				</li>
+				<li>
+					<p>
+						<em>How do backups and encryped data compliment each other? Explain.</em>
+					</p>
+				</li>
+			</ol>
+		</p>
+	</section>
 </chapter>

@@ -113,6 +113,12 @@
   </latex>
 
   <html>
+
+        <platform host="web" />
+        <!-- knowled checkpoints interfere with ActiveCode problems -->
+        <knowl exercise-inline="no" example="no" listing="no" />
+        <exercises tabbed-tasks="inline project"/>
+
     <!-- A possible attribute for the html tag above is @short-answer-responses, with values either "always" or "graded".  As in: -->
     <!--<html short-answer-responses="always">-->
 

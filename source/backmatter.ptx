@@ -13,8 +13,15 @@
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
 
   <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
+  <appendix xml:id="list_of_symbols">
+    <title>Symbols Index</title>
+    <notation-list/>
+  </appendix>
 
-  <!-- <index> <title>Index</title> <index-list/> </index> -->
+  <index xml:id="text-index">
+    <title>Text Index</title>
+    <index-list/>
+  </index>
 
   <colophon>
     <p> This book was authored in <pretext />. </p>
