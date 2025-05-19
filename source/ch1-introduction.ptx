@@ -187,10 +187,7 @@
 			<idx>hacker</idx>
 			<idx>hacking</idx>
 			<idx>cracker</idx> 
-					The term 
-						
-			
-			<term>hacker</term> comes from the sound that programmers would make when typing or 
+					The term <term>hacker</term> comes from the sound that programmers would make when typing or 
 						
 			
 			<term>hacking</term> away at keyboards. Originally a hacker was anyone who worked feverishly at a problem on a computer and the term 
@@ -228,7 +225,7 @@
 		
 		</p>
 		<p>
-			<idx>Gray Hat</idx>
+			<idx>gray hat</idx>
 			<term>Gray Hat</term>: A gray hat hacker operates illegally but ultimately wants to improve the security of the system. They may inform administrators of the details of their breach or they may be acting to force a group to better secure their system. In rare circumstances a gray hat hacker may actually exploit a system for the purposes of hardening it once they have gained administrative access. It should be noted that despite the good intentions, gray hat hackers are still operating illegally and may be subject to prosecution.
 				
 		
@@ -298,7 +295,7 @@
 			<ul>
 				<li>
 					<p>
-						<idx>Physical controls</idx>
+						<idx>physical controls</idx>
 						<term>Physical controls</term>	 are things like door locks, cameras, or even the way rooms in a building are laid out. These things can have a dramatic impact on the overall security and should not be overlooked!
 									
 					
@@ -306,7 +303,7 @@
 				</li>
 				<li>
 					<p>
-						<idx>Administrative controls</idx>
+						<idx>administrative controls</idx>
 						<term>Administrative controls</term> include human resources policies (HR), classifying and limiting access to data, and separating duties. It helps to have a whole-organization understanding of security to make it easier to put these controls in place.
 									
 					
@@ -314,7 +311,7 @@
 				</li>
 				<li>
 					<p>
-						<idx>Technical controls</idx>
+						<idx>technical controls</idx>
 						<term>Technical controls</term>	 are often what new security professionals think of first. These are things like intrusion detection systems (IDS), firewalls, anti-malware software, etc. While these are an important segment of security and they are the segment that falls almost entirely within the purview of IT, it is critical to remember that these are only as strong as the physical and administrative controls that support them!
 									
 					
@@ -347,7 +344,7 @@
 		
 		</p>
 		<p>
-			<idx>User Awareness</idx>
+			<idx>user awareness</idx>
 			<term>User Awareness</term>: A major risk, some would argue the biggest risk, is that unprepared users will run malware programs or perform other harmful actions as directed by actors looking to gain access. These actors may impersonate others or perform other 
 			
 			<term>
@@ -358,19 +355,19 @@
 		
 		</p>
 		<p>
-			<idx>Anti-Malware Software</idx>
+			<idx>anti-malware software</idx>
 			<term>Anti-Malware Software</term>: Given how prevalent the use of malware is a host of tools have been developed to prevent its usage. These tools may filter download requests to prevent downloading malware, monitor network traffic to detect active malware patterns, scan files for malware signatures, or harden operating system loopholes used by malware. A security plan will typically detail the type of anti-malware software being used as well as the intended purpose of its usage.
 				
 		
 		</p>
 		<p>
-			<idx>Backups</idx>
+			<idx>backups</idx>
 			<term>Backups</term>: Maintaining a copy of the data used by a system can be a quick solution to the problems of ransomware and other attacks aimed at causing or threatening system failure. While a backup does not solve the problem of the data being sold or used by others, it does allow for a quick recovery in many instances and should be part of a security plan.
 				
 		
 		</p>
 		<p>
-			<idx>Encryption</idx>
+			<idx>encryption</idx>
 			<term>Encryption</term>: At its most simple, encryption obfuscates data and requires a key to make it useful. Encryption can be employed to make copies of data obtained through unauthorized access useless to attackers that do not have the key. Often, encryption and backups complement each other and fill in the use cases that each lacks individually. As such, encryption will show up multiple times and in multiple ways in an average security plan.
 				
 		
