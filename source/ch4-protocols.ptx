@@ -31,7 +31,8 @@
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="paragraph"-->
 						<p>
-						There is a protocol designed to mitigate the issues with ARP. Dynamic ARP Inspection (DAI) reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
+							<idx>DAI</idx>
+						There is a protocol designed to mitigate the issues with ARP. <term>Dynamic ARP Inspection</term> <term>(DAI)</term> reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
 					</p>
 						<!--</div attr= class="paragraph">-->
 						<!--</div attr= class="sect3">-->
