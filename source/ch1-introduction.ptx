@@ -4,16 +4,16 @@
 	<title>Introduction</title>
 	<section xml:id="managing-risk">
 		<title>Managing Risk</title>
-		<figure>
-			<image source="db-locked.png" width="40%" decorative="yes"/>
-			<caption>
-				<url href="https://commons.wikimedia.org/wiki/File:Database-locked.svg">RRZEicons</url>, 
-						
-				
-				<url href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</url>, 
-				
-				<em>via Wikimedia Commons</em>
-			</caption>
+        <figure>
+            <caption>
+                <url href="https://commons.wikimedia.org/wiki/File:Database-locked.svg">RRZEicons</url>, 
+                        
+                
+                <url href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</url>, 
+                
+                <em>via Wikimedia Commons</em>
+            </caption>
+            <image source="db-locked.png" width="40%" decorative="yes"/>
 		</figure>
 		<p>
 			<idx>information security</idx>
@@ -63,7 +63,13 @@
 		</p>
 		<paragraphs xml:id="cia">
 			<title>CIA</title>
-			<image source="cia.svg" width="70%" />
+			<image source="cia.svg" width="70%">
+                <shortdescription>Diagram illustrating the CIA triad: Confidentiality, Integrity, and Availability.</shortdescription>
+                <description>
+                    <p>This image is a diagram designed to visually represent the CIA triad, which stands for Confidentiality, Integrity, and Availability. These are foundational principles in information security.</p>
+                    <p>The diagram uses a symbolic triangle or text labels to connect each of the three components. The surrounding text provides detailed definitions and examples for each principle of the CIA triad.</p>
+                </description>
+            </image>
 			<p>
 						While the Central Intelligence Agency does have a role to play in information security, for our purposes CIA is an acronym used to remember the three foundational information security principles: confidentiality, integrity, and availability. These ideas form the cornerstone of security and should be ever-present in your thoughts.
 					</p>
@@ -93,7 +99,16 @@
 		</paragraphs>
 		<paragraphs xml:id="aaa">
 			<title>AAA </title>
-			<image source="aaa.svg" width="40%" decorative="yes" />
+            <figure xml:id="aaa-fig">
+                <caption>AAA Conceptual Diagram</caption>
+                <image source="aaa.svg" width="40%">
+                    <shortdescription>Diagram illustrating AAA concepts: Authentication, Authorization, and Accounting.</shortdescription>
+                    <description>
+                        <p>This image is a diagram visually representing the AAA concepts in information security, which stand for Authentication, Authorization, and Accounting.</p>
+                        <p>As the image is marked decorative, its primary purpose is to visually reinforce the AAA acronym, with the surrounding text providing detailed definitions for each component.</p>
+                    </description>
+                </image>
+            </figure>
 			<p>
 				<idx>AAA</idx>
 						Another acronym you’re going to encounter in many different contexts is 
@@ -203,8 +218,14 @@
 		</p>
 		<p></p>
 		<figure>
-			<image source="hats.png"/>
-			<caption>Hacker Hats</caption>
+			<caption>Hat Scale</caption>
+			<image source="hats.png" width="40%">
+                <shortdescription>Alignment chart classifying hacker types (White, Black, Gray Hat) on Legal/Illegal and Malicious/Benevolent axes.</shortdescription>
+                <description>
+                    <p>The image, captioned 'Hacker Hats,' is an alignment chart that classifies different types of hackers using two axes. The horizontal axis ranges from 'Malicious' on the left to 'Benevolent' on the right. The vertical axis ranges from 'Legal' at the top to 'Illegal' at the bottom, creating four quadrants.</p>
+                    <p>In the top-right quadrant (Legal/Benevolent), a white hat icon is positioned above the label 'White Hat'. In the bottom-left quadrant (Illegal/Malicious), a black hat icon is positioned above the label 'Black Hat'. In the bottom-right quadrant (Illegal/Benevolent), a gray hat icon is positioned above the label 'Gray Hat'. The top-left quadrant (Legal/Malicious) is depicted as empty.</p>
+                    <p>This chart visually categorizes the hacker types based on their ethical stance and legality, corresponding to the classifications detailed in the accompanying text.</p>
+                </description> </image>
 		</figure>
 		<p>,
 			
@@ -235,20 +256,15 @@
 				</p>
 	</section>
 	<section xml:id="threat-actors">
-		<title>Threat Actors</title>
-		<p>
-			<url href="https://en.wikipedia.org/wiki/Guy_Fawkes_mask#Anonymous" >
-				<figure xml:id="guy_fawkes_mask">
-					<caption>
-						<url href="https://pixabay.com/illustrations/anonymous-revolution-guy-fawkes-1235169/">Anonymous Revolution Guy Fawkes</url> is used under 
-						
-						<url href="https://pixabay.com/service/license/">Pixabay License</url>
+        <title>Threat Actors</title>
+            <figure xml:id="guy_fawkes_mask">
+                <caption>
+			<url href="https://en.wikipedia.org/wiki/Guy_Fawkes_mask#Anonymous" />
 					</caption>
-					<image source="anonymous.svg" width="40%" />
-				</figure>
-			</url>
-		</p>
+                    <image source="anonymous.svg" width="40%" decorative="yes"/>
+				</figure>		
 		<p>
+			
 					To better be able to manage the risks of a data breach, it helps to be able to identify/understand the attacker or threat actor involved. Just as there are many reasons an actor may attempt to gain unauthorized access there are also many groups of threat actors.
 				</p>
 		<p>
@@ -278,8 +294,7 @@
 				</p>
 		<p>
 					The last group of threat actors, and arguably the group with the most resources, are threat actors working with or for governments and nation states. These groups may have the explicit or implicit permission of their country to commit cyber crimes targeting other nations. Given the constant threat and resources available to these groups, they are referred to as an advanced persistent threat (APT). By utilizing the resources of a nation (often including its intelligence and military resources) APTs are a severe threat.
-				</p>
-	</section>
+				</p></section>
 	<section xml:id="security-plans">
 		<title>Security Plans</title>
 		<p>
@@ -346,9 +361,11 @@
 		<p>
 			<idx>user awareness</idx>
 			<term>User Awareness</term>: A major risk, some would argue the biggest risk, is that unprepared users will run malware programs or perform other harmful actions as directed by actors looking to gain access. These actors may impersonate others or perform other 
-			
+
+			<idx>social engineering</idx>
+
 			<term>
-				<idx>social engineering</idx>
+				social engineering
 			</term> tactics to cause users to do as they say. Probably the scariest statistic is the ease with which a massive attack requiring little effort can be performed. Threat actors do not even need to personally reach out to users, they could simply send a mass email. Through training programs and other methods of interaction a security professional can make users aware of these threats and train them to act accordingly. Raising user awareness is a critical component of any security plan.
 				
 							
