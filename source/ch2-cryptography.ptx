@@ -226,7 +226,9 @@
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="listingblock"-->
 					<!-- div attr= class="content"-->
-					<pre>KEY GENERATION
+					<program>
+    <input>
+KEY GENERATION
 p = a random prime number
 q = a random prime number
 N = p * q
@@ -255,7 +257,9 @@ Public Key = 91, 5
 Private Key = 91, 29
 cleartext = 72 ('H' in ASCII)
 ciphertext = (72**5)%91 = 11 (encrypted using N and e)
-cleartext = (11**29)%91 = 72 (decrypted using N and d)</pre>
+cleartext = (11**29)%91 = 72 (decrypted using N and d)
+    </input>
+  </program>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="listingblock">-->
 					<!-- div attr= class="paragraph"-->
