@@ -34,8 +34,12 @@
 					<!-- div attr= class="content"-->
 					<!-- div attr= class="title"-->
 					<p>
-					Case Study: Equifax
-				</p>
+					</p>
+					
+					
+					<subsection xml:id="case-study-equifax">
+      				<title>Case Study: Equifax</title>
+					
 					<!--</div attr= class="title">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -53,6 +57,7 @@
 					<!--</div attr= class="sidebarblock">-->
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
+				</subsection>
 				</section>
 				<section xml:id="terminology-_terminology">
 					<title>2.2. Terminology {#_terminology}</title>
@@ -60,52 +65,18 @@
 					<p>
 					Going forward, it is important to address some common cryptography terms as they will be used frequently:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="dlist"-->
-					<dl>
-						<dt>Plaintext</dt>
-						<dd>
-							<p>
-								<url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext
-				
-							</p>
-						</dd>
-						<dt>Cipher</dt>
-						<dd>
-							<p>
-								<url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption</url>
-							</p>
-						</dd>
-						<dt>Ciphertext</dt>
-						<dd>
-							<p>
-					data that has undergone encryption
-				</p>
-						</dd>
-						<dt>Cryptographic algorithm</dt>
-						<dd>
-							<p>
-					a series of steps to follow to encrypt or decrypt data
-				</p>
-						</dd>
-						<dt>Public key</dt>
-						<dd>
-							<p>
-					information (typically a byte array) that can be used to encrypt data such that only the owner of the matching 
-								<em>private key</em> can unencrypt it
-				
-							</p>
-						</dd>
-						<dt>Private (secret) key</dt>
-						<dd>
-							<p>
-					information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key
-				</p>
-						</dd>
-					</dl>
-					<!--</div attr= class="dlist">-->
-					<!-- div attr= class="exampleblock"-->
-					<!-- div attr= class="title"-->
+					<p><term>Plaintext</term>: <url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext</p>
+
+					<p><term>Cipher</term>: <url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption</url></p>
+
+					<p><term>Ciphertext</term>: data that has undergone encryption</p>
+
+					<p><term>Cryptographic algorithm</term>: a series of steps to follow to encrypt or decrypt data</p>
+
+					<p><term>Public key</term>: information (typically a byte array) that can be used to encrypt data such that only the owner of the matching <em>private key</em> can decrypt it</p>
+
+					<p><term>Private (secret) key</term>: information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key</p>
+					
 					<p>
 					Example 1. Caesar Cipher
 				</p>
