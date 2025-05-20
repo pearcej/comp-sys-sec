@@ -191,10 +191,15 @@
 						<title>4.2.3. NAT {#_nat}</title>
 						<!-- div attr= class="imageblock left"-->
 						<!-- div attr= class="content"-->
-						<figure>
-							<image source="nat.svg"/>
-							<caption>nat</caption>
-						</figure>
+						<figure xml:id="fig-nat-router">
+						<caption>nat</caption>
+						<image source="nat.svg">
+							<shortdescription>A diagram illustrating how a NAT router enables multiple devices on a private network to share a single public IP address to access the internet.</shortdescription>
+							<description>
+								<p>This diagram shows a basic Network Address Translation (NAT) scenario. Three client devices with private IP addresses (192.168.1.50, 192.168.1.51, and 192.168.1.52) are on a local network. They connect to a NAT Router, which has a local interface IP (192.168.1.1) and a single public IP address (128.235.176.43). The NAT router translates the private IP addresses of the client devices to its own public IP address when they access the Internet, allowing multiple devices to share one public IP.</p>
+							</description>
+						</image>
+					</figure>
 						<!--</div attr= class="content">-->
 						<!--</div attr= class="imageblock left">-->
 						<!-- div attr= class="paragraph"-->
@@ -380,10 +385,15 @@
 						<!-- div attr= class="content"-->
 						<!-- div attr= class="imageblock left"-->
 						<!-- div attr= class="content"-->
-						<figure>
-							<image source="tls.svg"/>
-							<caption>tls</caption>
-						</figure>
+						<figure xml:id="fig-tls-handshake">
+						<caption>tls</caption>
+						<image source="tls.svg">
+							<shortdescription>A sequence diagram illustrating the key steps in a simplified TLS handshake between a client and a server.</shortdescription>
+							<description>
+								<p>This diagram shows a simplified sequence of messages exchanged between a client and a server during a Transport Layer Security (TLS) handshake. The process begins with TCP's three-way handshake (SYN from client to server, SYN ACK from server to client, and ACK from client to server). Immediately following the TCP ACK, the client initiates the TLS handshake by sending a "ClientHello" message. The server responds with "ServerHello," its digital "Certificate," and a "ServerHelloDone" message. The client then processes this information and sends a "ClientKeyExchange" message (containing the premaster secret), a "ClientCipherSpec" message to activate the newly negotiated cryptographic parameters, and a "Finished" message (an encrypted hash of the handshake so far). The server, in turn, sends its "ChangeCipherSpec" message and its own "Finished" message. Upon successful exchange and verification of these messages, the secure TLS channel is established.</p>
+							</description>
+						</image>
+					</figure>
 						<!--</div attr= class="content">-->
 						<!--</div attr= class="imageblock left">-->
 						<!-- div attr= class="paragraph"-->
@@ -400,10 +410,15 @@
 						<title>4.4.4. HTTPS {#_https}</title>
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
-						<figure>
-							<image source="https.png"/>
-							<caption>https</caption>
-						</figure>
+						<figure xml:id="fig-https-indicator">
+						<caption>https</caption>
+						<image source="https.png">
+							<shortdescription>An icon depicting a green padlock next to "https://" text, symbolizing a secure HTTPS web connection.</shortdescription>
+							<description>
+								<p>This image shows a common visual indicator of a secure HTTPS connection, often seen in web browser address bars. It features a green padlock icon immediately to the left of the text "https://". The padlock signifies that the communication with the website is encrypted using TLS/SSL, ensuring data privacy and integrity. This assures the user that their connection to the site is secure.</p>
+							</description>
+						</image>
+					</figure>
 						<!--</div attr= class="content">-->
 						<!-- div attr= class="title"-->
 						<p>
