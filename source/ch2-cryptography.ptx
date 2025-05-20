@@ -9,8 +9,8 @@
 	</p>
   </introduction>
 
-				<section xml:id="why-do-we-need-cryptography-_why_do_we_need_cryptography">
-					<title>2.1. Why do we need cryptography? {#_why_do_we_need_cryptography}</title>
+				<section xml:id="why-do-we-need-cryptography">
+					<title>2.1. Why do we need cryptography?</title>
 					<!-- div attr= class="paragraph"-->
 					<introduction>
 						
@@ -56,8 +56,8 @@
 					<!-- div attr= class="sect2"-->
 				</subsection>
 				</section>
-				<section xml:id="terminology-_terminology">
-					<title>2.2. Terminology {#_terminology}</title>
+				<section xml:id="terminology">
+					<title>2.2. Terminology</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Going forward, it is important to address some common cryptography terms as they will be used frequently:
@@ -163,8 +163,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="keys-_keys">
-					<title>2.3. Keys {#_keys}</title>
+				<section xml:id="keys">
+					<title>2.3. Keys</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Typically a series of random bytes can be used as a key to either encrypt or decrypt data. A key is used by a cryptographic algorithm to change plaintext to ciphertext. Keys may also be asymmetric in that they can only be used to perform 
@@ -183,8 +183,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="mathematical-foundation-_mathematical_foundation">
-					<title>2.4. Mathematical Foundation {#_mathematical_foundation}</title>
+				<section xml:id="mathematical-foundation">
+					<title>2.4. Mathematical Foundation</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Cryptography relies largely on the concept of one-way or trap door functions. That is a process that is hard to compute in one direction, but easy to compute in the other. For example it is much easier for a computer to multiply large numbers than to determine the factors of large numbers. This is the foundation of the RSA algorithm. 
@@ -242,8 +242,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="hashes-_hashes">
-					<title>2.5. Hashes {#_hashes}</title>
+				<section xml:id="hashes">
+					<title>2.5. Hashes</title>
 					<!-- div attr= class="imageblock right"-->
 					<!-- div attr= class="content"-->
 					<figure>
@@ -301,8 +301,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="symmetric-encryption-_symmetric_encryption">
-					<title>2.6. Symmetric Encryption {#_symmetric_encryption}</title>
+				<section xml:id="symmetric-encryption">
+					<title>2.6. Symmetric Encryption</title>
 					<!-- div attr= class="imageblock left"-->
 					<!-- div attr= class="content"-->
 					<figure>
@@ -370,8 +370,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="stream-ciphers-_stream_ciphers">
-					<title>2.8. Stream Ciphers {#_stream_ciphers}</title>
+				<section xml:id="stream-ciphers">
+					<title>2.8. Stream Ciphers</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Stream ciphers encode data one symbol at a time and produces one ciphertext symbol for each cleartext symbol. Given that you can often use some sort of block encryption with a significantly small block size, stream encryption is not used as often. Technically the OTP example, when used one symbol at a time, is a stream cipher. The keys come in one symbol at a time, the cleartext comes in one symbol at a time, and an operation is performed (addition in the case of the example) to create the ciphertext. Given a suitable keysize and a well-researched algorithm, stream ciphers can be just as secure as block ciphers. That being said a stream cipher is usually more consistent in its runtime characteristics and typically consumes less memory Unfortunately there are not as many well-researched algorithms and widely used stream ciphers.
@@ -380,28 +380,25 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="block-ciphers-_block_ciphers">
-					<title>2.9. Block Ciphers {#_block_ciphers}</title>
+				<section xml:id="block-ciphers">
+					<title>2.9. Block Ciphers</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Block ciphers takes the data in, in blocks and use cipher blocks of the same size to perform the encryption. It is very popular and there are many secure algorithms to choose from. Unfortunately if the input data doesn’t fit neatly into blocks of the same size, padding may be required, which takes up more space/memory and reduces the speed of the cipher. As such the block encryption is often less performant than stream encryption.
 				</p>
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="block-cipher-modes-of-operation-_block_cipher_modes_of_operation">
-						<title>2.9.1. Block Cipher Modes of Operation {#_block_cipher_modes_of_operation}</title>
+					<paragraphs xml:id="block-cipher-modes-of-operation">
+						<title>2.9.1. Block Cipher Modes of Operation</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						There are several ways you can create your cipher blocks and depending on how you do it, various attacks are possible:
 					</p>
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="sect4"-->
-						<paragraphs xml:id="electronic-codebook-ecb-_electronic_codebook_ecb">
-							<title>Electronic Codebook (ECB) {#_electronic_codebook_ecb}</title>
-							<!-- div attr= class="openblock float-group"-->
-							<!-- div attr= class="content"-->
-							<!-- div attr= class="imageblock right"-->
-							<!-- div attr= class="content"-->
+						<paragraphs xml:id="electronic-codebook-ecb">
+							<title>Electronic Codebook (ECB)</title>
+
 							<figure>
 								<image source="ecb.svg"/>
 								<caption>ecb</caption>
@@ -424,12 +421,9 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<!--</div attr= class="sect4">-->
 							<!-- div attr= class="sect4"-->
 						</paragraphs>
-						<paragraphs xml:id="cipher-block-chaining-cbc-_cipher_block_chaining_cbc">
-							<title>Cipher block chaining (CBC) {#_cipher_block_chaining_cbc}</title>
-							<!-- div attr= class="openblock float-group"-->
-							<!-- div attr= class="content"-->
-							<!-- div attr= class="imageblock left"-->
-							<!-- div attr= class="content"-->
+						<paragraphs xml:id="cipher-block-chaining-cbc">
+							<title>Cipher block chaining (CBC)</title>
+
 							<figure>
 								<image source="cbc.svg"/>
 								<caption>cbc</caption>
@@ -455,7 +449,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<!-- div attr= class="sect4"-->
 						</paragraphs>
 						<paragraphs xml:id="counter-ctr-_counter_ctr">
-							<title>Counter (CTR) {#_counter_ctr}</title>
+							<title>Counter (CTR)</title>
 							<!-- div attr= class="openblock float-group"-->
 							<!-- div attr= class="content"-->
 							<!-- div attr= class="imageblock right"-->
@@ -482,8 +476,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<!--</div attr= class="sect4">-->
 							<!-- div attr= class="sect4"-->
 						</paragraphs>
-						<paragraphs xml:id="galoiscounter-mode-gcm-_galoiscounter_mode_gcm">
-							<title>Galois/Counter Mode (GCM) {#_galoiscounter_mode_gcm}</title>
+						<paragraphs xml:id="galoiscounter-mode-gcm">
+							<title>Galois/Counter Mode (GCM)</title>
 							<!-- div attr= class="openblock float-group"-->
 							<!-- div attr= class="content"-->
 							<!-- div attr= class="imageblock left"-->
@@ -544,11 +538,11 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						</paragraphs>
 					</paragraphs>
 				</section>
-				<section xml:id="encryption-examples-_encryption_examples">
-					<title>2.10. Encryption Examples {#_encryption_examples}</title>
+				<section xml:id="encryption-examples">
+					<title>2.10. Encryption Examples</title>
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="rsa-_rsa">
-						<title>2.10.1. RSA {#_rsa}</title>
+					<paragraphs xml:id="rsa">
+						<title>2.10.1. RSA</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						RSA is an asymmetric encryption standard developed in 1977 that is still very popular. Its trapdoor function is based on the difficulty of factoring large numbers. The name RSA comes from the names of the authors of the system: Ron Rivest, Adi Shamir, and Leonard Adleman.
@@ -557,8 +551,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="advanced-encryption-standard-aes-_advanced_encryption_standard_aes">
-						<title>2.10.2. Advanced Encryption Standard (AES) {#_advanced_encryption_standard_aes}</title>
+					<paragraphs xml:id="advanced-encryption-standard-aes">
+						<title>2.10.2. Advanced Encryption Standard (AES)</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						AES is a symmetric block cipher developed in 1998 to supersede the less secure Data Encryption Standard (DES). AES works on 128 bit blocks of data, performing multiple rounds of substitution-permutation to encrypt data. You will find AES used to encrypt network traffic (as is the case in a virtual private network), data stored to disk (disk encryption), or computer game data that is saved to storage. AES is a 
@@ -569,8 +563,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="elliptic-curve-cryptography-ecc-_elliptic_curve_cryptography_ecc">
-						<title>2.10.3. Elliptic-curve Cryptography (ECC) {#_elliptic_curve_cryptography_ecc}</title>
+					<paragraphs xml:id="elliptic-curve-cryptography-ecc">
+						<title>2.10.3. Elliptic-curve Cryptography (ECC)</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						ECC is an asymmetric encryption scheme that is quite fast and easy to computer. It is rapidly becoming the go to choice for digital signatures and key exchanges, gaining adopting starting in 2004. ECC is based on the geometry of a pre-determined set of curves (some examples can be found 
@@ -581,8 +575,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="diffie-hellman-key-exchange-_diffie_hellman_key_exchange">
-						<title>2.10.4. Diffie-Hellman Key Exchange {#_diffie_hellman_key_exchange}</title>
+					<paragraphs xml:id="diffie-hellman-key-exchange">
+						<title>2.10.4. Diffie-Hellman Key Exchange</title>
 						<!-- div attr= class="openblock float-group"-->
 						<!-- div attr= class="content"-->
 						<!-- div attr= class="imageblock right"-->
@@ -609,8 +603,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="digital-certificates-_digital_certificates">
-						<title>2.10.5. Digital Certificates {#_digital_certificates}</title>
+					<paragraphs xml:id="digital-certificates">
+						<title>2.10.5. Digital Certificates</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						A digital certificate is a set of credentials used to identify a company or an individual. Since asymmetric encryption requires know a party’s public key, a digital certificate includes that key as well as an ID of the owner. The question then becomes how do you trust that the public key is 
@@ -652,8 +646,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="blockchain-_blockchain">
-						<title>2.10.6. Blockchain {#_blockchain}</title>
+					<paragraphs xml:id="blockchain">
+						<title>2.10.6. Blockchain</title>
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
 						<figure>
@@ -676,8 +670,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="trusted-platform-module-tpm-hardware-security-module-hsm-_trusted_platform_module_tpm_hardware_security_module_hsm">
-						<title>2.10.7. Trusted Platform Module (TPM) / Hardware Security Module (HSM) {#_trusted_platform_module_tpm_hardware_security_module_hsm}</title>
+					<paragraphs xml:id="trusted-platform-module-tpm">
+						<title>2.10.7. Trusted Platform Module (TPM) / Hardware Security Module (HSM)</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						These modules provide hardware specifically for use with encryption. HSMs are removable modules while TPMs are motherboard chips. Many ciphers rely on a reliable source of entropy (randomness) which these modules provide. They can also significantly increase the speed at which cryptographic algorithms run by moving the operations to specialized hardware. Lastly, these modules can be used to store keys 
@@ -688,8 +682,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="steganography-_steganography">
-						<title>2.10.8. Steganography {#_steganography}</title>
+					<paragraphs xml:id="steganography">
+						<title>2.10.8. Steganography </title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 						Steganography is the process of hiding data in something such that to a casual observer it cannot be detected. Data can be hidden in audio, images, or even 
@@ -702,8 +696,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-hash-it-out-_lab_hash_it_out">
-					<title>2.11. Lab: Hash it Out {#_lab_hash_it_out}</title>
+				<section xml:id="lab-hash-it-out">
+					<title>2.11. Lab: Hash it Out</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					A 
@@ -1036,7 +1030,7 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="crypto_review">
+				<section xml:id="cryptography-review">
 					<title>2.12. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>

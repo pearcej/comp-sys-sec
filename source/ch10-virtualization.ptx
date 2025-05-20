@@ -9,8 +9,8 @@
 			</p>
   </introduction>
 
-				<section xml:id="methods-_methods">
-					<title>10.1. Methods {#_methods}</title>
+				<section xml:id="methods">
+					<title>10.1. Methods</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Virtualization is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, emulating the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in isolated environments without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:
@@ -247,8 +247,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="lab-malicious-containers-_lab_malicious_containers">
-					<title>10.5. Lab: Malicious Containers {#_lab_malicious_containers}</title>
+				<section xml:id="lab-malicious-containers">
+					<title>10.5. Lab: Malicious Containers</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					While containers have made it much easier to deploy software, they have also made it easier to deploy 
@@ -355,7 +355,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="virt_review">
+				<section xml:id="virtualization-review">
 					<title>10.6. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>
