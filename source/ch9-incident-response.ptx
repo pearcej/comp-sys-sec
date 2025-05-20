@@ -609,7 +609,7 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="incident_review">
+				<section xml:id="incident-review">
 					<title>9.6. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>
@@ -637,8 +637,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="lab-reporting-on-the-2014-sony-pictures-hack-_lab_reporting_on_the_2014_sony_pictures_hack">
-					<title>9.7. Lab: Reporting on the 2014 Sony Pictures Hack {#_lab_reporting_on_the_2014_sony_pictures_hack}</title>
+				<section xml:id="lab-reporting-on-the-2014-sony-pictures-hack">
+					<title>9.7. Lab: Reporting on the 2014 Sony Pictures Hack</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					Take a moment to read through the details of the 

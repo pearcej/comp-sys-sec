@@ -734,8 +734,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-hash-it-out-_lab_hash_it_out">
-					<title>2.11. Lab: Hash it Out {#_lab_hash_it_out}</title>
+				<section xml:id="lab-hash-it-out">
+					<title>2.11. Lab: Hash it Out</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					A 
@@ -1068,7 +1068,7 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="crypto_review">
+				<section xml:id="cryptography-review">
 					<title>2.12. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>
