@@ -33,7 +33,7 @@
 						<p>
 							<idx>DAI</idx>
 						There is a protocol designed to mitigate the issues with ARP. 
-						<term>Dynamic ARP Inspection</term> <term>(DAI)</term> reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
+						<term>Dynamic ARP Inspection</term> (<term>DAI</term>) reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
 					</p>
 						<!--</div attr= class="paragraph">-->
 						<!--</div attr= class="sect3">-->
@@ -42,33 +42,33 @@
 					<paragraphs xml:id="wifi-_wifi">
 						<title>4.1.2. Wifi {#_wifi}</title>
 						<!-- div attr= class="paragraph"-->
-						<p>
+						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
 					</p>
 						
 						
 							<p>WEP</p>
 								<p><idx>WEP</idx>
-						<term>Wireless Equivalent Privacy</term> <term>(WEP)</term> is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
+						<term>Wireless Equivalent Privacy</term> (<term>WEP</term>) is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
 					</p>
 							
 							<p>WPA</p>
 							
 								<p><idx>TKIP</idx><idx>WPA</idx>
-						<term>Wifi Protected Access</term> <term>(WPA)</term> utilized 
-						<term>Temporal Key Integrity Protocol</term> <term>(TKIP)</term> to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
+						<term>Wifi Protected Access</term> (<term>WPA</term>) utilized 
+						<term>Temporal Key Integrity Protocol</term> (<term>TKIP</term>) to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
 					</p>
 							
 							<p>WPA2</p>
 							
 								<p><idx>WPA2</idx>
-						<term>Wifi Protected Access 2</term> <term>(WPA2)</term> makes use of AES encryption and is currently the most popular standard. WPA2 is still considered secure.
+						<term>Wifi Protected Access 2</term> (<term>WPA2</term>) makes use of AES encryption and is currently the most popular standard. WPA2 is still considered secure.
 					</p>
 							
 							<p>WPA3</p>
 							
 								<p><idx>WPA3</idx>
-						<term>Wifi Protected Access 3</term> <term>(WPA3)</term> was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
+						<term>Wifi Protected Access 3</term> (<term>WPA3</term>) was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
 					</p>
 							
 						
@@ -85,10 +85,9 @@
 						<title>4.2.1. IP {#_ip}</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
-							<idx>routing</idx>
-							<idx>ip</idx>
+							<idx>IP</idx>
 						<term>IP</term> stands for internet protocol and it was devised to allow creating a network of networks. The network of networks that uses it primarily is the Internet, although you could use IP in other scenarios as well. IP is largely concerned with 
-							<term>routing</term> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
+							<em>routing</em> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -107,15 +106,15 @@
 						<!-- div attr= class="paragraph"-->
 						<p><idx>Network Address Translation</idx>
 						From a security standpoint, the way addresses are used in IPv4 vs IPv6 has big consequences. Since there aren’t enough IPv4 addresses a typical internet user is assigned a local address that gets translated to an external IPv4 address when they route their packets through their router. This is referred to as 
-						<term>Network Address Translation</term> <term>(NAT)</term> and is usually handled by an all-in-one device that also makes sure external entities cannot connect to the internal network.
+						<term>Network Address Translation</term> (<term>NAT</term>) and is usually handled by an all-in-one device that also makes sure external entities cannot connect to the internal network.
 					</p>
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="paragraph"-->
 						<p>
 
 						With IPv6 addresses each host on that same 
-							<term>internal</term> network can be given an external IPv6 address. A 
-							<term>basic</term> IPv6 router may simply pass the packets to the network without blocking connections to the internal network. If the machines are not hardened or a firewall is not put in place/enabled the machines could be subject to attack.
+							<em>internal</em> network can be given an external IPv6 address. A 
+							<em>basic</em> IPv6 router may simply pass the packets to the network without blocking connections to the internal network. If the machines are not hardened or a firewall is not put in place/enabled the machines could be subject to attack.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -132,9 +131,9 @@
 					<paragraphs xml:id="icmp-_icmp">
 						<title>4.2.2. ICMP {#_icmp}</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>destination unreachable</idx><idx>ICMP</idx>
-						<term>Internet Control Message Protocol</term> <term>(ICMP)</term> is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
-							<term>Destination Unreachable</term> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
+						<p><idx>ICMP</idx>
+						<term>Internet Control Message Protocol</term> (<term>ICMP</term>) is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
+							<em>Destination Unreachable</em> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
 					
 						</p>
 						<!--</div attr= class="paragraph">-->
@@ -150,8 +149,8 @@
 						<p><idx>TTL</idx>
 						ICMP is also used in the 
 							<c>traceroute</c> command. 
-							<c>traceroute</c> incrementally increase the <term>Time To Live</term> <term>(TTL)</term> field of ICMP packets and watches for 
-							<term>TTL Exceeded</term> messages to determine what route packets are taking to get to a host. Example 
+							<c>traceroute</c> incrementally increase the <term>Time To Live</term> (<term>TTL</term>) field of ICMP packets and watches for 
+							<em>TTL Exceeded</em> messages to determine what route packets are taking to get to a host. Example 
 							<c>traceroute</c> output is shown below:
 					
 						</p>
@@ -176,7 +175,7 @@
 							<tabular>
 								<row class="odd">
 									<cell halign="left">
-										<term>1</term>
+										<em>1</em>
 									</cell>
 									<cell halign="left">Notice these routers not responding to ICMP packets</cell>
 								</row>
@@ -214,7 +213,7 @@
 						<title>4.2.4. IPsec {#_ipsec}</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>IPsec</idx>
-						<term>Internet Protocol Security</term> <term>(IPsec)</term> is used to set up a point-to-point encryption tunnel to secure data in transit across IP networks. IPsec is used primarily in dedicated VPN links and makes use of three main parts: SA, ESP, and AH:
+						<term>Internet Protocol Security</term> (<term>IPsec</term>) is used to set up a point-to-point encryption tunnel to secure data in transit across IP networks. IPsec is used primarily in dedicated VPN links and makes use of three main parts: SA, ESP, and AH:
 					</p>
 						<!--</div attr= class="paragraph">-->
 						<!-- div attr= class="ulist"-->
@@ -271,7 +270,7 @@
 					<paragraphs xml:id="common-ports-and-services-_common_ports_and_services">
 						<title>4.3.3. Common Ports and Services {#_common_ports_and_services}</title>
 						<!-- div attr= class="paragraph"-->
-						<p>
+						<p><idx>port numbers</idx>
 						<term>Port numbers</term> are used in a transport layer connection to specify which service to connect to. This allows a single host to have multiple services running on it. Ports 0 to 1023 are 
 							well-known ports and typically support a commonly used service. In most operating systems it takes administrative privileges to bind to a Well-known port and listen for connections. Registered ports range from 1024 to 49151 and do not require administrative privileges to run a service on. You may find many things listening on these ports as any user can have a service on them. Lastly ports 49152 to 65535 are used dynamically by applications as needed.
 					
@@ -528,7 +527,7 @@
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>IMAP</idx>
-							<idx>POP#</idx>
+							<idx>POP3</idx>
 						<term>Internet Message Access Protocol</term> (<term>IMAP</term>) and <term>Post Office Protocol 3</term> (<term>POP3</term>) are two protocols used to retrieve email from a server. IMAP is the more recent protocol which supports saving mail on the sever and folders. POP3 is more primitive, supporting only the retrieval (and subsequent deletion from the server) of emails. Both protocols use cleartext and are now commonly run over TLS. POP3 defaults to TCP port 110 or 995 if using TLS. IMAP defaults to TCP port 143 or 993 if using TLS. In the age of webmail it is easy to forget about these protocols, but a security specialist must keep them in mind as they may still be used in support of corporate devices.
 					</p>
 						<!--</div attr= class="paragraph">-->
@@ -702,7 +701,7 @@ root@7b6d733cc03a:/(1)</pre>
 						<tabular>
 							<row class="odd">
 								<cell halign="left">
-									<term>1</term>
+									<em>1</em>
 								</cell>
 								<cell halign="left">Notice the prompt change. We are now 
 									<em>inside</em> the 
