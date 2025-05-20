@@ -17,10 +17,10 @@
 			</p>
   </introduction>
 
-				<section xml:id="network-access-layer-_network_access_layer">
-					<title>4.1. Network Access Layer {#_network_access_layer}</title>
+				<section xml:id="network-access-layer">
+					<title>4.1. Network Access Layer</title>
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="arp-_arp">
+					<paragraphs xml:id="arp">
 						<title>4.1.1. ARP {#_arp}</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>ARP</idx>
@@ -39,8 +39,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="wifi-_wifi">
-						<title>4.1.2. Wifi {#_wifi}</title>
+					<paragraphs xml:id="wifi">
+						<title>4.1.2. Wifi</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
@@ -78,11 +78,11 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="internet-layer-protocols-_internet_layer_protocols">
-					<title>4.2. Internet Layer Protocols {#_internet_layer_protocols}</title>
+				<section xml:id="internet-layer-protocols">
+					<title>4.2. Internet Layer Protocols</title>
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="ip-_ip">
-						<title>4.2.1. IP {#_ip}</title>
+					<paragraphs xml:id="ip">
+						<title>4.2.1. IP</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>IP</idx>
@@ -128,8 +128,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="icmp-_icmp">
-						<title>4.2.2. ICMP {#_icmp}</title>
+					<paragraphs xml:id="icmp">
+						<title>4.2.2. ICMP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>ICMP</idx>
 						<term>Internet Control Message Protocol</term> (<term>ICMP</term>) is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
@@ -191,8 +191,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="nat-_nat">
-						<title>4.2.3. NAT {#_nat}</title>
+					<paragraphs xml:id="nat">
+						<title>4.2.3. NAT</title>
 						<!-- div attr= class="imageblock left"-->
 						<!-- div attr= class="content"-->
 						<figure>
@@ -209,8 +209,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ipsec-_ipsec">
-						<title>4.2.4. IPsec {#_ipsec}</title>
+					<paragraphs xml:id="ipsec">
+						<title>4.2.4. IPsec</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>IPsec</idx>
 						<term>Internet Protocol Security</term> (<term>IPsec</term>) is used to set up a point-to-point encryption tunnel to secure data in transit across IP networks. IPsec is used primarily in dedicated VPN links and makes use of three main parts: SA, ESP, and AH:
@@ -242,11 +242,11 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="transport-layer-protocols-_transport_layer_protocols">
-					<title>4.3. Transport Layer Protocols {#_transport_layer_protocols}</title>
+				<section xml:id="transport-layer-protocols">
+					<title>4.3. Transport Layer Protocols</title>
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="tcp-_tcp">
-						<title>4.3.1. TCP {#_tcp}</title>
+					<paragraphs xml:id="tcp">
+						<title>4.3.1. TCP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>TCP</idx>
 						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.^[
@@ -257,8 +257,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="udp-_udp">
-						<title>4.3.2. UDP {#_udp}</title>
+					<paragraphs xml:id="udp">
+						<title>4.3.2. UDP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>UDP</idx>
 						<term>User Datagram Protocol</term> (<term>UDP</term>) is a connectionless protocol designed for instances where TCP may have too much latency. UDP achieves this performance boost by not having handshaking or flow control. The result is a speedy protocol that sometimes drops datagrams. UDP is often used as the basis for gaming or streaming protocols where the timing of the packets is more important that whether or not they all arrive. UDP does still employ checksums so you can be sure of the integrity of any UDP packets that you do receive.
@@ -267,8 +267,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="common-ports-and-services-_common_ports_and_services">
-						<title>4.3.3. Common Ports and Services {#_common_ports_and_services}</title>
+					<paragraphs xml:id="common-ports-and-services">
+						<title>4.3.3. Common Ports and Services</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>port numbers</idx>
 						<term>Port numbers</term> are used in a transport layer connection to specify which service to connect to. This allows a single host to have multiple services running on it. Ports 0 to 1023 are 
@@ -289,11 +289,11 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="application-layer-protocols-_application_layer_protocols">
-					<title>4.4. Application Layer Protocols {#_application_layer_protocols}</title>
+				<section xml:id="application-layer-protocols">
+					<title>4.4. Application Layer Protocols</title>
 					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="dhcp-_dhcp">
-						<title>4.4.1. DHCP {#_dhcp}</title>
+					<paragraphs xml:id="dhcp">
+						<title>4.4.1. DHCP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>DHCP</idx>
 							<idx>DNS</idx>
@@ -311,8 +311,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="http-_http">
-						<title>4.4.2. HTTP {#_http}</title>
+					<paragraphs xml:id="http">
+						<title>4.4.2. HTTP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>request</idx>
 							<idx>response</idx>
@@ -385,8 +385,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ssltls-_ssltls">
-						<title>4.4.3. SSL/TLS {#_ssltls}</title>
+					<paragraphs xml:id="ssltls">
+						<title>4.4.3. SSL/TLS</title>
 						<!-- div attr= class="openblock float-group"-->
 						<!-- div attr= class="content"-->
 						<!-- div attr= class="imageblock left"-->
@@ -409,8 +409,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="https-_https">
-						<title>4.4.4. HTTPS {#_https}</title>
+					<paragraphs xml:id="https">
+						<title>4.4.4. HTTPS</title>
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
 						<figure>
@@ -437,8 +437,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="rdp-_rdp">
-						<title>4.4.5. RDP {#_rdp}</title>
+					<paragraphs xml:id="rdp">
+						<title>4.4.5. RDP</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>RDP</idx>
 						<term>Remote Desktop Protocol</term> (<term>RDP</term>) is build into Windows and is typically used to control a machine remotely. It works over port 3389 via TCP or UDP. While RDP can be quite useful for performing remote administration on a remote machine, it can also be a large security hole if a bad actor gains access. RDP use in ransomware attacks is on the rise as ransomware programs may use RDP to find other machines to attack.
@@ -447,8 +447,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="telnet-_telnet">
-						<title>4.4.6. Telnet {#_telnet}</title>
+					<paragraphs xml:id="telnet">
+						<title>4.4.6. Telnet</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>Telnet</idx>
 						<term>Telnet</term> is an antiquated remote administration tool that gives access to a shell via a cleartext channel. Telnet runs on port 23 and while still occasionally in use it should largely be phased out. You will still find telnet in embedded applications and legacy systems. You may also see the client being used to inspect other types of traffic. For example, you can use a telnet client to submit HTTP requests or send email via SMTP.
@@ -457,8 +457,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ssh-_ssh">
-						<title>4.4.7. SSH {#_ssh}</title>
+					<paragraphs xml:id="ssh">
+						<title>4.4.7. SSH</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>SSH</idx>
 						<term>Secure Shell</term> (<term>SSH</term>) is the most widely deployed remote administration tool. SSH provides access to a shell via an encrypted connection. SSH supports many options including SOCKS5 proxies, port forwarding, and the usage of multiple authentication schemes: password, key, hardware device, etc. SSH uses TCP on port 22.
@@ -467,8 +467,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ldap-_ldap">
-						<title>4.4.8. LDAP {#_ldap}</title>
+					<paragraphs xml:id="ldap">
+						<title>4.4.8. LDAP</title>
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
 						<figure>
@@ -490,8 +490,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="dns-_dns">
-						<title>4.4.9. DNS {#_dns}</title>
+					<paragraphs xml:id="dns">
+						<title>4.4.9. DNS</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>DNS</idx>
 						<idx>TLD</idx>
@@ -512,8 +512,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="dnssec-_dnssec">
-						<title>4.4.10. DNSSEC {#_dnssec}</title>
+					<paragraphs xml:id="dnssec">
+						<title>4.4.10. DNSSEC</title>
 						<!-- div attr= class="paragraph"-->
 						<p><idx>DNSSEC</idx>
 						<term>Domain Name System Security Extensions</term> (<term>DNSSEC</term>) is a suite of extension specifications designed to authenticate responses to domain name lookups. This can help prevent MitM attacks by checking the digital signature of the responding server. While this is certainly helpful, it is important to note that DNSSEC does not provide confidentiality. DNS resolutions can still be monitored by anyone who has access to the traffic.
@@ -522,8 +522,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="imappop3-_imappop3">
-						<title>4.4.11. IMAP/POP3 {#_imappop3}</title>
+					<paragraphs xml:id="imappop3">
+						<title>4.4.11. IMAP/POP3</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>IMAP</idx>
@@ -534,8 +534,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="smtp-_smtp">
-						<title>4.4.12. SMTP {#_smtp}</title>
+					<paragraphs xml:id="smtp">
+						<title>4.4.12. SMTP</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>SMTP</idx>
@@ -549,8 +549,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ntp-_ntp">
-						<title>4.4.13. NTP {#_ntp}</title>
+					<paragraphs xml:id="ntp">
+						<title>4.4.13. NTP</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>NTP</idx>
@@ -560,8 +560,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="ftp-_ftp">
-						<title>4.4.14. FTP {#_ftp}</title>
+					<paragraphs xml:id="ftp">
+						<title>4.4.14. FTP</title>
 						<!-- div attr= class="paragraph"-->
 						<p>
 							<idx>FTP</idx>
@@ -586,8 +586,8 @@
 						<!--</div attr= class="sect3">-->
 						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="snmp-_snmp">
-						<title>4.4.15. SNMP {#_snmp}</title>
+					<paragraphs xml:id="snmp">
+						<title>4.4.15. SNMP</title>
 						<!-- div attr= class="openblock float-group"-->
 						<!-- div attr= class="content"-->
 						<!-- div attr= class="imageblock left"-->
@@ -616,8 +616,8 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-scanning-with-nmap-_lab_scanning_with_nmap">
-					<title>4.5. Lab: Scanning with nmap {#_lab_scanning_with_nmap}</title>
+				<section xml:id="lab-scanning-with-nmap">
+					<title>4.5. Lab: Scanning with nmap</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					For this lab we will start by downloading and extracting the files required. Download 
