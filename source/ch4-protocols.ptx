@@ -428,7 +428,7 @@
 					</table>
 
 					<p>
-						<!-- extra space for the progress bar-->
+						<!-- extra space for the-->
 					</p>
 						<!--</div attr= class="sect3">-->
 						<!--</div attr= class="sect2">-->
@@ -914,11 +914,13 @@ Nmap done: 256 IP addresses (3 hosts up) scanned in 5.78 seconds</pre>
 				</p>
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | 
-						<url href="https://nmap.%20%7C%20%7C%20%7C%20org/book/man-host-discovery.html">Read the nmap documentation for | | | host | | | discovery.</url> | | | What other types of scans could | | | you use if a host does not | | | respond to an ICMP ping packet? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							Read the <url href="https://nmap.org/book/man-host-discovery.html">nmap documentation for host discovery</url>. 
+						
+							What other types of scans could you use if a host does not respond to an ICMP ping packet?
+						</p>
+					</question>
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -951,11 +953,11 @@ Nmap done: 1 IP address (1 host up) scanned in 1.84 seconds</pre>
 					</p>
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What ports are open on the victim | | | machine? Why is 
-						<em>this</em> particular | | | protocol insecure? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							What ports are open on the victim machine? Why is this particular protocol insecure?
+						</p>
+					</question>
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -1002,11 +1004,11 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="listingblock">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What additional information did | | | you learn from the 
-						<c>-A</c> option? | | | How do you think this could be | | | exploited? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							What additional information did you learn from the -A option? How do you think this could be exploited?
+						</p>
+					</question>
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -1017,18 +1019,18 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					</p>
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: Remembering what you | | | learned in the 
-						<em>Hash it Out</em> lab, | | | what is the root password on the | | | victim machine? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							BONUS: Remembering what you learned in the <em>Hash it Out</em> lab, what is the root password on the victim machine?
+						</p>
+					</question>
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: How can you test to see if | | | you got it right? What does this | | | say about how ProFTP is | | | configured on 
-						<c>victim</c>? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							BONUS: How can you test to see if you got it right? What does this say about how ProFTP is configured on <em>victim</em>?
+						</p>
+					</question>
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
