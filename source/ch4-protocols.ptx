@@ -587,8 +587,8 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-scanning-with-nmap-_lab_scanning_with_nmap">
-					<title>4.5. Lab: Scanning with nmap {#_lab_scanning_with_nmap}</title>
+				<section xml:id="lab-scanning-with-nmap">
+					<title>4.5. Lab: Scanning with nmap</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					For this lab we will start by downloading and extracting the files required. Download 
@@ -866,7 +866,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="protocols_review">
+				<section xml:id="protocols-review">
 					<title>4.6. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>

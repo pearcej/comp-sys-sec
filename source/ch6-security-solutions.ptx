@@ -340,8 +340,8 @@
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="lab-exploiting-log4j-_lab_exploiting_log4j">
-					<title>6.9. Lab: Exploiting log4j {#_lab_exploiting_log4j}</title>
+				<section xml:id="lab-exploiting-log4j">
+					<title>6.9. Lab: Exploiting log4j</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					In this lab we will examine the log4j vulnerability, 
@@ -594,7 +594,7 @@ root@3971c61303c8:/(1)</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="solutions_review">
+				<section xml:id="security-solutions-review">
 					<title>6.10. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>

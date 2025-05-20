@@ -703,8 +703,8 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-mitm-with-scapy-_lab_mitm_with_scapy">
-					<title>5.7. Lab: MitM with Scapy {#_lab_mitm_with_scapy}</title>
+				<section xml:id="lab-mitm-with-scapy">
+					<title>5.7. Lab: MitM with Scapy</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					In this lab we will use a fake SSH server, 
@@ -1343,7 +1343,7 @@ root@server's password:
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="attacks_review">
+				<section xml:id="attacks-review">
 					<title>5.8. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>
