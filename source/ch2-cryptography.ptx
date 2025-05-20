@@ -12,6 +12,10 @@
 				<section xml:id="why-do-we-need-cryptography-_why_do_we_need_cryptography">
 					<title>2.1. Why do we need cryptography? {#_why_do_we_need_cryptography}</title>
 					<!-- div attr= class="paragraph"-->
+					<introduction>
+						
+							
+			
 					<p>
 					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, 
 						<em>and</em> accounting (AAA).
@@ -27,16 +31,9 @@
 						<em>signature</em> for the data showing that the person who claims to have sent it really did send it. Cryptography also allows for 
 						<em>non-repudiation</em> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
 						<em>without</em> storing passwords in plaintext. This is critical in an age where data breaches are increasingly common.
+					</p>
+				</introduction>
 				
-					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sidebarblock"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="title"-->
-					<p>
-					</p>
-					
-					
 					<subsection xml:id="case-study-equifax">
       				<title>Case Study: Equifax</title>
 					
