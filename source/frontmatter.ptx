@@ -290,32 +290,32 @@
     </row>
     <row bottom="minor">
       <cell><line>3</line></cell>
-      <cell><line>Malware</line></cell>
+      <cell><line><xref ref="ch3-malware">Malware</xref></line></cell>
       <cell><line>Lab: Malware Analysis</line>, 
 		<line>Malware Review Questions</line></cell>
       <cell><line>1.2, 1.3, 1.4, 2.5, 4.1, 4.3, 4.5</line></cell>
     </row>
     <row bottom="minor">
       <cell><line>4</line></cell>
-      <cell><line>Protocols</line></cell>
+      <cell><line><xref ref="ch4-protocols">Protocols</xref></line></cell>
       <cell><line>Lab: Scanning with nmap</line>, 
 		<line>Protocols Review Questions</line></cell>
       <cell><line>1.3, 1.6, 1.7, 3.1, 3.2, 4.1</line></cell>
     </row>
     <row bottom="minor">
       <cell><line>5</line></cell>
-      <cell><line>Attacks</line></cell>
+      <cell><line><xref ref="ch5-attacks">Attacks</xref></line></cell>
       <cell><line>Quiz 1</line>, 
 		<line>Attacks Review Questions</line></cell>
       <cell><line>1.2, 1.3, 1.4, 1.8, 3.3, 3.4, 4.1, 4.2</line></cell>
     </row>    
 	<row bottom="minor">
       <cell><line>6</line></cell>
-      <cell><line>Introduction, </line>
-<line>Cryptography, </line>
-<line>Malware, </line>
-<line>Protocols, </line>
-<line>Attacks</line></cell>
+      <cell><line><xref ref="ch1-introduction">Introduction</xref>, </line>
+<line><xref ref="ch2-cryptography">Cryptography</xref>, </line>
+<line><xref ref="ch3-malware">Malware</xref>, </line>
+<line><xref ref="ch4-protocols">Protocols</xref>, </line>
+<line><xref ref="ch5-attacks">Attacks</xref></line></cell>
       <cell><line>Midterm Review</line>, 
 		<line>Lab: MitM with Scapy</line></cell>
       <cell><line>1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, </line>
@@ -325,11 +325,11 @@
     </row>    
 	<row bottom="minor">
       <cell><line>7</line></cell>
-      <cell><line>Introduction, </line>
-<line>Cryptography, </line>
-<line>Malware, </line>
-<line>Protocols, </line>
-<line>Attacks</line></cell>
+      <cell><line><xref ref="ch1-introduction">Introduction</xref>, </line>
+<line><xref ref="ch2-cryptography">Cryptography</xref>, </line>
+<line><xref ref="ch3-malware">Malware</xref>, </line>
+<line><xref ref="ch4-protocols">Protocols</xref>, </line>
+<line><xref ref="ch5-attacks">Attacks</xref></line></cell>
       <cell><line>Midterm</line></cell>
       <cell><line>1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, </line>
 		<line>2.1, 2.4, 2.5, 2.7, 2.8, </line>
@@ -338,21 +338,21 @@
     </row>
 	<row bottom="minor">
       <cell><line>8</line></cell>
-      <cell><line>Security Solutions, </line></cell>
+      <cell><line><xref ref="ch6-security-solutions">Security Solution</xref>, </line></cell>
       <cell><line>Lab: Exploiting log4j, </line> 
 		<line>Security Solutions Review Questions</line></cell>
       <cell><line>3.1, 3.2, 3.3, 3.6, 4.1, 4.2</line></cell>
     </row>
 	<row bottom="minor">
       <cell><line>9</line></cell>
-      <cell><line>Access Controls</line></cell>
+      <cell><line><xref ref="ch7-access-controls">Access Controls</xref></line></cell>
       <cell><line>Lab: Linux File Permissions,</line> 
 		<line>Access Controls Review Questions</line></cell>
       <cell><line>2.1, 2.2, 2.4, 2.7, 3.3, 3.4, 3.8, 5.1</line></cell>
     </row>
 	<row bottom="minor">
       <cell><line>10</line></cell>
-      <cell><line>Vulnerability Management and Compliance</line></cell>
+      <cell><line><xref ref="ch8-vulnerability-management">Vulnerability Management and Compliance</xref></line></cell>
       <cell><line>Lab: Scanning with Nessus,</line> 
 		<line>Vulnerability Management and</line> 
 		<line>Compliance Review Questions</line></cell>
@@ -360,7 +360,7 @@
     </row>
 	<row bottom="minor">
       <cell><line>11</line></cell>
-      <cell><line>Incident Response and Continuity</line></cell>
+      <cell><line><xref ref="ch9-incident-response">Incident Response and Continuity</xref></line></cell>
       <cell><line>Lab: Reporting on the 2014 Sony Pictures Hack</line>, 
 		<line>Incident Response and Recovery Review Questions</line></cell>
       <cell><line>1.2, 1.3, 1.4, 1.7, 1.8</line>, 
@@ -370,7 +370,7 @@
     </row>
 	<row bottom="minor">
       <cell><line>12</line></cell>
-      <cell><line>Virtualization</line></cell>
+      <cell><line><xref ref="ch10-virtualization">Virtualization</xref></line></cell>
       <cell><line>Lab: Malicious Containers</line>, 
 		<line>Virtualization Review Questions</line></cell>
       <cell><line>2.3, 3.6, 3.6</line></cell>
@@ -383,11 +383,11 @@
     </row>
 	<row bottom="minor">
       <cell><line>14</line></cell>
-      <cell><line>Security Solutions, </line>
-<line>Access Controls, </line>
-<line>Vulnerability Management and Compliance, </line>
-<line>Incident Response and Continuity, </line>
-<line>Virtualization, </line>
+      <cell><line><xref ref="ch6-security-solutions">Security Solutions</xref>, </line>
+<line><xref ref="ch7-access-controls">Access Controls</xref>, </line>
+<line><xref ref="ch8-vulnerability-management">Vulnerability Management and Compliance</xref>, </line>
+<line><xref ref="ch9-incident-response">Incident Response and Continuity</xref>, </line>
+<line><xref ref="ch10-virtualization">Virtualization</xref>, </line>
 <line>Mobile Solutions</line></cell>
       <cell><line>Final Review</line></cell>
       <cell><line>1.2, 1.3, 1.4, 1.7, 1.8, </line>
@@ -398,11 +398,11 @@
     </row>
 	<row bottom="minor">
       <cell><line>15</line></cell>
-      <cell><line>Security Solutions, </line>
-<line>Access Controls, </line>
-<line>Vulnerability Management and Compliance, </line>
-<line>Incident Response and Continuity, </line>
-<line>Virtualization, </line>
+      <cell><line><xref ref="ch6-security-solutions">Security Solutions</xref>, </line>
+<line><xref ref="ch7-access-controls">Access Controls</xref>, </line>
+<line><xref ref="ch8-vulnerability-management">Vulnerability Management and Compliance</xref>, </line>
+<line><xref ref="ch9-incident-response">Incident Response and Continuity</xref>, </line>
+<line><xref ref="ch10-virtualization">Virtualization</xref>, </line>
 <line>Mobile Solutions</line></cell>
       <cell><line>Final Exam</line></cell>
       <cell><line>1.2, 1.3, 1.4, 1.7, 1.8, </line>
