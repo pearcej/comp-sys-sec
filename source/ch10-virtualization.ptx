@@ -21,9 +21,17 @@
 						<title>10.1.1. Virtual Machines {#_virtual_machines}</title>
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
-						<figure>
-							<image source="vm.svg"/>
-							<caption>vm</caption>
+						<figure xml:id="fig-vm">
+						<caption>Figure 10.1.1. vm</caption>
+						<image source="vm.svg">
+							<shortdescription>Comparison of Virtual Machine deployment and Container deployment architectures.</shortdescription>
+							<description>
+							<p>The diagram presents a side-by-side comparison of two deployment models: "Virtual Machine Deployment" on the left and "Container Deployment" on the right. Both models start with "Actual Hardware (bare metal)" at the base.</p>
+							<p>The "Virtual Machine Deployment" model shows a stack beginning with Actual Hardware, then a Host OS (comprising an OS Kernel and OS Userspace), followed by VM Software (hypervisor). Above this, a Guest OS (with its own OS Kernel and OS Userspace) is depicted, which in turn runs the Application.</p>
+							<p>The "Container Deployment" model also starts with Actual Hardware and a Host OS (including an OS Kernel and OS Userspace). However, it then shows a Container Runtime directly above the Host OS, upon which the Application runs. This model does not include a separate Guest OS kernel.</p>
+							<p>Arrows indicate the layered dependencies in each model, illustrating that Virtual Machines include a full Guest OS, while Containers share the Host OS kernel and run applications via a Container Runtime.</p>
+							</description>
+						</image>
 						</figure>
 						<!--</div attr= class="content">-->
 						<!--</div attr= class="imageblock right">-->
