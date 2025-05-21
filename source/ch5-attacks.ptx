@@ -570,8 +570,6 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 					<table>
 						<title>Table 1. IP Addresses Used</title>
 						<col width="50%" />
-						<col width="50%" />
-						<tabular>
 							<row header="yes">
 								<cell halign="left">Name</cell>
 								<cell halign="left">IP Address</cell>
