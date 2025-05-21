@@ -176,9 +176,14 @@
 						<title>4.2.3. NAT</title>
 
 
-						<figure>
-							<image source="nat.svg"/>
-							<caption>nat</caption>
+						<figure xml:id="fig-nat">
+						<caption>Figure 4.2.2. nat</caption>
+						<image source="image_6d4368.png">
+							<shortdescription>Diagram illustrating Network Address Translation (NAT).</shortdescription>
+							<description>
+							<p>The diagram shows three devices with private IP addresses (192.168.1.50, 192.168.1.51, and 192.168.1.52) on a local network connecting to the Internet through a NAT router. The NAT router has a private IP address (192.168.1.1) for the internal network and a public IP address (128.235.176.43) for the external network (Internet). Arrows indicate the flow of traffic from the local devices, through the NAT router, and out to the Internet.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p><idx>network address translation</idx><idx>NAT</idx>
@@ -513,9 +518,14 @@
 						<title>4.4.3. SSL/TLS</title>
 
 
-						<figure>
-							<image source="tls.svg"/>
-							<caption>tls</caption>
+						<figure xml:id="fig-tls">
+						<caption>Figure 4.4.2. tls</caption>
+						<image source="image_6d441f.png">
+							<shortdescription>Diagram illustrating the SSL/TLS handshake process between a client and a server.</shortdescription>
+							<description>
+							<p>The diagram shows the sequence of messages exchanged between a client and a server to establish a secure SSL/TLS connection. The process begins with the TCP three-way handshake (SYN, SYN ACK, ACK). This is followed by the TLS handshake, starting with the client sending a ClientHello message. The server responds with ServerHello, Certificate, and ServerHelloDone. The client then sends ClientKeyExchange and ClientCipherSpec, followed by a Finished message. Finally, the server sends ChangeCipherSpec and its own Finished message to complete the handshake. Solid arrows indicate messages sent from client to server, and dashed arrows indicate messages from server to client.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p><idx>SSL</idx><idx>secure sockets layer</idx>
@@ -530,9 +540,14 @@
 						<title>4.4.4. HTTPS</title>
 
 
-						<figure>
-							<image source="https.png"/>
-							<caption>https</caption>
+						<figure xml:id="fig-https">
+						<caption>Figure 4.4.3. https</caption>
+						<image source="image_6d47e1.png">
+							<shortdescription>Illustration of a secure HTTPS connection indicator.</shortdescription>
+							<description>
+							<p>The image displays a common visual representation of a secure HTTPS connection, often seen in a web browser's address bar. It features a green, closed padlock icon to the left of the text "https://". The green color and closed padlock symbolize that the connection to the website is encrypted and secure. The "https" prefix itself stands for Hypertext Transfer Protocol Secure.</p>
+							</description>
+						</image>
 						</figure>
 
 
@@ -582,9 +597,14 @@
 					<paragraphs xml:id="ldap">
 						<title>4.4.8. LDAP</title>
 
-						<figure>
-							<image source="ldap.svg"/>
-							<caption>ldap</caption>
+						<figure xml:id="fig-ldap">
+						<caption>Figure 4.4.4. ldap</caption>
+						<image source="image_6d4b44.png">
+							<shortdescription>Diagram illustrating an example LDAP directory tree structure.</shortdescription>
+							<description>
+							<p>The diagram displays a hierarchical tree structure representing an LDAP (Lightweight Directory Access Protocol) directory. At the top is the "Root" node. Below the root are top-level domain components: "dc=net", "dc=com", and "dc=org". The "dc=com" branch further expands to an "Organization" labeled "dc=example". Under "dc=example", there are two "Organization Unit" branches: "ou=People" and "ou=Servers". Finally, under "ou=People", there is a "Person" entry labeled "udid=jsmith". Lines connect the nodes, showing their hierarchical relationships. Arrows point from labels "Organization", "Organization Unit", and "Person" to their respective example nodes in the tree.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
@@ -693,9 +713,14 @@
 					<paragraphs xml:id="snmp">
 						<title>4.4.15. SNMP</title>
 
-						<figure>
-							<image source="snmp.png"/>
-							<caption>snmp</caption>
+						<figure xml:id="fig-snmp">
+						<caption>Figure 4.4.5. snmp</caption>
+						<image source="image_6d4f06.png">
+							<shortdescription>Diagram illustrating the typical SNMP message exchange mechanism between an NMS Management Station and an SNMP Agent.</shortdescription>
+							<description>
+							<p>The diagram shows the interaction between a Network Management Station (NMS) and an SNMP Agent. The NMS Management Station, on the left, is depicted as listening for Traps and Informs on UDP port 162. The SNMP Agent, on the right, listens for requests on UDP port 161 and has access to a Management Information Base (MIB). The typical message exchange includes the NMS sending GetRequest and GetNextRequest messages to the Agent. The Agent responds to these with GetResponse messages. Additionally, the Agent can proactively send Trap or Inform messages to the NMS to notify it of significant events. The entire process is labeled as a "Typical SNMP Message Exchange Mechanism."</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
