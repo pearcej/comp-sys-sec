@@ -19,16 +19,20 @@
 
 				<section xml:id="network-access-layer">
 					<title>4.1. Network Access Layer</title>
+
 					<paragraphs xml:id="arp">
 						<title>4.1.1. ARP</title>
 						<p><idx>ARP</idx><idx>address resolution protocol</idx>
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) is used on the local ethernet segment to resolve IP addresses to MAC addresses. Since this protocol functions at the ethernet segment level, security was not a primary concern. Unfortunately this means that ARP communications can be easily spoofed to cause a MitM scenario. A malicious actor simply sends out several ARP packets, 
 							<em>gratuitous ARP</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
+
 					
 						</p>
 
 						<p>
+
 							<idx>DAI</idx><idx>dynamic ARP inspection</idx>
+
 						There is a protocol designed to mitigate the issues with ARP. 
 						<term>Dynamic ARP Inspection</term> (<term>DAI</term>) reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
 					</p>
@@ -42,12 +46,15 @@
 						
 						
 							<p>WEP</p>
+
 								<p><idx>WEP</idx><idx>wireless equivalent privacy</idx>
+
 						<term>Wireless Equivalent Privacy</term> (<term>WEP</term>) is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
 					</p>
 							
 							<p>WPA</p>
 							
+
 								<p><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
 						<term>Wifi Protected Access</term> (<term>WPA</term>) utilized 
 						<term>Temporal Key Integrity Protocol</term> (<term>TKIP</term>) to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
@@ -65,10 +72,12 @@
 						<term>Wifi Protected Access 3</term> (<term>WPA3</term>) was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
 					</p>
 
+
 					</paragraphs>
 				</section>
 				<section xml:id="internet-layer-protocols">
 					<title>4.2. Internet Layer Protocols</title>
+
 
 					<paragraphs xml:id="ip">
 						<title>4.2.1. IP</title>
@@ -76,6 +85,7 @@
 						<p>
 							<idx>IP</idx><idx>internet protocol</idx> 
 						<term>IP</term> stands for <term>internet protocol</term> and it was devised to allow creating a network of networks. The network of networks that uses it primarily is the Internet, although you could use IP in other scenarios as well. IP is largely concerned with 
+
 							<em>routing</em> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
 					
 						</p>
@@ -87,10 +97,12 @@
 						IPv6 Security Implications
 						</p>
 
+
 						<p><idx>network address translation</idx><idx>NAT</idx>
 						From a security standpoint, the way addresses are used in IPv4 vs IPv6 has big consequences. Since there aren’t enough IPv4 addresses a typical internet user is assigned a local address that gets translated to an external IPv4 address when they route their packets through their router. This is referred to as 
 						<term>Network Address Translation</term> (<term>NAT</term>) and is usually handled by an all-in-one device that also makes sure external entities cannot connect to the internal network.
 					</p>
+
 
 						<p>
 
@@ -108,7 +120,9 @@
 					<paragraphs xml:id="icmp">
 						<title>4.2.2. ICMP</title>
 
+
 						<p><idx>ICMP</idx><idx>internet control message protocol</idx> 
+
 						<term>Internet Control Message Protocol</term> (<term>ICMP</term>) is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
 							<em>Destination Unreachable</em> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
 					
@@ -119,7 +133,9 @@
 							<c>ping</c> sends an ICMP echo request to check to see if a host is up. By responding to the request with the data included in the request we can assume that the host is up and functioning.
 					
 						</p>
+
 						<p><idx>TTL</idx><idx>time to live</idx><idx><c>traceroute</c></idx>
+
 						ICMP is also used in the 
 							<c>traceroute</c> command. 
 							<c>traceroute</c> incrementally increase the <term>Time To Live</term> (<term>TTL</term>) field of ICMP packets and watches for 
@@ -159,6 +175,7 @@
 					<paragraphs xml:id="nat">
 						<title>4.2.3. NAT</title>
 
+
 						<figure>
 							<image source="nat.svg"/>
 							<caption>nat</caption>
@@ -166,18 +183,22 @@
 
 						<p><idx>network address translation</idx><idx>NAT</idx>
 						<term>Network address translation</term> (<term>NAT</term>) is primarily used to allow local IP address to share a public IPv4 address. Given the lack of IPv4 address space many devices have to share a single address. As mentioned when discussing IPv6, NAT routers often also include security features such as a stateful firewall as the complexity of the hardware required to perform NAT is equivalent to what would be needed for a firewall.
+
 					</p>
 					</paragraphs>
 					<paragraphs xml:id="ipsec">
 						<title>4.2.4. IPsec</title>
 						<!-- div attr= class="paragraph"-->
+
 						<p><idx>IPsec</idx><idx>internet protocol security</idx> 
+
 						<term>Internet Protocol Security</term> (<term>IPsec</term>) is used to set up a point-to-point encryption tunnel to secure data in transit across IP networks. IPsec is used primarily in dedicated VPN links and makes use of three main parts: SA, ESP, and AH:
 					</p>
 
 						<p>
 							<ul>
 								<li>
+
 									<p><idx>SA</idx><idx>security association</idx> 
 												<term>SA</term> stands for <term>security association</term> and is a channel used to set up encryption parameters and exchange keys. This happens via UDP on port 500.
 											</p>
@@ -190,6 +211,7 @@
 								<li>
 									<p><idx>AH</idx><idx>authentication header</idx> 
 												<term>AH</term> stands for <term>authentication header</term> and they can optionally be used in standard IP packets with the protocol field set to 51. AH simply ensures that a packet hasn’t been tampered with.
+
 											</p>
 								</li>
 							</ul>
@@ -200,10 +222,12 @@
 				<section xml:id="transport-layer-protocols">
 					<title>4.3. Transport Layer Protocols</title>
 
+
 					<paragraphs xml:id="tcp">
 						<title>4.3.1. TCP</title>
 
 						<p><idx>TCP</idx><idx>transmission control protocol</idx>
+
 						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.^[
 							<url href="index.html#_footnotedef_5">5</url>{#_footnoteref_5 .footnote}]^
 					
@@ -213,14 +237,18 @@
 					<paragraphs xml:id="udp">
 						<title>4.3.2. UDP</title>
 
+
 						<p><idx>UDP</idx><idx>user datagram protocol</idx>
+
 						<term>User Datagram Protocol</term> (<term>UDP</term>) is a connectionless protocol designed for instances where TCP may have too much latency. UDP achieves this performance boost by not having handshaking or flow control. The result is a speedy protocol that sometimes drops datagrams. UDP is often used as the basis for gaming or streaming protocols where the timing of the packets is more important that whether or not they all arrive. UDP does still employ checksums so you can be sure of the integrity of any UDP packets that you do receive.
 					</p>
 
 					</paragraphs>
 					<paragraphs xml:id="common-ports-and-services">
 						<title>4.3.3. Common Ports and Services</title>
+
 	
+
 						<p><idx>port numbers</idx>
 						<term>Port numbers</term> are used in a transport layer connection to specify which service to connect to. This allows a single host to have multiple services running on it. Ports 0 to 1023 are 
 							well-known ports and typically support a commonly used service. In most operating systems it takes administrative privileges to bind to a Well-known port and listen for connections. Registered ports range from 1024 to 49151 and do not require administrative privileges to run a service on. You may find many things listening on these ports as any user can have a service on them. Lastly ports 49152 to 65535 are used dynamically by applications as needed.
@@ -231,8 +259,155 @@
 						It is important to know some commonly used ports as the services running on these ports may be subject to an attack. When scanning a machine, only necessary ports should be open.
 					</p>
 
-						<p>
-						+———————-+———————-+———————–+ | Port Number | L4 Protocol | Usage | +======================+======================+=======================+ | 20 | TCP | File Transfer | | | | Protocol (FTP) Data | | | | Transfer | +———————-+———————-+———————–+ | 21 | TCP | FTP Command Control | +———————-+———————-+———————–+ | 22 | TCP | Secure Shell (SSH) | +———————-+———————-+———————–+ | 23 | TCP | Telnet Remote Login | | | | Service | +———————-+———————-+———————–+ | 25 | TCP | Simple Mail Transfer | | | | Protocol (SMTP) | | | | E-Mail | +———————-+———————-+———————–+ | 53 | TCP, UDP | Domain Name System | | | | (DNS) | +———————-+———————-+———————–+ | 67, 68 | UDP | Dynamic Host | | | | Configuration | | | | Protocol (DHCP) | +———————-+———————-+———————–+ | 69 | UDP | Trivial File Transfer | | | | Protocol (TFTP) | +———————-+———————-+———————–+ | 80 | TCP | Hypertext Transfer | | | | Protocol (HTTP) | +———————-+———————-+———————–+ | 110 | TCP | Post Office Protocol | | | | (POP3) E-Mail | +———————-+———————-+———————–+ | 119 | TCP, UDP | Network News Transfer | | | | Protocol (NNTP) | +———————-+———————-+———————–+ | 123 | UDP | Network Time Protocol | | | | (NTP) | +———————-+———————-+———————–+ | 137-139 | TCP, UDP | NetBIOS | +———————-+———————-+———————–+ | 143 | TCP | Internet Message | | | | Access Protocol | | | | (IMAP) E-Mail | +———————-+———————-+———————–+ | 161, 162 | TCP, UDP | Simple Network | | | | Management Protocol | | | | (SNMP) | +———————-+———————-+———————–+ | 194 | TCP, UDP | Internet Relay Chat | | | | (IRC) | +———————-+———————-+———————–+ | 389 | TCP, UDP | Lightweight Directory | | | | Access Protocol | | | | (LDAP) | +———————-+———————-+———————–+ | 443 | TCP | HTTP Secure (HTTPS) | | | | HTTP over TLS/SSL | +———————-+———————-+———————–+ | 3389 | TCP, UDP | Microsoft Terminal | | | | Server (RDP) | +———————-+———————-+———————–+
+						<!--</div attr= class="paragraph">-->
+					<table>
+						<title>Common Port Numbers and Their Usage</title>
+						<tabular>
+						
+
+						<row>
+							<cell><em>Port Number</em></cell>
+							<cell><em>L4 Protocol</em></cell>
+							<cell><em>Usage</em></cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>20</cell>
+							<cell>TCP</cell>
+							<cell>File Transfer Protocol (FTP) Data Transfer</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>21</cell>
+							<cell>TCP</cell>
+							<cell>FTP Command Control</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>22</cell>
+							<cell>TCP</cell>
+							<cell>Secure Shell (SSH)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>23</cell>
+							<cell>TCP</cell>
+							<cell>Telnet Remote Login Service</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>25</cell>
+							<cell>TCP</cell>
+							<cell>Simple Mail Transfer Protocol (SMTP) E-Mail</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>53</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Domain Name System (DNS)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>67, 68</cell>
+							<cell>UDP</cell>
+							<cell>Dynamic Host Configuration Protocol (DHCP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>69</cell>
+							<cell>UDP</cell>
+							<cell>Trivial File Transfer Protocol (TFTP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>80</cell>
+							<cell>TCP</cell>
+							<cell>Hypertext Transfer Protocol (HTTP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>110</cell>
+							<cell>TCP</cell>
+							<cell>Post Office Protocol (POP3) E-Mail</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>119</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Network News Transfer Protocol (NNTP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>123</cell>
+							<cell>UDP</cell>
+							<cell>Network Time Protocol (NTP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>137–139</cell>
+							<cell>TCP, UDP</cell>
+							<cell>NetBIOS</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>143</cell>
+							<cell>TCP</cell>
+							<cell>Internet Message Access Protocol (IMAP) E-Mail</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>161, 162</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Simple Network Management Protocol (SNMP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>194</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Internet Relay Chat (IRC)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>389</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Lightweight Directory Access Protocol (LDAP)</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>443</cell>
+							<cell>TCP</cell>
+							<cell>HTTP Secure (HTTPS) — HTTP over TLS/SSL</cell>
+						</row>
+						<line/>
+
+						<row>
+							<cell>3389</cell>
+							<cell>TCP, UDP</cell>
+							<cell>Microsoft Terminal Server (RDP)</cell>
+						</row>
+						</tabular>
+					</table>
+
+					<p>
+
 					</p>
 
 					</paragraphs>
@@ -240,17 +415,21 @@
 				<section xml:id="application-layer-protocols">
 					<title>4.4. Application Layer Protocols</title>
 
+
 					<paragraphs xml:id="dhcp">
 						<title>4.4.1. DHCP</title>
 
 						<p><idx>DHCP</idx><idx>dynamic host configuration protocol</idx> 
 							<idx>DNS</idx><idx>domain name servers</idx> 
+
 						<term>Dynamic Host Configuration Protocol</term> (<term>DHCP</term>) is used to allow new clients on a network to obtain an IP address and information about services provided. IPv4 addresses can be thought of as being in two groups: static addresses and dynamic addresses. Dynamic addresses are distributed by a DHCP server for a particular lease time. When the time is up, the DHCP server may distribute the address to another client. DHCP servers can also give information about proxies, 
 						<term>Domain Name Servers</term> (<term>DNS</term>), gateways and even where to get a 
 							<url href="https://en.wikipedia.org/wiki/Preboot_Execution_Environment">where to get a kernel to boot an OS over the network!</url>
 						</p>
 
+
 						<p><idx>ARP</idx><idx>address resolution protocol</idx>
+
 						Given the dynamic nature of modern networks, with clients coming and going, DHCP is the standard. From a security standpoint someone impersonating a DHCP server can wreak havoc on a network. These rogue DHCP servers can cause traffic to be redirected to initiate MitM attacks or cause DoS attacks. DHCP relies on broadcast 
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) messages and does not make use of authentication, meaning that once an attacker is on the same Ethernet segment as the victim machines all bets are off.
 					</p>
@@ -259,10 +438,12 @@
 					<paragraphs xml:id="http">
 						<title>4.4.2. HTTP</title>
 
+
 						<p><idx>request</idx>
 							<idx>response</idx>
 							<idx>path</idx>
 							<idx>HTTP</idx><idx>hypertext transfer protocol</idx>
+
 						<term>Hypertext Transfer Protocol</term> (<term>HTTP</term>) is a text based protocol that governs how web traffic moves. It is built on the concept of a 
 							<em>request</em> and a 
 							<em>response</em>. A typical request has an 
@@ -320,6 +501,7 @@
 							</tabular>
 						</table>
 
+            
 						<p><idx>headers</idx>
 						Both requests and responses can take advantage of 
 							<term>headers</term>, arbitrary lines of text following the initial request or response. Since headers were designed to be open-ended, many new headers have been added over time. A modern web request/response usually has far more information in the headers than just the basics defined in HTTP 1.1. Unencrypted HTTP traffic is sent over port 80 and is vulnerable to attack as all information is sent in cleartext.
@@ -330,6 +512,7 @@
 					<paragraphs xml:id="ssltls">
 						<title>4.4.3. SSL/TLS</title>
 
+
 						<figure>
 							<image source="tls.svg"/>
 							<caption>tls</caption>
@@ -337,6 +520,7 @@
 
 						<p><idx>SSL</idx><idx>secure sockets layer</idx>
 							<idx>TLS</idx><idx>transport layer security</idx> 
+
 						<term>Secure Sockets Layer</term> (<term>SSL</term>) or the more modern nomenclature 
 						<term>Transport Layer Security</term> (<term>TLS</term>) is a protocol that allows cleartext protocols used on the web to be encrypted. It is a general purpose protocol, designed as a layer through which other protocols communicate. Some protocols typically wrapped in TLS include HTTP, SMTP, IMAP, VoIP, and many VPN protocols. TLS uses a handshake to exchange certificate information as shown in the diagram. It should be noted that at the time of writing TLS 1.3 is the most current version, but only half of websites support it. TLS 1.2, the most common version, is still considered safe if best practices are followed and TLS 1.1 or lower is considered depreciated.
 					</p>
@@ -345,10 +529,12 @@
 					<paragraphs xml:id="https">
 						<title>4.4.4. HTTPS</title>
 
+
 						<figure>
 							<image source="https.png"/>
 							<caption>https</caption>
 						</figure>
+
 
 						<p>
 							<url href="https://flic.kr/p/qi1eYu">HTTPS 
@@ -359,7 +545,9 @@
 					
 						</p>
 
+
 						<p><idx>HTTPS</idx><idx>hypertext transfer protocol secure</idx> 
+
 						<term>Hypertext Transfer Protocol Secure</term> (<term>HTTPS</term>) solves the problem of unencrypted traffic by wrapping HTTP requests in TLS. HTTPS traffic uses port 443 and is typically signified in a browser with a lock icon in the upper left-hand corner. By clicking on the icon users can learn more about the certificates being used for communication. Utilizing a robust PKI HTTPS allows for safe HTTP communication between client and server.
 					</p>
 
@@ -368,6 +556,7 @@
 						<title>4.4.5. RDP</title>
 
 						<p><idx>RDP</idx><idx>remote desktop protocol</idx>
+
 						<term>Remote Desktop Protocol</term> (<term>RDP</term>) is build into Windows and is typically used to control a machine remotely. It works over port 3389 via TCP or UDP. While RDP can be quite useful for performing remote administration on a remote machine, it can also be a large security hole if a bad actor gains access. RDP use in ransomware attacks is on the rise as ransomware programs may use RDP to find other machines to attack.
 					</p>
 
@@ -376,13 +565,16 @@
 						<title>4.4.6. Telnet</title>
 
 						<p><idx>telnet</idx>
+
 						<term>Telnet</term> is an antiquated remote administration tool that gives access to a shell via a cleartext channel. Telnet runs on port 23 and while still occasionally in use it should largely be phased out. You will still find telnet in embedded applications and legacy systems. You may also see the client being used to inspect other types of traffic. For example, you can use a telnet client to submit HTTP requests or send email via SMTP.
 					</p>
 					</paragraphs>
 					<paragraphs xml:id="ssh">
 						<title>4.4.7. SSH</title>
 
+
 						<p><idx>SSH</idx><idx>secure shell</idx> 
+
 						<term>Secure Shell</term> (<term>SSH</term>) is the most widely deployed remote administration tool. SSH provides access to a shell via an encrypted connection. SSH supports many options including SOCKS5 proxies, port forwarding, and the usage of multiple authentication schemes: password, key, hardware device, etc. SSH uses TCP on port 22.
 					</p>
 
@@ -396,8 +588,10 @@
 						</figure>
 
 						<p>
+
 							<idx>LDAP</idx><idx>lightweight directory access protocol</idx> 
 							<idx>AD</idx><idx>active directory</idx>
+
 							<idx>LDAPS</idx>
 						<term>Lightweight directory access protocol</term> (<term>LDAP</term>) is used for accessing and maintaining directory information services. It’s primary use is with Windows 
 						<term>Active Directory</term> (<term>AD</term>) where it can be used to obtain information regarding users and resources from an AD server. Clients can authenticate through the server and obtain privileges to read or read/write certain entries. LDAP did not originally support encryption, so LDAP over SSL 
@@ -408,8 +602,10 @@
 					<paragraphs xml:id="dns">
 						<title>4.4.9. DNS</title>
 
+
 						<p><idx>DNS</idx><idx>domain name system</idx> 
 						<idx>TLD</idx><idx>top level domain</idx>
+
 						<term>Domain Name System</term> (<term>DNS</term>) is used to resolve domain names to IP addresses. Domain names are the simple names people are accustomed to for websites, such as 
 							<c>njit.edu</c> as opposed to 
 							<c>54.83.189.142</c>. Names are significantly easier for people to remember than IP addresses. In order for a computer to resolve a name, it first queries a local cache, then its primary DNS server. Assuming the DNS server cannot find the name it will query a Root server for a 
@@ -426,7 +622,9 @@
 					<paragraphs xml:id="dnssec">
 						<title>4.4.10. DNSSEC</title>
 
+
 						<p><idx>DNSSEC</idx><idx>domain name system security Extensions</idx> 
+
 						<term>Domain Name System Security Extensions</term> (<term>DNSSEC</term>) is a suite of extension specifications designed to authenticate responses to domain name lookups. This can help prevent MitM attacks by checking the digital signature of the responding server. While this is certainly helpful, it is important to note that DNSSEC does not provide confidentiality. DNS resolutions can still be monitored by anyone who has access to the traffic.
 					</p>
 
@@ -434,9 +632,11 @@
 					<paragraphs xml:id="imappop3">
 						<title>4.4.11. IMAP/POP3</title>
 
+
 						<p>
 							<idx>IMAP</idx><idx>internet message access protocol</idx> 
 							<idx>POP3</idx><idx>post office protocol 3</idx>
+
 						<term>Internet Message Access Protocol</term> (<term>IMAP</term>) and <term>Post Office Protocol 3</term> (<term>POP3</term>) are two protocols used to retrieve email from a server. IMAP is the more recent protocol which supports saving mail on the sever and folders. POP3 is more primitive, supporting only the retrieval (and subsequent deletion from the server) of emails. Both protocols use cleartext and are now commonly run over TLS. POP3 defaults to TCP port 110 or 995 if using TLS. IMAP defaults to TCP port 143 or 993 if using TLS. In the age of webmail it is easy to forget about these protocols, but a security specialist must keep them in mind as they may still be used in support of corporate devices.
 					</p>
 
@@ -444,9 +644,11 @@
 					<paragraphs xml:id="smtp">
 						<title>4.4.12. SMTP</title>
 
+
 						<p>
 							<idx>SMTP</idx><idx>simple mail transfer protocol</idx>
 							<idx>MX</idx><idx>mail exchange</idx>
+
 						<term>Simple Mail Transfer Protocol</term> (<term>SMTP</term>) is used for sending/forwarding email. As it states, it is a simple protocol consisting of lines of text. Basic SMTP used TCP on port 25. SMTP was later expanded to support authentication and finally wrapped in TLS still using TCP on port 587. SMTP servers accept outgoing mail from (hopefully) authenticated clients, route mail to other SMTP servers based on the 
 						<term>Mail Exchange</term> (<term>MX</term>) information in DNS records, and accept mail for their domain from other SMTP servers. Various checks have been implemented in SMTP servers to ensure that messages from domains 
 							<em>actually</em> come from those domains. This is largely used to combat spam, which continues to be a problem.
@@ -456,8 +658,10 @@
 					<paragraphs xml:id="ntp">
 						<title>4.4.13. NTP</title>
 
+
 						<p>
 							<idx>NTP</idx><idx>network time protocol</idx>
+
 						<term>Network Time Protocol</term> (<term>NTP</term>)  uses UDP over port 123 to sync the system time with a time server. NTP servers are layered in stratums, with the lowest stratums being closest to the most accurate sources of time, atomic clocks, GPS, etc. NTP is important as many protocols, including several key exchanges, require system clocks to be in sync. System clocks are also used to check when certificates expire and used in logs to indicate when something happened. Without an accurate, synchronized system clock many things will fail in surprising ways.
 					</p>
 
@@ -465,8 +669,10 @@
 					<paragraphs xml:id="ftp">
 						<title>4.4.14. FTP</title>
 
+
 						<p>
 							<idx>FTP</idx><idx>file transfer protocol</idx>
+
 						<term>File Transfer Protocol</term> (<term>FTP</term>) is a relatively simple, text-based protocol for sending files between machines. FTP uses TCP on port 21 and traditionally establishes two channels: one for protocol messages, and one binary channel for data. The interesting thing about this setup is that the FTP server would initiate the connection of the data channel from server to client, meaning that in many NAT situations where the client couldn’t be easily reached behind a firewall it would fail. The solution to this problem was passive FTP which uses one channel established by the client.
 					</p>
 						<p>
@@ -476,7 +682,9 @@
 					
 						</p>
 						<p>
+
 							<idx>SFTP</idx><idx>secure FTP</idx>
+
 						Unfortunately FTP does not support authentication systems other than passwords and the passwords are sent in plaintext. As such 
 						<term>Secure FTP</term> (<term>SFTP</term>) is recommended. SFTP uses an SSH connection to send and receive files over an encrypted channel. SFTP also supports all SSH authentication methods.
 					</p>
@@ -484,6 +692,7 @@
 					</paragraphs>
 					<paragraphs xml:id="snmp">
 						<title>4.4.15. SNMP</title>
+
 						<figure>
 							<image source="snmp.png"/>
 							<caption>snmp</caption>
@@ -493,14 +702,18 @@
 							<url href="https://commons.wikimedia.org/wiki/File:SNMP_TRAFFIC1.png">SNMP by Deegii121314</url> used under 
 							<url href="https://commons.wikimedia.org/wiki/File:SNMP_TRAFFIC1.png">CC-BY-SA 4.0</url>
 						</p>
+
 						<p><idx>simple network management protocol</idx><idx>SNMP</idx> 
 						<term>Simple Network Management Protocol</term> (<term>SNMP</term>) is used for gathering information about the workings of a network. It is broken into two groups: clients using UDP port 161 (TLS 10161) and a manager using UDP port 162 (TLS 10162). The manager collects messages from the clients regarding the operations of the network and uses this information to take actions as necessary. SNMP can be used to pass information about the temperature of a machine, how many connections it currently has, the channel capacity currently being utilized, etc. SNMP is currently up to version 3 which is encrypted and requires authentication. This is particularly important because SNMP is a very powerful protocol which exchanges information that could potentially be very valuable to an attacker. Access to SNMP should be limited and its usage on a network should be monitored.
 					</p>
+
 
 					</paragraphs>
 				</section>
 				<section xml:id="lab-scanning-with-nmap">
 					<title>4.5. Lab: Scanning with nmap</title>
+
+          
 					<p>
 					For this lab we will start by downloading and extracting the files required. Download 
 						<url href="https://github.com/rxt1077/it230/raw/main/labs/nmap.zip">nmap.zip</url> and extract it to a directory you can access from the shell. Open a shell in that directory (it should have a 
@@ -632,11 +845,14 @@ Nmap done: 256 IP addresses (3 hosts up) scanned in 5.78 seconds</pre>
 					In this instance we found three other machines on the network. One of which is conveniently named victim.
 				</p>
 
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | 
-						<url href="https://nmap.%20%7C%20%7C%20%7C%20org/book/man-host-discovery.html">Read the nmap documentation for | | | host | | | discovery.</url> | | | What other types of scans could | | | you use if a host does not | | | respond to an ICMP ping packet? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+
+					<question>
+						<p>
+							Read the <url href="https://nmap.org/book/man-host-discovery.html">nmap documentation for host discovery</url>. 
+						
+							What other types of scans could you use if a host does not respond to an ICMP ping packet?
+						</p>
+					</question>
 
 					<p>
 					Now lets do a full scan on on the victim machine. Docker Compose does a nice job of resolving DNS requests for sensible names in the 
@@ -663,11 +879,12 @@ Nmap done: 1 IP address (1 host up) scanned in 1.84 seconds</pre>
 				
 					</p>
 
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What ports are open on the victim | | | machine? Why is 
-						<em>this</em> particular | | | protocol insecure? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+
+					<question>
+						<p>
+							What ports are open on the victim machine? Why is this particular protocol insecure?
+						</p>
+					</question>
 
 					<p>
 					nmap is capable of much more than just simple port scanning. nmap includes version detection and OS fingerprinting (among other things). To get a much better picture of what exactly 
@@ -709,11 +926,13 @@ HOP RTT     ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What additional information did | | | you learn from the 
-						<c>-A</c> option? | | | How do you think this could be | | | exploited? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+
+					<question>
+						<p>
+							What additional information did you learn from the -A option? How do you think this could be exploited?
+						</p>
+					</question>
+
 
 					<p>
 					Now, using the 
@@ -722,17 +941,18 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 						<url href="https://linux.die.net/man/1/ftp">This man page may be of some help.</url>
 					</p>
 
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: Remembering what you | | | learned in the 
-						<em>Hash it Out</em> lab, | | | what is the root password on the | | | victim machine? | | | ::: | +———————————–+———————————–+
-				
-					</p>
 
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: How can you test to see if | | | you got it right? What does this | | | say about how ProFTP is | | | configured on 
-						<c>victim</c>? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					<question>
+						<p>
+							BONUS: Remembering what you learned in the <em>Hash it Out</em> lab, what is the root password on the victim machine?
+						</p>
+					</question>
+
+					<question>
+						<p>
+							BONUS: How can you test to see if you got it right? What does this say about how ProFTP is configured on <em>victim</em>?
+						</p>
+					</question>
 
 					<p>
 					When you are all done poking around, you can exit the shell and run 
@@ -742,7 +962,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					</p>
 
 				</section>
-				<section xml:id="protocols_review">
+				<section xml:id="protocols-review">
 					<title>4.6. Review Questions</title>
 
 					<p>

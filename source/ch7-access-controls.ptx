@@ -698,8 +698,8 @@
 						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
-				<section xml:id="lab-linux-file-permissions-_lab_linux_file_permissions">
-					<title>7.4. Lab: Linux File Permissions {#_lab_linux_file_permissions}</title>
+				<section xml:id="lab-linux-file-permissions">
+					<title>7.4. Lab: Linux File Permissions</title>
 					<!-- div attr= class="paragraph"-->
 					<p>
 					In this lab we are going to explore UNIX style file permissions and determine what they can do and why they are limited. Finally we will see how Linux ACLs provide more flexibility in assigning permissions.
@@ -970,7 +970,7 @@ other::---</pre>
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
 				</section>
-				<section xml:id="access_review">
+				<section xml:id="access-controls-review">
 					<title>7.5. Review Questions</title>
 					<!-- div attr= class="qlist qanda"-->
 					<p>
