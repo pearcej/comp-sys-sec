@@ -31,8 +31,8 @@
 					</p>
 
 					</paragraphs>
-					<paragraphs xml:id="mitb-_mitb">
-						<title>5.1.2.</title>
+					<paragraphs xml:id="mitb">
+						<title>5.1.2. MitB</title>
 	
 						<p>
 						MitB stands for man in the browser and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
@@ -65,7 +65,7 @@
 						</example>
 
 					</paragraphs>
-					<paragraphs xml:id="ssl-circumvention-_ssl_circumvention">
+					<paragraphs xml:id="ssl-circumvention">
 						<title>5.1.4. SSL Circumvention</title>
 
 						<figure>
@@ -87,7 +87,7 @@
 				<section xml:id="network-layer-attacks">
 					<title>5.2. Network Layer Attacks</title>
 					
-					<paragraphs xml:id="mac-spoofingmac-cloning">
+					<paragraphs xml:id="mac-spoofing-mac-cloning">
 						<title>5.2.1. MAC Spoofing/MAC Cloning</title>
 						
 						<p>
@@ -95,7 +95,7 @@
 					</p>
 						
 					</paragraphs>
-					<paragraphs xml:id="mac-flooding-_mac_flooding">
+					<paragraphs xml:id="mac-flooding">
 						<title>5.2.2. MAC Flooding</title>
 
 						<p>
@@ -103,7 +103,7 @@
 					</p>
 
 					</paragraphs>
-					<paragraphs xml:id="arp-poisoning-_arp_poisoning">
+					<paragraphs xml:id="arp-poisoning">
 						<title>5.2.3. ARP Poisoning</title>
 						
 						<figure>
@@ -391,7 +391,7 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 					</p>
 						
 					</paragraphs>
-					<paragraphs xml:id="url-hijackingtyposquating">
+					<paragraphs xml:id="url-hijacking-typosquating">
 						<title>5.5.9. URL Hijacking/Typosquating</title>
 						
 						<p>
