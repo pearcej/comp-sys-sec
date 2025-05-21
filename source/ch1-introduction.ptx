@@ -4,6 +4,17 @@
 	<title>Introduction</title>
 	<section xml:id="managing-risk">
 		<title>Managing Risk</title>
+				<p>
+			<idx>information security</idx>
+			<idx>infosec</idx>
+			<term>Information security</term> (
+			
+			<term>infosec</term>) is largely the practice of preventing 
+			<term>unauthorized access</term> to data. 
+			<idx>unauthorized access</idx> Unauthorized access is when an actor gains access to data that they do not have the permissions to access. The system is often used in an unintended manner to provide such access. Data has become an increasingly valuable asset and the 
+			<idx>risks</idx><term>risks</term> of others having access to data are incredibly high. 
+			 Because of this, information security typically falls under the risk-management plan of a company and its importance cannot be understated. This is evidenced by the fact that information technology’s (IT) typical role in a company has migrated from a basic service provider to directorships with a seat at the highest decision making table. This is directly due to the fact that IT assets have become the most valuable things many companies own. Guarding these assets and managing the inherent risk of their loss is the job of information security professionals.
+		</p>
         <figure>
             <caption>
                 <url href="https://commons.wikimedia.org/wiki/File:Database-locked.svg">RRZEicons</url>, 
@@ -15,24 +26,7 @@
             </caption>
             <image source="db-locked.png" width="40%" decorative="yes"/>
 		</figure>
-		<p>
-			<idx>information security</idx>
-			<idx>infosec</idx>
-			<term>Information security</term> (
-			
-			<term>infosec</term>) is largely the practice of preventing 
-						
-			
-			<term>unauthorized access</term> to data. 
-			
-			<idx>unauthorized access</idx> Unauthorized access is when an actor gains access to data that they do not have the permissions to access. The system is often used in an unintended manner to provide such access. Data has become an increasingly valuable asset and the 
-						
-			
-			<term>risks</term> of others having access to data are incredibly high. 
-			
-			<idx>risks</idx> Because of this, information security typically falls under the risk-management plan of a company and its importance cannot be understated. This is evidenced by the fact that information technology’s (IT) typical role in a company has migrated from a basic service provider to directorships with a seat at the highest decision making table. This is directly due to the fact that IT assets have become the most valuable things many companies own. Guarding these assets and managing the inherent risk of their loss is the job of information security professionals.
-		
-		</p>
+
 		<p>
 			<idx>malicious software</idx>
 			<term>Malicious software</term>, also referred to as 
@@ -46,22 +40,16 @@
 	</section>
 	<section xml:id="learning-the-lingo">
 		<title>Learning the Lingo</title>
+		<introduction>
 		<p>
 					In general, the technical fields are laden with acronyms and obtuse vocabulary. Unfortunately security is no exception to this rule. Three of the most important acronyms you should be aware of to start are 
-						
-			
 			<em>CIA</em>, 
-						
-			
 			<em>AAA</em>, and 
-						
-			
 			<em>DRY</em>.
-				
-					
-		
 		</p>
-		<paragraphs xml:id="cia">
+		
+		</introduction>
+		<subsection xml:id="cia">
 			<title>CIA</title>
 			<image source="cia.svg" width="70%">
                 <shortdescription>Diagram illustrating the CIA triad: Confidentiality, Integrity, and Availability.</shortdescription>
@@ -96,8 +84,8 @@
 						
 			
 			</p>
-		</paragraphs>
-		<paragraphs xml:id="aaa">
+		</subsection>
+		<subsection xml:id="aaa">
 			<title>AAA </title>
             <figure xml:id="aaa-fig">
                 <caption>AAA Conceptual Diagram</caption>
@@ -157,8 +145,8 @@
 						
 			
 			</p>
-		</paragraphs>
-		<paragraphs xml:id="dry">
+		</subsection>
+		<subsection xml:id="dry">
 			<title>DRY</title>
 			<p>
 				<idx>DRY</idx>
@@ -193,7 +181,7 @@
 						
 			
 			</p>
-		</paragraphs>
+		</subsection>
 	</section>
 	<section xml:id="hacker-culture">
 		<title>Hacker Culture</title>
@@ -357,37 +345,28 @@
 					
 		
 		</p>
-		<p>
+		<ul>
+			<li><p>
 			<idx>user awareness</idx>
 			<term>User Awareness</term>: A major risk, some would argue the biggest risk, is that unprepared users will run malware programs or perform other harmful actions as directed by actors looking to gain access. These actors may impersonate others or perform other 
-
 			<idx>social engineering</idx>
-
-			<term>
-				social engineering
-			</term> tactics to cause users to do as they say. Probably the scariest statistic is the ease with which a massive attack requiring little effort can be performed. Threat actors do not even need to personally reach out to users, they could simply send a mass email. Through training programs and other methods of interaction a security professional can make users aware of these threats and train them to act accordingly. Raising user awareness is a critical component of any security plan.
-				
-							
-		
+			<term>social engineering</term> tactics to cause users to do as they say. Probably the scariest statistic is the ease with which a massive attack requiring little effort can be performed. Threat actors do not even need to personally reach out to users, they could simply send a mass email. Through training programs and other methods of interaction a security professional can make users aware of these threats and train them to act accordingly. Raising user awareness is a critical component of any security plan.
 		</p>
+		</li>
+		<li>
 		<p>
 			<idx>anti-malware software</idx>
 			<term>Anti-Malware Software</term>: Given how prevalent the use of malware is a host of tools have been developed to prevent its usage. These tools may filter download requests to prevent downloading malware, monitor network traffic to detect active malware patterns, scan files for malware signatures, or harden operating system loopholes used by malware. A security plan will typically detail the type of anti-malware software being used as well as the intended purpose of its usage.
-				
-		
-		</p>
-		<p>
+		</p></li>
+		<li><p>
 			<idx>backups</idx>
 			<term>Backups</term>: Maintaining a copy of the data used by a system can be a quick solution to the problems of ransomware and other attacks aimed at causing or threatening system failure. While a backup does not solve the problem of the data being sold or used by others, it does allow for a quick recovery in many instances and should be part of a security plan.
-				
-		
-		</p>
-		<p>
+		</p></li>
+		<li><p>
 			<idx>encryption</idx>
 			<term>Encryption</term>: At its most simple, encryption obfuscates data and requires a key to make it useful. Encryption can be employed to make copies of data obtained through unauthorized access useless to attackers that do not have the key. Often, encryption and backups complement each other and fill in the use cases that each lacks individually. As such, encryption will show up multiple times and in multiple ways in an average security plan.
-				
-		
-		</p>
+		</p></li>
+		</ul>
 	</section>
 	<section xml:id="lab-think-like-a-hacker">
 		<title>Lab: Think Like a Hacker</title>
@@ -411,11 +390,11 @@
 				<em>I would tell the attendant that I forgot my ID, but I know my number and then give someone elses number. This is very similar to logging in to systems by claiming the user has forgotten their password and then knowing the answers to the security questions required to change the password.</em>
 			</p>
 		</blockquote>
-		<exercise>
+		<question>
 			<p>
 								Come up with at least five different ways of getting free breakfasts and map them to real-world information security attacks. If you are unfamiliar with any information security attacks, you may want to start by researching attacks and then mapping them to free breakfast ideas.
 							</p>
-		</exercise>
+						</question>
 	</section>
 	<section xml:id="intro_review">
 		<title>Review Questions</title>
