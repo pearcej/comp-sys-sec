@@ -176,10 +176,15 @@
 						<title>4.2.3. NAT</title>
 
 
-						<figure>
-							<image source="nat.svg"/>
-							<caption>nat</caption>
-						</figure>
+						<figure xml:id="fig-nat-router">
+						<caption>nat</caption>
+						<image source="nat.svg">
+							<shortdescription>A diagram illustrating how a NAT router enables multiple devices on a private network to share a single public IP address to access the internet.</shortdescription>
+							<description>
+								<p>This diagram shows a basic Network Address Translation (NAT) scenario. Three client devices with private IP addresses (192.168.1.50, 192.168.1.51, and 192.168.1.52) are on a local network. They connect to a NAT Router, which has a local interface IP (192.168.1.1) and a single public IP address (128.235.176.43). The NAT router translates the private IP addresses of the client devices to its own public IP address when they access the Internet, allowing multiple devices to share one public IP.</p>
+							</description>
+						</image>
+					</figure>
 
 						<p><idx>network address translation</idx><idx>NAT</idx>
 						<term>Network address translation</term> (<term>NAT</term>) is primarily used to allow local IP address to share a public IPv4 address. Given the lack of IPv4 address space many devices have to share a single address. As mentioned when discussing IPv6, NAT routers often also include security features such as a stateful firewall as the complexity of the hardware required to perform NAT is equivalent to what would be needed for a firewall.
@@ -513,10 +518,15 @@
 						<title>4.4.3. SSL/TLS</title>
 
 
-						<figure>
-							<image source="tls.svg"/>
-							<caption>tls</caption>
-						</figure>
+						<figure xml:id="fig-tls-handshake">
+						<caption>tls</caption>
+						<image source="tls.svg">
+							<shortdescription>A sequence diagram illustrating the key steps in a simplified TLS handshake between a client and a server.</shortdescription>
+							<description>
+								<p>This diagram shows a simplified sequence of messages exchanged between a client and a server during a Transport Layer Security (TLS) handshake. The process begins with TCP's three-way handshake (SYN from client to server, SYN ACK from server to client, and ACK from client to server). Immediately following the TCP ACK, the client initiates the TLS handshake by sending a "ClientHello" message. The server responds with "ServerHello," its digital "Certificate," and a "ServerHelloDone" message. The client then processes this information and sends a "ClientKeyExchange" message (containing the premaster secret), a "ClientCipherSpec" message to activate the newly negotiated cryptographic parameters, and a "Finished" message (an encrypted hash of the handshake so far). The server, in turn, sends its "ChangeCipherSpec" message and its own "Finished" message. Upon successful exchange and verification of these messages, the secure TLS channel is established.</p>
+							</description>
+						</image>
+					</figure>
 
 						<p><idx>SSL</idx><idx>secure sockets layer</idx>
 							<idx>TLS</idx><idx>transport layer security</idx> 
@@ -530,10 +540,15 @@
 						<title>4.4.4. HTTPS</title>
 
 
-						<figure>
-							<image source="https.png"/>
-							<caption>https</caption>
-						</figure>
+						<figure xml:id="fig-https-indicator">
+						<caption>https</caption>
+						<image source="https.png">
+							<shortdescription>An icon depicting a green padlock next to "https://" text, symbolizing a secure HTTPS web connection.</shortdescription>
+							<description>
+								<p>This image shows a common visual indicator of a secure HTTPS connection, often seen in web browser address bars. It features a green padlock icon immediately to the left of the text "https://". The padlock signifies that the communication with the website is encrypted using TLS/SSL, ensuring data privacy and integrity. This assures the user that their connection to the site is secure.</p>
+							</description>
+						</image>
+					</figure>
 
 
 						<p>
@@ -582,9 +597,14 @@
 					<paragraphs xml:id="ldap">
 						<title>4.4.8. LDAP</title>
 
-						<figure>
-							<image source="ldap.svg"/>
-							<caption>ldap</caption>
+						<figure xml:id="fig-ldap">
+						<caption>ldap</caption>
+						<image source="ldap.svg">
+							<shortdescription>Diagram illustrating an example LDAP directory tree structure.</shortdescription>
+							<description>
+							<p>The diagram displays a hierarchical tree structure representing an LDAP (Lightweight Directory Access Protocol) directory. At the top is the "Root" node. Below the root are top-level domain components: "dc=net", "dc=com", and "dc=org". The "dc=com" branch further expands to an "Organization" labeled "dc=example". Under "dc=example", there are two "Organization Unit" branches: "ou=People" and "ou=Servers". Finally, under "ou=People", there is a "Person" entry labeled "udid=jsmith". Lines connect the nodes, showing their hierarchical relationships. Arrows point from labels "Organization", "Organization Unit", and "Person" to their respective example nodes in the tree.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
@@ -693,9 +713,14 @@
 					<paragraphs xml:id="snmp">
 						<title>4.4.15. SNMP</title>
 
-						<figure>
-							<image source="snmp.png"/>
-							<caption>snmp</caption>
+						<figure xml:id="fig-snmp">
+						<caption>snmp</caption>
+						<image source="snmp.png">
+							<shortdescription>Diagram illustrating the typical SNMP message exchange mechanism between an NMS Management Station and an SNMP Agent.</shortdescription>
+							<description>
+							<p>The diagram shows the interaction between a Network Management Station (NMS) and an SNMP Agent. The NMS Management Station, on the left, is depicted as listening for Traps and Informs on UDP port 162. The SNMP Agent, on the right, listens for requests on UDP port 161 and has access to a Management Information Base (MIB). The typical message exchange includes the NMS sending GetRequest and GetNextRequest messages to the Agent. The Agent responds to these with GetResponse messages. Additionally, the Agent can proactively send Trap or Inform messages to the NMS to notify it of significant events. The entire process is labeled as a "Typical SNMP Message Exchange Mechanism."</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>

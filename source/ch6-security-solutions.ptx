@@ -176,7 +176,7 @@
 						</p>
 
 					</paragraphs>
-					<paragraphs xml:id="tap-_tap">
+					<paragraphs xml:id="tap">
 						<title>6.3.5. TAP</title>
 
 						<p>
@@ -493,7 +493,6 @@ root@3971c61303c8:/(1)</pre>
 				</section>
 				<section xml:id="security-solutions-review">
 					<title>6.10. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
 					<p>
 						<ol>
 							<li>

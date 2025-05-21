@@ -4,60 +4,55 @@
   <title>Incident Response and Continuity</title>
 
   <introduction>
-				<p>
+			<p>
 				Even with the strongest security controls in place, incidents will still occur. It is important to be prepared to respond and get things back up and running as soon as possible. This process is known as incident response and continuity.
 			</p>
   </introduction>
 
-				<section xml:id="security-organizations-_security_organizations">
-					<title>9.1. Security Organizations {#_security_organizations}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="security-organizations">
+					<title>9.1. Security Organizations</title>
+
 					<p>
 					We have looked at many of these security ogranizations already, but we talk about them in more depth here. These organizations create the analysis frameworks and vulnerability lists that security specialists use to respond to an incident.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="mitre-_mitre">
-						<title>9.1.1. MITRE {#_mitre}</title>
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
-						<figure>
-							<image source="mitre.svg"/>
-							<caption>mitre</caption>
+
+					<subsection xml:id="mitre">
+						<title>9.1.1. MITRE</title>
+
+						<figure xml:id="fig-mitre">
+						<caption>mitre</caption>
+						<image source="mitre.svg">
+							<shortdescription>The logo of The MITRE Corporation.</shortdescription>
+							<description>
+							<p>The image displays the logo of The MITRE Corporation. It features the word "MITRE" in all capital letters.</p>
+							</description>
+						</image>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:Mitre_Corporation_logo.svg">The MITRE Corporation, Public domain, via Wikimedia Commons</url>
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						In the 1940s and 1950s MIT scientists developed large-scale computing laboratories. In 1958 MITRE was formed as a private corporation from the personnel and equipment in these labs. Currently, MITRE is a federally funded research and development center.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						As mentioned previously, MITRE maintains the CVE DB. MITRE has also developed the ATT&amp;CK framework for analyzing incidents. We will go through each step of the framework at the end of this chapter.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="nist-_nist">
-						<title>9.1.2. NIST {#_nist}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="nist">
+						<title>9.1.2. NIST</title>
+
 						<p>
 						NIST stands for National Institute of Standards and Technology. It is a federally supported through the US Department of Commerce and posits itself as an institute to promote American innovation. NIST develops standards, guidelines, and best practices in technical fields.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						NIST also has a security framework they’ve developed known as the NIST framework. It outlines the general responsibilities of a security team:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="ulist"-->
+
 						<p>
 							<ul>
 								<li>
@@ -87,102 +82,83 @@
 								</li>
 							</ul>
 						</p>
-						<!--</div attr= class="ulist">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="owasp-_owasp">
-						<title>9.1.3. OWASP {#_owasp}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="owasp">
+						<title>9.1.3. OWASP</title>
+
 						<p>
 						The Open Web Application Security Project (OWASP) is an international non-profit organization focused on web application security. They have an active online community with tools, forums, videos, and news posts. Their most popular resource is the 
 							<url href="https://owasp.org/Top10">OWASP Top 10</url>, an annual listing of the most popular web application vulnerabilities.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
-				<section xml:id="soc-_soc">
-					<title>9.2. SOC {#_soc}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="soc">
+					<title>9.2. SOC</title>
+
 					<p>
 					A security operations center (SOC) is a dedicated team of security experts working within the business they are protecting. Incident response and recovery is the job of the SOC. SOCs also set up preventative infrastructure, monitor the environment, respond to possible threats, manage logs, and maintain compliance.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					An important concept in the SOC is the idea of a 
 						<em>baseline</em>. A popular company may be attacked hundreds of times over the course of a day. It is important that the SOC knows what the average volume of attack is so they can maintain resources to respond. Through monitoring an SOC can establish a baseline of what is normal in the environment.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
-				<section xml:id="incidents-_incidents">
-					<title>9.3. Incidents {#_incidents}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="incidents">
+					<title>9.3. Incidents</title>
+
 					<p>
 					Incidents are part of working at an SOC, they will occur. The best SOCs may spot them before they’re an issue (or an incident even) and have practice how to respond and recovery. The goal is to maintain continuity of services provided even if an incident occurs.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="precursors-_precursors">
-						<title>9.3.1. Precursors {#_precursors}</title>
-						<!-- div attr= class="paragraph"-->
+
+					<subsection xml:id="precursors">
+						<title>9.3.1. Precursors</title>
+	
 						<p>
 						Typically before an incident takes place, there are warning signs or precursors telling you that an incident is going to occur. Precursors may be obvious like threats from APTs, criminal organizations, or Hacktivist. They can also be subtle, such as patterns of recon in web server logs or evidence of transient port scans. Finally a precursor may be the discovery of a new exploit which leads to an uptick in malicious actor activity for everyone. In all cases, it’s important to keep an eye out for precursors. If an incident is caught in this phase it is much easier to handle.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="indicators-_indicators">
-						<title>9.3.2. Indicators {#_indicators}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="indicators">
+						<title>9.3.2. Indicators</title>
+
 						<p>
 						The next level up from a precursor is an indicator. An indicator is an alert showing that an incident has been detected. These may be raised by the IDS/IPS, endpoint management system, malware scanners, network devices, or even a user report.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Once and indicator alarm has been triggered, an SOC member must respond and investigate. In the best case scenario the indicator is telling you that an incident has been detected before too much damage has been done.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
-				<section xml:id="response-_response">
-					<title>9.4. Response {#_response}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="response">
+					<title>9.4. Response</title>
+
 					<p>
 					In the response phase, the SOC deals with an incident to mitigate the harm it causes. Every incident is different, but the governing principles and steps are the same.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="business-continuity-_business_continuity">
-						<title>9.4.1. Business Continuity {#_business_continuity}</title>
-						<!-- div attr= class="paragraph"-->
+
+					<subsection xml:id="business-continuity">
+						<title>9.4.1. Business Continuity</title>
+
 						<p>
 						The concept of continuity is central to the steps taken to respond to an incident. Remember that the goal is to keep things running and keep services available. Business Continuity has three main parts: Business Continuity Planning (BCP), Business Impact Analysis (BIA), and Disaster Recovery Planning (DRP).
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Business Continuity Planning (BCP) is a methodology for keeping things running. With BCP threats are identified in advance and critical business processes are prioritized. Recovery procedures for these processes have been developed and tested. In response to an incident, these procedures are followed as practiced.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Business Impact Analysis (BIA) identifies business functions and rates the impact of an outage on these functions. BIA measures the impact of an outage on:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="ulist"-->
+
 						<p>
 							<ul>
 								<li>
@@ -217,18 +193,15 @@
 								</li>
 							</ul>
 						</p>
-						<!--</div attr= class="ulist">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						BIA can help pinpoint mission-essential functions and single points of failure. This allows SOCs to determine where there resources should go in terms of having the best chance of maintaining business continuity.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Finally having a Disaster Recovery Plan (DRP) makes it easier to recover in the case of a large-scale issue. Disaster Recovery (DR) entails policies, tools, and procedures to recover from an outage. DRPs will detail order of restoration and require a lot of testing to ensure that the entire suite of supported applications can be brought back up. A standard DRP will detail:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="ulist"-->
+
 						<p>
 							<ul>
 								<li>
@@ -258,92 +231,66 @@
 								</li>
 							</ul>
 						</p>
-						<!--</div attr= class="ulist">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="redundancy-_redundancy">
-						<title>9.4.2. Redundancy {#_redundancy}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="redundancy">
+						<title>9.4.2. Redundancy</title>
+
 						<p>
 						Redundant services can help with continuity by making sure there is always an uncompromised service available. The key concepts of redundancy are detailed within the language it uses:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="dlist"-->
-						<dl>
-							<dt>Redundancy</dt>
-							<dd>
-								<p>
-						extra components/services that run in case of failures
+
+					<p><idx>redundancy</idx>
+						<term>Redundancy</term>: extra components/services that run in case of failures.
 					</p>
-							</dd>
-							<dt>Failover</dt>
-							<dd>
-								<p>
-						the process of turning over to a secondary device
+
+								<p><idx>failover</idx>
+						<term>Failover</term>: the process of turning over to a secondary device
 					</p>
-							</dd>
-							<dt>High availability (HA)</dt>
-							<dd>
-								<p>
-						ensures high level of operation performance
+								<p><idx>high availability</idx><idx>HA</idx>
+						<term>High availability (HA)</term>: ensures high level of operation performance
 					</p>
-							</dd>
-							<dt>Fault tolerance</dt>
-							<dd>
-								<p>
-						allows a system to continue in the event of a failure
+
+						<p><idx>fault tolerance</idx>
+						<term>Fault tolerance</term>: allows a system to continue in the event of a failure
 					</p>
-							</dd>
-							<dt>Single Point of Failure (SPOF)</dt>
-							<dd>
-								<p>
-						a single failure that can cause an outage
+
+					<p><idx>single point of failure</idx><idx>SPOF</idx>
+						<term>Single Point of Failure</term> (<term>SPOF</term>): a single failure that can cause an outage
 					</p>
-							</dd>
-						</dl>
-						<!--</div attr= class="dlist">-->
-						<!-- div attr= class="sect4"-->
-						<paragraphs xml:id="hot-cold-warm-_hot_cold_warm">
-							<title>Hot, Cold, &amp; Warm {#_hot_cold_warm}</title>
-							<!-- div attr= class="paragraph"-->
+
+						<subsection xml:id="hot-cold-warm">
+							<title>Hot, Cold, &amp; Warm</title>
 							<p>
 							One typical way to implement redundancy is through the use of hot, cold, and warm sites.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
+
 							<p>
 							A hot site is a secondary location that is live and replicating in real-time what is happening in production. In the case of the primary site going down, a hot site can failover immediately.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
+
 							<p>
 							A cold site is a secondary location without equipment. A cold site will take some time to set up and configure in the case of an outage.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
+
 							<p>
 							A warm site is a secondary location with all equipment and connectivity. The equipment will still need to be turned on and made production ready, but it will not take as long to failover to a warm site as a cold one.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="sect4">-->
-							<!-- div attr= class="sect4"-->
-						</paragraphs>
-						<paragraphs xml:id="raid-_raid">
-							<title>RAID {#_raid}</title>
-							<!-- div attr= class="paragraph"-->
+
+						</subsection>
+						<subsection xml:id="raid">
+							<title>RAID</title>
+
 							<p>
 							RAID is an interesting case of redundancy that occurs at the server storage level. RAID stands for Redundant Array of Inexpensive/Independent Disks and as the name states it uses multiple disks to make reads/writes faster 
 								<em>and</em> to be able to recover if one of the disks fails. It is important to note that RAID is not a backup. Backups are meant to aid in recovery and can be co-located. A RAID array is mean to work on a single machine and help mitigate damages cause by disk failures.
 						
 							</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
+
 							<p>
 							RAID has multiple levels, each of which prioritizes a different aspect:
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="ulist"-->
+
 							<p>
 								<ul>
 									<li>
@@ -373,245 +320,193 @@
 									</li>
 								</ul>
 							</p>
-							<!--</div attr= class="ulist">-->
-							<!--</div attr= class="sect4">-->
-							<!--</div attr= class="sect3">-->
-							<!-- div attr= class="sect3"-->
-						</paragraphs>
-					</paragraphs>
-					<paragraphs xml:id="isolation-and-containment-_isolation_and_containment">
-						<title>9.4.3. Isolation and Containment {#_isolation_and_containment}</title>
-						<!-- div attr= class="paragraph"-->
+
+						</subsection>
+					</subsection>
+					<subsection xml:id="isolation-and-containment">
+						<title>9.4.3. Isolation and Containment</title>
+
 						<p>
 						The first step in reaction to an incident is to remove the asset from the network so that the damage does not spread. It is standard procedure for malware to attempt to spread to other machines and the fastest way for it to do that is through an internal network. By isolating the infected asset, we can help prevent this.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						There are a few other tools for containing malware such as sandboxing and snapshots. Sandboxing refers to the practice of running processes in a controlled environment on a machine. Most web browsers sandbox the JavaScript they run, meaning that if a website is serving malicious JS it should not be able to affect anything else on the machine. Snapshots refer to periodically saving the state of the storage device on a machine. This allows the SOC to roll the machine back to a previous state, before malware was active.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="recovery-_recovery">
-						<title>9.4.4. Recovery {#_recovery}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="recovery">
+						<title>9.4.4. Recovery</title>
+
 						<p>
 						Recovery can be a long process, but it is the core of responding to an incident. If it is possible to remove malware from a machine, that action is taken in this step. Breached accounts are also disabled.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Unfortunately it may be impossible to roll back some assets to a previously uncompromised state, in which case they may need to be restored from a backup or failing that rebuilt from the ground up. Backups make recovery much simpler and companies that do not have a backup plan typically implement them after their first incident. That being said, malware may have also found its way into the backups if given enough time on the system. In that case the asset is typically destroyed and a new one is built. While this can take a long time, it is one of the few ways to know for sure that the asset isn’t compromised.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="remediation-_remediation">
-						<title>9.4.5. Remediation {#_remediation}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="remediation">
+						<title>9.4.5. Remediation</title>
+
 						<p>
 						Remediation is focused on making sure that an incident can’t happen again. Remediation may entail patches, firewall changes, IoC database updates, or even adding more layers of security. The goal is to ensure that all assets are safe.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="reporting-_reporting">
-						<title>9.4.6. Reporting {#_reporting}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="reporting">
+						<title>9.4.6. Reporting</title>
+
 						<p>
 						Reporting is a critical step. It is important to collect timestamped logs as well as accounts of how the incident plans were rolled out. This can help you determine if the plans should be changed and can help you know what to look for in the future. In the best case scenario good reporting lets you catch future precursors before they become incidents.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Disclosure is also an important aspect of the reporting phase. Both compliance and basic ethics mandate that customers be made aware of any data lost. By disclosing the details of an incident you can also other companies aware of what types of attacks are occurring "in the wild."
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
-				<section xml:id="mitre-attck-framework-_mitre_attck_framework">
-					<title>9.5. MITRE ATT&amp;CK Framework {#_mitre_attck_framework}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="mitre-attack-framework">
+					<title>9.5. MITRE ATT&amp;CK Framework</title>
 					<p>
 					In the 
 						<url href="index.html#_malware">Malware</url> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
 						<url href="https://attack.mitre.org">MITRE ATT&amp;CK framework</url>. ATT&amp;CK has 14 sections that cover adversarial tactics, techniques, and common knowledge. Each section is separated into different matrices that have their own sub-techniques.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+		
 					<p>
 					Developed in 2013, the ATT&amp;CK framework is a modern way of looking at an incident that can help drive decision making regarding response and continuity.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="reconnaissance-_reconnaissance">
-						<title>9.5.1. Reconnaissance {#_reconnaissance}</title>
-						<!-- div attr= class="paragraph"-->
+
+					<subsection xml:id="reconnaissance">
+						<title>9.5.1. Reconnaissance</title>
+
 						<p>
 						Reconnaissance is the act of collecting information about a target. This typically involves vulnerability scanning, network mapping, and phishing. Attackers are generally looking for weak links and a way in to the company. Understanding how reconnaissance is performed can help a security team pick up on the precursors to an incident.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="resource-development-_resource_development">
-						<title>9.5.2. Resource Development {#_resource_development}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="resource-development">
+						<title>9.5.2. Resource Development</title>
+
 						<p>
 						Resource development involves acquiring infrastructure from which to deploy an attack. This may involve impersonation or custom tailoring exploits based on the results of the previous reconnaissance. In the resource development phase, all the actions needed to set the stage for an attack are performed.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="initial-access-_initial_access">
-						<title>9.5.3. Initial Access {#_initial_access}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="initial-access">
+						<title>9.5.3. Initial Access</title>
+
 						<p>
 						Initial access refers to the first breach of security. There are many ways for this to occur, but some common ones are phishing, someone clicks on a link in an email, or through a compromised accounts. Attackers may find it easier to exploit the underlying software a corporation uses as is the case in a supply chain attack. There are even instances of attackers leaving rogue flash drives in common areas or attacking WiFi networks from nearby cars.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						However it is performed, initial access is the first real compromise in an attack.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="execution-_execution">
-						<title>9.5.4. Execution {#_execution}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="execution">
+						<title>9.5.4. Execution</title>
+
 						<p>
 						Execution involves running the commands or scripts needed to perform the rest of the attack. Much of this may be automated through PowerShell or BASH scripts. These scripts will exploit vulnerability, setup tasks to run, download and install software, and possibly even give attackers a foothold for internal spearphishing.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="persistence-_persistence">
-						<title>9.5.5. Persistence {#_persistence}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="persistence">
+						<title>9.5.5. Persistence</title>
+
 						<p>
 						Persistence is the act of setting up a system or systems to continue to run the malware that has been implanted. This may involve autostart execution of scripts, init scripts on a Linux system, creating new accounts, scheduling tasks to run, or even implanting the code within or in place of another executable or macro-enabled document. With persistence, the attacker can be sure that even if the machine is restarted or not fully wiped the malicious code will run again.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="privilege-escalation-_privilege_escalation_2">
-						<title>9.5.6. Privilege Escalation {#_privilege_escalation_2}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="privilege-escalation">
+						<title>9.5.6. Privilege Escalation</title>
 						<p>
 						Once an attacker has a foothold on the internal network they will typically work to elevate privilege. This may be done locally, through an exploit, by tricking the user into elevating the privileges of a running script, by stealing credentials over-the-wire, or by leveraging running system processes.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The key in this phase is that the security of the machine has been breached, but if the attacker does not have an admin account on the machine the actual extend of the damage may not be that bad. By elevating the privilege to an admin the attacker can fully control the asset.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="defense-evasion-_defense_evasion">
-						<title>9.5.7. Defense Evasion {#_defense_evasion}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="defense-evasion">
+						<title>9.5.7. Defense Evasion</title>
+
 						<p>
 						It is important to note that while this is occurring, malware scanners, endpoint management software, and possibly even members of the SOC will be actively working to detect and remove malware. An attacker will take steps, typically automated, to make it had to detect their presence. This may involve disabling malware scanners, clearing logs, deploying in a container, running within an already running process, and other methods of obfuscation. Defense evasion makes the job of the security team that much harder.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="credential-access-_credential_access">
-						<title>9.5.8. Credential Access {#_credential_access}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="credential-access">
+						<title>9.5.8. Credential Access</title>
+
 						<p>
 						With malware running on at least one machine, an attacker may attempt to steal credentials. This could involve logging key strokes, performing MitM attacks n the local network, brute force programs, cracking locally stored hashes, or exploiting password managers. Credentials give an attacker a means to log in to other machines on the network and expand their assets.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="discovery-_discovery">
-						<title>9.5.9. Discovery {#_discovery}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="discovery">
+						<title>9.5.9. Discovery</title>
+
 						<p>
 						A malicious actor will try to collect as much information as possible about the environment in which they are operating. Knowing about available accounts, types of network traffic, running services, stored passwords, and security countermeasures help them make informed decisions regarding next steps. Internal policies can also be helpful, it’s much easier to guess passwords when you know the company password policy. Expect that at some point after initial access, an attacker will try to gain more information.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="lateral-movement-_lateral_movement">
-						<title>9.5.10. Lateral Movement {#_lateral_movement}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="lateral-movement">
+						<title>9.5.10. Lateral Movement</title>
+
 						<p>
 						Lateral movement refers to moving across internal systems without any major change in privilege. This may refer to a compromised user account being used to compromise other user accounts. The more accounts an attacker has access to, the more effectively they can learn about the environment. Having access to multiple accounts also gives the attacker more options for persistence, credential access, and internal spearphishing.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="collection-_collection">
-						<title>9.5.11. Collection {#_collection}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="collection">
+						<title>9.5.11. Collection</title>
+	
 						<p>
 						Data can be collected from workstation keyboards, as well as laptop cameras and microphones. Local system data, shared drive data, and removable media data can all be harvested as well. Emails can be skimmed and stored and in some instances screen recordings may also be employed. Much like in Discovery an attacker is often after as much data as they can possibly collect.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="command-and-control-_command_and_control">
-						<title>9.5.12. Command and Control {#_command_and_control}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="command-and-control">
+						<title>9.5.12. Command and Control</title>
+
 						<p>
 						Command and Control (C2 or C&amp;C) refers to the process of setting up a channel between the compromised internal systems and an external system. This channel can be used to get data off the compromised machines and/or for putting malware on the machines. A C2 channel allows the operator to send interact with the compromised machines and even automate much of the work.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						C2 protocols may try to piggyback on regular network traffic, or make use of services that are hard to trace. You’ll see encrypted C2 traffic on web protocols, DNS queries, mail protocols, or even chat protocols such as Discord. Lower level protocols like ICMP and UDP can also be used to avoid detection. C2 systems may make use of multiple channels or different channels for uploads/downloads. The ultimate goal is to make the traffic hard to detect, trace, and stop.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="exfiltration-_exfiltration">
-						<title>9.5.13. Exfiltration {#_exfiltration}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="exfiltration">
+						<title>9.5.13. Exfiltration</title>
+
 						<p>
 						Getting the data off of a machine can be difficult for an adversary as large transfers may trigger alarms. Web services that are already used, Google Drive, Dropbox, etc., may be employed to make exfiltration look like regular traffic. In the case of a physical breach, USB drives may be employed. Finally radio protocols like Bluetooth, cellular, or local WiFi may also be used if the attacker is in close proximity to the device.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="impact-_impact">
-						<title>9.5.14. Impact {#_impact}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="impact">
+						<title>9.5.14. Impact</title>
+
 						<p>
 						The impact of the attack needs to be analyzed as well. The impact can include losing access to the asset, loss of data, data held for ransom, defacement, denial of service, or resource hijacking. All of these things can interrupt business continuity and ultimately cost a company money. The impact of an attack needs to be well understood to make security decisions in the future.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
 				<section xml:id="incident-review">
 					<title>9.6. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
 					<p>
 						<ol>
 							<li>
@@ -633,28 +528,23 @@
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
 				<section xml:id="lab-reporting-on-the-2014-sony-pictures-hack">
 					<title>9.7. Lab: Reporting on the 2014 Sony Pictures Hack</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Take a moment to read through the details of the 
 						<url href="https://en.wikipedia.org/wiki/Sony_Pictures_hack">2014 Sony Pictures Hack</url>. Feel free to research an used other sources as well. Imagine you are responsible for disclosing the details of the attack to affected parties shortly after it had occurred.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
+						
+					
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Come up with two different groups | | | that should receive a disclosure | | | from Sony as a result of the 2014 | | | breach. Write a disclosure email | | | for each of them, detailing what | | | happened, what the response was, | | | and what the effect of the party | | | is. Be sure to keep your audience | | | in mind when determining how much | | | detail and what types of things | | | should be discussed in the email. | | | ::: | +———————————–+———————————–+
+					Come up with two different groups that should receive a disclosure from Sony as a result of the 2014 breach. Write a disclosure email for each of them, detailing what happened, what the response was, and what the effect of the party is. Be sure to keep your audience in mind when determining how much detail and what types of things should be discussed in the email.
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
+				</question>
 				</section>
 
 </chapter>
