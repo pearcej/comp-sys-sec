@@ -140,27 +140,20 @@
 				</section>
 				<section xml:id="keys">
 					<title>2.3. Keys</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Typically a series of random bytes can be used as a key to either encrypt or decrypt data. A key is used by a cryptographic algorithm to change plaintext to ciphertext. Keys may also be asymmetric in that they can only be used to perform 
 						<em>one</em> of the operations (either encryption or decryption).
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					It is important to have an idea of what factors make a 
 						<em>strong</em> cryptographic key. Length plays an important role. The longer the key, the hard it is to 
 						<em>crack</em> the encryption. Likewise the randomness of the data in the key also makes it stronger. If the byte sequence is somehow predictable, the length is irrelevant. Finally we have the concept of a cryptoperiod or lifetime of a key. If we are working with a system that frequently changes keys an attacker may not have enough time to crack it.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="mathematical-foundation">
 					<title>2.4. Mathematical Foundation</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Cryptography relies largely on the concept of one-way or trap door functions. That is a process that is hard to compute in one direction, but easy to compute in the other. For example it is much easier for a computer to multiply large numbers than to determine the factors of large numbers. This is the foundation of the RSA algorithm. 
 						<url href="https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html">A simplified version of the algorithm</url> is shown below:
@@ -208,19 +201,12 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<url href="https://stackoverflow.com/questions/11832022/why-are-large-prime-numbers-used-in-rsa-encryption">factor a number with 1400 decimal digits,</url> the current recommended keysize for RSA. You’ll notice that the algorithm only requires exponentiation, multiplication, and modulus arithmetic. At no point do you ever have to factor a large prime number to generate keys, encrypt, or decrypt. You only have to perform that operation if you’re trying to work backwards without the keys.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Other similar one-way function exist based on elliptical curves. It turns out that motion along an elliptical curve can be described according to a start and end point and several iterations of a simple algorithm. You can reconstruct the initial conditions if you know the start point, end point, and how many iterations it took. If all you know is the start and end point you can’t determine the initial conditions.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="hashes">
 					<title>2.5. Hashes</title>
-					<!-- div attr= class="imageblock right"-->
-					<!-- div attr= class="content"-->
 					<figure>
                         <caption>hash</caption>
                         <image source="hash.svg" >
@@ -232,22 +218,15 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                             </description>
                         </image>
                     </figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock right">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					A hashing algorithm is a one-way function that creates hashed text from plaintext. It is often used for data validation as a relatively small hash 
 						<em>digest</em> or 
 						<em>signature</em> can demonstrate the integrity of a large block of data. Hashes can also be used so that sensitive information does not have to be stored in cleartext. By storing a hash of a password, you can check to see if the correct password was entered without storing the password itself. In the case of a data breach only the hashes are leaked and the attacker does not have access to the passwords to try with other services.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Two main families of hash algorithms are used: MD5 and SHA. MD5 produces a 128-bit hash value and is still often used to verify data integrity. The algorithm is technically cryptographically broken, but you may still see it in use. The SHA family of algorithms consists of SHA-1, SHA-2, and SHA-3:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="ulist"-->
 					<p>
 						<ul>
 							<li>
@@ -267,26 +246,17 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							</li>
 						</ul>
 					</p>
-					<!--</div attr= class="ulist">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Dictionary based attacks against password hashes are fairly common. Typically software is used which generates a hash for every word in the dictionary and then compares that hash to what is stored on the compromised machine. One way to combat this is through salting or adding random bits to each password. When salting the bits are stored with the hash. This forces a dictionary based attack to actively generate the hashes based on what the salt is as opposed to using a stored table (rainbow table) of all the possible hashes. It can make attacks go from instant to days or even years depending on the complexity of the password.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					An even better way of combating attacks against hashes is through a secret salt or 
 						<em>pepper</em>. A pepper is a random value that is added to the password but not stored with the resulting hash. The random value can be stored in a separate medium such as a hardware Security Module.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="symmetric-encryption">
 					<title>2.6. Symmetric Encryption</title>
-					<!-- div attr= class="imageblock left"-->
-					<!-- div attr= class="content"-->
 					<figure>
                         <caption>symmetric</caption>
                         <image source="symmetric.svg" >
@@ -298,52 +268,30 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                             </description>
                         </image>
                     </figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock left">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Symmetric encryption is probably the simplest encryption to understand in that it only uses a single key (in this case our key is labelled 'A') to encrypt or decrypt data. Both parties need to know the private key in order to communicate. It does pose a security risk in that if the channel used for key exchange is insecure, all of the messages can be decrypted. That being said, given that it is simpler than many other forms of encryption, it is often used for secure communication or storage.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="exampleblock"-->
-					<!-- div attr= class="title"-->
 				<example>
                     <title>One-time-pad</title>
                     <p>	
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					One-time-pad (OTP) is a rare example of a pen and paper, symmetric encryption scheme that cannot be cracked. The difficulty in OTP mirrors the difficulty with all symmetric encryption, namely that pre-shared keys need to be exchanged at some point.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Imagine that a prisoner wishes to send encrypted messages to someone outside the prison. To do so, they will make use of a copy of Harry Potter and the Sorcerer’s Stone that they have in their cell. The message they want to send is "DIG UP THE GOLD". They turn to "Chapter One: The Boy Who Lived" and look up the first twelve letters in the chapter: MR AND MRS DURS. For each letter of their message, they convert it to its number in the alphabet: 4 9 7 21 16 20 8 5 7 15 12 4 (DIG UP THE GOLD). They do the same for the key they looked up in their book: 13 18 1 14 4 13 18 19 4 21 18 19 (MR AND MRS DURS). Finally they add the two numbers to get their ciphertext: 17 27 8 35 20 33 26 24 11 36 30 23.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					If the prisoner sends that ciphertext to someone on the outside who knows that they key is the first chapter of Harry Potter and the Sorcerer’s Stone, they will be able to subtract the key from each of the numbers in the ciphertext and discover the plaintext message. While theoretically unbreakable, anybody else who has the key can recover the text as well. This means that using common keys like popular books make it trivial for a man-in-the-middle to decode the ciphertext. After all, the warden probably knows every book that the prisoner has in their cell.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					OTP has been used by spy agencies, often for communications between individuals via dead-drops. In this situation tables of random characters printed in duplicate are exchanged as the key.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="exampleblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</example>
                 </section>
                 
 				<section xml:id="asymmetric-encryption">
 					<title>2.7. Asymmetric Encryption</title>
-					<!-- div attr= class="imageblock"-->
-					<!-- div attr= class="content"-->
 					<figure>
                         <caption>asymmetric</caption>
                         <image source="asymmetric.svg">
@@ -355,9 +303,6 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                             </description>
                         </image>
                     </figure>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="imageblock">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					An asymmetric encryption algorithm has actually already been demonstrated in the 
 						<url href="index.html#_mathematical_foundation">Mathematical Foundation</url> section. Asymmetric encryption has a public key which can be published anywhere and used to encrypt messages that only the holder of the private key, which is not published, can unencrypt. For example if you want to receive encrypted emails you may make your 
@@ -365,37 +310,24 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<url href="https://keyserver.ubuntu.com/">public key server</url>. This would allow anyone to look up your public key, encrypt a message that only you can read, and send you the ciphertext. Asymmetric encryption gets around the difficulties of key exchange via an untrusted channel (like email). Unfortunately the cost of such a useful system is that asymmetric algorithms tend to be much slower that their symmetric counterparts.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="stream-ciphers">
 					<title>2.8. Stream Ciphers</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Stream ciphers encode data one symbol at a time and produces one ciphertext symbol for each cleartext symbol. Given that you can often use some sort of block encryption with a significantly small block size, stream encryption is not used as often. Technically the OTP example, when used one symbol at a time, is a stream cipher. The keys come in one symbol at a time, the cleartext comes in one symbol at a time, and an operation is performed (addition in the case of the example) to create the ciphertext. Given a suitable keysize and a well-researched algorithm, stream ciphers can be just as secure as block ciphers. That being said a stream cipher is usually more consistent in its runtime characteristics and typically consumes less memory Unfortunately there are not as many well-researched algorithms and widely used stream ciphers.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="block-ciphers">
 					<title>2.9. Block Ciphers</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Block ciphers takes the data in, in blocks and use cipher blocks of the same size to perform the encryption. It is very popular and there are many secure algorithms to choose from. Unfortunately if the input data doesn’t fit neatly into blocks of the same size, padding may be required, which takes up more space/memory and reduces the speed of the cipher. As such the block encryption is often less performant than stream encryption.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="block-cipher-modes-of-operation">
+					<subsection xml:id="block-cipher-modes-of-operation">
 						<title>2.9.1. Block Cipher Modes of Operation</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						There are several ways you can create your cipher blocks and depending on how you do it, various attacks are possible:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="sect4"-->
-						<paragraphs xml:id="electronic-codebook-ecb">
+						<subsection xml:id="electronic-codebook-ecb">
 							<title>Electronic Codebook (ECB)</title>
 
 							<figure>
@@ -409,25 +341,14 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                     </description>
                                 </image>
                             </figure>
-							<!--</div attr= class="content">-->
-							<!-- div attr= class="title"-->
 							<p>
 								<url href="https://commons.wikimedia.org/wiki/File:ECB_encryption.svg">WhiteTimberwolf (SVG version)</url>, Public domain, via Wikimedia Commons
-						
 							</p>
-							<!--</div attr= class="title">-->
-							<!--</div attr= class="imageblock right">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							The simplest mode of operation, data is divided into blocks and each block is encoded using a key. Since the blocks are encoded the same way, identical blocks will give identical ciphertexts. This makes it easier, given enough data, to determine what the key is.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="content">-->
-							<!--</div attr= class="openblock float-group">-->
-							<!--</div attr= class="sect4">-->
-							<!-- div attr= class="sect4"-->
-						</paragraphs>
-						<paragraphs xml:id="cipher-block-chaining-cbc">
+						</subsection>
+						<subsection xml:id="cipher-block-chaining-cbc">
 							<title>Cipher block chaining (CBC)</title>
 
 							<figure>
@@ -440,32 +361,18 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                     </description>
                                 </image>
                             </figure>
-							<!--</div attr= class="content">-->
-							<!-- div attr= class="title"-->
 							<p>
 								<url href="https://commons.wikimedia.org/wiki/File:CBC_encryption.svg">WhiteTimberwolf (SVG version)</url>, Public domain, via Wikimedia Commons
 						
 							</p>
-							<!--</div attr= class="title">-->
-							<!--</div attr= class="imageblock left">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							Starting with an initialization vector (IV) each block is XORed with part of the ciphertext of the previous block to create a chain of ciphertext that is constantly changing. This means that identical blocks will result in 
 								<em>different</em> ciphertexts. This is the most common mode of operation, its weaknesses being that the algorithm cannot be run in parallel (sorry modern processors) and that the IV is a common attack target.
 						
 							</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="content">-->
-							<!--</div attr= class="openblock float-group">-->
-							<!--</div attr= class="sect4">-->
-							<!-- div attr= class="sect4"-->
-						</paragraphs>
-						<paragraphs xml:id="counter-ctr-_counter_ctr">
+						</subsection>
+						<subsection xml:id="counter-ctr-_counter_ctr">
 							<title>Counter (CTR)</title>
-							<!-- div attr= class="openblock float-group"-->
-							<!-- div attr= class="content"-->
-							<!-- div attr= class="imageblock right"-->
-							<!-- div attr= class="content"-->
 							<figure>
                                 <caption>ctr</caption>
                                 <image source="ctr.svg">
@@ -477,30 +384,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                     </description>
                                 </image>
                             </figure>
-							<!--</div attr= class="content">-->
-							<!-- div attr= class="title"-->
-							<p>
+								<p>
 								<url href="https://commons.wikimedia.org/wiki/File:CTR_encryption_2.svg">WhiteTimberwolf (SVG version)</url>, Public domain, via Wikimedia Commons
 						
 							</p>
-							<!--</div attr= class="title">-->
-							<!--</div attr= class="imageblock right">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							Instead of using an IV, CTR uses a nonce (random number that is the same for all blocks) and counter. The counter is incremented with each block, meaning this mode can function in parallel. CTR mode solves the problems of ECB while still providing an algorithm that can run quickly on modern machines.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="content">-->
-							<!--</div attr= class="openblock float-group">-->
-							<!--</div attr= class="sect4">-->
-							<!-- div attr= class="sect4"-->
-						</paragraphs>
-						<paragraphs xml:id="galoiscounter-mode-gcm">
+						</subsection>
+						<subsection xml:id="galoiscounter-mode-gcm">
 							<title>Galois/Counter Mode (GCM)</title>
-							<!-- div attr= class="openblock float-group"-->
-							<!-- div attr= class="content"-->
-							<!-- div attr= class="imageblock left"-->
-							<!-- div attr= class="content"-->
 							<figure>
                                 <caption>gcm</caption>
                                 <image source="gcm.svg" >
@@ -512,101 +405,59 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                     </description>
                                 </image>
                             </figure>
-							<!--</div attr= class="content">-->
-							<!-- div attr= class="title"-->
 							<p>
-								<url href="https://commons.wikimedia.org/w/index.php?curid=74845777">Gallois Counter Mode block diagram with initialization vector,
-									<!-- linebreak -->adapted from a diagram by NIST
+								<url href="https://commons.wikimedia.org/w/index.php?curid=74845777">Gallois Counter Mode block diagram with initialization vector, adapted from a diagram by NIST
 								</url> is used under 
 								<url href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0 1.0</url>
 							</p>
-							<!--</div attr= class="title">-->
-							<!--</div attr= class="imageblock left">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							GCM uses a counter like CTR, but does not make use of a nonce. Instead an IV is used with the inititial counter. GCM also generates a message authentication code (MAC) for each block to verify the integrity of the block. This combination makes for a modern, robust algorithm that is gaining rapid adoption.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="content">-->
-							<!--</div attr= class="openblock float-group">-->
-							<!-- div attr= class="sidebarblock"-->
-							<!-- div attr= class="content"-->
-							<!-- div attr= class="title"-->
 							<p>
 							Case Study: Exploiting Non-Rolling Codes
 						</p>
-							<!--</div attr= class="title">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							The importance of non-repeating codes, such as the counter codes used in the CTR and GCM block cipher modes of operation can be highlighted through analysis of another important technology that uses codes: keyless entry systems. When garage door openers first came on to the market, the remote would broadcast a single code that the receiver was programmed to recognize as correct. This meant that anyone listening in could easily get the code and replay the code to open the garage door with their own device.^[
 								<url href="index.html#_footnotedef_2">2</url>{#_footnoteref_2 .footnote}]^ To combat this, companies began using 
 								<url href="https://en.wikipedia.org/wiki/Rolling_code">rolling codes</url> in their remotes and receivers. Given the same seed a rolling code allows each device to generate a sequence of codes that are exactly the same. The remote will use the next code in a sequence every time the button is hit. The receiver will validate the recieved code if it matches any of the next several codes in the sequence (in case the button was hit a few times out of range). This effectively mitigates the replay attack.
 						
 							</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							Given that this was implemented in the 1980s with garage door remotes, you would assume car manufacturers employ the same technology in their remotes. In a case of "everything old is new again" this isn’t true. 
 								<url href="https://github.com/HackingIntoYourHeart/Unoriginal-Rice-Patty/blob/main/README.md">Blake Berry (HackingIntoYourHeart) discovered that several makes and models of cars are actually still vulnerable to a replay attack.</url>
 							</p>
-							<!--</div attr= class="paragraph">-->
-							<!-- div attr= class="paragraph"-->
 							<p>
 							Sammy Kamkar also discovered a vulnerablility for rolling codes, named RollJam, which he demonstrated at DEF CON 23. Kamkar’s device jams signals sent by a keyfob, while recording the codes being sent. Once it has two codes recorded, presumably from the victim pressing the button multiple times, it stops jamming, sends out the first code to unlock the car and stores the second code to unlock the car at a later time.
 						</p>
-							<!--</div attr= class="paragraph">-->
-							<!--</div attr= class="content">-->
-							<!--</div attr= class="sidebarblock">-->
-							<!--</div attr= class="sect4">-->
-							<!--</div attr= class="sect3">-->
-							<!--</div attr= class="sect2">-->
-							<!-- div attr= class="sect2"-->
-						</paragraphs>
-					</paragraphs>
+						</subsection>
+					</subsection>
 				</section>
 				<section xml:id="encryption-examples">
 					<title>2.10. Encryption Examples</title>
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="rsa">
+					<subsection xml:id="rsa">
 						<title>2.10.1. RSA</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						RSA is an asymmetric encryption standard developed in 1977 that is still very popular. Its trapdoor function is based on the difficulty of factoring large numbers. The name RSA comes from the names of the authors of the system: Ron Rivest, Adi Shamir, and Leonard Adleman.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="advanced-encryption-standard-aes">
+					</subsection>
+					<subsection xml:id="advanced-encryption-standard-aes">
 						<title>2.10.2. Advanced Encryption Standard (AES)</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						AES is a symmetric block cipher developed in 1998 to supersede the less secure Data Encryption Standard (DES). AES works on 128 bit blocks of data, performing multiple rounds of substitution-permutation to encrypt data. You will find AES used to encrypt network traffic (as is the case in a virtual private network), data stored to disk (disk encryption), or computer game data that is saved to storage. AES is a 
 							<em>very</em> common cipher.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="elliptic-curve-cryptography-ecc">
+					</subsection>
+					<subsection xml:id="elliptic-curve-cryptography-ecc">
 						<title>2.10.3. Elliptic-curve Cryptography (ECC)</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						ECC is an asymmetric encryption scheme that is quite fast and easy to computer. It is rapidly becoming the go to choice for digital signatures and key exchanges, gaining adopting starting in 2004. ECC is based on the geometry of a pre-determined set of curves (some examples can be found 
 							<url href="http://www.secg.org/sec2-v2.pdf">here</url>), which can be used to create a trapdoor function.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="diffie-hellman-key-exchange">
+					</subsection>
+					<subsection xml:id="diffie-hellman-key-exchange">
 						<title>2.10.4. Diffie-Hellman Key Exchange</title>
-						<!-- div attr= class="openblock float-group"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
 						<figure>
                             <caption>dh</caption>
                             <image source="dh.svg">
@@ -619,120 +470,76 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                 </description>
                             </image>
                         </figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:Diffie-Hellman_Key_Exchange.svg">Original schema: A.J. Han Vinck, University of Duisburg-EssenSVG version: Flugaal</url>, Public domain, via Wikimedia Commons
 					
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						Given the slow nature of asymmetric algorithms, often an application such as a VPN will choose to use asymmetric cryptography to exchange a shared secret key and then use that secret key with a faster symmetric algorithm such as AES. Diffie-Hellman does exactly that and was first published in 1976. Diffie-Hellman key exchange uses the same mathematical concepts as RSA, exponentiation and modulus arithmetic, to great effect, but to visualize what is happening a metaphor of secret color mixing is used (see the included diagram). It is important to remember that because the medium of exchange may be slow a DH key exchange is designed to generate minimal traffic.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="openblock float-group">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="digital-certificates">
+					</subsection>
+					<subsection xml:id="digital-certificates">
 						<title>2.10.5. Digital Certificates</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						A digital certificate is a set of credentials used to identify a company or an individual. Since asymmetric encryption requires know a party’s public key, a digital certificate includes that key as well as an ID of the owner. The question then becomes how do you trust that the public key is 
 							<em>actually</em> for the alleged owner? That’s where the issuing authority comes in. A 
 							<em>certificate authority (CA)</em> signs the certificate indicating that the ID and public_key are correct. Certificates can be self-signed, but this sidesteps the trust placed in the CA and is often only used in testing. Since most certificates are used for encrypting web traffic, Web browsers will typically warn you if a site is using a self-signed certificate.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						Given how how many certificates need to be issued and the work that needs to be done to verify them, most certs are not issues by root CAs, but are actually issued by intermediate CAs. Root CAs delegate the work to Intermediate CAs and indicate their trust in them by signing the intermediate CAs keys. This creates a 
 							<em>chain of trust</em> from the issued certificate (signed by the Intermediate CA) to the Intermediate CA (signed by the root CA) to the root CA (trusted by the browser). Tools that use this chain of trust will keep the root CA certificates and update them from the companies that issue them as needed.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						The certificate store is very important and while users rarely interact with it is often possible to install root CAs manually. 
 							<url href="https://docs.telerik.com/fiddler/configure-fiddler/tasks/trustfiddlerrootcert">This is can be used to create a proxy that can decrypt HTTPS traffic for debugging</url> or for more nefarious purposes. For this reason some applications, Facebook mobiles apps for example, maintain their own certificate store and prevent users from adding root CAs to it.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
 						<p>
 							<url href="https://letsencrypt.org/">
 								<image source='letsencrypt.svg'/>
 							</url>
 						</p>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						So how do you get a certificate for your website? The customer will generate a Certificate Signing Request (CSR) that includes the public key and their ID. The CA will validate that the customer owns the website and build and sign the cert. This whole process can be automated and performed for free via a tool called 
 							<url href="https://letsencrypt.org/">Let’s Encrypt</url>.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="blockchain">
+					</subsection>
+					<subsection xml:id="blockchain">
 						<title>2.10.6. Blockchain</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
 						<figure>
 							<caption>btc</caption>
 							<image source="btc.svg" decorative="yes"/>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:Bitcoin_logo.svg">Bitboy</url>, Public domain, via Wikimedia Commons
 					
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						It is hard to talk about cryptography without addressing blockchains, one of the concepts behind cryptocurrencies. A blockchain is a shared ledger (of transactions in the case of BitCoin) where blocks are constantly being added to add to the information being stored. Periodically an new block is created, which includes a hash of the previous block and a hash of itself for the next block to reference. By examining these hashes, you can prove the integrity each block and its position, thus making a publicly-available, mutually agreed upon accounting of what has occurred on the network. Typically to prevent bad actors from adding block some sort of proof of work, a mathematically difficult operation, or proof of stake, an accounting of investment in the network, must be included when adding a block to the chain.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="trusted-platform-module-tpm">
+					</subsection>
+					<subsection xml:id="trusted-platform-module-tpm">
 						<title>2.10.7. Trusted Platform Module (TPM) / Hardware Security Module (HSM)</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						These modules provide hardware specifically for use with encryption. HSMs are removable modules while TPMs are motherboard chips. Many ciphers rely on a reliable source of entropy (randomness) which these modules provide. They can also significantly increase the speed at which cryptographic algorithms run by moving the operations to specialized hardware. Lastly, these modules can be used to store keys 
 							<em>and</em> make them only accessible via the module. This can add an extra layer of security to prevent the keys from being easily copied.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="steganography">
+					</subsection>
+					<subsection xml:id="steganography">
 						<title>2.10.8. Steganography </title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						Steganography is the process of hiding data in something such that to a casual observer it cannot be detected. Data can be hidden in audio, images, or even 
 							<url href="https://dl.packetstormsecurity.net/crypt/snow/description.html">plain text!</url>. The hidden data can also be encrypted if an additional layer of security is required. In the field of security, malicious code may be hidden inside other files using steganographic techniques. This makes it more difficult for tools to find them when searching storage.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="lab-hash-it-out">
 					<title>2.11. Lab: Hash it Out</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					A 
 						<em>hash</em> is a one-way cryptographic function that produces a 
@@ -742,86 +549,57 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<url href="index.html#_footnotedef_3">3</url>{#_footnoteref_3 .footnote}]^
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 						<term>Anagram Hash</term>
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Let’s assume we wanted to hash the message "Hello from Karl" so that we can have a string of characters the uniquely represent that phrase. One way to do it would be to strip all the punctuation in the message, make everything lowercase, and then arrange all the letters alphabetically. "Hello from Karl" becomes "aefhklllmoorr". You can think of it like saying, "There is one 'a' in the message, one 'e' in the message, one 'f' in the message', one 'k' in the message, three 'l’s in the message…​" Now our hash, "aefhklllmoorr", can be used to uniquely identify the phrase.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Now assume Karl wants to send us a message but he can’t trust the person sending the message. He could use the untrusted party to send us the message and then put the hash someplace public like on a website. We could use the hash to know the message came from Karl 
 						<em>and</em> if anyone else got the hash they would not be able to discern the message because a hash is a one-way function. "aefhklllmoorr" reveals very little about the message, but it can be used to check its accuracy.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Hopefully this is beginning to show the power of hashes. Now lets examine another very common usecase and find out exactly why this is a terrible algorithm.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Assume you run a website where a user uses a password to log in. You want to make sure users are using their password when they log in, but you do not want to store the password on your website. This is quite common. If you website was breached you don’t want to leak a bunch of people’s passwords. What do you do? What you could do is store a hash of their password, hash the password when they try to login, and compare the hashes. For example if our password was "password" using our basic hash algorithm the hash would be "adoprssw". We could store "adoprssw" in our database, use it for comparison during login, and if someone were to ever steal the data in our database they wouldn’t know that the original password is "password". This may prevent an attacker from exploiting the fact that many people use the same password on multiple sites.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					The problem is that there are many things that hash to "adoprssw" including "wordpass", "drowsaps", or even the hash we’re storing: "adoprssw". When multiple messages have the same hash it is referred to as a 
 						<em>collision</em> and this particular algorithm is useless because it generates so many of them.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
 					
                     <question><p>What would the anagram hash of "AlwaysDancing" be?</p></question>
-				
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
-					<p>
+						<p>
 					Now that we understand what hashes do and to some extant how they are possible, lets look at a much more useful hash function.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 						<term>MD5</term>
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					For this section, we are going to be using Docker and a terminal. 
 						<url href="https://docs.docker.com/get-docker/">Please follow these directions for installing Docker.</url> For Windows you can use the 
 						<url href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701">Windows Terminal app</url> and in MacOS you can use the preinstalled Terminal app. Gray boxes show the commands as typed into the terminal with typical output where possible. Your prompt (the part shown before the command) may differ depending on your OS.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Start by running a BASH shell on a custom Linux container:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>ryan@R90VJ3MK:/windir/c/Users/rxt1077/it230/docs$ docker run -it ryantolboom/hash (1)
 root@8e0962021f85:/(2)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
 					<table>
 						<title></title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
 								<cell halign="left">Here we are using the Docker run command interactively (-it) as this container runs bash by default</cell>
 							</row>
-							<row class="even">
+							<row>
 								<cell halign="left">
 									<term>2</term>
 								</cell>
@@ -829,25 +607,19 @@ root@8e0962021f85:/(2)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					MD5 is a message-digest algorithm that produces significantly better hashes than our Anagram algorithm. Most Linux distributions include a simple utility for creating an MD5 hash based on a file’s contents. This command is named md5sum. Typically this is used to detect if a file has been tampered with. A website may provide links to download software as well as an MD5 hash of the files so that you know what you’ve downloaded is correct. Similarly a security system may keep md5sums (MD5 hashes) of certain critical files to determine if they have been tampered with by malware. Let’s practice taking the md5sum of the 
 						<c>/etc/passwd</c> file:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@8e0962021f85:/# md5sum /etc/passwd
 9911b793a6ca29ad14ab9cb40671c5d7  /etc/passwd (1)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
@@ -855,24 +627,16 @@ root@8e0962021f85:/(2)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Now we’ll make a file with 
 						<em>your</em> first name in it and store it in /tmp/name.txt:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>root@8e0962021f85:/# echo "&lt;your_name&gt;" &gt;&gt; /tmp/name.txt (1)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
 					<table>
 						<title></title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
@@ -880,35 +644,23 @@ root@8e0962021f85:/(2)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
 					
                     <question>
                     <p>
                       What is the md5sum of <c>/tmp/name.txt</c>?
                     </p>  
                     </question>
-					
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					For our final activity, lets take a look at some of the weaknesses of hashes.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 						<term>Hash Cracking</term>
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Passwords in a Linux system are hashed and stored in the 
 						<c>/etc/shadow</c> file. Let’s print out the contents of that file to see how it looks:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>root@7f978dd90746:/# cat /etc/shadow
 root:*:19219:0:99999:7:::
 daemon:*:19219:0:99999:7:::
@@ -930,9 +682,6 @@ gnats:*:19219:0:99999:7:::
 nobody:*:19219:0:99999:7:::
 _apt:*:19219:0:99999:7:::
 karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:19255:0:99999:7::: (1)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
 					<table>
 						<title></title>
 						<tabular>
@@ -946,23 +695,16 @@ karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:1
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					One of the problems with hashes are that if people choose simple passwords, they can be easily cracked by a program that takes a wordlist of common passwords, generates their hashes, and then checks to see if the hash is the same. While a hash may be a one-way function, it is still subject to this type of attack. We’re use a program called 
 						<url href="https://www.openwall.com/john/">John the Ripper</url> and do exactly that.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					John the Ripper is already installed on this container along with a simple wordlist. We will tell it to use the default wordlist to try and determine what the password is that matches karl’s hash in 
 						<c>/etc/shadow</c>:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>root@8e0962021f85:/# john --format=crypt --wordlist=/usr/share/john/password.lst /etc/shadow
 Loaded 1 password hash (crypt, generic crypt(3) [?/64])
 Press 'q' or Ctrl-C to abort, almost any other key for status
@@ -970,9 +712,6 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 1g 0:00:00:01 100% 0.6211g/s 178.8p/s 178.8c/s 178.8C/s lacrosse..pumpkin
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="admonitionblock note"-->
 					
             <note>
                 <p>Once john has cracked a password it will not show it if you run it again. To 
@@ -981,10 +720,6 @@ Session completed</pre>
 					<c>john --show /etc/shadow</c>
                 </p>    
             </note>
-                    
-								
-					<!--</div attr= class="admonitionblock note">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Given that the password is in the included common password wordlist, 
 						<c>/usr/share/john/password.lst</c>, you will quickly find that John the Ripper figures out that karl’s password. John the Ripper can also run incrementally though all the possible character combinations, but it takes much longer. To help make these types of attacks more difficult, every hash in 
@@ -993,8 +728,6 @@ Session completed</pre>
 						<url href="https://en.wikipedia.org/wiki/Rainbow_table">rainbow tables</url> so that all of the possible hashes have already been computed. These tables may take up terabytes of disk space, but can make cracking even complicated hashes much simpler.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Let’s use a custom utility named 
 						<c>`crypt</c> to show that we have the actual password. This utility is already installed on your container. We will start by printing out just the line in 
@@ -1003,14 +736,8 @@ Session completed</pre>
 						<c>karl</c> in them:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>root@7f978dd90746:/# cat /etc/shadow | grep karl
 karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:19255:0:99999:7:::</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					The first part of the shadow line is the username, karl. The next part of the shadown line, immediately following the first colon, is the hash information. The characters in between the first set of 
 						<c>$</c> is the version of the hashing algorithm being used, 
@@ -1021,8 +748,6 @@ karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:1
 						<c>$</c> is the hash.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					The [
 						<c>crypt</c>] utility calls the system 
@@ -1033,18 +758,12 @@ karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:1
 						<c>/etc/shadow</c>:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
 					<pre>root@7f978dd90746:/# crypt &lt;karl's password&gt; '$y$j9T$oR2ZofMTuH3dpEGbw6c/y.' (1)
 $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
 					<table>
 						<title></title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
@@ -1052,19 +771,13 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
 					
                     <question><p>Submit a screenshot with your lab showing that the output of the
 						<c>crypt</c> command matches the hash in /etc/shadow</p></question>
 
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
 				</section>
 				<section xml:id="cryptography-review">
 					<title>2.12. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
 					<p>
 						<ol>
 							<li>
@@ -1084,11 +797,5 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
 				</section>
-
 </chapter>
