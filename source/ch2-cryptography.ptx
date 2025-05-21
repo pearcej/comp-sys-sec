@@ -11,14 +11,10 @@
 
 				<section xml:id="why-do-we-need-cryptography">
 					<title>2.1. Why do we need cryptography?</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
-					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, 
-						<em>and</em> accounting (AAA).
-				
+					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, <em>and</em> accounting (AAA).
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					By using a secure and 
 						<em>confidential</em> encrypted channel we can be sure that anyone who intercepts our communications cannot "listen in." This helps prevents 
@@ -27,95 +23,49 @@
 						<em>signature</em> for the data showing that the person who claims to have sent it really did send it. Cryptography also allows for 
 						<em>non-repudiation</em> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
 						<em>without</em> storing passwords in plaintext. This is critical in an age where data breaches are increasingly common.
-				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sidebarblock"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="title"-->
+				
+					<example xml:id="case-study-equifax">
+      				<title>Case Study: Equifax</title>
 					<p>
-					Case Study: Equifax
-				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="paragraph"-->
+					</p>
 					<p>
 						<url href="https://www.ftc.gov/enforcement/cases-proceedings/refunds/equifax-data-breach-settlement">In September of 2017, Equifax announced a data breach the exposed the personal information of 147 million people.</url> The original attack made use of an exploit in an outdated version of 
 						<url href="https://struts.apache.org/">Apache Struts</url> which was being used as part of Equifax’s system for handling credit disputes from customers. Once the attackers had gained access to internal Equifax servers, the began gathering as much information as they could from internal databases.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					What is particularly egregious about this data breach is that passwords in many databases were stored in plaintext. This means that the attackers were able to try the passwords and usernames on other services. While it is important that users use different passwords for different services it is far more disturbing that a company as large as Equifax did not have the policies in place to use cryptography to mitigate the risks from such an enormous breach.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="sidebarblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
+			</example>
 				</section>
 				<section xml:id="terminology">
 					<title>2.2. Terminology</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Going forward, it is important to address some common cryptography terms as they will be used frequently:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="dlist"-->
-					<dl>
-						<dt>Plaintext</dt>
-						<dd>
-							<p>
-								<url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext
-				
-							</p>
-						</dd>
-						<dt>Cipher</dt>
-						<dd>
-							<p>
-								<url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption</url>
-							</p>
-						</dd>
-						<dt>Ciphertext</dt>
-						<dd>
-							<p>
-					data that has undergone encryption
-				</p>
-						</dd>
-						<dt>Cryptographic algorithm</dt>
-						<dd>
-							<p>
-					a series of steps to follow to encrypt or decrypt data
-				</p>
-						</dd>
-						<dt>Public key</dt>
-						<dd>
-							<p>
-					information (typically a byte array) that can be used to encrypt data such that only the owner of the matching 
-								<em>private key</em> can unencrypt it
-				
-							</p>
-						</dd>
-						<dt>Private (secret) key</dt>
-						<dd>
-							<p>
-					information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key
-				</p>
-						</dd>
-					</dl>
-					<!--</div attr= class="dlist">-->
-					<!-- div attr= class="exampleblock"-->
-					<!-- div attr= class="title"-->
+					<p><idx>plaintext</idx><term>Plaintext</term>: <url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext.</p>
+
+					<p><idx>cipher</idx><term>Cipher</term>: <url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption.</url></p>
+
+					<p><idx>ciphertext</idx><term>Ciphertext</term>: data that has undergone encryption.</p>
+
+					<p><idx>cryptographic algorithm</idx><term>Cryptographic algorithm</term>: a series of steps to follow to encrypt or decrypt data.</p>
+
+					<p><idx>public key</idx><term>Public key</term>: information (typically a byte array) that can be used to encrypt data such that only the owner of the matching <em>private key</em> can decrypt it.</p>
+
+					<p><idx>private (secret) key</idx><term>Private (secret) key</term>: information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key.</p>
+					
+					<example>
+					<title>Caesar Cipher</title>
 					<p>
-					Example 1. Caesar Cipher
-				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="paragraph"-->
+					</p>
 					<p>
 					One of the most basic examples of encryption is the Caesar cipher, or substitution cipher. It is easy to understand, compute, and trivial to crack. Let’s create a table that maps every letter in the alphabet to a different letter:
 				</p>
-					<!--</div attr= class="paragraph">-->
 					<table>
 						<title></title>
 						<tabular>
@@ -177,23 +127,16 @@
 							</row>
 						</tabular>
 					</table>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now creating a message is simple a matter of performing the substitutions. For example, 
 						<c>HELLO WORLD</c> becomes 
 						<c>UXIIO ZOEIQ</c>.
-				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					While this is simple to understand and set up, it is also very easy to break. You could use a frequency attack, where you analyze a large chunk of encrypted text knowing that certain letters are more frequent than others. By matching up the most frequently used ciphertext letters with their standard English equivalents you may quickly reach a solution. You could also go through all permutations of the alphabet (4E26) and see what gives you the most English words. The second attack is made much more feasible through computing.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="exampleblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+			</example>
 				</section>
 				<section xml:id="keys">
 					<title>2.3. Keys</title>
@@ -279,9 +222,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!-- div attr= class="imageblock right"-->
 					<!-- div attr= class="content"-->
 					<figure>
-						<image source="hash.svg"/>
-						<caption>hash</caption>
-					</figure>
+                        <caption>hash</caption>
+                        <image source="hash.svg" >
+                            <shortdescription>Flowchart showing 'Plain Text' processed by a 'Hash Function' to produce 'Hashed Text'.</shortdescription>
+                            <description>
+                                <p>The image, captioned 'hash,' is a flowchart illustrating the cryptographic hashing process in three stages from left to right, connected by arrows.</p>
+                                <p>The first stage features a document icon labeled 'Plain Text'. An arrow leads to the second stage, a box with an internal grid pattern, labeled 'Hash Function'. A final arrow points to the third stage, a document icon filled with seemingly random characters, labeled 'Hashed Text'.</p>
+                                <p>This visual representation demonstrates how a hash function transforms readable plaintext into a non-readable, fixed-size string known as hashed text or a digest.</p>
+                            </description>
+                        </image>
+                    </figure>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="imageblock right">-->
 					<!-- div attr= class="paragraph"-->
@@ -338,9 +288,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!-- div attr= class="imageblock left"-->
 					<!-- div attr= class="content"-->
 					<figure>
-						<image source="symmetric.svg"/>
-						<caption>symmetric</caption>
-					</figure>
+                        <caption>symmetric</caption>
+                        <image source="symmetric.svg" >
+                            <shortdescription>Flowchart of symmetric encryption: Plaintext is encrypted with key 'A' to Ciphertext, then decrypted with the same key 'A' back to Plaintext.</shortdescription>
+                            <description>
+                                <p>The image, captioned 'symmetric,' is a flowchart demonstrating the symmetric encryption process. It displays a sequence of five stages, from left to right, connected by arrows, illustrating data transformation.</p>
+                                <p>The process begins with a document icon labeled 'Plaintext'. An arrow points to a key-shaped icon labeled 'A' and also 'Encryption', representing the encryption step with Key A. This transformation results in a document icon labeled 'Ciphertext'. Following this, an arrow points from the ciphertext to the same key-shaped icon, indicating the decryption step. A final arrow leads to a document icon labeled 'Plaintext', signifying the recovery of the original data.</p>
+                                <p>This diagram clearly illustrates the core principle of symmetric encryption: the identical key (Key 'A') is utilized for both encrypting the plaintext to ciphertext and subsequently decrypting the ciphertext back to the original plaintext.</p>
+                            </description>
+                        </image>
+                    </figure>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="imageblock left">-->
 					<!-- div attr= class="paragraph"-->
@@ -385,9 +342,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!-- div attr= class="imageblock"-->
 					<!-- div attr= class="content"-->
 					<figure>
-						<image source="asymmetric.svg"/>
-						<caption>asymmetric</caption>
-					</figure>
+                        <caption>asymmetric</caption>
+                        <image source="asymmetric.svg">
+                            <shortdescription>Flowchart of asymmetric encryption: Plaintext is encrypted with a 'Public' key to Ciphertext, then decrypted with a 'Private' key back to Plaintext.</shortdescription>
+                            <description>
+                                <p>The image, captioned 'asymmetric,' is a flowchart that visually explains the process of asymmetric encryption. It displays a sequence of five stages from left to right, connected by arrows, illustrating data transformation using a public and private key pair.</p>
+                                <p>The process begins with a document icon labeled 'Plaintext'. An arrow points to a key-shaped icon explicitly labeled 'Public' (and also 'Encryption'), representing encryption with the public key. This transforms the data into a document icon labeled 'Ciphertext'. From the ciphertext, another arrow points to a different key-shaped icon explicitly labeled 'Private' (and also 'Decryption'), representing decryption with the private key. A final arrow leads to a document icon labeled 'Plaintext', showing the original data successfully recovered.</p>
+                                <p>This diagram clearly illustrates the core principle of asymmetric encryption: a public key is used for the encryption process, and its corresponding, distinct private key is required for the decryption process, ensuring that only the intended recipient holding the private key can access the original plaintext.</p>
+                            </description>
+                        </image>
+                    </figure>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="imageblock">-->
 					<!-- div attr= class="paragraph"-->
@@ -432,9 +396,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<title>Electronic Codebook (ECB)</title>
 
 							<figure>
-								<image source="ecb.svg"/>
-								<caption>ecb</caption>
-							</figure>
+                                <caption>ecb</caption>
+                                <image source="ecb.svg">
+                                    <shortdescription>Diagram showing Electronic Codebook (ECB) mode encryption where multiple plaintext blocks are independently encrypted with the same key.</shortdescription>
+                                    <description>
+                                        <p>The image, captioned 'ecb' and also titled 'Electronic Codebook (ECB) mode encryption' below the diagram, illustrates how ECB mode operates on multiple blocks of plaintext.</p>
+                                        <p>It displays three identical, parallel encryption processes. In each instance, a 'Plaintext' block, represented as a sequence of conjoined squares, is shown as input to a rectangular unit labeled 'block cipher encryption'. A 'Key' is also depicted as an input to this encryption unit. The output from each encryption unit is a 'Ciphertext' block, similarly represented as a sequence of conjoined squares.</p>
+                                        <p>This visual arrangement emphasizes that each block of plaintext is encrypted independently of other blocks, using the same key for every block. A key characteristic highlighted by this method is that identical plaintext blocks will result in identical ciphertext blocks.</p>
+                                    </description>
+                                </image>
+                            </figure>
 							<!--</div attr= class="content">-->
 							<!-- div attr= class="title"-->
 							<p>
@@ -457,9 +428,15 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<title>Cipher block chaining (CBC)</title>
 
 							<figure>
-								<image source="cbc.svg"/>
-								<caption>cbc</caption>
-							</figure>
+                                <caption>cbc</caption>
+                                <image source="cbc.svg">
+                                    <shortdescription>Diagram of Cipher Block Chaining (CBC) mode of block cipher encryption.</shortdescription>
+                                    <description>
+                                        <p>The diagram, captioned 'cbc,' illustrates the Cipher Block Chaining (CBC) mode of operation for block ciphers. It typically shows plaintext blocks being processed sequentially.</p>
+                                        <p>An Initialization Vector (IV) is depicted being XORed with the first plaintext block before it undergoes encryption with the key. For all subsequent blocks, the ciphertext generated from the encryption of the *previous* block is shown being XORed with the current plaintext block before it is encrypted. This chaining dependency is a key visual feature, ensuring that identical plaintext blocks produce different ciphertext blocks.</p>
+                                    </description>
+                                </image>
+                            </figure>
 							<!--</div attr= class="content">-->
 							<!-- div attr= class="title"-->
 							<p>
@@ -487,9 +464,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<!-- div attr= class="imageblock right"-->
 							<!-- div attr= class="content"-->
 							<figure>
-								<image source="ctr.svg"/>
-								<caption>ctr</caption>
-							</figure>
+                                <caption>ctr</caption>
+                                <image source="ctr.svg">
+                                    <shortdescription>Diagram illustrating Counter (CTR) mode encryption with nonce and incrementing counter per block.</shortdescription>
+                                    <description>
+                                        <p>The image, captioned 'ctr' and also titled 'Counter (CTR) mode encryption' below the diagram, illustrates the Counter (CTR) mode of block cipher operation. It shows three parallel examples of encrypting a plaintext block, each with an incrementing counter value.</p>
+                                        <p>In each depicted instance, a 'Nonce' (e.g., 'c59bcf35...') is combined with a 'Counter' (sequentially '0000000', '0000001', '0000002'). This combined value is input to a 'block cipher encryption' unit, along with a 'Key'. The encrypted output of this unit is then XORed (symbolized by ⊕) with a 'Plaintext' block to produce the corresponding 'Ciphertext' block.</p>
+                                        <p>The diagram highlights that the same nonce is used for these blocks while the counter value increments for each, a mechanism that allows for parallel encryption of blocks. The generation of the keystream (encrypted nonce-counter) is shown as distinct from its application to the plaintext via XOR.</p>
+                                    </description>
+                                </image>
+                            </figure>
 							<!--</div attr= class="content">-->
 							<!-- div attr= class="title"-->
 							<p>
@@ -515,9 +499,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<!-- div attr= class="imageblock left"-->
 							<!-- div attr= class="content"-->
 							<figure>
-								<image source="gcm.svg"/>
-								<caption>gcm</caption>
-							</figure>
+                                <caption>gcm</caption>
+                                <image source="gcm.svg" >
+                                    <shortdescription>Diagram of Galois/Counter Mode (GCM) showing parallel encryption via CTR and authentication tag generation.</shortdescription>
+                                    <description>
+                                        <p>The image, captioned 'gcm' and titled 'Galois/Counter Mode (GCM)', details an authenticated encryption mode. It illustrates an Initialization Vector (IV) used with a series of incrementing counters (Counter 0, Counter 1, Counter 2). Each counter is encrypted with a key (E<sub>K</sub>). This encrypted counter output is then XORed with corresponding Plaintext blocks (Plaintext 1, Plaintext 2) to produce Ciphertext blocks (Ciphertext 1, Ciphertext 2), demonstrating the Counter (CTR) mode portion of GCM.</p>
+                                        <p>In parallel, the diagram shows the authentication mechanism. Authenticated Data (Auth Data 1) and the generated Ciphertext blocks are processed through several Galois field multiplication steps (mult<sub>H</sub>). The lengths of the authenticated data and ciphertext (len(A) || len(C)) are also included in this process. The cumulative result is XORed with the encrypted output of the first counter (E<sub>K</sub>(Counter 0)) to generate the final 'Auth Tag'.</p>
+                                        <p>This diagram effectively visualizes how GCM combines CTR mode for encryption with a GHASH function for authentication, thereby providing both data confidentiality and integrity.</p>
+                                    </description>
+                                </image>
+                            </figure>
 							<!--</div attr= class="content">-->
 							<!-- div attr= class="title"-->
 							<p>
@@ -614,9 +605,17 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
 						<figure>
-							<image source="dh.svg"/>
-							<caption>dh</caption>
-						</figure>
+                            <caption>dh</caption>
+                            <image source="dh.svg">
+                                <shortdescription>Diagram illustrating Diffie-Hellman key exchange using the paint mixing analogy with Alice and Bob.</shortdescription>
+                                <description>
+                                    <p>The image, captioned 'dh' and also titled 'Diffie-Hellman Key Exchange' (or similar, based on context from image analysis), clearly illustrates the protocol using the well-known paint mixing analogy. It involves two parties, labeled Alice on the left and Bob on the right.</p>
+                                    <p>Both Alice and Bob begin with a canister of 'Common paint' (depicted as yellow). Each then separately mixes this common paint with their own unique 'Secret colours': Alice uses an orange paint, and Bob uses a blue-green paint. This step results in two distinct mixed paint colors, one for Alice (an orange-yellow mixture) and one for Bob (a blue-yellow mixture).</p>
+                                    <p>These new mixtures are then shown being exchanged via 'Public transport', indicated by arrows crossing between Alice and Bob. After the exchange, Alice adds her original secret orange paint to the mixture received from Bob. Similarly, Bob adds his original secret blue-green paint to the mixture received from Alice. Both processes are depicted to culminate in the same final 'Common secret' paint color (a brownish hue).</p>
+                                    <p>A note within the diagram, '(assume that mixture separation is expensive)', underscores the cryptographic principle that the combined values are difficult to reverse-engineer to find the original secret components.</p>
+                                </description>
+                            </image>
+                        </figure>
 						<!--</div attr= class="content">-->
 						<!-- div attr= class="title"-->
 						<p>
@@ -683,8 +682,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<!-- div attr= class="imageblock right"-->
 						<!-- div attr= class="content"-->
 						<figure>
-							<image source="btc.svg"/>
 							<caption>btc</caption>
+							<image source="btc.svg" decorative="yes"/>
 						</figure>
 						<!--</div attr= class="content">-->
 						<!-- div attr= class="title"-->
