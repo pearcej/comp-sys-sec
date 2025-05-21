@@ -16,7 +16,7 @@
 					Virtualization is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, emulating the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in isolated environments without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:
 				</p>
 
-					<paragraphs xml:id="virtual-machines">
+					<subsection xml:id="virtual-machines">
 						<title>10.1.1. Virtual Machines</title>
 
 						<figure xml:id="fig-vm">
@@ -48,25 +48,22 @@
 						Unfortunately virtual machines are quite resource intensive due to the fact they require virtualizing the entire operating system. This resource use problem and the increasing popularity of virtualization led to the creation of more light-weight solutions such as containers.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="containers">
+					</subsection>
+					<subsection xml:id="containers">
 						<title>10.1.2. Containers</title>
-
 						<p>
 						A container simplifies the VM by using the same operating system kernel as the host. This is accomplished by using special features of the Linux kernel to isolate the container. 
 							<url href="https://man7.org/linux/man-pages/man7/namespaces.7.html">Linux namespaces</url> controlled by 
 							<url href="https://man7.org/linux/man-pages/man7/cgroups.7.html">cgroups</url> allow a daemon (Docker, podman, etc.) to make an environment where the application has limited access to the full system. Typically containers are used to run a single application as if it were running all by itself on an actual host. This makes it easier to deploy the unique environments that some applications require.
-					
 						</p>
 
 						<p>
 						The obvious security concern lies in the isolation. What happens if a container has access to another containers resources? Given that containers for rival companies may be running next to each other on the same machine in the cloud, what are the risks of having a malicious container access or disrupt another?
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="container-orchestration-systems">
+					</subsection>
+					<subsection xml:id="container-orchestration-systems">
 						<title>10.1.3. Container Orchestration Systems</title>
-
 						<p>
 						Containers also make it easier to restart or scale applications. Container orchestration systems leverage this by monitoring containers and bringing them up or down as needed. The most popular container orchestration system is 
 							<url href="https://kubernetes.io/">Kubernetes</url>, developed by Google to manage web applications.
@@ -77,16 +74,16 @@
 						Given the orchestration systems create containers from images as needed, one of the obvious areas of concern is the integrity of those images. If an image registry is compromised the orchestration system will still deploy the images stored there typically making the issue far worse. Containers can also be hard to manage from a logging standpoint, which may cause compliance issues. Whereas a company may have monitored the logs of a single server in the past, they now have to monitor the logs of hundreds of containers running on a server.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="iaas">
+					</subsection>
+					<subsection xml:id="iaas">
 						<title>10.1.4. IaaS</title>
 
 						<p>
 						IaaS stands for infrastructure as a service and it refers to purchasing VMs or container resources from a provider. Some popular IaaS companies are Amazon Web Systems, Microsoft Azure, and Linode. Each has some basic security tools and default policies in place to help keep the purchased resources secure, but ultimately most of the security responsibility for making sure the resources are secure lies with the group purchasing the resource.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="paas">
+					</subsection>
+					<subsection xml:id="paas">
 						<title>10.1.5. PaaS</title>
 
 						<p>
@@ -101,8 +98,8 @@
 						While the user could take these steps themselves, PaaS makes it easier to deploy an application.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="saas">
+					</subsection>
+					<subsection xml:id="saas">
 						<title>10.1.6. SaaS</title>
 
 						<p>
@@ -113,7 +110,7 @@
 						One of the security concerns with SaaS is that it consolidates information with a single provider. If the server running the software is compromised, the PII of millions of people may be leaked.
 					</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="cloud-computing">
 					<title>10.2. Cloud Computing</title>
@@ -124,15 +121,15 @@
 				
 					</p>
 
-					<paragraphs xml:id="public">
+					<subsection xml:id="public">
 						<title>10.2.1. Public</title>
 
 						<p>
 						Public cloud infrastructure consists of providers like AWS who host huge data centers throughout the world and welcome anyone who can afford it to use their resources. Public cloud providers claim to be secure and may even allow for audits (typically through a third party) to meet compliance requests. Ultimately the security of the underlying public cloud infrastructure lies in the hands of the provider, something that not all companies are comfortable with.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="private">
+					</subsection>
+					<subsection xml:id="private">
 						<title>10.2.2. Private</title>
 
 						<p>
@@ -141,16 +138,16 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="hybrid">
+					</subsection>
+					<subsection xml:id="hybrid">
 						<title>10.2.3. Hybrid</title>
 
 						<p>
 						Hybrid cloud uses both models, public and private, and hosts some things on public IaaS services and other on internal, private IaaS services. This can be the best of both worlds, assuming the applications being supported leverage the full advantages of their environment.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="multi-cloud">
+					</subsection>
+					<subsection xml:id="multi-cloud">
 						<title>10.2.4. Multi-Cloud</title>
 
 						<p>
@@ -161,7 +158,7 @@
 						From a security standpoint, multi-cloud likely increases the attack surface of an application. You now have to be concerned with the vulnerabilities of two providers instead of just one. This must be weighed against the benefits of redundancy when deciding whether or not to utilize more than one cloud provider.
 					</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="serverless-solutions">
 					<title>10.3. Serverless Solutions</title>
@@ -185,32 +182,32 @@
 					When reflecting on how to secure an application running in the cloud, a common tactic is to look at the four Cs involved:
 				</p>
 
-					<dl>
-						<dt>Code</dt>
-						<dd>
+					<ul>
+						
+						<li>
 							<p>
-					How secure is the code of the application? Is it configured correctly? Is it subject to buffer overflows or other issues? If the code isn’t secure, the application never will be
+					<term>Code</term>: How secure is the code of the application? Is it configured correctly? Is it subject to buffer overflows or other issues? If the code isn’t secure, the application never will be
 				</p>
-						</dd>
-						<dt>Container</dt>
-						<dd>
+						</li>
+						
+						<li>
+							<p><idx>container</idx>
+					<term>Container</term>: How secure is the container itself? Are there limits to what the container has access to? Does the Linux distribution on the container have known vulnerabilities? Is the code running as a privileged user on the container?
+				</p>
+						</li>
+						
+						<li>
+							<p><idx>cluster</idx>
+					<term>Cluster</term>: The container orchestration system is going to run on a cluster, how secure is this cluster? Has the container orchestration system been configured correctly? Is the virtual network being used secure? Are its ingress and egress points mapped and monitored?
+				</p>
+						</li>
+						
+						<li>
 							<p>
-					How secure is the container itself? Are there limits to what the container has access to? Does the Linux distribution on the container have known vulnerabilities? Is the code running as a privileged user on the container?
+					<term>Cloud</term>: Is the cloud provider you are using secure? If they have are compromised everything within them is compromised. Can you trust this computing base?
 				</p>
-						</dd>
-						<dt>Cluster</dt>
-						<dd>
-							<p>
-					The container orchestration system is going to run on a cluster, how secure is this cluster? Has the container orchestration system been configured correctly? Is the virtual network being used secure? Are its ingress and egress points mapped and monitored?
-				</p>
-						</dd>
-						<dt>Cloud</dt>
-						<dd>
-							<p>
-					Is the cloud provider you are using secure? If they have are compromised everything within them is compromised. Can you trust this computing base?
-				</p>
-						</dd>
-					</dl>
+						</li>
+					</ul>
 
 				</section>
 				<section xml:id="lab-malicious-containers">
