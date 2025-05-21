@@ -97,7 +97,7 @@
 								<cell halign="left">Y</cell>
 								<cell halign="left">Z</cell>
 							</row>
-							<row class="odd">
+							<row>
 								<cell halign="left">J</cell>
 								<cell halign="left">G</cell>
 								<cell halign="left">T</cell>
@@ -319,15 +319,19 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				</section>
 				<section xml:id="block-ciphers">
 					<title>2.9. Block Ciphers</title>
+					<introduction>
 					<p>
 					Block ciphers takes the data in, in blocks and use cipher blocks of the same size to perform the encryption. It is very popular and there are many secure algorithms to choose from. Unfortunately if the input data doesn’t fit neatly into blocks of the same size, padding may be required, which takes up more space/memory and reduces the speed of the cipher. As such the block encryption is often less performant than stream encryption.
 				</p>
+					</introduction>
 					<subsection xml:id="block-cipher-modes-of-operation">
 						<title>2.9.1. Block Cipher Modes of Operation</title>
+						<introduction>
 						<p>
 						There are several ways you can create your cipher blocks and depending on how you do it, various attacks are possible:
-					</p>
-						<subsection xml:id="electronic-codebook-ecb">
+						</p>
+						</introduction>
+						<subsubsection xml:id="electronic-codebook-ecb">
 							<title>Electronic Codebook (ECB)</title>
 
 							<figure>
@@ -347,8 +351,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<p>
 							The simplest mode of operation, data is divided into blocks and each block is encoded using a key. Since the blocks are encoded the same way, identical blocks will give identical ciphertexts. This makes it easier, given enough data, to determine what the key is.
 						</p>
-						</subsection>
-						<subsection xml:id="cipher-block-chaining-cbc">
+						</subsubsection>
+						<subsubsection xml:id="cipher-block-chaining-cbc">
 							<title>Cipher block chaining (CBC)</title>
 
 							<figure>
@@ -368,10 +372,9 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<p>
 							Starting with an initialization vector (IV) each block is XORed with part of the ciphertext of the previous block to create a chain of ciphertext that is constantly changing. This means that identical blocks will result in 
 								<em>different</em> ciphertexts. This is the most common mode of operation, its weaknesses being that the algorithm cannot be run in parallel (sorry modern processors) and that the IV is a common attack target.
-						
 							</p>
-						</subsection>
-						<subsection xml:id="counter-ctr-_counter_ctr">
+						</subsubsection>
+						<subsubsection xml:id="counter-ctr-_counter_ctr">
 							<title>Counter (CTR)</title>
 							<figure>
                                 <caption>ctr</caption>
@@ -384,15 +387,14 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                                     </description>
                                 </image>
                             </figure>
-								<p>
+							<p>
 								<url href="https://commons.wikimedia.org/wiki/File:CTR_encryption_2.svg">WhiteTimberwolf (SVG version)</url>, Public domain, via Wikimedia Commons
-						
 							</p>
 							<p>
 							Instead of using an IV, CTR uses a nonce (random number that is the same for all blocks) and counter. The counter is incremented with each block, meaning this mode can function in parallel. CTR mode solves the problems of ECB while still providing an algorithm that can run quickly on modern machines.
-						</p>
-						</subsection>
-						<subsection xml:id="galoiscounter-mode-gcm">
+							</p>
+						</subsubsection>
+						<subsubsection xml:id="galoiscounter-mode-gcm">
 							<title>Galois/Counter Mode (GCM)</title>
 							<figure>
                                 <caption>gcm</caption>
@@ -412,10 +414,10 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							</p>
 							<p>
 							GCM uses a counter like CTR, but does not make use of a nonce. Instead an IV is used with the inititial counter. GCM also generates a message authentication code (MAC) for each block to verify the integrity of the block. This combination makes for a modern, robust algorithm that is gaining rapid adoption.
-						</p>
-							<p>
-							Case Study: Exploiting Non-Rolling Codes
-						</p>
+							</p>
+						</subsubsection>
+							<example>
+							<title>Case Study: Exploiting Non-Rolling Codes</title>
 							<p>
 							The importance of non-repeating codes, such as the counter codes used in the CTR and GCM block cipher modes of operation can be highlighted through analysis of another important technology that uses codes: keyless entry systems. When garage door openers first came on to the market, the remote would broadcast a single code that the receiver was programmed to recognize as correct. This meant that anyone listening in could easily get the code and replay the code to open the garage door with their own device.^[
 								<url href="index.html#_footnotedef_2">2</url>{#_footnoteref_2 .footnote}]^ To combat this, companies began using 
@@ -429,8 +431,10 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<p>
 							Sammy Kamkar also discovered a vulnerablility for rolling codes, named RollJam, which he demonstrated at DEF CON 23. Kamkar’s device jams signals sent by a keyfob, while recording the codes being sent. Once it has two codes recorded, presumably from the victim pressing the button multiple times, it stops jamming, sends out the first code to unlock the car and stores the second code to unlock the car at a later time.
 						</p>
+							</example>
 						</subsection>
-					</subsection>
+
+
 				</section>
 				<section xml:id="encryption-examples">
 					<title>2.10. Encryption Examples</title>
@@ -685,7 +689,7 @@ karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:1
 					<table>
 						<title></title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
