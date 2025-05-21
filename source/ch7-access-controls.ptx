@@ -202,7 +202,7 @@
 					</p>
 
 						<figure xml:id="fig-rfid">
-						<caption>rfid</caption>
+						<caption></caption>
 						<image source="rfid.svg">
 							<shortdescription>Diagram illustrating the internal components of an RFID proximity card.</shortdescription>
 							<description>
@@ -486,7 +486,7 @@
 						</p>
 
 						<figure xml:id="fig-oauth">
-						<caption>oauth</caption>
+						<caption></caption>
 						<image source="oauth.svg">
 							<shortdescription>Diagram comparing OpenID Authentication with Pseudo-Authentication using OAuth, illustrating metaphorical credential exchanges with an identity/API provider.</shortdescription>
 							<description>
