@@ -11,11 +11,11 @@
 
 				<section xml:id="methods">
 					<title>10.1. Methods</title>
-
+					<introduction>
 					<p>
 					Virtualization is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, emulating the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in isolated environments without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:
 				</p>
-
+			</introduction>
 					<subsection xml:id="virtual-machines">
 						<title>10.1.1. Virtual Machines</title>
 
@@ -114,13 +114,13 @@
 				</section>
 				<section xml:id="cloud-computing">
 					<title>10.2. Cloud Computing</title>
-
+					<introduction>
 					<p>
 					IaaS ushered in a shift from on-premises deployments of software to deployments 
 						<em>in the cloud</em> or on a IaaS resource. Information technology has seen a shift to the cloud and back again with all kinds of mixed options in between. A business may choose any of these models depending on their needs.
 				
 					</p>
-
+					</introduction>
 					<subsection xml:id="public">
 						<title>10.2.1. Public</title>
 
@@ -168,11 +168,11 @@
 						<em>serverless</em> solutions. A cloud user might not want to have to admin an entire Linux server, or even a Linux container just to run their application. They may be willing to design the application to work directly within a system that the cloud provider creates.
 				
 					</p>
-
+					<example>
 					<p>
 						<url href="https://aws.amazon.com/lambda/">Amazon Lambda</url> is an example of such a system. Users create functions which run seemingly on their own, without worrying about the underlying systems supporting them. From a security standpoint, this places a lot of trust in the provider.
-				
 					</p>
+					</example>
 
 				</section>
 				<section xml:id="cs-of-cloud-native-security">
@@ -181,11 +181,10 @@
 					<p>
 					When reflecting on how to secure an application running in the cloud, a common tactic is to look at the four Cs involved:
 				</p>
-
+				<p>
 					<ul>
-						
-						<li>
-							<p>
+					<li>
+					<p>
 					<term>Code</term>: How secure is the code of the application? Is it configured correctly? Is it subject to buffer overflows or other issues? If the code isn’t secure, the application never will be
 				</p>
 						</li>
@@ -208,7 +207,7 @@
 				</p>
 						</li>
 					</ul>
-
+				</p>
 				</section>
 				<section xml:id="lab-malicious-containers">
 					<title>10.5. Lab: Malicious Containers</title>
@@ -259,9 +258,9 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Wed Jul 13 02:25:57.082089 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'</pre>
 
 					<table>
-						<title></title>
+						<title>Instructions</title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
@@ -270,7 +269,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 									<c>.</c> at the end!
 								</cell>
 							</row>
-							<row class="even">
+							<row>
 								<cell halign="left">
 									<term>2</term>
 								</cell>
