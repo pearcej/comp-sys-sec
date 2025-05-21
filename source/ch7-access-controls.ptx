@@ -14,68 +14,61 @@
 			
 				</p>
 
-						<p>
-				<term>Identification:</term> The act of identifying an actor or 
+						<p><idx>identification</idx>
+				<term>Identification</term>: The act of identifying an actor or 
 							<em>something</em> that is used to identify an actor. This could be as simple as a drivers license or as complex as a cryptographic signature that can only be made by the bearer of a private key. Example: A delivery driver presenting an employee badge.
 						</p>
-						<p>
-				<term>Authentication:</term> This step occurs when an identity is confirmed through the use of a specific process. This could be the process through which the private key is used or perhaps another biometric process such as reading a fingerprint. In either case the 
+						<p><idx>authentication</idx>
+				<term>Authentication</term>: This step occurs when an identity is confirmed through the use of a specific process. This could be the process through which the private key is used or perhaps another biometric process such as reading a fingerprint. In either case the 
 							<em>authentication</em> is the method by which we verify identity. Example: Examining the delivery driver’s badge.
 						</p>
-						<p>
-				<term>Authorization:</term> Authorization is when an actor is given permission to access a resource. In casual conversation we may assume that 
+						<p><idx>authorization</idx>
+				<term>Authorization</term>: Authorization is when an actor is given permission to access a resource. In casual conversation we may assume that 
 							<em>authorization</em> is a foregone conclusion once an actor has progressed this far, but in actuality authorization relies on the previous steps being completed and may in fact fail. A system may have identified who someone was through authentication with a username and password, but that user is not set up to have access to a resource. In this case the 
 							<em>authorization</em> step would fail. To continue with our delivery driver example: Allowing the delivery driver to pick up a package.
 						</p>
-						<p>
-				<term>Accounting:</term> Finally accounting is the process through which a record of access to the resource is recorded. Accounting may be a log of users who have signed in an log of what resources they each accessed. In a similar vein, with the delivery driver: A record of the driver’s visit is written in the sign-in book at the front desk.
+						<p><idx>accounting</idx>
+				<term>Accounting</term>: Finally accounting is the process through which a record of access to the resource is recorded. Accounting may be a log of users who have signed in an log of what resources they each accessed. In a similar vein, with the delivery driver: A record of the driver’s visit is written in the sign-in book at the front desk.
 			</p>
 
   </introduction>
 
-				<section xml:id="general-principles-and-techniques-_general_principles_and_techniques">
-					<title>7.1. General Principles and Techniques {#_general_principles_and_techniques}</title>
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="least-privilege-_least_privilege">
-						<title>7.1.1. Least Privilege {#_least_privilege}</title>
-						<!-- div attr= class="paragraph"-->
+				<section xml:id="general-principles-and-techniques">
+					<title>7.1. General Principles and Techniques</title>
+
+					<paragraphs xml:id="least-privilege">
+						<title>7.1.1. Least Privilege</title>
+
 						<p>
 						The principle of least privilege states that an actor should only be given access to resources as necessary and with the permissions necessary to complete their task. These resources may be processes, programs, or even user accounts. This principle reduces an attack surface and helps stop the spread of malware as a single compromised account will not have access to all of the resources.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Least privilege is also an important concept for compliance purposes. For example, laws may require and audit of all accounts that have Internet access. By limiting accounts that have Internet access to only the accounts of actors that require Internet access to complete their tasks, it makes it easier to be in compliance.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="multi-factor-authentication-mfa-_multi_factor_authentication_mfa">
-						<title>7.1.2. Multi-factor Authentication (MFA) {#_multi_factor_authentication_mfa}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="multi-factor-authentication-mfa">
+						<title>7.1.2. Multi-factor Authentication (MFA)</title>
+
 						<p>
 						Multi-factor authentication is a technique that requires actors to provide two or more pieces of information to be used as identification. Some examples of identification would be usernames and passwords, token codes, a physical token, or biometric data. Typically it is suggested to use "something you have and something you know" for example the code in an SMS message to your phone (you have your phone) and a password (you know your password).
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						There are many popular products for MFA, most of which are based on the time based creation of a code. 
 							<url href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en_US&amp;gl=US">Google Authenticator</url> and 
 							<url href="https://authy.com/">Authy</url> are each phone applications which generate codes from a cryptographic seed which is synced with the verifying system. RSA IDs generate similar codes on a dedicated hardware device.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="mac-dac-rbac-and-abac-_mac_dac_rbac_and_abac">
-						<title>7.1.3. MAC, DAC, RBAC, and ABAC {#_mac_dac_rbac_and_abac}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="mac-dac-rbac-and-abac">
+						<title>7.1.3. MAC, DAC, RBAC, and ABAC</title>
 						<p>
 						There are several different authorization models that can be used. Mandatory Access Control (MAC) requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security. Discretional Access Control (DAC) simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised. Role-Based Access Control (RBAC) builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC. Attribute-Based access control (ABAC) is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context. These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."
 					</p>
-						<!--</div attr= class="paragraph">-->
+
 						<table>
 							<title>Table 2. Comparison between DAC, MAC, RBAC, and ABAC^[
 								<url href="index.html#_footnotedef_6">6</url>{#_footnoteref_6 .footnote}]^
@@ -137,314 +130,228 @@
 								</row>
 							</tabular>
 						</table>
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
-				<section xml:id="physical-access-_physical_access">
-					<title>7.2. Physical Access {#_physical_access}</title>
-					<!-- div attr= class="openblock float-group"-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="imageblock right"-->
-					<!-- div attr= class="content"-->
+				<section xml:id="physical-access">
+					<title>7.2. Physical Access</title>
+
 					<figure>
 						<image source="castle.jpg"/>
 						<caption>castle</caption>
 					</figure>
-					<!--</div attr= class="content">-->
-					<!-- div attr= class="title"-->
+
 					<p>
 						<url href="https://commons.wikimedia.org/wiki/File:Inveraray_Castle_-_south-west_facade.jpg">DeFacto</url>, 
 						<url href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</url>, via Wikimedia Commons
 				
 					</p>
-					<!--</div attr= class="title">-->
-					<!--</div attr= class="imageblock right">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					An organization’s building is a large ongoing investment and is often an unexpected security asset or weakness. Most technical security controls can be completely bypassed or disabled if physical security is not taken into account. As such, steps must be taken to assure that physical access is limited to protect not only the building and its contents but also the data that is created and stored there.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="openblock float-group">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="gates-_gates">
-						<title>7.2.1. Gates {#_gates}</title>
-						<!-- div attr= class="paragraph"-->
+
+					<paragraphs xml:id="gates">
+						<title>7.2.1. Gates</title>
+
 						<p>
 						It is easier to manage the physical security of a location when the amount of entry points are limited. Convenience and safety dictate that even with such considerations multiple points of ingress are still needed. A security gate is the most basic tool available the ensure that only authorized actors gain access.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Security gates can be manned or unmanned and designed to support vehicular or pedestrian traffic. In general an unmanned security gate is not going to be as effective as a manned security gate. Likewise, vehicular gates will be less effective against foot traffic (especially unmanned vehicular gates) than gates or checkpoints designed for individuals. A thorough risk assessment is often the first step in planning where to put gates and what types of gates to use.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="biometrics-_biometrics">
-						<title>7.2.2. Biometrics {#_biometrics}</title>
-						<!-- div attr= class="openblock float-group"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
+					<paragraphs xml:id="biometrics">
+						<title>7.2.2. Biometrics</title>
+
 						<figure>
 							<image source="biometric.jpg"/>
 							<caption>biometric</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://pixabay.com/illustrations/biometrics-access-identification-4503107/">Biometrics Access Identification</url> is used under 
 							<url href="https://pixabay.com/service/license/">Pixabay License</url>.
 					
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Biometric security devices identify people based on on or more physical characteristics. This has the great advantage of convenience. A person may occasionally forget to bring their ID card in to work, but they will never forget to bring their fingertip or iris! Similarly, since the items being used for identification are attached to the people that using them, biometric characteristics are difficult to steal or impersonate.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Biometric traits are often broken into two categories: physiological and behavioral. Physiological traits can be facial structure, fingerprints, palm prints, hand structure, iris patterns, or even the sequence of someone’s DNA. Behavioral traits include voice, signature, and even keystroke patterns.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="openblock float-group">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="key-cards-_key_cards">
-						<title>7.2.3. Key Cards {#_key_cards}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="key-cards">
+						<title>7.2.3. Key Cards</title>
+
 						<p>
 						Many security measures employ key cards for access to rooms. A key card uses the same form factor as a credit card, making it easy for employees to carry in their wallets or ID holders. Key cards may utilize magnetic stripes or chips (in a similar fashion to credit cards), radio frequency identification (RFID), or near field communication (NFC).
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Basic passive keycards are often subject to skimming and cloning attacks. Once an attacker can gain access to the unique number stored on the card, they can recreate the card. It is important to monitor areas where key cards are being used to make sure additional hardware is not installed by an attacker to read these numbers. It is also important to educate users of the system so they do not share their key cards with others and report them if they go missing.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="sidebarblock"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="title"-->
+
 						<p>
 						Proximity Cards
 					</p>
-						<!--</div attr= class="title">-->
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="rfid.svg"/>
 							<caption>rfid</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The most ubiquitous RFID card, the proximity or prox card, is vulnerable to a very basic cloning attack. The keycard is a 
 							<em>passive</em> electronic device, meaning it utilizes a coil as both an antenna 
 							<em>and</em> a source of power for its circuit. This has the advantage of not requiring a battery only working when the card is placed in an electromagnetic field, like near the reader on a door with an RFID reader. The RFID reader will generate a 125 kHz radio frequency field. The prox card has a long antenna which spirals around the outside. This antenna is designed to be resonant at 125 kHz and when powered by the field created by the reader it charges a capacitor and provides current to an IC. The IC then broadcasts the card’s ID.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Unfortunately this passive configuration limits the circuitry to very simple operations due to the need for low power consumption. All a proximity card can do when activated is broadcast the card’s ID. An attacker can listen for that number by placing another reader next to the legitimate reader or even carrying a portable reader that will activate the card when close to the user. Once the attacker has the 26 bit unique number of the card, they can make their own card with that same number and gain access.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						There have been proposals for strengthen RFID systems 
 							<url href="https://www.iacr.org/archive/ches2004/31560357/31560357.pdf">including using AES</url>. It is also possible to require another factor of identification in addition to the keycard. Fortunately, many systems seem to be moving to phone applications via NFC which have significantly more processing power to support trustless cryptographic identification.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="sidebarblock">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="security-guards-_security_guards">
-						<title>7.2.4. Security Guards {#_security_guards}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="security-guards">
+						<title>7.2.4. Security Guards</title>
+
 						<p>
 						The most versatile assets in any organization are human assets and the same is true of security guards. Security guards can be used to verify IDs, enforce rules, stopped forced entry, and take actions as necessary. Given the expensive nature of human resources, security guards should be employed in critical locations where risk is high. They may also benefit greatly from staff awareness training even if their job description may be different from the other employees you are training.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="cameras-_cameras">
-						<title>7.2.5. Cameras {#_cameras}</title>
-						<!-- div attr= class="openblock float-group"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
+					<paragraphs xml:id="cameras">
+						<title>7.2.5. Cameras</title>
+
 						<figure>
 							<image source="cctv.jpg"/>
 							<caption>cctv</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:CCTV_camera_and_iFacility_IP_Audio_speaker_on_a_pole.jpg">CCTV camera and iFacility IP Audio speaker on a pole</url> by RickySpanish used under 
 							<url href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA 4.0</url>
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Cameras afford the operator an "always on" view of a location. Awareness that all activity is being recorded can persuade attackers to aim for an easier target or not continue with their nefarious actions. Even if an attacker persists the camera footage can provide proof of the attack as well as evidence that can be used later to track the attacker or make better security decisions.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The "eye in the sky" seems to have the effect of keeping honest people honest, but is often just seen as an obstacle for those intent on breaking the rules. Despite this cameras do have several technological advantages. They can work in no/low light conditions, can be remotely controlled and monitored, can store footage remotely, can track motion, and can activate/alert on motion events. Cameras are an integral part of most security plans.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="openblock float-group">-->
-						<!-- div attr= class="sidebarblock"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="title"-->
-						<p>
+					<p>
 						CCTV in London
 					</p>
-						<!--</div attr= class="title">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The largest deployment of CCTV cameras in the world is currently in London England. 
 							<url href="https://www.caughtoncamera.net/news/how-many-cctv-cameras-in-london/">There are over half a million cameras recording the average Londoner more than 300 times a day.</url> This makes London a very interesting case study in the effects of widespread camera use.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						It appears that conspicuous cameras can prevent certain types of crime (theft and burglary) but have little effect on crimes of passion (spontaneous and unplanned crimes). In aggregate, cameras appear to not have an effect on the overall amount of crime. While decreases have occasionally been seen, causation cannot be established.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						From a security perspective, we are not only concerned with preventing crimes, but also concerned with tightening our security after a breach has occurred. The cameras in London have been shown to aid in 
 							<em>solving</em> crimes after they have occurred. This bodes well in a security context where that is a major goal.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="sidebarblock">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="mantraps-_mantraps">
-						<title>7.2.6. Mantraps {#_mantraps}</title>
-						<!-- div attr= class="imageblock text-center"-->
-						<!-- div attr= class="content"-->
+					<paragraphs xml:id="mantraps">
+						<title>7.2.6. Mantraps</title>
+
 						<figure>
 							<image source="mantrap.svg.svg"/>
 							<caption>mantrap</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock text-center">-->
-						<!-- div attr= class="paragraph"-->
+		
 						<p>
 						A mantrap is a physical access control that requires one person at a time enter through a door. Also known as air locks, sally ports, or access control vestibules, mantraps are used to prevent tailgating, or following another person through a secured door. These devices are often used with keycards to ensure that only people who are supposed to have access to a building can get in.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
-				<section xml:id="network-access-_network_access">
-					<title>7.3. Network Access {#_network_access}</title>
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="active-directory-_active_directory">
-						<title>7.3.1. Active Directory {#_active_directory}</title>
-						<!-- div attr= class="paragraph"-->
+				<section xml:id="network-access">
+					<title>7.3. Network Access</title>
+
+					<paragraphs xml:id="active-directory">
+						<title>7.3.1. Active Directory</title>
+
 						<p>
 						Active Directory (AD) is a directory service typically used in Windows networks to control and track resources. AD is a Microsoft technology that enables centralized network management. It has proven to be very scalable and is commonly deployed in the enterprise environment (corporations, universities, schools, etc.)
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+			
 						<p>
 						Active Directory relies upon the Lightweight Directory Access Protocol (LDAP) for its communications. While AD is probably the largest deployed user of LDAP other implementations for various operating systems exist, including Apple OpenDirectory, RH Directory Server, and OpenLDAP. LDAP is often used by internal applications and process.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The cornerstone of an AD environment is the Domain Controller (DC). DCs stores directory information about Users, Groups, Computers, Policies, and more. They respond to auth requests for the domain (network) they are supporting. A standard network will have multiple DCs with fail-over in place in case something goes wrong.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						For many environments, AD is the mechanism used for authentication, authorization, and accounting. As many services have migrated to the web, the need to access AD from anywhere has become increasingly important. This has kindled the growth of Azure Active Directory, a cloud-based version of active directory. Increasingly we are seeing deployments that utilize cloud-based resources instead of local DCs.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="privileged-identity-management-pim-_privileged_identity_management_pim">
-						<title>7.3.2. Privileged Identity Management (PIM) {#_privileged_identity_management_pim}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="privileged-identity-management-pim">
+						<title>7.3.2. Privileged Identity Management (PIM)</title>
+
 						<p>
 						Privileged Identity Management (PIM) is a method of managing access to resources such as locations, commands, audit reports, and services. PIM aims to provide more granular access control. By recording more information about access it allows for better reporting regarding suspicious behavior and anomalies. PIM is used in the Windows operating system and for many Microsoft Azure services.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="privileged-access-management-pam-_privileged_access_management_pam">
-						<title>7.3.3. Privileged Access Management (PAM) {#_privileged_access_management_pam}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="privileged-access-management-pam">
+						<title>7.3.3. Privileged Access Management (PAM)</title>
+
 						<p>
 						Privileged Access Management (PAM) is a framework for safeguarding identities with advanced capabilities, such as superusers in a *NIX system. PAM is common in the Linux world, where it is used to control how administrators log in. PAM supports many more features than the older "become root and perform admin tasks" model. With PAM passwords can be set to expire, better auditing can be put in place, and privilege escalation can be made temporary.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="identity-and-access-management-iam-_identity_and_access_management_iam">
-						<title>7.3.4. Identity and Access Management (IAM) {#_identity_and_access_management_iam}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="identity-and-access-management-iam">
+						<title>7.3.4. Identity and Access Management (IAM)</title>
+
 						<p>
 						Identity and Access Management is a framework for managing digital identities. IAM manages the user database, logs when users sign in and out, manages the creation of groups or roles, and allows for the assignment and removal of access privileges. Many different groups offer IAM frameworks, the most famous of which may be Amazon Web Systems (AWS) which use it for controlling access to the infrastructure as a service (IaaS) technologies they offer.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						IAM often makes use of PIM and PAM to accomplish these goals. A well-implemented, thorough IAM framework can work across operating systems and handle many different types of resources.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
 					</paragraphs>
-					<paragraphs xml:id="unix-file-permissions-_unix_file_permissions">
-						<title>7.3.5. Unix File Permissions {#_unix_file_permissions}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="unix-file-permissions">
+						<title>7.3.5. Unix File Permissions</title>
+
 						<p>
 						From its inception, Unix was designed to be a multi-user environment, and as such, a lot of attention was paid to file permissions. Every file in a Unix system has an owner and a group. Each file also has permissions for owner, group, and all users. Permissions are set using octal numbers where each bit represents read (bit 0: 1), write (bit 1: 2), or execute (bit 2: 4) permission.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="permissions.svg"/>
 							<caption>permissions</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						For example, if you wanted a read and execute permission the number would be 5 (1 + 4). Read and write permission would be 3 (1 + 2).
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Permissions are specified with the 
 							<c>chmod</c> command, the first octal number is the permissions for the owner, the second is for the group, and the third is for all user. So to change a file to have read, write, and execute permissions for the owner, read permissions for the group, and no permissions for everyone else, the command would be 
@@ -452,8 +359,7 @@
 							<c>&lt;filename&gt;</c> is the name of your file.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The owner and group of a file can be set with the 
 							<c>chown</c> command: 
@@ -461,13 +367,11 @@
 							<c>&lt;group&gt;</c> is not specified only the owner is changed.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="acls-_acls">
-						<title>7.3.6. ACLs {#_acls}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="acls">
+						<title>7.3.6. ACLs</title>
+
 						<p>
 						Access Control Lists (ACL) are used to permit or deny access based on a characteristic. They tend to be based on a simple characteristic and either deny access to anyone not on the list, 
 							<em>allowlist</em>, or deny access to anyone who 
@@ -475,143 +379,120 @@
 							<em>denylist</em>.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						ACLs used in networking and typically filter based on IP address. You can find examples of ACLs in most firewall products as well as in Amazon Web Services (AWS) Virtual Private Cloud (VPC).
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Filesystem ACLs apply the same concept to files. Linux uses fileystem ACLs to permit or deny access in a more nuanced way than possible with 
 							<url href="index.html#_unix_file_permissions">Unix File Permissions</url>.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="ssh-keys-_ssh_keys">
-						<title>7.3.7. SSH Keys {#_ssh_keys}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="ssh-keys">
+						<title>7.3.7. SSH Keys</title>
+
 						<p>
 						Secure Shell Server (SSH) supports the use of asymmetric encryption keys for authentication. Most severs support RSA, DSA, and ECDSA keys, with RSA being the most common. An SSH server maintains a list of authorized keys, typically in 
 							<c>~/.ssh/authorized_keys</c>, that can be used to connect to the server. When a client connects, the SSH server issues a challenge asking the client to sign a random piece of data using their private key. If the private key matches the public key stored in the 
 							<c>authorized_keys</c> file, the user is logged in.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						SSH keys have the advantage of being easier to use as the user doesn’t need to remember and type in a password. For this reason, keys are often used for authentication when running protocols over SSH such a 
 							<url href="https://git-scm.com/">git</url>. Keys also have the advantage of possibly thwarting MitM attacks. While a password can be easily stolen by a malicious actor impersonating an SSH server, authentication via key will only transmit a signed bit of random data. This bit of data is useless to the MitM.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="sessions-and-cookies-_sessions_and_cookies">
-						<title>7.3.8. Sessions and Cookies {#_sessions_and_cookies}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="sessions-and-cookies">
+						<title>7.3.8. Sessions and Cookies</title>
 						<p>
 						HTTP sessions can also be used to control access to a resource. This is often employed in web applications. Upon successful sign-in, a user is given a cookie with a cryptographically tamper-resistant session ID. Every request the user makes to that site will include that cookie. Eventually the session will time out and the user will make a request that is denied based on their session ID no longer being valid. Typically the website will redirect them from the protected resource to a login page where they can log in again.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Website cookies may also be used to store user preferences or the current state of the application. A cookie could list the items currently in a users shopping cart or specify whether or not the user prefers dark mode. Cookies have been a target of scrutiny as they can be used in attacks. If cookies can be accessed by an outside application or by a separate malicious tab in a web browser, then can be used to gain access to a users session.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="single-sign-on-sso-_single_sign_on_sso">
-						<title>7.3.9. Single Sign On (SSO) {#_single_sign_on_sso}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="single-sign-on-sso">
+						<title>7.3.9. Single Sign On (SSO)</title>
+
 						<p>
 						Given the ubiquitous nature of web applications, maintaining separate usernames and passwords can be difficult for users. A recent trend has been to support Single Sign On, where one identity provider is used to confirm that users are who they claim to be. There are a few protocols that make this possible, including SAML and OAuth.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						SAML stands for Security Assertion Markup Language and is an XML based Single Sign On solution. The SAML workflow centers around the SAML identity provider or IDP. The following steps take place to grant access to a resource via SAML:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="olist arabic"-->
+
 						<p>
 							<ol>
 								<li>
 									<p>
-												User accesses a sevice
+												User accesses a service.
 											</p>
 								</li>
 								<li>
 									<p>
-												User is redirected to SAML IDP with SAML request
+												User is redirected to SAML IDP with SAML request.
 											</p>
 								</li>
 								<li>
 									<p>
-												User logs in
+												User logs in.
 											</p>
 								</li>
 								<li>
 									<p>
-												Credentials are verified
+												Credentials are verified.
 											</p>
 								</li>
 								<li>
 									<p>
-												SAML IDP sends credentials to the service
+												SAML IDP sends credentials to the service.
 											</p>
 								</li>
 							</ol>
 						</p>
-						<!--</div attr= class="olist arabic">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						OpenID is another protocol that allows users to authenticated using a third-party identity provider in a similar fashion to SAML. One of the main differences is that OpenID was designed to be decentralized, allowing for multiple IDPs for users to choose from. In February 2014 OpenID introduced OpenID Connect (OIDC), a more modern system that allows IDPs to provide information about users via a REST API. This move was largely in response to the popularity of OAuth.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						OAuth is a method for allowing websites to access parts of a user’s profile with the user’s permission. OAuth is not 
 							<em>technically</em> a full-fledged authentication protocol, but it is often used as part of one. The following diagram highlights the differences between OpenID authentication and an OAuth flow:
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="imageblock text-center"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="oauth.svg"/>
 							<caption>oauth</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:OpenIDvs.Pseudo-AuthenticationusingOAuth.svg">OpenID vs. Pseudo-Authentication using OAuth</url> by 
 							<url href="https://commons.wikimedia.org/wiki/File:OpenIDvs.Pseudo-AuthenticationusingOAuth.svg">Perhelion</url> used under 
 							<url href="https://commons.wikimedia.org/wiki/File:OpenIDvs.Pseudo-AuthenticationusingOAuth.svg">CC0 1.0</url>
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock text-center">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="kerberos-_kerberos">
-						<title>7.3.10. Kerberos {#_kerberos}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="kerberos">
+						<title>7.3.10. Kerberos</title>
+
 						<p>
 						Kerberos is an authentication protocol for client server connections. It was developed by MIT in the 1980s and is most largely deployed on Windows networks, but many Linux distributions support using it for authentication as well. Kerberos makes extensive use of time-based tickets and as such all client participating must have their clocks in sync. When functioning correctly, Kerberos allows for full authentication on an untrusted network.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Kerberos makes use of many different services and concepts to perform its duties. Some of these services may run on the same machine and they are almost always abbreviated:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="dlist"-->
+
 						<dl>
 							<dt>Authentication Server (AS)</dt>
 							<dd>
@@ -644,74 +525,55 @@
 					</p>
 							</dd>
 						</dl>
-						<!--</div attr= class="dlist">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						To sign in and client reaches out to the AS which gets a TGT from the TGS running on the KDC and gives it to the client. The client gets the SPN of the service it wants to utilize and sends it along with the TGT to the TGS. Assuming the client has permission to access the service the TGS issues a ticket and session to the client. The ticket is then used to connect to the service.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="sidebarblock"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="title"-->
+
 						<p>
 						Golden Ticket
 					</p>
-						<!--</div attr= class="title">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						A dangerous attack against Kerberos authentication exists and goes by the name 
 							<em>Golden Ticket</em>. TGTs are the cornerstone of Kerberos security and the Golden Ticket exploit targets them specifically.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Using the fully qualified domain name, security identifier, username of an account, and a KRBTGT password hash an attacker can create their own TGTs that will grant access to services. The KRBTGT account is an account that Windows machines use to perform Kerberos administrative tasks. The KRBTGT password hash can be obtained from any machine where that account was used if the attacker has complete access to the files on the hard drive. This may be done with physical access or through the use of malware on a victim machine.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						An attacker will only be able to forge TGTs until the KRBTGT account password is changed, 
 							<url href="https://blog.quest.com/what-is-krbtgt-and-why-should-you-change-the-password/">so a common remediation strategy is to change the password</url>. Ultimately the administrator will need to determine how the KRBTGT password hash was obtained in the first place.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="sidebarblock">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
-					<paragraphs xml:id="tokenization-_tokenization">
-						<title>7.3.11. Tokenization {#_tokenization}</title>
-						<!-- div attr= class="paragraph"-->
+					<paragraphs xml:id="tokenization">
+						<title>7.3.11. Tokenization</title>
+
 						<p>
 						Tokenization may be used as part of an access control scheme to protect sensitive information. Information that would be highly valuable if compromised is replaced with a random token known to the parties involved in the transaction. In a typically scenario once the tokens have been established, only the token is sent out over an untrusted network.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Imagine you don’t want your credit card number exposed to merchants. One solution would be if you used a payment service that issued you a new credit card number for each transaction. This credit card number would only be valid for a single transaction and would be billed to your regular credit card (which the payment service would have access to). In this case the token is the one-time-use credit card number and the sensitive information is your actual credit card number. Payment services like ApplePay and GoogleWallet do exactly this.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
 					</paragraphs>
 				</section>
 				<section xml:id="lab-linux-file-permissions">
 					<title>7.4. Lab: Linux File Permissions</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					In this lab we are going to explore UNIX style file permissions and determine what they can do and why they are limited. Finally we will see how Linux ACLs provide more flexibility in assigning permissions.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					We will be working in a vanilla Ubuntu container and installing software and adding users manually. Let’s start up the container, install the packages we need, and add some users to work with:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>C:\Users\rxt1077\it230\docs&gt;docker run -it ubuntu bash
 root@11ce9e5ee80e:/# apt-get update
 &lt;snip&gt;
@@ -736,17 +598,13 @@ root@11ce9e5ee80e:/# useradd alice
 root@11ce9e5ee80e:/# useradd bob
 root@11ce9e5ee80e:/# useradd carol
 root@11ce9e5ee80e:/# useradd dave</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Traditional UNIX file permissions support user and group ownership of a file. Read, write, and execute permissions for a file can be set for the user, group, or others. You can view the permissions of a file with the 
 						<c>ls -l</c> command. Let’s make home directories for Alice, Bob, and Carol and view the default permissions:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/# cd home
 root@11ce9e5ee80e:/home# mkdir alice bob carol
 root@11ce9e5ee80e:/home# ls -l
@@ -754,25 +612,20 @@ total 12
 drwxr-xr-x 2 root root 4096 Oct 28 01:28 alice
 drwxr-xr-x 2 root root 4096 Oct 28 01:28 bob
 drwxr-xr-x 2 root root 4096 Oct 28 01:28 carol</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					The text 
 						<c>drwxr-xr-x</c> tells us that these files are directories, the owner has read/write/execute permission, the group has read/execute permission, and other users have read/execute permission. It is important to note that execute permissions are required for viewing the contents of a directory.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Files owners and a groups are set with the 
 						<c>chown</c> command, following the format 
 						<c>chown &lt;user&gt;.&lt;group&gt; &lt;filename&gt;</c>. Let’s try to use this command to make the home directories of alice, bob, and carol private:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# chown alice.alice alice
 root@11ce9e5ee80e:/home# chown bob.bob bob
 root@11ce9e5ee80e:/home# chown carol.carol carol
@@ -781,9 +634,7 @@ total 12
 drwxr-xr-x 2 alice alice 4096 Oct 28 01:28 alice
 drwxr-xr-x 2 bob   bob   4096 Oct 28 01:28 bob
 drwxr-xr-x 2 carol carol 4096 Oct 28 01:28 carol</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					When a user is added to a UNIX system with the 
 						<c>useradd</c> command a group with their name is created. This allows us to pass a group to 
@@ -792,17 +643,13 @@ drwxr-xr-x 2 carol carol 4096 Oct 28 01:28 carol</pre>
 						<c>ls</c> on each of the directories:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# su dave (1)
 $ ls alice
 $ ls bob
 $ ls carol
 $ exit</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -817,8 +664,7 @@ $ exit</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					The 
 						<c>ls</c> command was successful even though there were no files to look at. If we weren’t able to view the contents, we would have received a permission denied error. The 
@@ -834,9 +680,7 @@ $ exit</pre>
 						<c>chmod</c> to actually make these home directories private:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# chmod u=rwx,g=,o= alice
 root@11ce9e5ee80e:/home# chmod u=rwx,g=,o= bob
 root@11ce9e5ee80e:/home# chmod u=rwx,g=,o= carol
@@ -845,15 +689,11 @@ total 12
 drwx------ 2 alice alice 4096 Oct 28 01:28 alice
 drwx------ 2 bob   bob   4096 Oct 28 01:28 bob
 drwx------ 2 carol carol 4096 Oct 28 01:28 carol</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Things look much better, but let’s test it and see if Dave can view any of the directories:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# su dave
 $ ls alice
 ls: cannot open directory 'alice': Permission denied
@@ -862,40 +702,33 @@ ls: cannot open directory 'bob': Permission denied
 $ ls carol
 ls: cannot open directory 'carol': Permission denied
 $ exit</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Lastly, lets make sure that Alice can view the contents of her home directory:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# su alice
 $ ls alice
 $ exit</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Looks good!
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
+						
+					
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Using your first name (all | | | lowercase) add yourself as a user | | | and create a home directory for | | | yourself. Set the permissions | | | such that only you can view the | | | contents. Show the permissions of | | | the home directory and | | | demonstrate that another user | | | 
-						<em>cannot</em> view its contents. Take | | | a screenshot showing all of this | | | and submit this as one of your | | | deliverables. | | | ::: | +———————————–+———————————–+
+					Using your first name (all lowercase) add yourself as a user and create a home directory for yourself. Set the permissions such that only you can view the contents. Show the permissions of the home directory and demonstrate that another user cannot view its contents. Take a screenshot showing all of this and submit this as one of your deliverables.
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+					</question>
+
 					<p>
 					Unfortunately traditional UNIX file permissions often do not provide the granularity needed in a modern system. For example, lets assume that we wanted a web server to be able to view the contents of Alice, Bob, and Carol’s home directories. This is typically done to allow users to place a 
 						<c>public_html</c> directory in their home directory and set up a personal web space. We could do this by making their home directories viewable by others, but then we have the same issue we started with. We could also do this by changing the group ownership of their home directories to a group that the web server is part of, but then we open up the home directories to any other users or services that are part of that group.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					The solution to this problem is to use Linux ACLs, which allow you to fine tune permissions. Two commands, 
 						<c>setfacl</c> and 
@@ -903,9 +736,7 @@ $ exit</pre>
 						<c>setfacl</c> command to explicitly give the http user read and execute permissions to all three directories, list the new permissions, and list the new ACLs:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@11ce9e5ee80e:/home# useradd http
 root@11ce9e5ee80e:/home# setfacl -m u:http:rx alice bob carol
 root@11ce9e5ee80e:/home# ls -l
@@ -940,9 +771,7 @@ user:http:r-x
 group::---
 mask::r-x
 other::---</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -956,23 +785,20 @@ other::---</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Take a screenshot showing that | | | the http user has access to each | | | directory. | | | ::: | +———————————–+———————————–+
+					Take a screenshot showing that the http user has access to each directory.
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+			</question>
+
 					<p>
 					When you are done, you can type exit to exit bash and stop the container.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
 				<section xml:id="access-controls-review">
 					<title>7.5. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
+
 					<p>
 						<ol>
 							<li>
@@ -992,11 +818,7 @@ other::---</pre>
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
+
 				</section>
 
 </chapter>
