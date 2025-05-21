@@ -569,20 +569,21 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 					
 					<table>
 						<title>Table 1. IP Addresses Used</title>
+						<tabular halign="center">
 						<col width="50%" />
 							<row header="yes">
 								<cell halign="left">Name</cell>
 								<cell halign="left">IP Address</cell>
 							</row>
-							<row class="odd">
+							<row >
 								<cell halign="left">server</cell>
 								<cell halign="left">172.20.0.5</cell>
 							</row>
-							<row class="even">
+							<row >
 								<cell halign="left">victim</cell>
 								<cell halign="left">172.20.0.6</cell>
 							</row>
-							<row class="odd">
+							<row >
 								<cell halign="left">attacker</cell>
 								<cell halign="left">172.20.0.7</cell>
 							</row>
