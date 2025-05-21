@@ -21,9 +21,14 @@
 						<title>9.1.1. MITRE {#_mitre}</title>
 						<!-- div attr= class="imageblock left"-->
 						<!-- div attr= class="content"-->
-						<figure>
-							<image source="mitre.svg"/>
-							<caption>mitre</caption>
+						<figure xml:id="fig-mitre">
+						<caption>mitre</caption>
+						<image source="mitre.svg">
+							<shortdescription>The logo of The MITRE Corporation.</shortdescription>
+							<description>
+							<p>The image displays the logo of The MITRE Corporation. It features the word "MITRE" in all capital letters.</p>
+							</description>
+						</image>
 						</figure>
 						<!--</div attr= class="content">-->
 						<!-- div attr= class="title"-->
