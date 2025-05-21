@@ -46,9 +46,22 @@
 				<section xml:id="layered-security">
 					<title>6.2. Layered Security</title>
 
-					<figure>
-						<image source="layers.svg"/>
-						<caption>layers</caption>
+					<figure xml:id="fig-layers">
+					<caption></caption>
+					<image source="layers.svg">
+						<shortdescription>Diagram illustrating a conceptual layered security model with six distinct levels of defense.</shortdescription>
+						<description>
+						<p>The diagram displays a stacked representation of a layered security approach, commonly known as defense in depth. It consists of six horizontal rectangular blocks, each denoting a specific layer of security.</p>
+						<p>The layers are numbered and labeled as follows from the base upwards:
+						Layer 0 is "Operating System."
+						Layer 1 is "Antivirus."
+						Layer 2 is "Antimalware."
+						Layer 3 is "Firewall."
+						Layer 4 is "Intrusion Detection System."
+						Layer 5, at the top, is "Human Monitoring."
+						This visualization demonstrates how multiple security measures are combined to provide comprehensive protection.</p>
+						</description>
+					</image>
 					</figure>
 
 					<p>
@@ -114,10 +127,16 @@
 					</paragraphs>
 					<paragraphs xml:id="proxy">
 						<title>6.3.2. Proxy</title>
-
-						<figure>
-							<image source="tls-proxy.svg"/>
-							<caption>tls proxy</caption>
+						<figure xml:id="fig-tls-proxy">
+						<caption></caption>
+						<image source="tls-proxy.svg">
+							<shortdescription>Diagram illustrating the operational flow of a TLS decrypting proxy between a user and a server.</shortdescription>
+							<description>
+							<p>The diagram, titled "TLS Decrypting Proxy," depicts three components in a row: a "User" on the left, a "Proxy" in the center, and a "Server" on the right. </p>
+							<p>Bidirectional arrows labeled "encrypted traffic" connect the "User" to the "Proxy," and the "Proxy" to the "Server." This signifies that data exchanged between the user and proxy, and between the proxy and server, is encrypted.</p>
+							<p>Above the "Proxy" component, a circular flow of actions is illustrated with arrows: Traffic arriving at the proxy is first "Decrypt(ed)," then "Inspect(ed)," and finally "Re-encrypt(ed)" before being sent onwards. This cycle highlights the proxy's capability to intercept, examine, and then re-secure TLS traffic.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
@@ -255,12 +274,21 @@
 				</section>
 				<section xml:id="siem">
 					<title>6.8. SIEM</title>
-
-					<figure>
-						<image source="seim.svg"/>
-						<caption>seim</caption>
+					<figure xml:id="fig-seim">
+					<caption>seim</caption>
+					<image source="seim.svg">
+						<shortdescription>Diagram illustrating a Security and Information Event Management (SIEM) system aggregating data from multiple security and network sources.</shortdescription>
+						<description>
+						<p>The diagram depicts a central rectangular component labeled "[S]ecurity and [I]nformation [E]vent [M]anagement," with the initial letters S, I, E, M bracketed to emphasize the acronym SIEM. This box represents the SIEM system.</p>
+						<p>Arrows point from various external sources towards this central SIEM box, symbolizing the collection of log and event data. These sources, labeled around the SIEM, are:
+						From the top: "Firewalls" and "Servers."
+						From the left: "Workstations" and "Routers."
+						From the right: "Switches" and "Proxies."
+						From the bottom: "IPS" (Intrusion Prevention System) and "DMARC" (Domain-based Message Authentication, Reporting, and Conformance).</p>
+						<p>This visualization highlights the function of a SIEM in centralizing and processing security-related information from diverse components within an IT infrastructure.</p>
+						</description>
+					</image>
 					</figure>
-
 					<p>
 					Security and Information Event management is a system for real-time monitoring of security information. Typically a SIEM system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
 				</p>
