@@ -18,10 +18,10 @@
 					<p>
 					By using a secure and 
 						<em>confidential</em> encrypted channel we can be sure that anyone who intercepts our communications cannot "listen in." This helps prevents 
-						<em>man-in-the-middle (MITM)</em> attacks. Cryptography can also be used to provide 
+						<idx>man-in-the-middle</idx><term>man-in-the-middle (MITM)</term> attacks. Cryptography can also be used to provide 
 						<em>integrity</em>: proving that the data is valid. With cryptography you can provide a 
 						<em>signature</em> for the data showing that the person who claims to have sent it really did send it. Cryptography also allows for 
-						<em>non-repudiation</em> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
+						<idx>non-repudiation</idx><term>non-repudiation</term> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
 						<em>without</em> storing passwords in plaintext. This is critical in an age where data breaches are increasingly common.
 					</p>
 				
@@ -778,9 +778,9 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</p>
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What would the anagram hash of | | | "AlwaysDancing" be? | | | ::: | +———————————–+———————————–+
-				</p>
+					
+                    <question><p>What would the anagram hash of "AlwaysDancing" be?</p></question>
+				
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -882,11 +882,13 @@ root@8e0962021f85:/(2)</pre>
 					</table>
 					<!--</div attr= class="colist arabic">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What is the md5sum of | | | 
-						<c>/tmp/name.txt</c>? | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					
+                    <question>
+                    <p>
+                      What is the md5sum of <c>/tmp/name.txt</c>?
+                    </p>  
+                    </question>
+					
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -971,19 +973,16 @@ Session completed</pre>
 					<!--</div attr= class="content">-->
 					<!--</div attr= class="listingblock">-->
 					<!-- div attr= class="admonitionblock note"-->
-					<table>
-						<title></title>
-						<tabular>
-							<row class="odd">
-								<cell halign="left"></cell>
-								<cell halign="left">Once john has cracked a password it will not show it if you run it again. To 
-									<em>show</em> the passwords that have already been cracked you must run the 
-									<c>--show</c> command with the file: 
-									<c>john --show /etc/shadow</c>
-								</cell>
-							</row>
-						</tabular>
-					</table>
+					
+            <note>
+                <p>Once john has cracked a password it will not show it if you run it again. To 
+				    <em>show</em> the passwords that have already been cracked you must run the 
+					<c>--show</c> command with the file: 
+					<c>john --show /etc/shadow</c>
+                </p>    
+            </note>
+                    
+								
 					<!--</div attr= class="admonitionblock note">-->
 					<!-- div attr= class="paragraph"-->
 					<p>
@@ -1055,11 +1054,10 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 					</table>
 					<!--</div attr= class="colist arabic">-->
 					<!-- div attr= class="admonitionblock important deliverable"-->
-					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Submit a screenshot with your lab | | | showing that the output of the | | | 
-						<c>crypt</c> command matches the hash | | | in /etc/shadow | | | ::: | +———————————–+———————————–+
-				
-					</p>
+					
+                    <question><p>Submit a screenshot with your lab showing that the output of the
+						<c>crypt</c> command matches the hash in /etc/shadow</p></question>
+
 					<!--</div attr= class="admonitionblock important deliverable">-->
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
