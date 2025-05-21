@@ -11,11 +11,12 @@
 
 				<section xml:id="security-organizations">
 					<title>9.1. Security Organizations</title>
-
+					<introduction>
+									
 					<p>
-					We have looked at many of these security ogranizations already, but we talk about them in more depth here. These organizations create the analysis frameworks and vulnerability lists that security specialists use to respond to an incident.
+					We have looked at many of these security organizations already, but we talk about them in more depth here. These organizations create the analysis frameworks and vulnerability lists that security specialists use to respond to an incident.
 				</p>
-
+				</introduction>
 					<subsection xml:id="mitre">
 						<title>9.1.1. MITRE</title>
 
@@ -111,11 +112,11 @@
 				</section>
 				<section xml:id="incidents">
 					<title>9.3. Incidents</title>
-
+					<introduction>
 					<p>
 					Incidents are part of working at an SOC, they will occur. The best SOCs may spot them before they’re an issue (or an incident even) and have practice how to respond and recovery. The goal is to maintain continuity of services provided even if an incident occurs.
 				</p>
-
+				</introduction>
 					<subsection xml:id="precursors">
 						<title>9.3.1. Precursors</title>
 	
@@ -139,11 +140,11 @@
 				</section>
 				<section xml:id="response">
 					<title>9.4. Response</title>
-
+					<introduction>
 					<p>
 					In the response phase, the SOC deals with an incident to mitigate the harm it causes. Every incident is different, but the governing principles and steps are the same.
-				</p>
-
+					</p>
+					</introduction>
 					<subsection xml:id="business-continuity">
 						<title>9.4.1. Business Continuity</title>
 
@@ -239,27 +240,46 @@
 						<p>
 						Redundant services can help with continuity by making sure there is always an uncompromised service available. The key concepts of redundancy are detailed within the language it uses:
 					</p>
-
-					<p><idx>redundancy</idx>
-						<term>Redundancy</term>: extra components/services that run in case of failures.
+					
+				<p>
+					<ul>
+							<li>
+					<p>
+						<idx>redundancy</idx>
+						<term>Redundancy</term>: extra components/services that run in case
+						 of failures.
 					</p>
+				</li>
 
-								<p><idx>failover</idx>
+				<li>
+					<p>
+						<idx>failover</idx>
 						<term>Failover</term>: the process of turning over to a secondary device
+					
 					</p>
-								<p><idx>high availability</idx><idx>HA</idx>
+			</li>
+							
+			<li>
+				<p>
+					<idx>high availability</idx><idx>HA</idx>
 						<term>High availability (HA)</term>: ensures high level of operation performance
 					</p>
-
-						<p><idx>fault tolerance</idx>
+				</li>	
+				<li>
+					<p>
+						<idx>fault tolerance</idx>
 						<term>Fault tolerance</term>: allows a system to continue in the event of a failure
 					</p>
-
-					<p><idx>single point of failure</idx><idx>SPOF</idx>
+				</li>
+				<li>
+					<p>
+						<idx>single point of failure</idx><idx>SPOF</idx>
 						<term>Single Point of Failure</term> (<term>SPOF</term>): a single failure that can cause an outage
 					</p>
-
-						<subsection xml:id="hot-cold-warm">
+				</li>
+			</ul>
+				</p>
+						<example xml:id="hot-cold-warm">
 							<title>Hot, Cold, &amp; Warm</title>
 							<p>
 							One typical way to implement redundancy is through the use of hot, cold, and warm sites.
@@ -276,9 +296,11 @@
 							<p>
 							A warm site is a secondary location with all equipment and connectivity. The equipment will still need to be turned on and made production ready, but it will not take as long to failover to a warm site as a cold one.
 						</p>
+						<p>
+						</p>
 
-						</subsection>
-						<subsection xml:id="raid">
+					</example>
+						<example xml:id="raid">
 							<title>RAID</title>
 
 							<p>
@@ -321,7 +343,7 @@
 								</ul>
 							</p>
 
-						</subsection>
+						</example>
 					</subsection>
 					<subsection xml:id="isolation-and-containment">
 						<title>9.4.3. Isolation and Containment</title>
@@ -370,6 +392,7 @@
 				</section>
 				<section xml:id="mitre-attack-framework">
 					<title>9.5. MITRE ATT&amp;CK Framework</title>
+					<introduction>
 					<p>
 					In the 
 						<url href="index.html#_malware">Malware</url> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
@@ -380,7 +403,7 @@
 					<p>
 					Developed in 2013, the ATT&amp;CK framework is a modern way of looking at an incident that can help drive decision making regarding response and continuity.
 				</p>
-
+				</introduction>
 					<subsection xml:id="reconnaissance">
 						<title>9.5.1. Reconnaissance</title>
 
@@ -505,8 +528,22 @@
 
 					</subsection>
 				</section>
+				<section xml:id="lab-reporting-on-the-2014-sony-pictures-hack">
+					<title>Lab: Reporting on the 2014 Sony Pictures Hack</title>
+
+					<p>
+					Take a moment to read through the details of the 
+						<url href="https://en.wikipedia.org/wiki/Sony_Pictures_hack">2014 Sony Pictures Hack</url>. Feel free to research an used other sources as well. Imagine you are responsible for disclosing the details of the attack to affected parties shortly after it had occurred.
+				
+					</p>
+					<question>
+					<p>
+					Come up with two different groups that should receive a disclosure from Sony as a result of the 2014 breach. Write a disclosure email for each of them, detailing what happened, what the response was, and what the effect of the party is. Be sure to keep your audience in mind when determining how much detail and what types of things should be discussed in the email.
+				</p>
+				</question>
+				</section>
 				<section xml:id="incident-review">
-					<title>9.6. Review Questions</title>
+					<title>Review Questions</title>
 					<p>
 						<ol>
 							<li>
@@ -530,21 +567,4 @@
 					</p>
 
 				</section>
-				<section xml:id="lab-reporting-on-the-2014-sony-pictures-hack">
-					<title>9.7. Lab: Reporting on the 2014 Sony Pictures Hack</title>
-
-					<p>
-					Take a moment to read through the details of the 
-						<url href="https://en.wikipedia.org/wiki/Sony_Pictures_hack">2014 Sony Pictures Hack</url>. Feel free to research an used other sources as well. Imagine you are responsible for disclosing the details of the attack to affected parties shortly after it had occurred.
-				
-					</p>
-					<question>
-						
-					
-					<p>
-					Come up with two different groups that should receive a disclosure from Sony as a result of the 2014 breach. Write a disclosure email for each of them, detailing what happened, what the response was, and what the effect of the party is. Be sure to keep your audience in mind when determining how much detail and what types of things should be discussed in the email.
-				</p>
-				</question>
-				</section>
-
 </chapter>
