@@ -11,18 +11,10 @@
 
 				<section xml:id="why-do-we-need-cryptography">
 					<title>2.1. Why do we need cryptography?</title>
-					<!-- div attr= class="paragraph"-->
-					<introduction>
-						
-							
-			
 					<p>
-					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, 
-						<em>and</em> accounting (AAA).
-				
+					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, <em>and</em> accounting (AAA).
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					By using a secure and 
 						<em>confidential</em> encrypted channel we can be sure that anyone who intercepts our communications cannot "listen in." This helps prevents 
@@ -32,58 +24,48 @@
 						<em>non-repudiation</em> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
 						<em>without</em> storing passwords in plaintext. This is critical in an age where data breaches are increasingly common.
 					</p>
-				</introduction>
 				
-					<subsection xml:id="case-study-equifax">
+					<example xml:id="case-study-equifax">
       				<title>Case Study: Equifax</title>
-					
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="paragraph"-->
+					<p>
+					</p>
 					<p>
 						<url href="https://www.ftc.gov/enforcement/cases-proceedings/refunds/equifax-data-breach-settlement">In September of 2017, Equifax announced a data breach the exposed the personal information of 147 million people.</url> The original attack made use of an exploit in an outdated version of 
 						<url href="https://struts.apache.org/">Apache Struts</url> which was being used as part of Equifax’s system for handling credit disputes from customers. Once the attackers had gained access to internal Equifax servers, the began gathering as much information as they could from internal databases.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					What is particularly egregious about this data breach is that passwords in many databases were stored in plaintext. This means that the attackers were able to try the passwords and usernames on other services. While it is important that users use different passwords for different services it is far more disturbing that a company as large as Equifax did not have the policies in place to use cryptography to mitigate the risks from such an enormous breach.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="sidebarblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
-				</subsection>
+
+			</example>
 				</section>
 				<section xml:id="terminology">
 					<title>2.2. Terminology</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Going forward, it is important to address some common cryptography terms as they will be used frequently:
 				</p>
-					<p><term>Plaintext</term>: <url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext</p>
+					<p><idx>plaintext</idx><term>Plaintext</term>: <url href="https://en.wikipedia.org/wiki/Plaintext">unencrypted information</url>, data that is "in clear", or cleartext.</p>
 
-					<p><term>Cipher</term>: <url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption</url></p>
+					<p><idx>cipher</idx><term>Cipher</term>: <url href="https://en.wikipedia.org/wiki/Cipher">an algorithm for performing encryption or decryption.</url></p>
 
-					<p><term>Ciphertext</term>: data that has undergone encryption</p>
+					<p><idx>ciphertext</idx><term>Ciphertext</term>: data that has undergone encryption.</p>
 
-					<p><term>Cryptographic algorithm</term>: a series of steps to follow to encrypt or decrypt data</p>
+					<p><idx>cryptographic algorithm</idx><term>Cryptographic algorithm</term>: a series of steps to follow to encrypt or decrypt data.</p>
 
-					<p><term>Public key</term>: information (typically a byte array) that can be used to encrypt data such that only the owner of the matching <em>private key</em> can decrypt it</p>
+					<p><idx>public key</idx><term>Public key</term>: information (typically a byte array) that can be used to encrypt data such that only the owner of the matching <em>private key</em> can decrypt it.</p>
 
-					<p><term>Private (secret) key</term>: information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key</p>
+					<p><idx>private (secret) key</idx><term>Private (secret) key</term>: information (typically a byte array) that can be used to decrypt data encrypted using the corresponding public key.</p>
 					
+					<example>
+					<title>Caesar Cipher</title>
 					<p>
-					Example 1. Caesar Cipher
-				</p>
-					<!--</div attr= class="title">-->
-					<!-- div attr= class="content"-->
-					<!-- div attr= class="paragraph"-->
+					</p>
 					<p>
 					One of the most basic examples of encryption is the Caesar cipher, or substitution cipher. It is easy to understand, compute, and trivial to crack. Let’s create a table that maps every letter in the alphabet to a different letter:
 				</p>
-					<!--</div attr= class="paragraph">-->
 					<table>
 						<title></title>
 						<tabular>
@@ -145,23 +127,16 @@
 							</row>
 						</tabular>
 					</table>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now creating a message is simple a matter of performing the substitutions. For example, 
 						<c>HELLO WORLD</c> becomes 
 						<c>UXIIO ZOEIQ</c>.
-				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
 					<p>
 					While this is simple to understand and set up, it is also very easy to break. You could use a frequency attack, where you analyze a large chunk of encrypted text knowing that certain letters are more frequent than others. By matching up the most frequently used ciphertext letters with their standard English equivalents you may quickly reach a solution. You could also go through all permutations of the alphabet (4E26) and see what gives you the most English words. The second attack is made much more feasible through computing.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="exampleblock">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+			</example>
 				</section>
 				<section xml:id="keys">
 					<title>2.3. Keys</title>
