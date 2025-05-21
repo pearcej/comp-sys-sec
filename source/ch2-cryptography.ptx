@@ -307,8 +307,9 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="paragraph">-->
 					<!-- div attr= class="exampleblock"-->
 					<!-- div attr= class="title"-->
-					<p>
-					Example 2. One-time-pad
+				<example>
+                    <title>One-time-pad</title>
+                    <p>	
 				</p>
 					<!--</div attr= class="title">-->
 					<!-- div attr= class="content"-->
@@ -336,7 +337,9 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<!--</div attr= class="exampleblock">-->
 					<!--</div attr= class="sect2">-->
 					<!-- div attr= class="sect2"-->
-				</section>
+				</example>
+                </section>
+                
 				<section xml:id="asymmetric-encryption">
 					<title>2.7. Asymmetric Encryption</title>
 					<!-- div attr= class="imageblock"-->

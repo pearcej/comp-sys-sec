@@ -11,23 +11,26 @@
 
 				<section xml:id="methods">
 					<title>10.1. Methods</title>
-					<!-- div attr= class="paragraph"-->
+					<introduction>
 					<p>
 					Virtualization is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, emulating the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in isolated environments without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="virtual-machines-_virtual_machines">
-						<title>10.1.1. Virtual Machines {#_virtual_machines}</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
-						<figure>
-							<image source="vm.svg"/>
-							<caption>vm</caption>
+			</introduction>
+					<subsection xml:id="virtual-machines">
+						<title>10.1.1. Virtual Machines</title>
+
+						<figure xml:id="fig-vm">
+						<caption>Figure 10.1.1. vm</caption>
+						<image source="vm.svg">
+							<shortdescription>Comparison of Virtual Machine deployment and Container deployment architectures.</shortdescription>
+							<description>
+							<p>The diagram presents a side-by-side comparison of two deployment models: "Virtual Machine Deployment" on the left and "Container Deployment" on the right. Both models start with "Actual Hardware (bare metal)" at the base.</p>
+							<p>The "Virtual Machine Deployment" model shows a stack beginning with Actual Hardware, then a Host OS (comprising an OS Kernel and OS Userspace), followed by VM Software (hypervisor). Above this, a Guest OS (with its own OS Kernel and OS Userspace) is depicted, which in turn runs the Application.</p>
+							<p>The "Container Deployment" model also starts with Actual Hardware and a Host OS (including an OS Kernel and OS Userspace). However, it then shows a Container Runtime directly above the Host OS, upon which the Application runs. This model does not include a separate Guest OS kernel.</p>
+							<p>Arrows indicate the layered dependencies in each model, illustrating that Virtual Machines include a full Guest OS, while Containers share the Host OS kernel and run applications via a Container Runtime.</p>
+							</description>
+						</image>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						A virtual machine is a resource that uses software to 
 							<em>pretend</em> to be an entire physical computer. Virtual machines emulate hardware on which a 
@@ -36,220 +39,179 @@
 							<em>host</em> operating system.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Virtual machines afford a great deal of flexibility in how something is run. The machine can be paused, restarted, or even have snapshots of its current state stored. Some virtual machines do not even required elevated privileges to run, meaning you can emulate a privileged environment within an unprivileged one. This makes them a great choice for sandboxing untrusted programs.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Unfortunately virtual machines are quite resource intensive due to the fact they require virtualizing the entire operating system. This resource use problem and the increasing popularity of virtualization led to the creation of more light-weight solutions such as containers.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="containers-_containers">
-						<title>10.1.2. Containers {#_containers}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="containers">
+						<title>10.1.2. Containers</title>
 						<p>
 						A container simplifies the VM by using the same operating system kernel as the host. This is accomplished by using special features of the Linux kernel to isolate the container. 
 							<url href="https://man7.org/linux/man-pages/man7/namespaces.7.html">Linux namespaces</url> controlled by 
 							<url href="https://man7.org/linux/man-pages/man7/cgroups.7.html">cgroups</url> allow a daemon (Docker, podman, etc.) to make an environment where the application has limited access to the full system. Typically containers are used to run a single application as if it were running all by itself on an actual host. This makes it easier to deploy the unique environments that some applications require.
-					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						The obvious security concern lies in the isolation. What happens if a container has access to another containers resources? Given that containers for rival companies may be running next to each other on the same machine in the cloud, what are the risks of having a malicious container access or disrupt another?
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="container-orchestration-systems-_container_orchestration_systems">
-						<title>10.1.3. Container Orchestration Systems {#_container_orchestration_systems}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="container-orchestration-systems">
+						<title>10.1.3. Container Orchestration Systems</title>
 						<p>
 						Containers also make it easier to restart or scale applications. Container orchestration systems leverage this by monitoring containers and bringing them up or down as needed. The most popular container orchestration system is 
 							<url href="https://kubernetes.io/">Kubernetes</url>, developed by Google to manage web applications.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+	
 						<p>
 						Given the orchestration systems create containers from images as needed, one of the obvious areas of concern is the integrity of those images. If an image registry is compromised the orchestration system will still deploy the images stored there typically making the issue far worse. Containers can also be hard to manage from a logging standpoint, which may cause compliance issues. Whereas a company may have monitored the logs of a single server in the past, they now have to monitor the logs of hundreds of containers running on a server.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="iaas-_iaas">
-						<title>10.1.4. IaaS {#_iaas}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="iaas">
+						<title>10.1.4. IaaS</title>
+
 						<p>
 						IaaS stands for infrastructure as a service and it refers to purchasing VMs or container resources from a provider. Some popular IaaS companies are Amazon Web Systems, Microsoft Azure, and Linode. Each has some basic security tools and default policies in place to help keep the purchased resources secure, but ultimately most of the security responsibility for making sure the resources are secure lies with the group purchasing the resource.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="paas-_paas">
-						<title>10.1.5. PaaS {#_paas}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="paas">
+						<title>10.1.5. PaaS</title>
+
 						<p>
 						PaaS stands for platform as a service and refers to a higher-level service that deploys an application in an already established environment running on an IaaS service. Heroku is a great example of this type of service.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Heroku supports many different applications, but they all work in relatively the same manner: Imagine there is a git repository of a Django web application that needs to be deployed. Heroku will take an Amazon EC2 instance running on AWS, clone the repo, install a Python virtual environment with the needed dependencies, and install a production Django web server on the system.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						While the user could take these steps themselves, PaaS makes it easier to deploy an application.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="saas-_saas">
-						<title>10.1.6. SaaS {#_saas}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="saas">
+						<title>10.1.6. SaaS</title>
+
 						<p>
 						Software as a service (SaaS) is a methodology that we are quite used to. SaaS takes a web application and makes it available for a subscription. Some examples would be Webex, Dropbox, Google Workspace, etc. SaaS is a popular way to monitize software.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						One of the security concerns with SaaS is that it consolidates information with a single provider. If the server running the software is compromised, the PII of millions of people may be leaked.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
-				<section xml:id="cloud-computing-_cloud_computing">
-					<title>10.2. Cloud Computing {#_cloud_computing}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="cloud-computing">
+					<title>10.2. Cloud Computing</title>
+					<introduction>
 					<p>
 					IaaS ushered in a shift from on-premises deployments of software to deployments 
 						<em>in the cloud</em> or on a IaaS resource. Information technology has seen a shift to the cloud and back again with all kinds of mixed options in between. A business may choose any of these models depending on their needs.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="sect3"-->
-					<paragraphs xml:id="public-_public">
-						<title>10.2.1. Public {#_public}</title>
-						<!-- div attr= class="paragraph"-->
+					</introduction>
+					<subsection xml:id="public">
+						<title>10.2.1. Public</title>
+
 						<p>
 						Public cloud infrastructure consists of providers like AWS who host huge data centers throughout the world and welcome anyone who can afford it to use their resources. Public cloud providers claim to be secure and may even allow for audits (typically through a third party) to meet compliance requests. Ultimately the security of the underlying public cloud infrastructure lies in the hands of the provider, something that not all companies are comfortable with.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="private-_private">
-						<title>10.2.2. Private {#_private}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="private">
+						<title>10.2.2. Private</title>
+
 						<p>
 						Private cloud takes the virtualization and automation technologies used by public cloud providers and hosts them internally. By utilizing technologies like 
 							<url href="https://www.redhat.com/en/topics/openstack">OpenStack</url> a company can take full control of their deployment and run their own cloud. This has some disadvantages for companies that may lack the servers, space, and utilities, but for companies that were already self-hosted, migrated to the public cloud, and now would like more control, private cloud is an excellent choice.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="hybrid-_hybrid">
-						<title>10.2.3. Hybrid {#_hybrid}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="hybrid">
+						<title>10.2.3. Hybrid</title>
+
 						<p>
 						Hybrid cloud uses both models, public and private, and hosts some things on public IaaS services and other on internal, private IaaS services. This can be the best of both worlds, assuming the applications being supported leverage the full advantages of their environment.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
-					</paragraphs>
-					<paragraphs xml:id="multi-cloud-_multi_cloud">
-						<title>10.2.4. Multi-Cloud {#_multi_cloud}</title>
-						<!-- div attr= class="paragraph"-->
+
+					</subsection>
+					<subsection xml:id="multi-cloud">
+						<title>10.2.4. Multi-Cloud</title>
+
 						<p>
 						Multi-cloud typically refers to utilizing more than one cloud provider. This may be required for applications that wish to remain available even if their cloud provider fails. Multi-cloud also avoids the issue of vendor lock-in, where the application is only set up to run on one provider.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						From a security standpoint, multi-cloud likely increases the attack surface of an application. You now have to be concerned with the vulnerabilities of two providers instead of just one. This must be weighed against the benefits of redundancy when deciding whether or not to utilize more than one cloud provider.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
-					</paragraphs>
+
+					</subsection>
 				</section>
-				<section xml:id="serverless-solutions-_serverless_solutions">
-					<title>10.3. Serverless Solutions {#_serverless_solutions}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="serverless-solutions">
+					<title>10.3. Serverless Solutions</title>
+
 					<p>
 					One interesting outcome of the move to virtualized technologies is the advent of 
 						<em>serverless</em> solutions. A cloud user might not want to have to admin an entire Linux server, or even a Linux container just to run their application. They may be willing to design the application to work directly within a system that the cloud provider creates.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+					<example>
 					<p>
 						<url href="https://aws.amazon.com/lambda/">Amazon Lambda</url> is an example of such a system. Users create functions which run seemingly on their own, without worrying about the underlying systems supporting them. From a security standpoint, this places a lot of trust in the provider.
-				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+					</example>
+
 				</section>
-				<section xml:id="cs-of-cloud-native-security-_4cs_of_cloud_native_security">
-					<title>10.4. 4C’s of Cloud Native Security {#_4cs_of_cloud_native_security}</title>
-					<!-- div attr= class="paragraph"-->
+				<section xml:id="cs-of-cloud-native-security">
+					<title>10.4. 4C’s of Cloud Native Security</title>
+
 					<p>
 					When reflecting on how to secure an application running in the cloud, a common tactic is to look at the four Cs involved:
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="dlist"-->
-					<dl>
-						<dt>Code</dt>
-						<dd>
-							<p>
-					How secure is the code of the application? Is it configured correctly? Is it subject to buffer overflows or other issues? If the code isn’t secure, the application never will be
+				<p>
+					<ul>
+					<li>
+					<p>
+					<term>Code</term>: How secure is the code of the application? Is it configured correctly? Is it subject to buffer overflows or other issues? If the code isn’t secure, the application never will be
 				</p>
-						</dd>
-						<dt>Container</dt>
-						<dd>
-							<p>
-					How secure is the container itself? Are there limits to what the container has access to? Does the Linux distribution on the container have known vulnerabilities? Is the code running as a privileged user on the container?
+						</li>
+						
+						<li>
+							<p><idx>container</idx>
+					<term>Container</term>: How secure is the container itself? Are there limits to what the container has access to? Does the Linux distribution on the container have known vulnerabilities? Is the code running as a privileged user on the container?
 				</p>
-						</dd>
-						<dt>Cluster</dt>
-						<dd>
-							<p>
-					The container orchestration system is going to run on a cluster, how secure is this cluster? Has the container orchestration system been configured correctly? Is the virtual network being used secure? Are its ingress and egress points mapped and monitored?
+						</li>
+						
+						<li>
+							<p><idx>cluster</idx>
+					<term>Cluster</term>: The container orchestration system is going to run on a cluster, how secure is this cluster? Has the container orchestration system been configured correctly? Is the virtual network being used secure? Are its ingress and egress points mapped and monitored?
 				</p>
-						</dd>
-						<dt>Cloud</dt>
-						<dd>
+						</li>
+						
+						<li>
 							<p>
-					Is the cloud provider you are using secure? If they have are compromised everything within them is compromised. Can you trust this computing base?
+					<term>Cloud</term>: Is the cloud provider you are using secure? If they have are compromised everything within them is compromised. Can you trust this computing base?
 				</p>
-						</dd>
-					</dl>
-					<!--</div attr= class="dlist">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+						</li>
+					</ul>
+				</p>
 				</section>
 				<section xml:id="lab-malicious-containers">
 					<title>10.5. Lab: Malicious Containers</title>
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					While containers have made it much easier to deploy software, they have also made it easier to deploy 
 						<em>malicious</em> software. Imagine that we have an internal company website, written in PHP and deployed in a Docker container. Given the layered nature of the Docker build system, this application is 
@@ -257,29 +219,22 @@
 						<c>Dockerfile</c> to see just how easy it is to slip something malicious into the image:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>FROM php:apache
 COPY shell.php /var/www/html/shell.php
 COPY index.php /var/www/html/index.php</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 						<c>shell.php</c> is a shell written in PHP that will execute with the permissions of the web server. This means it will be able to read and write (but not overwrite) in the /var/www/html directory.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Let’s download, build, and run this image. Download 
 						<url href="https://github.com/rxt1077/it230/raw/main/labs/malicious.zip">the malicious.zip file</url>, unzip it in a directory where you have write access, and navigate to that directory in your shell.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\it230\labs\malicious&gt; docker build -t malicious . (1)
 [+] Building 32.4s (8/8) FINISHED
  =&gt; [internal] load build definition from Dockerfile                                                                                                                                                        0.0s
@@ -301,13 +256,11 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
 [Wed Jul 13 02:25:57.082000 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/8.1.8 configured -- resuming normal operations
 [Wed Jul 13 02:25:57.082089 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
-						<title></title>
+						<title>Instructions</title>
 						<tabular>
-							<row class="odd">
+							<row>
 								<cell halign="left">
 									<term>1</term>
 								</cell>
@@ -316,7 +269,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 									<c>.</c> at the end!
 								</cell>
 							</row>
-							<row class="even">
+							<row>
 								<cell halign="left">
 									<term>2</term>
 								</cell>
@@ -326,38 +279,36 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now you should be able to navigate to 
 						<url href="http://localhost:8080">http://localhost:8080</url> to see the default web page.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
+						
+					
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | What’s for lunch? | | | ::: | +———————————–+———————————–+
+					What’s for lunch?
 				</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+				</question>
+
 					<p>
 					Now based on the information in the Dockerfile, get a shell on the compromised web server.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+					<question>
+						
+					
 					<p>
-					+———————————–+———————————–+ | | ::: {.paragraph} | | | Notice of the time off request on | | | the main page doesn’t work? From | | | your shell, create a new web page | | | on the server named | | | 
-						<c>timeoff.html</c> with the text | | | 
-						<c>GRANTED</c>. What command did you | | | use to make the new file? What | | | happens now when you click on the | | | time off link? | | | ::: | +———————————–+———————————–+
-				
+					Notice of the time off request on the main page doesn’t work? From your shell, create a new web page on the server named timeoff.html with the text GRANTED. What command did you use to make the new file? What happens now when you click on the time off link?
+			
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+					</question>
+
 				</section>
 				<section xml:id="virtualization-review">
 					<title>10.6. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
+
 					<p>
 						<ol>
 							<li>
@@ -378,19 +329,13 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!--</div attr= xml:id="content">-->
-					<!-- div attr= xml:id="footnotes"-->
-					<!-- Horizontal Rule Not Implimented -->
+
 					<p>
 					::: {#_footnotedef_1 .footnote} 
 						<url href="index.html#_footnoteref_1">1</url>. Talking Heads. (1977). Psycho killer [song]. On Talking Heads:77. Sire Records.
 				
 					</p>
-					<!--</div attr= xml:id="footnotes">-->
+
 					<p>
 					::: {#_footnotedef_2 .footnote} 
 						<url href="index.html#_footnoteref_2">2</url>. In actuality the code space was so small that you could even easily create a device to cycle through all possible codes in under a minute. :::
@@ -417,13 +362,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 						<url href="index.html#_footnoteref_6">6</url>. Khalaf, Emad. (2017). A Survey of Access Control and Data Encryption for Database Security. journal of King Abdulaziz University Engineering Sciences. 28. 19-30. 10.4197/Eng.28-1.2. Reproduced under license: CC BY-NC 4.0 ::: :::
 				
 					</p>
-					<!-- div attr= xml:id="footer"-->
-					<!-- div attr= xml:id="footer-text"-->
-					<p>
-					Last updated 2022-12-14 00:04:47 UTC
-				</p>
-					<!--</div attr= xml:id="footer-text">-->
-					<!--</div attr= xml:id="footer">-->
+
 				</section>
 
 </chapter>
