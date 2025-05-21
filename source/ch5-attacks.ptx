@@ -632,7 +632,7 @@ server_1    | &gt;&gt; Running: /etc/entrypoint.d/changepw.sh
 server_1    | Running /usr/sbin/sshd -D -e -f /etc/ssh/sshd_config
 server_1    | Server listening on 0.0.0.0 port 22. (2)
 server_1    | Server listening on :: port 22.</pre>
-					
+					<p>
 					 <ol>
 						<li>
 							<p>	
@@ -645,7 +645,7 @@ server_1    | Server listening on :: port 22.</pre>
 							</p>
 						</li>
 					 </ol>
-					
+					</p>
 					
 					<p>
 					In the second terminal run 
@@ -665,7 +665,7 @@ root@server's password: (1)
 You are now logged into 'server' (presumably from 'victim') via SSH for this assignment.
 Leave this connection open while you experiment with scapy from 'attacker'.
 bf9ebe42a108:~#</pre>
-
+				<p>
 					<ol>
 						<li>
 							<p>
@@ -673,7 +673,7 @@ bf9ebe42a108:~#</pre>
 							</p>
 						</li>
 					</ol>
-					
+				</p>			
 					<note>
 						<p>
 							If for some reason the password will not work and you are sure you are typing it in correctly you can run the following command 
@@ -711,7 +711,7 @@ root@5195de3d330c:/# ip addr
        valid_lft forever preferred_lft forever
     inet 172.20.0.5/32 scope global eth0 (2)
        valid_lft forever preferred_lft forever</pre>
-
+					<p>
 					 <ol>
 						<li>
 							<p>
@@ -724,7 +724,7 @@ root@5195de3d330c:/# ip addr
 							</p>
 						</li>
 					 </ol>
-					
+					</p>
 					
 					<p>
 					Now that the attacker system is configured, we’ll start up 
@@ -776,6 +776,7 @@ AutoCompletion, History are disabled.
 
 					<pre>&gt;&gt;&gt; server_ip = "172.20.0.5" (1)
 &gt;&gt;&gt; victim_ip = "172.20.0.6"</pre>
+					<p>
 					<ol>
 						<li>
 							<p>
@@ -783,7 +784,7 @@ AutoCompletion, History are disabled.
 							</p>
 						</li>
 					</ol>
-					
+				</p>
 					
 					<p>
 					Now let’s see how scapy allows us to build packets. We’ll make an Ethernet frame, with an IP packet inside it, with an ICMP echo request in that, with the data being set to our name:
@@ -860,7 +861,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 &gt;&gt;&gt; server_mac = result[0][0].src
 &gt;&gt;&gt; server_mac
 '02:42:ac:14:00:05'</pre>
-
+					<p>
 					<ol>
 						<li>
 							<p>
@@ -878,7 +879,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 							</p>
 						</li>
 					</ol>
-					
+					</p>
 					
 					<p>
 					Notice how we use this to capture the server’s MAC address and save it in the 
@@ -923,7 +924,7 @@ Received 1 packets, got 1 answers, remaining 0 packets
      pdst      = 172.20.0.7
 
 &gt;&gt;&gt; victim_mac = result[0].src</pre>
-
+					<p>
 					<ol>
 						<li>
 							<p>
@@ -931,7 +932,7 @@ Received 1 packets, got 1 answers, remaining 0 packets
 							</p>
 						</li>
 					</ol>
-					
+					</p>
 					
 					<p>
 					This is how an ARP exchange is supposed to work. We broadcast out asking what MAC we should use for a certain IP and we get a response 
@@ -992,7 +993,7 @@ bash-5.0# ssh server
 Warning: Permanently added 'server,172.20.0.5' (ECDSA) to the list of known hosts.
 root@server's password:
 #</pre>
-
+					<p>
 					 <ol>
 						<li>
 							<p>
@@ -1000,7 +1001,7 @@ root@server's password:
 							</p>
 						</li>
 					 </ol>
-					 
+					</p>
 					<p>
 					Wait, that prompt looks a little different and where’s the message about staying logged in? It turns out the victim actually signed into our fake SSH server and their username and password were logged! Take a look at the output from the terminal running 
 						<c>docker-compose up</c>, you’ll see the credentials entered:
@@ -1012,8 +1013,9 @@ root@server's password:
 				</p>
 
 					<pre>attacker_1  | 2021/10/07 01:21:41 [172.20.0.6:60252] authentication for user "root" with password "password" accepted</pre>
-					
+
 					<question>
+						<p>
 						<ol>
 							<li>
 								<p>
@@ -1033,6 +1035,7 @@ why not?
 								</p>
 							</li>
 						</ol>
+					</p>
 					</question>
 
 					<p>
