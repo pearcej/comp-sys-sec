@@ -137,8 +137,8 @@
 					<title>7.2. Physical Access</title>
 
 					<figure>
-						<image source="castle.jpg"/>
-						<caption>castle</caption>
+						<caption></caption>
+						<image source="castle.jpg" decorative="yes"/>
 					</figure>
 
 					<p>
@@ -167,8 +167,8 @@
 						<title>7.2.2. Biometrics</title>
 
 						<figure>
-							<image source="biometric.jpg"/>
-							<caption>biometric</caption>
+							<caption></caption>
+							<image source="biometric.jpg" decorative="yes"/>
 						</figure>
 
 						<p>
@@ -201,9 +201,14 @@
 						Proximity Cards
 					</p>
 
-						<figure>
-							<image source="rfid.svg"/>
-							<caption>rfid</caption>
+						<figure xml:id="fig-rfid">
+						<caption>rfid</caption>
+						<image source="rfid.svg">
+							<shortdescription>Diagram illustrating the internal components of an RFID proximity card.</shortdescription>
+							<description>
+							<p>The diagram, titled "Proximity Cards," shows the internal structure of an RFID (Radio-Frequency Identification) proximity card. The outer boundary is indicated by a dashed rectangle labeled "Card Edge." Inside, a prominent feature is a large, spiraling coil of wire, explicitly labeled with an arrow as "Antenna"; this coil occupies most of the card's internal area. Connected to the inner termination of this antenna coil is a smaller rectangular block labeled "Capacitor and IC" (Integrated Circuit). The diagram illustrates how the antenna is a key component for receiving power and transmitting the card's ID when energizing by a reader's electromagnetic field.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
@@ -236,8 +241,8 @@
 						<title>7.2.5. Cameras</title>
 
 						<figure>
-							<image source="cctv.jpg"/>
-							<caption>cctv</caption>
+							<caption></caption>
+							<image source="cctv.jpg" decorative="yes"/>
 						</figure>
 
 						<p>
@@ -276,11 +281,16 @@
 					<paragraphs xml:id="mantraps">
 						<title>7.2.6. Mantraps</title>
 
-						<figure>
-							<image source="mantrap.svg.svg"/>
-							<caption>mantrap</caption>
+						<figure xml:id="fig-mantrap">
+						<caption></caption>
+						<image source="mantrap.svg.svg">
+							<shortdescription>Diagram or illustration of a mantrap physical access control system.</shortdescription>
+							<description>
+							<p>The image shows mantraps, or a physical security mechanism designed to control access by allowing only one person to pass through at a time. This is a small enclosed space or chamber with two doors. The system ensures that the first door must close and lock before the second door can be opened. The diagram shows a top-down view of this setup, with a figure indicating the passage of an individual, to demonstrate its function in preventing unauthorized piggybacking or tailgating.</p>
+							</description>
+						</image>
 						</figure>
-		
+
 						<p>
 						A mantrap is a physical access control that requires one person at a time enter through a door. Also known as air locks, sally ports, or access control vestibules, mantraps are used to prevent tailgating, or following another person through a secured door. These devices are often used with keycards to ensure that only people who are supposed to have access to a building can get in.
 					</p>
@@ -344,9 +354,14 @@
 						From its inception, Unix was designed to be a multi-user environment, and as such, a lot of attention was paid to file permissions. Every file in a Unix system has an owner and a group. Each file also has permissions for owner, group, and all users. Permissions are set using octal numbers where each bit represents read (bit 0: 1), write (bit 1: 2), or execute (bit 2: 4) permission.
 					</p>
 
-						<figure>
-							<image source="permissions.svg"/>
-							<caption>permissions</caption>
+						<figure xml:id="fig-permissions">
+						<caption></caption>
+						<image source="permissions.svg">
+							<shortdescription>Diagram illustrating Unix file permissions (read, write, execute).</shortdescription>
+							<description>
+							<p>The image would provide a visual explanation of the Unix file permission system. This includes a breakdown of the symbolic notation (e.g., `rwx` for read, write, and execute) and how these permissions apply to the three categories of users: owner, group, and others. It also illustrates the octal (numeric) representation of these permissions (e.g., 4 for read, 2 for write, 1 for execute) and how they combine to form a complete permission.</p>
+							</description>
+						</image>
 						</figure>
 						<p>
 						For example, if you wanted a read and execute permission the number would be 5 (1 + 4). Read and write permission would be 3 (1 + 2).
@@ -470,9 +485,17 @@
 					
 						</p>
 
-						<figure>
-							<image source="oauth.svg"/>
-							<caption>oauth</caption>
+						<figure xml:id="fig-oauth">
+						<caption>oauth</caption>
+						<image source="oauth.svg">
+							<shortdescription>Diagram comparing OpenID Authentication with Pseudo-Authentication using OAuth, illustrating metaphorical credential exchanges with an identity/API provider.</shortdescription>
+							<description>
+							<p>The diagram is divided into two horizontal panels, contrasting "OpenID Authentication" (top) and "Pseudo-Authentication using OAuth" (bottom), with an Android application, a user icon, and a Google building icon representing the provider in each flow.</p>
+							<p>In the "OpenID Authentication" panel, the Android app asks the user for a "notarized referral letter." The user requests this from "Google - The Identity Provider," specifically asking for a referral stating "I'm user@gmail." Google issues a "certificate" (detailing "name: Real Name, email: user@gmail, notary: Google"), which the user then presents to the app.</p>
+							<p>In the "Pseudo-Authentication using OAuth" panel, the Android app asks the user for a "valet key*" to their "house (account)" to verify ownership. The user requests "Please issue me a valet key* for the core APIs" from "Google - The Identity Provider &amp; the API Provider." Google issues a "valet key*," which the user gives to the app. A footnote clarifies "*valet key = limited scope OAuth Token."</p>
+							<p>The diagram uses these metaphors to simplify the different authentication and authorization mechanisms. An attribution "adapted from a drawing by @_nat_en" is present in the lower right of the OAuth panel.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
