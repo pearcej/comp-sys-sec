@@ -19,25 +19,19 @@
 
 				<section xml:id="network-access-layer">
 					<title>4.1. Network Access Layer</title>
-					<!-- div attr= class="sect3"-->
 					<paragraphs xml:id="arp">
-						<title>4.1.1. ARP {#_arp}</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>ARP</idx>
+						<title>4.1.1. ARP</title>
+						<p><idx>ARP</idx><idx>address resolution protocol</idx>
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) is used on the local ethernet segment to resolve IP addresses to MAC addresses. Since this protocol functions at the ethernet segment level, security was not a primary concern. Unfortunately this means that ARP communications can be easily spoofed to cause a MitM scenario. A malicious actor simply sends out several ARP packets, 
-							<em>gratuitous arp</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
+							<em>gratuitous ARP</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>DAI</idx>
+							<idx>DAI</idx><idx>dynamic ARP inspection</idx>
 						There is a protocol designed to mitigate the issues with ARP. 
 						<term>Dynamic ARP Inspection</term> (<term>DAI</term>) reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
 					</paragraphs>
 					<paragraphs xml:id="wifi">
 						<title>4.1.2. Wifi</title>
@@ -48,13 +42,13 @@
 						
 						
 							<p>WEP</p>
-								<p><idx>WEP</idx>
+								<p><idx>WEP</idx><idx>wireless equivalent privacy</idx>
 						<term>Wireless Equivalent Privacy</term> (<term>WEP</term>) is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
 					</p>
 							
 							<p>WPA</p>
 							
-								<p><idx>TKIP</idx><idx>WPA</idx>
+								<p><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
 						<term>Wifi Protected Access</term> (<term>WPA</term>) utilized 
 						<term>Temporal Key Integrity Protocol</term> (<term>TKIP</term>) to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
 					</p>
@@ -70,46 +64,34 @@
 								<p><idx>WPA3</idx>
 						<term>Wifi Protected Access 3</term> (<term>WPA3</term>) was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
 					</p>
-							
-						
-						<!--</div attr= class="dlist">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
 				<section xml:id="internet-layer-protocols">
 					<title>4.2. Internet Layer Protocols</title>
-					<!-- div attr= class="sect3"-->
+
 					<paragraphs xml:id="ip">
 						<title>4.2.1. IP</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>IP</idx>
-						<term>IP</term> stands for internet protocol and it was devised to allow creating a network of networks. The network of networks that uses it primarily is the Internet, although you could use IP in other scenarios as well. IP is largely concerned with 
+							<idx>IP</idx><idx>internet protocol</idx> 
+						<term>IP</term> stands for <term>internet protocol</term> and it was devised to allow creating a network of networks. The network of networks that uses it primarily is the Internet, although you could use IP in other scenarios as well. IP is largely concerned with 
 							<em>routing</em> traffic across and to networks. The protocol was first detailed by the IEEE in 1974 and comes from the Advanced Research Projects Agency Network (ARPANET) project, which created the first large, packet-switched network.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Most people are familiar with IP addresses, the unique number given to a host participating in an IP network. Currently there are two main versions of the IP protocol, IPv4 and IPv6, and one of the major differences is in how many IP addresses are available. IPv4 supports 32 bit addresses and IPv6 supports 128 bit addresses. To give an idea of how big of a change that is, we have currently allocated all possible IPv4 addresses, but with IPv6 we could give an address to every grain of sand on the beaches of earth and still not run out.
+
+						<p><idx>IP addresses</idx><idx>IPv4</idx> <idx>IPv6</idx>
+						Most people are familiar with <term>IP addresses</term>, the unique number given to a host participating in an IP network. Currently there are two main versions of the IP protocol, <term>IPv4</term> and <term>IPv6</term>, and one of the major differences is in how man IP addresses are available. IPv4 supports 32 bit addresses and IPv6 supports 128 bit addresses. To give an idea of how big of a change that is, we have currently allocated all possible IPv4 addresses, but with IPv6 we could give an address to every grain of sand on the beaches of earth and still not run out.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="sidebarblock"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="title"-->
 						<p>
 						IPv6 Security Implications
 						</p>
-						<!--</div attr= class="title">-->
-						<!-- div attr= class="paragraph"-->
-						<p><idx>Network Address Translation</idx>
+
+						<p><idx>network address translation</idx><idx>NAT</idx>
 						From a security standpoint, the way addresses are used in IPv4 vs IPv6 has big consequences. Since there aren’t enough IPv4 addresses a typical internet user is assigned a local address that gets translated to an external IPv4 address when they route their packets through their router. This is referred to as 
 						<term>Network Address Translation</term> (<term>NAT</term>) and is usually handled by an all-in-one device that also makes sure external entities cannot connect to the internal network.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 
 						With IPv6 addresses each host on that same 
@@ -117,46 +99,34 @@
 							<em>basic</em> IPv6 router may simply pass the packets to the network without blocking connections to the internal network. If the machines are not hardened or a firewall is not put in place/enabled the machines could be subject to attack.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						As a computer security specialist it is important to test not only IPv4 connectivity, but also IPv6 to ensure that your network is configured appropriately.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="sidebarblock">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="icmp">
 						<title>4.2.2. ICMP</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>ICMP</idx>
+
+						<p><idx>ICMP</idx><idx>internet control message protocol</idx> 
 						<term>Internet Control Message Protocol</term> (<term>ICMP</term>) is largely used to send messages between systems when IP doesn’t work. For example, lets say we tried to connect to a host but our router doesn’t know how to get there. Our router can send us an ICMP 
 							<em>Destination Unreachable</em> message to let us know that something is going wrong. Because ICMP messages work at the network layer, we will receive this message even if there is an issue with the internet layer.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
+						<p><idx><c>ping</c></idx> 
 						The most common use for ICMP is the 
-							<c>ping</c> command. 
+							<term><c>ping</c></term> command. 
 							<c>ping</c> sends an ICMP echo request to check to see if a host is up. By responding to the request with the data included in the request we can assume that the host is up and functioning.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p><idx>TTL</idx>
+						<p><idx>TTL</idx><idx>time to live</idx><idx><c>traceroute</c></idx>
 						ICMP is also used in the 
 							<c>traceroute</c> command. 
 							<c>traceroute</c> incrementally increase the <term>Time To Live</term> (<term>TTL</term>) field of ICMP packets and watches for 
 							<em>TTL Exceeded</em> messages to determine what route packets are taking to get to a host. Example 
-							<c>traceroute</c> output is shown below:
+							<term><c>traceroute</c></term> output is shown below:
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="listingblock"-->
-						<!-- div attr= class="content"-->
 						<pre>traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
  1  ryan.njitdm.campus.njit.edu (172.24.80.1)  0.217 ms  0.200 ms  0.252 ms
  2  ROOter.lan (192.168.2.1)  5.790 ms  5.765 ms  6.275 ms
@@ -167,9 +137,7 @@
  7  209.85.149.208 (209.85.149.208)  9.782 ms  10.331 ms  9.192 ms
  8  * * * (1)
  9  dns.google (8.8.8.8)  11.313 ms  9.761 ms  9.758 ms</pre>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="listingblock">-->
-						<!-- div attr= class="colist arabic"-->
+
 						<table>
 							<title></title>
 							<tabular>
@@ -181,144 +149,120 @@
 								</row>
 							</tabular>
 						</table>
-						<!--</div attr= class="colist arabic">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						Despite the usefulness of ICMP, ICMP packets from external sources are often ignored. Network engineers use ICMP to troubleshoot their own networks, but it would be a security issue to allow outside parties to do the same. As such, do not expect all external hosts to respond to pings. They may still be up, but you’ll need to figure out 
 							<url href="https://nmap.org/book/man-host-discovery.html">another way to detect them.</url>
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="nat">
 						<title>4.2.3. NAT</title>
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="nat.svg"/>
 							<caption>nat</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
-						Network address translation (NAT) is primarily used to allow local IP address to share a public IPv4 address. Given the lack of IPv4 address space many devices have to share a single address. As mentioned when discussing IPv6, NAT routers often also include security features such as a stateful firewall as the complexity of the hardware required to perform NAT is equivalent to what would be needed for a firewall.
+
+						<p><idx>network address translation</idx><idx>NAT</idx>
+						<term>Network address translation</term> (<term>NAT</term>) is primarily used to allow local IP address to share a public IPv4 address. Given the lack of IPv4 address space many devices have to share a single address. As mentioned when discussing IPv6, NAT routers often also include security features such as a stateful firewall as the complexity of the hardware required to perform NAT is equivalent to what would be needed for a firewall.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
 					</paragraphs>
 					<paragraphs xml:id="ipsec">
 						<title>4.2.4. IPsec</title>
 						<!-- div attr= class="paragraph"-->
-						<p><idx>IPsec</idx>
+						<p><idx>IPsec</idx><idx>internet protocol security</idx> 
 						<term>Internet Protocol Security</term> (<term>IPsec</term>) is used to set up a point-to-point encryption tunnel to secure data in transit across IP networks. IPsec is used primarily in dedicated VPN links and makes use of three main parts: SA, ESP, and AH:
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="ulist"-->
+
 						<p>
 							<ul>
 								<li>
-									<p><idx>SA</idx>
-												<term>SA</term> stands for security association and is a channel used to set up encryption parameters and exchange keys. This happens via UDP on port 500.
+									<p><idx>SA</idx><idx>security association</idx> 
+												<term>SA</term> stands for <term>security association</term> and is a channel used to set up encryption parameters and exchange keys. This happens via UDP on port 500.
 											</p>
 								</li>
 								<li>
-									<p><idx>ESP</idx>
-												<term>ESP</term> stands for encapsulating security protocol and is used to encrypt IP headers and payloads. It is sent using standard IP packets with the protocol field set to 50.
+									<p><idx>ESP</idx><idx>encapsulating security protocol</idx> 
+												<term>ESP</term> stands for <term>encapsulating security protocol</term> and is used to encrypt IP headers and payloads. It is sent using standard IP packets with the protocol field set to 50.
 											</p>
 								</li>
 								<li>
-									<p><idx>AH</idx>
-												<term>AH</term> stands for authentication header and they can optionally be used in standard IP packets with the protocol field set to 51. AH simply ensures that a packet hasn’t been tampered with.
+									<p><idx>AH</idx><idx>authentication header</idx> 
+												<term>AH</term> stands for <term>authentication header</term> and they can optionally be used in standard IP packets with the protocol field set to 51. AH simply ensures that a packet hasn’t been tampered with.
 											</p>
 								</li>
 							</ul>
 						</p>
-						<!--</div attr= class="ulist">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
 				<section xml:id="transport-layer-protocols">
 					<title>4.3. Transport Layer Protocols</title>
-					<!-- div attr= class="sect3"-->
+
 					<paragraphs xml:id="tcp">
 						<title>4.3.1. TCP</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>TCP</idx>
+
+						<p><idx>TCP</idx><idx>transmission control protocol</idx>
 						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.^[
 							<url href="index.html#_footnotedef_5">5</url>{#_footnoteref_5 .footnote}]^
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="udp">
 						<title>4.3.2. UDP</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>UDP</idx>
+
+						<p><idx>UDP</idx><idx>user datagram protocol</idx>
 						<term>User Datagram Protocol</term> (<term>UDP</term>) is a connectionless protocol designed for instances where TCP may have too much latency. UDP achieves this performance boost by not having handshaking or flow control. The result is a speedy protocol that sometimes drops datagrams. UDP is often used as the basis for gaming or streaming protocols where the timing of the packets is more important that whether or not they all arrive. UDP does still employ checksums so you can be sure of the integrity of any UDP packets that you do receive.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="common-ports-and-services">
 						<title>4.3.3. Common Ports and Services</title>
-						<!-- div attr= class="paragraph"-->
+	
 						<p><idx>port numbers</idx>
 						<term>Port numbers</term> are used in a transport layer connection to specify which service to connect to. This allows a single host to have multiple services running on it. Ports 0 to 1023 are 
 							well-known ports and typically support a commonly used service. In most operating systems it takes administrative privileges to bind to a Well-known port and listen for connections. Registered ports range from 1024 to 49151 and do not require administrative privileges to run a service on. You may find many things listening on these ports as any user can have a service on them. Lastly ports 49152 to 65535 are used dynamically by applications as needed.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
 						It is important to know some commonly used ports as the services running on these ports may be subject to an attack. When scanning a machine, only necessary ports should be open.
 					</p>
-						<!--</div attr= class="paragraph">-->
+
 						<p>
 						+———————-+———————-+———————–+ | Port Number | L4 Protocol | Usage | +======================+======================+=======================+ | 20 | TCP | File Transfer | | | | Protocol (FTP) Data | | | | Transfer | +———————-+———————-+———————–+ | 21 | TCP | FTP Command Control | +———————-+———————-+———————–+ | 22 | TCP | Secure Shell (SSH) | +———————-+———————-+———————–+ | 23 | TCP | Telnet Remote Login | | | | Service | +———————-+———————-+———————–+ | 25 | TCP | Simple Mail Transfer | | | | Protocol (SMTP) | | | | E-Mail | +———————-+———————-+———————–+ | 53 | TCP, UDP | Domain Name System | | | | (DNS) | +———————-+———————-+———————–+ | 67, 68 | UDP | Dynamic Host | | | | Configuration | | | | Protocol (DHCP) | +———————-+———————-+———————–+ | 69 | UDP | Trivial File Transfer | | | | Protocol (TFTP) | +———————-+———————-+———————–+ | 80 | TCP | Hypertext Transfer | | | | Protocol (HTTP) | +———————-+———————-+———————–+ | 110 | TCP | Post Office Protocol | | | | (POP3) E-Mail | +———————-+———————-+———————–+ | 119 | TCP, UDP | Network News Transfer | | | | Protocol (NNTP) | +———————-+———————-+———————–+ | 123 | UDP | Network Time Protocol | | | | (NTP) | +———————-+———————-+———————–+ | 137-139 | TCP, UDP | NetBIOS | +———————-+———————-+———————–+ | 143 | TCP | Internet Message | | | | Access Protocol | | | | (IMAP) E-Mail | +———————-+———————-+———————–+ | 161, 162 | TCP, UDP | Simple Network | | | | Management Protocol | | | | (SNMP) | +———————-+———————-+———————–+ | 194 | TCP, UDP | Internet Relay Chat | | | | (IRC) | +———————-+———————-+———————–+ | 389 | TCP, UDP | Lightweight Directory | | | | Access Protocol | | | | (LDAP) | +———————-+———————-+———————–+ | 443 | TCP | HTTP Secure (HTTPS) | | | | HTTP over TLS/SSL | +———————-+———————-+———————–+ | 3389 | TCP, UDP | Microsoft Terminal | | | | Server (RDP) | +———————-+———————-+———————–+
 					</p>
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
 				<section xml:id="application-layer-protocols">
 					<title>4.4. Application Layer Protocols</title>
-					<!-- div attr= class="sect3"-->
+
 					<paragraphs xml:id="dhcp">
 						<title>4.4.1. DHCP</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>DHCP</idx>
-							<idx>DNS</idx>
+
+						<p><idx>DHCP</idx><idx>dynamic host configuration protocol</idx> 
+							<idx>DNS</idx><idx>domain name servers</idx> 
 						<term>Dynamic Host Configuration Protocol</term> (<term>DHCP</term>) is used to allow new clients on a network to obtain an IP address and information about services provided. IPv4 addresses can be thought of as being in two groups: static addresses and dynamic addresses. Dynamic addresses are distributed by a DHCP server for a particular lease time. When the time is up, the DHCP server may distribute the address to another client. DHCP servers can also give information about proxies, 
 						<term>Domain Name Servers</term> (<term>DNS</term>), gateways and even where to get a 
 							<url href="https://en.wikipedia.org/wiki/Preboot_Execution_Environment">where to get a kernel to boot an OS over the network!</url>
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
-						<p><idx>ARP</idx>
+
+						<p><idx>ARP</idx><idx>address resolution protocol</idx>
 						Given the dynamic nature of modern networks, with clients coming and going, DHCP is the standard. From a security standpoint someone impersonating a DHCP server can wreak havoc on a network. These rogue DHCP servers can cause traffic to be redirected to initiate MitM attacks or cause DoS attacks. DHCP relies on broadcast 
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) messages and does not make use of authentication, meaning that once an attacker is on the same Ethernet segment as the victim machines all bets are off.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="http">
 						<title>4.4.2. HTTP</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p><idx>request</idx>
 							<idx>response</idx>
-							<idx>method</idx>
 							<idx>path</idx>
-							<idx>HTTP</idx>
+							<idx>HTTP</idx><idx>hypertext transfer protocol</idx>
 						<term>Hypertext Transfer Protocol</term> (<term>HTTP</term>) is a text based protocol that governs how web traffic moves. It is built on the concept of a 
 							<em>request</em> and a 
 							<em>response</em>. A typical request has an 
@@ -327,7 +271,7 @@
 							<c>GET /index.html</c> which would retrieve the landing page of a website. Responses have a code, message, and optionally data. Some standard responses are shown below:
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
+
 						<table>
 							<title></title>
 							<col width="50%" />
@@ -375,50 +319,37 @@
 								</row>
 							</tabular>
 						</table>
-						<!-- div attr= class="paragraph"-->
+
 						<p><idx>headers</idx>
 						Both requests and responses can take advantage of 
 							<term>headers</term>, arbitrary lines of text following the initial request or response. Since headers were designed to be open-ended, many new headers have been added over time. A modern web request/response usually has far more information in the headers than just the basics defined in HTTP 1.1. Unencrypted HTTP traffic is sent over port 80 and is vulnerable to attack as all information is sent in cleartext.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="ssltls">
 						<title>4.4.3. SSL/TLS</title>
-						<!-- div attr= class="openblock float-group"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="tls.svg"/>
 							<caption>tls</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
-						<p><idx>SSL</idx>
-							<idx>TLS</idx>
+
+						<p><idx>SSL</idx><idx>secure sockets layer</idx>
+							<idx>TLS</idx><idx>transport layer security</idx> 
 						<term>Secure Sockets Layer</term> (<term>SSL</term>) or the more modern nomenclature 
 						<term>Transport Layer Security</term> (<term>TLS</term>) is a protocol that allows cleartext protocols used on the web to be encrypted. It is a general purpose protocol, designed as a layer through which other protocols communicate. Some protocols typically wrapped in TLS include HTTP, SMTP, IMAP, VoIP, and many VPN protocols. TLS uses a handshake to exchange certificate information as shown in the diagram. It should be noted that at the time of writing TLS 1.3 is the most current version, but only half of websites support it. TLS 1.2, the most common version, is still considered safe if best practices are followed and TLS 1.1 or lower is considered depreciated.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="openblock float-group">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="https">
 						<title>4.4.4. HTTPS</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="https.png"/>
 							<caption>https</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://flic.kr/p/qi1eYu">HTTPS 
 								<q>icon</q>
@@ -427,198 +358,149 @@
 							<url href="https://creativecommons.org/licenses/by/2.0/deed.en">CC-BY 2.0</url>.
 					
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
-						<p><idx>HTTPS</idx>
+
+						<p><idx>HTTPS</idx><idx>hypertext transfer protocol secure</idx> 
 						<term>Hypertext Transfer Protocol Secure</term> (<term>HTTPS</term>) solves the problem of unencrypted traffic by wrapping HTTP requests in TLS. HTTPS traffic uses port 443 and is typically signified in a browser with a lock icon in the upper left-hand corner. By clicking on the icon users can learn more about the certificates being used for communication. Utilizing a robust PKI HTTPS allows for safe HTTP communication between client and server.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="rdp">
 						<title>4.4.5. RDP</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>RDP</idx>
+
+						<p><idx>RDP</idx><idx>remote desktop protocol</idx>
 						<term>Remote Desktop Protocol</term> (<term>RDP</term>) is build into Windows and is typically used to control a machine remotely. It works over port 3389 via TCP or UDP. While RDP can be quite useful for performing remote administration on a remote machine, it can also be a large security hole if a bad actor gains access. RDP use in ransomware attacks is on the rise as ransomware programs may use RDP to find other machines to attack.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="telnet">
 						<title>4.4.6. Telnet</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>Telnet</idx>
+
+						<p><idx>telnet</idx>
 						<term>Telnet</term> is an antiquated remote administration tool that gives access to a shell via a cleartext channel. Telnet runs on port 23 and while still occasionally in use it should largely be phased out. You will still find telnet in embedded applications and legacy systems. You may also see the client being used to inspect other types of traffic. For example, you can use a telnet client to submit HTTP requests or send email via SMTP.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
 					</paragraphs>
 					<paragraphs xml:id="ssh">
 						<title>4.4.7. SSH</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>SSH</idx>
+
+						<p><idx>SSH</idx><idx>secure shell</idx> 
 						<term>Secure Shell</term> (<term>SSH</term>) is the most widely deployed remote administration tool. SSH provides access to a shell via an encrypted connection. SSH supports many options including SOCKS5 proxies, port forwarding, and the usage of multiple authentication schemes: password, key, hardware device, etc. SSH uses TCP on port 22.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="ldap">
 						<title>4.4.8. LDAP</title>
-						<!-- div attr= class="imageblock right"-->
-						<!-- div attr= class="content"-->
+
 						<figure>
 							<image source="ldap.svg"/>
 							<caption>ldap</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="imageblock right">-->
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>LDAP</idx>
-							<idx>AD</idx>
+							<idx>LDAP</idx><idx>lightweight directory access protocol</idx> 
+							<idx>AD</idx><idx>active directory</idx>
 							<idx>LDAPS</idx>
 						<term>Lightweight directory access protocol</term> (<term>LDAP</term>) is used for accessing and maintaining directory information services. It’s primary use is with Windows 
 						<term>Active Directory</term> (<term>AD</term>) where it can be used to obtain information regarding users and resources from an AD server. Clients can authenticate through the server and obtain privileges to read or read/write certain entries. LDAP did not originally support encryption, so LDAP over SSL 
 						(<term>LDAPS</term>) was developed. LDAP uses TCP and UPD over port 389 and LDAPS uses TCP over port 636.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="dns">
 						<title>4.4.9. DNS</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>DNS</idx>
-						<idx>TLD</idx>
+
+						<p><idx>DNS</idx><idx>domain name system</idx> 
+						<idx>TLD</idx><idx>top level domain</idx>
 						<term>Domain Name System</term> (<term>DNS</term>) is used to resolve domain names to IP addresses. Domain names are the simple names people are accustomed to for websites, such as 
 							<c>njit.edu</c> as opposed to 
 							<c>54.83.189.142</c>. Names are significantly easier for people to remember than IP addresses. In order for a computer to resolve a name, it first queries a local cache, then its primary DNS server. Assuming the DNS server cannot find the name it will query a Root server for a 
 							<term>Top Level Domain</term> (<term>TLD</term>) server, which maintains a listing of Authoritative Nameservers for that particular domain (edu, com, net, org, gov, etc.). Finally once an authoritative nameserver is found it will respond with the IP address for that particular hostname which will be cached and sent back through the user’s primary DNS server to the user.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						DNS is designed to be resilient and decentralized but unfortunately the traffic is not authenticated or encrypted. This has made it a target for MitM attacks. Likewise cache hits and misses 
 							<url href="https://kb.isc.org/docs/aa-00509">can yield information as to what names have been recently resolved</url> (as was the case in discovering the extent of the Sony Rootkit). The recursive nature has of DNS has also allowed for DoS attacks in the past, but much of that has been solved by limiting recursive queries to the user-facing DNS servers (ie. the one given to you by your DHCP request). DNS operates via UDP (and occasionally TCP) on port 53.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="dnssec">
 						<title>4.4.10. DNSSEC</title>
-						<!-- div attr= class="paragraph"-->
-						<p><idx>DNSSEC</idx>
+
+						<p><idx>DNSSEC</idx><idx>domain name system security Extensions</idx> 
 						<term>Domain Name System Security Extensions</term> (<term>DNSSEC</term>) is a suite of extension specifications designed to authenticate responses to domain name lookups. This can help prevent MitM attacks by checking the digital signature of the responding server. While this is certainly helpful, it is important to note that DNSSEC does not provide confidentiality. DNS resolutions can still be monitored by anyone who has access to the traffic.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="imappop3">
 						<title>4.4.11. IMAP/POP3</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>IMAP</idx>
-							<idx>POP3</idx>
+							<idx>IMAP</idx><idx>internet message access protocol</idx> 
+							<idx>POP3</idx><idx>post office protocol 3</idx>
 						<term>Internet Message Access Protocol</term> (<term>IMAP</term>) and <term>Post Office Protocol 3</term> (<term>POP3</term>) are two protocols used to retrieve email from a server. IMAP is the more recent protocol which supports saving mail on the sever and folders. POP3 is more primitive, supporting only the retrieval (and subsequent deletion from the server) of emails. Both protocols use cleartext and are now commonly run over TLS. POP3 defaults to TCP port 110 or 995 if using TLS. IMAP defaults to TCP port 143 or 993 if using TLS. In the age of webmail it is easy to forget about these protocols, but a security specialist must keep them in mind as they may still be used in support of corporate devices.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="smtp">
 						<title>4.4.12. SMTP</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>SMTP</idx>
-							<idx>MX</idx>
+							<idx>SMTP</idx><idx>simple mail transfer protocol</idx>
+							<idx>MX</idx><idx>mail exchange</idx>
 						<term>Simple Mail Transfer Protocol</term> (<term>SMTP</term>) is used for sending/forwarding email. As it states, it is a simple protocol consisting of lines of text. Basic SMTP used TCP on port 25. SMTP was later expanded to support authentication and finally wrapped in TLS still using TCP on port 587. SMTP servers accept outgoing mail from (hopefully) authenticated clients, route mail to other SMTP servers based on the 
 						<term>Mail Exchange</term> (<term>MX</term>) information in DNS records, and accept mail for their domain from other SMTP servers. Various checks have been implemented in SMTP servers to ensure that messages from domains 
 							<em>actually</em> come from those domains. This is largely used to combat spam, which continues to be a problem.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
 					</paragraphs>
 					<paragraphs xml:id="ntp">
 						<title>4.4.13. NTP</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>NTP</idx>
+							<idx>NTP</idx><idx>network time protocol</idx>
 						<term>Network Time Protocol</term> (<term>NTP</term>)  uses UDP over port 123 to sync the system time with a time server. NTP servers are layered in stratums, with the lowest stratums being closest to the most accurate sources of time, atomic clocks, GPS, etc. NTP is important as many protocols, including several key exchanges, require system clocks to be in sync. System clocks are also used to check when certificates expire and used in logs to indicate when something happened. Without an accurate, synchronized system clock many things will fail in surprising ways.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="ftp">
 						<title>4.4.14. FTP</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p>
-							<idx>FTP</idx>
+							<idx>FTP</idx><idx>file transfer protocol</idx>
 						<term>File Transfer Protocol</term> (<term>FTP</term>) is a relatively simple, text-based protocol for sending files between machines. FTP uses TCP on port 21 and traditionally establishes two channels: one for protocol messages, and one binary channel for data. The interesting thing about this setup is that the FTP server would initiate the connection of the data channel from server to client, meaning that in many NAT situations where the client couldn’t be easily reached behind a firewall it would fail. The solution to this problem was passive FTP which uses one channel established by the client.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
 						Despite this initial shortcoming, FTP has proven to be incredibly popular and is still used in many corporate environments. You may see FTP being used to transmit bulk data for import to systems or used to update firmware in embedded systems. You can use FTP with a commandline client, 
 							<c>ftp</c>, a graphical client such as Filezilla or SecureFX, or even in most web browsers with the 
 							<c>ftp://</c> URL scheme.
 					
 						</p>
-						<!--</div attr= class="paragraph">-->
-						<!-- div attr= class="paragraph"-->
 						<p>
-							<idx>SFTP</idx>
+							<idx>SFTP</idx><idx>secure FTP</idx>
 						Unfortunately FTP does not support authentication systems other than passwords and the passwords are sent in plaintext. As such 
 						<term>Secure FTP</term> (<term>SFTP</term>) is recommended. SFTP uses an SSH connection to send and receive files over an encrypted channel. SFTP also supports all SSH authentication methods.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="sect3">-->
-						<!-- div attr= class="sect3"-->
+
 					</paragraphs>
 					<paragraphs xml:id="snmp">
 						<title>4.4.15. SNMP</title>
-						<!-- div attr= class="openblock float-group"-->
-						<!-- div attr= class="content"-->
-						<!-- div attr= class="imageblock left"-->
-						<!-- div attr= class="content"-->
 						<figure>
 							<image source="snmp.png"/>
 							<caption>snmp</caption>
 						</figure>
-						<!--</div attr= class="content">-->
-						<!-- div attr= class="title"-->
+
 						<p>
 							<url href="https://commons.wikimedia.org/wiki/File:SNMP_TRAFFIC1.png">SNMP by Deegii121314</url> used under 
 							<url href="https://commons.wikimedia.org/wiki/File:SNMP_TRAFFIC1.png">CC-BY-SA 4.0</url>
 						</p>
-						<!--</div attr= class="title">-->
-						<!--</div attr= class="imageblock left">-->
-						<!-- div attr= class="paragraph"-->
-						<p>
+						<p><idx>simple network management protocol</idx><idx>SNMP</idx> 
 						<term>Simple Network Management Protocol</term> (<term>SNMP</term>) is used for gathering information about the workings of a network. It is broken into two groups: clients using UDP port 161 (TLS 10161) and a manager using UDP port 162 (TLS 10162). The manager collects messages from the clients regarding the operations of the network and uses this information to take actions as necessary. SNMP can be used to pass information about the temperature of a machine, how many connections it currently has, the channel capacity currently being utilized, etc. SNMP is currently up to version 3 which is encrypted and requires authentication. This is particularly important because SNMP is a very powerful protocol which exchanges information that could potentially be very valuable to an attacker. Access to SNMP should be limited and its usage on a network should be monitored.
 					</p>
-						<!--</div attr= class="paragraph">-->
-						<!--</div attr= class="content">-->
-						<!--</div attr= class="openblock float-group">-->
-						<!--</div attr= class="sect3">-->
-						<!--</div attr= class="sect2">-->
-						<!-- div attr= class="sect2"-->
+
 					</paragraphs>
 				</section>
 				<section xml:id="lab-scanning-with-nmap">
 					<title>4.5. Lab: Scanning with nmap</title>
-					<!-- div attr= class="paragraph"-->
 					<p>
 					For this lab we will start by downloading and extracting the files required. Download 
 						<url href="https://github.com/rxt1077/it230/raw/main/labs/nmap.zip">nmap.zip</url> and extract it to a directory you can access from the shell. Open a shell in that directory (it should have a 
@@ -630,9 +512,7 @@
 						<c>docker-compose up --build --detach</c> to build and run the images in the background:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\temp\nmap&gt; docker-compose up --build --detach
 Building victim
 [+] Building 2.9s (15/15) FINISHED
@@ -677,9 +557,7 @@ Building scanner
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
 Starting nmap_scanner_1  ... done
 Recreating nmap_victim_1 ... done</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now we actually have two containers running, one named 
 						<c>victim</c> which is our target machine and another named 
@@ -687,15 +565,11 @@ Recreating nmap_victim_1 ... done</pre>
 						<c>scanner</c> and work from there:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>PS C:\Users\rxt1077\temp\nmap&gt; docker-compose run scanner bash
 Creating nmap_scanner_run ... done
 root@7b6d733cc03a:/(1)</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="colist arabic"-->
+
 					<table>
 						<title></title>
 						<tabular>
@@ -710,16 +584,13 @@ root@7b6d733cc03a:/(1)</pre>
 							</row>
 						</tabular>
 					</table>
-					<!--</div attr= class="colist arabic">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Lets use the Linux 
 						<c>ip addr</c> command to see what our IP address on this network is:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@7b6d733cc03a:/# ip addr
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -733,9 +604,7 @@ root@7b6d733cc03a:/(1)</pre>
     link/ether 02:42:ac:14:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet 172.20.0.2/16 brd 172.20.255.255 scope global eth0
        valid_lft forever preferred_lft forever</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					We care about the 
 						<c>eth0</c> device, so as you can see on my machine the address is 
@@ -746,9 +615,7 @@ root@7b6d733cc03a:/(1)</pre>
 						<em>much</em> faster.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@7b6d733cc03a:/# nmap -sP 172.20.0.0/24
 Starting Nmap 7.70 ( https://nmap.org ) at 2021-09-22 20:25 UTC
 Nmap scan report for 172.20.0.1
@@ -760,30 +627,24 @@ MAC Address: 02:42:AC:14:00:03 (Unknown)
 Nmap scan report for 7b6d733cc03a (172.20.0.2)
 Host is up.
 Nmap done: 256 IP addresses (3 hosts up) scanned in 5.78 seconds</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					In this instance we found three other machines on the network. One of which is conveniently named victim.
 				</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | 
 						<url href="https://nmap.%20%7C%20%7C%20%7C%20org/book/man-host-discovery.html">Read the nmap documentation for | | | host | | | discovery.</url> | | | What other types of scans could | | | you use if a host does not | | | respond to an ICMP ping packet? | | | ::: | +———————————–+———————————–+
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now lets do a full scan on on the victim machine. Docker Compose does a nice job of resolving DNS requests for sensible names in the 
 						<c>docker-compose.yml</c> file so we can refer to the host we want to scan as 
 						<c>victim</c>.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@7b6d733cc03a:/# nmap victim
 Starting Nmap 7.70 ( https://nmap.org ) at 2021-09-22 20:37 UTC
 Nmap scan report for victim (172.20.0.3)
@@ -795,32 +656,26 @@ PORT   STATE SERVICE
 MAC Address: 02:42:AC:14:00:03 (Unknown)
 
 Nmap done: 1 IP address (1 host up) scanned in 1.84 seconds</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					By default, nmap uses a 
 						<url href="https://www.techtarget.com/searchnetworking/definition/SYN-scanning">SYN</url> scan against well known ports. This type of scan is harder to detect (as it does not fully open a connection) and can be run quickly.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | What ports are open on the victim | | | machine? Why is 
 						<em>this</em> particular | | | protocol insecure? | | | ::: | +———————————–+———————————–+
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					nmap is capable of much more than just simple port scanning. nmap includes version detection and OS fingerprinting (among other things). To get a much better picture of what exactly 
 						<c>victim</c> is running, you can use the 
 						<c>-A</c> option:
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="listingblock"-->
-					<!-- div attr= class="content"-->
+
 					<pre>root@7b6d733cc03a:/# nmap -A victim
 Starting Nmap 7.70 ( https://nmap.org ) at 2021-09-22 20:44 UTC
 Nmap scan report for victim (172.20.0.3)
@@ -853,51 +708,43 @@ HOP RTT     ADDRESS
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
-					<!--</div attr= class="content">-->
-					<!--</div attr= class="listingblock">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | What additional information did | | | you learn from the 
 						<c>-A</c> option? | | | How do you think this could be | | | exploited? | | | ::: | +———————————–+———————————–+
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					Now, using the 
 						<c>scanner</c> container you are currently on see what you can find out about 
 						<c>victim</c>. 
 						<url href="https://linux.die.net/man/1/ftp">This man page may be of some help.</url>
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: Remembering what you | | | learned in the 
 						<em>Hash it Out</em> lab, | | | what is the root password on the | | | victim machine? | | | ::: | +———————————–+———————————–+
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="admonitionblock important deliverable"-->
+
 					<p>
 					+———————————–+———————————–+ | | ::: {.paragraph} | | | BONUS: How can you test to see if | | | you got it right? What does this | | | say about how ProFTP is | | | configured on 
 						<c>victim</c>? | | | ::: | +———————————–+———————————–+
 				
 					</p>
-					<!--</div attr= class="admonitionblock important deliverable">-->
-					<!-- div attr= class="paragraph"-->
+
 					<p>
 					When you are all done poking around, you can exit the shell and run 
 						<c>docker-compose down</c> to stop 
 						<c>victim</c> from running in the background.
 				
 					</p>
-					<!--</div attr= class="paragraph">-->
-					<!--</div attr= class="sect2">-->
-					<!-- div attr= class="sect2"-->
+
 				</section>
 				<section xml:id="protocols_review">
 					<title>4.6. Review Questions</title>
-					<!-- div attr= class="qlist qanda"-->
+
 					<p>
 						<ol>
 							<li>
@@ -917,11 +764,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 							</li>
 						</ol>
 					</p>
-					<!--</div attr= class="qlist qanda">-->
-					<!--</div attr= class="sect2">-->
-					<!--</div attr= class="sectionbody">-->
-					<!--</div attr= class="sect1">-->
-					<!-- div attr= class="sect1"-->
+
 				</section>
 
 </chapter>
