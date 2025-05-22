@@ -448,8 +448,8 @@
 					</p>
 
 					</subsection>
-					<subsection xml:id="privilege-escalation">
-						<title>9.5.6. Privilege Escalation</title>
+					<subsection xml:id="escalation-of-privilege">
+						<title>9.5.6. Escalation of Privilege</title>
 						<p>
 						Once an attacker has a foothold on the internal network they will typically work to elevate privilege. This may be done locally, through an exploit, by tricking the user into elevating the privileges of a running script, by stealing credentials over-the-wire, or by leveraging running system processes.
 					</p>
