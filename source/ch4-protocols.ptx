@@ -5,7 +5,7 @@
 
   <introduction>
 				<p><idx>protocol</idx>
-				A <term>protocol</term> is a set of rules. Protocols can be thorough as rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
+				A <term>protocol</term> is a set of rules. Protocols in computing are typically thorough rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
 					<url href="https://datatracker.ietf.org/doc/html/rfc2616">Some of the earliest web protocols are detailed in RFCs.</url> More often than not, large protocols have working groups and associations developing, such as the 802.11 group at the 
 					<url href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers (IEEE)</url> which handles WiFi protocols. These groups publish papers detailing how the protocols work.
 			
@@ -41,36 +41,30 @@
 						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
 					</p>
-						
-						
-							<p>WEP</p>
-
+						<ul>
+							<li>
 								<p><idx>WEP</idx><idx>wireless equivalent privacy</idx>
 
 						<term>Wireless Equivalent Privacy</term> (<term>WEP</term>) is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
 					</p>
-							
-							<p>WPA</p>
-							
-
-								<p><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
+					</li>
+					<li>
+						<p><idx>WPA</idx><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
 						<term>Wifi Protected Access</term> (<term>WPA</term>) utilized 
 						<term>Temporal Key Integrity Protocol</term> (<term>TKIP</term>) to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
 					</p>
-							
-							<p>WPA2</p>
-							
-								<p><idx>WPA2</idx>
+					</li>
+					<li>
+					<p><idx>WPA2</idx>
 						<term>Wifi Protected Access 2</term> (<term>WPA2</term>) makes use of AES encryption and is currently the most popular standard. WPA2 is still considered secure.
 					</p>
-							
-							<p>WPA3</p>
-							
-								<p><idx>WPA3</idx>
+					</li>
+					<li>
+						<p><idx>WPA3</idx>
 						<term>Wifi Protected Access 3</term> (<term>WPA3</term>) was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
 					</p>
-
-
+					</li>
+					</ul>
 					</paragraphs>
 				</section>
 				<section xml:id="internet-layer-protocols">
