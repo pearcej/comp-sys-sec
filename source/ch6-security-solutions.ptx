@@ -275,7 +275,7 @@
 				<section xml:id="siem">
 					<title>6.8. SIEM</title>
 					<figure xml:id="fig-seim">
-					<caption>seim</caption>
+					<caption></caption>
 					<image source="seim.svg">
 						<shortdescription>Diagram illustrating a Security and Information Event Management (SIEM) system aggregating data from multiple security and network sources.</shortdescription>
 						<description>
