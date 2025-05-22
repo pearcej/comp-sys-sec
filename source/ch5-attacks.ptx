@@ -699,7 +699,14 @@ server_1    | Server listening on :: port 22.</pre>
 						</li>
 					 </ol>
 					</p>
-					
+					<note>
+						<p>
+							If you receive the error 
+									<c>failed to create network scapy_testnet: Error response from daemon:</c> 
+										<c>Pool overlaps with other one on this address space</c> 
+									check to see if you have other containers running and stop them. You may also need to run docker network prune to remove the old networks Docker built.
+						</p>
+					</note>
 					<p>
 					In the second terminal run 
 						<c>docker-compose run victim bash</c> and then from the prompt we’ll SSH to server using the password "password":
