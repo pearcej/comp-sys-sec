@@ -91,10 +91,9 @@
 						<p><idx>IP addresses</idx><idx>IPv4</idx> <idx>IPv6</idx>
 						Most people are familiar with <term>IP addresses</term>, the unique number given to a host participating in an IP network. Currently there are two main versions of the IP protocol, <term>IPv4</term> and <term>IPv6</term>, and one of the major differences is in how man IP addresses are available. IPv4 supports 32 bit addresses and IPv6 supports 128 bit addresses. To give an idea of how big of a change that is, we have currently allocated all possible IPv4 addresses, but with IPv6 we could give an address to every grain of sand on the beaches of earth and still not run out.
 					</p>
-						<p>
-						IPv6 Security Implications
-						</p>
 
+				<example>
+					<p>IPv6 Security Implications</p>	
 
 						<p><idx>network address translation</idx><idx>NAT</idx>
 						From a security standpoint, the way addresses are used in IPv4 vs IPv6 has big consequences. Since there aren’t enough IPv4 addresses a typical internet user is assigned a local address that gets translated to an external IPv4 address when they route their packets through their router. This is referred to as 
@@ -113,6 +112,7 @@
 						<p>
 						As a computer security specialist it is important to test not only IPv4 connectivity, but also IPv6 to ensure that your network is configured appropriately.
 					</p>
+				</example>
 
 					</paragraphs>
 					<paragraphs xml:id="icmp">
