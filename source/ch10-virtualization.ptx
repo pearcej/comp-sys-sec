@@ -20,7 +20,7 @@
 						<title>10.1.1. Virtual Machines</title>
 
 						<figure xml:id="fig-vm">
-						<caption>Figure 10.1.1. vm</caption>
+						<caption></caption>
 						<image source="vm.svg">
 							<shortdescription>Comparison of Virtual Machine deployment and Container deployment architectures.</shortdescription>
 							<description>
