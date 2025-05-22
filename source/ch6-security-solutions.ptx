@@ -22,9 +22,9 @@
 					The key to lowering the false positive rate of a system is to better tune the rule set used to trigger the warnings. A security team may spend time determining a baseline of events and looking for abnormalities that correspond to actual attacks. This information can then be used to build a better detection system.
 				</p>
 
-					<p>
-					Example 6. Webroot Antivirus
-				</p>
+					<example>
+						<p>Webroot Antivirus</p>
+					
 
 					<p>
 						<url href="https://www.nbcnews.com/tech/tech-news/popular-antivirus-program-mistakenly-ids-windows-threat-creating-chaos-n750521">In 2017 a popular antivirus service created a bad rule that identified certain Windows operating system files as threats.</url> The antivirus solution quarantined these files, which were critical for the operation of the machine. The result was a machine that was unusable.
@@ -41,6 +41,7 @@
 						<em>Layered Security</em> a concept that we will cover next.
 				
 					</p>
+				</example>
 
 				</section>
 				<section xml:id="layered-security">
@@ -88,7 +89,7 @@
 					Many products are available for handling network traffic. They are typically marketed as either stand-alone devices, software to install on internal devices, or a subscription service that routes traffic through an external appliance. In the age of cloud computing network security as a service is becoming increasingly popular.
 				</p>
 
-					<paragraphs xml:id="firewall">
+					<subsection xml:id="firewall">
 						<title>6.3.1. Firewall</title>
 
 						<p>
@@ -124,8 +125,8 @@
 						The largest firewall in the world is the Chinese Great Firewall, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="proxy">
+					</subsection>
+					<subsection xml:id="proxy">
 						<title>6.3.2. Proxy</title>
 						<figure xml:id="fig-tls-proxy">
 						<caption></caption>
@@ -158,8 +159,8 @@
 						Reverse proxies take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="load-balancer">
+					</subsection>
+					<subsection xml:id="load-balancer">
 						<title>6.3.3. Load Balancer</title>
 
 						<p>
@@ -170,8 +171,8 @@
 						For example, if a company has four servers supporting a web application, they may employ a reverse proxy load balancer that takes requests from clients and passes that request to one of the four internal servers. Different metrics are used to determine how the servers are utilized including least used (round robin), weighted, least amount of active connections. Load balancers optimize bandwidth and increase availability.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="vpn">
+					</subsection>
+					<subsection xml:id="vpn">
 						<title>6.3.4. VPN</title>
 
 						<p>
@@ -194,15 +195,15 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="tap">
+					</subsection>
+					<subsection xml:id="tap">
 						<title>6.3.5. TAP</title>
 
 						<p>
 						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network terminal access point (TAP) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
 					</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="edr">
 					<title>6.4. EDR</title>
