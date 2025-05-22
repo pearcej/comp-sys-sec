@@ -218,8 +218,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                             </description>
                         </image>
                     </figure>
-					<p>
-					A hashing algorithm is a one-way function that creates hashed text from plaintext. It is often used for data validation as a relatively small hash 
+					<p><idx>hashing algorithm</idx>
+					A <term>hashing algorithm</term> is a one-way function that creates hashed text from plaintext. It is often used for data validation as a relatively small hash 
 						<em>digest</em> or 
 						<em>signature</em> can demonstrate the integrity of a large block of data. Hashes can also be used so that sensitive information does not have to be stored in cleartext. By storing a hash of a password, you can check to see if the correct password was entered without storing the password itself. In the case of a data breach only the hashes are leaked and the attacker does not have access to the passwords to try with other services.
 				
@@ -305,7 +305,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                     </figure>
 					<p>
 					An asymmetric encryption algorithm has actually already been demonstrated in the 
-						<url href="index.html#_mathematical_foundation">Mathematical Foundation</url> section. Asymmetric encryption has a public key which can be published anywhere and used to encrypt messages that only the holder of the private key, which is not published, can unencrypt. For example if you want to receive encrypted emails you may make your 
+						<xref ref="mathematical-foundation">Mathematical Foundation</xref> section. Asymmetric encryption has a public key which can be published anywhere and used to encrypt messages that only the holder of the private key, which is not published, can unencrypt. For example if you want to receive encrypted emails you may make your 
 						<url href="https://gnupg.org/">GNU Privacy Guard (GPG)</url> public key available a 
 						<url href="https://keyserver.ubuntu.com/">public key server</url>. This would allow anyone to look up your public key, encrypt a message that only you can read, and send you the ciphertext. Asymmetric encryption gets around the difficulties of key exchange via an untrusted channel (like email). Unfortunately the cost of such a useful system is that asymmetric algorithms tend to be much slower that their symmetric counterparts.
 				
@@ -415,14 +415,16 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<p>
 							GCM uses a counter like CTR, but does not make use of a nonce. Instead an IV is used with the inititial counter. GCM also generates a message authentication code (MAC) for each block to verify the integrity of the block. This combination makes for a modern, robust algorithm that is gaining rapid adoption.
 							</p>
-						</subsubsection>
+					
 							<example>
 							<title>Case Study: Exploiting Non-Rolling Codes</title>
 							<p>
-							The importance of non-repeating codes, such as the counter codes used in the CTR and GCM block cipher modes of operation can be highlighted through analysis of another important technology that uses codes: keyless entry systems. When garage door openers first came on to the market, the remote would broadcast a single code that the receiver was programmed to recognize as correct. This meant that anyone listening in could easily get the code and replay the code to open the garage door with their own device.^[
-								<url href="index.html#_footnotedef_2">2</url>{#_footnoteref_2 .footnote}]^ To combat this, companies began using 
-								<url href="https://en.wikipedia.org/wiki/Rolling_code">rolling codes</url> in their remotes and receivers. Given the same seed a rolling code allows each device to generate a sequence of codes that are exactly the same. The remote will use the next code in a sequence every time the button is hit. The receiver will validate the recieved code if it matches any of the next several codes in the sequence (in case the button was hit a few times out of range). This effectively mitigates the replay attack.
-						
+							The importance of non-repeating codes, such as the counter codes used in the CTR and GCM block cipher modes of operation can be highlighted through analysis of another important technology that uses codes: keyless entry systems. When garage door openers first came on to the market, the remote would broadcast a single code that the receiver was programmed to recognize as correct. This meant that anyone listening in could easily get the code and replay the code to open the garage door with their own device. (<em>In actuality the code space was so small that you could even easily create a device to cycle through all possible codes in under a minute.</em>)
+							</p>
+							<p>
+							To combat this, companies began using 
+							<url href="https://en.wikipedia.org/wiki/Rolling_code">rolling codes</url> in their remotes and receivers. Given the same seed a rolling code allows each device to generate a sequence of codes that are exactly the same. The remote will use the next code in a sequence every time the button is hit. The receiver will validate the recieved code if it matches any of the next several codes in the sequence (in case the button was hit a few times out of range). This effectively mitigates the replay attack.
+		
 							</p>
 							<p>
 							Given that this was implemented in the 1980s with garage door remotes, you would assume car manufacturers employ the same technology in their remotes. In a case of "everything old is new again" this isn’t true. 
@@ -432,8 +434,8 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							Sammy Kamkar also discovered a vulnerablility for rolling codes, named RollJam, which he demonstrated at DEF CON 23. Kamkar’s device jams signals sent by a keyfob, while recording the codes being sent. Once it has two codes recorded, presumably from the victim pressing the button multiple times, it stops jamming, sends out the first code to unlock the car and stores the second code to unlock the car at a later time.
 						</p>
 							</example>
+							</subsubsection>
 						</subsection>
-
 
 				</section>
 				<section xml:id="encryption-examples">
@@ -544,15 +546,13 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				</section>
 				<section xml:id="lab-hash-it-out">
 					<title>2.11. Lab: Hash it Out</title>
-					<p>
+					<p><idx>hash</idx> 
 					A 
-						<em>hash</em> is a one-way cryptographic function that produces a 
+						<term>hash</term> is a one-way cryptographic function that produces a 
 						<em>unique</em> set of characters for a given 
 						<em>message</em>. In a perfect world, given a hash you should 
-						<em>not</em> be able to determine what the original message was, but given a hash and the original message you can check that the hash matches the message. Before we dive into the uses of a hash, lets try to further understand it by looking at a simple and consequently poor hashing algorithm.^[
-						<url href="index.html#_footnotedef_3">3</url>{#_footnoteref_3 .footnote}]^
-				
-					</p>
+						<em>not</em> be able to determine what the original message was, but given a hash and the original message you can check that the hash matches the message. Before we dive into the uses of a hash, lets try to further understand it by looking at a simple and consequently poor hashing algorithm.</p>
+						<note><p>The following algorithm is so poor that it may be a stretch even to call it a hashing algorithm. That being said, it is being used as a tool to explain what hashes are.</p></note>
 					<p>
 						<term>Anagram Hash</term>
 					</p>
