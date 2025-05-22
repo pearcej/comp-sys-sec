@@ -84,10 +84,12 @@
 				</section>
 				<section xml:id="network-solutions">
 					<title>6.3. Network Solutions</title>
-
-					<p>
+					<introduction>
+				<p>
 					Many products are available for handling network traffic. They are typically marketed as either stand-alone devices, software to install on internal devices, or a subscription service that routes traffic through an external appliance. In the age of cloud computing network security as a service is becoming increasingly popular.
 				</p>
+					</introduction>
+					
 
 					<subsection xml:id="firewall">
 						<title>6.3.1. Firewall</title>
