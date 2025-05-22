@@ -169,7 +169,7 @@
 
 
 						<figure xml:id="fig-nat-router">
-						<caption>nat</caption>
+						<caption></caption>
 						<image source="nat.svg">
 							<shortdescription>A diagram illustrating how a NAT router enables multiple devices on a private network to share a single public IP address to access the internet.</shortdescription>
 							<description>
@@ -511,7 +511,7 @@
 
 
 						<figure xml:id="fig-tls-handshake">
-						<caption>tls</caption>
+						<caption></caption>
 						<image source="tls.svg">
 							<shortdescription>A sequence diagram illustrating the key steps in a simplified TLS handshake between a client and a server.</shortdescription>
 							<description>
@@ -533,7 +533,7 @@
 
 
 						<figure xml:id="fig-https-indicator">
-						<caption>https</caption>
+						<caption></caption>
 						<image source="https.png">
 							<shortdescription>An icon depicting a green padlock next to "https://" text, symbolizing a secure HTTPS web connection.</shortdescription>
 							<description>
@@ -590,7 +590,7 @@
 						<title>4.4.8. LDAP</title>
 
 						<figure xml:id="fig-ldap">
-						<caption>ldap</caption>
+						<caption></caption>
 						<image source="ldap.svg">
 							<shortdescription>Diagram illustrating an example LDAP directory tree structure.</shortdescription>
 							<description>
@@ -706,7 +706,7 @@
 						<title>4.4.15. SNMP</title>
 
 						<figure xml:id="fig-snmp">
-						<caption>snmp</caption>
+						<caption></caption>
 						<image source="snmp.png">
 							<shortdescription>Diagram illustrating the typical SNMP message exchange mechanism between an NMS Management Station and an SNMP Agent.</shortdescription>
 							<description>
