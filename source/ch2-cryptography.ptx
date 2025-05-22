@@ -208,7 +208,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				<section xml:id="hashes">
 					<title>2.5. Hashes</title>
 					<figure>
-                        <caption>hash</caption>
+                        <caption></caption>
                         <image source="hash.svg" >
                             <shortdescription>Flowchart showing 'Plain Text' processed by a 'Hash Function' to produce 'Hashed Text'.</shortdescription>
                             <description>
@@ -258,7 +258,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				<section xml:id="symmetric-encryption">
 					<title>2.6. Symmetric Encryption</title>
 					<figure>
-                        <caption>symmetric</caption>
+                        <caption></caption>
                         <image source="symmetric.svg" >
                             <shortdescription>Flowchart of symmetric encryption: Plaintext is encrypted with key 'A' to Ciphertext, then decrypted with the same key 'A' back to Plaintext.</shortdescription>
                             <description>
@@ -293,7 +293,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				<section xml:id="asymmetric-encryption">
 					<title>2.7. Asymmetric Encryption</title>
 					<figure>
-                        <caption>asymmetric</caption>
+                        <caption></caption>
                         <image source="asymmetric.svg">
                             <shortdescription>Flowchart of asymmetric encryption: Plaintext is encrypted with a 'Public' key to Ciphertext, then decrypted with a 'Private' key back to Plaintext.</shortdescription>
                             <description>
@@ -335,7 +335,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<title>Electronic Codebook (ECB)</title>
 
 							<figure>
-                                <caption>ecb</caption>
+                                <caption></caption>
                                 <image source="ecb.svg">
                                     <shortdescription>Diagram showing Electronic Codebook (ECB) mode encryption where multiple plaintext blocks are independently encrypted with the same key.</shortdescription>
                                     <description>
@@ -356,7 +356,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 							<title>Cipher block chaining (CBC)</title>
 
 							<figure>
-                                <caption>cbc</caption>
+                                <caption></caption>
                                 <image source="cbc.svg">
                                     <shortdescription>Diagram of Cipher Block Chaining (CBC) mode of block cipher encryption.</shortdescription>
                                     <description>
@@ -377,7 +377,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<subsubsection xml:id="counter-ctr-_counter_ctr">
 							<title>Counter (CTR)</title>
 							<figure>
-                                <caption>ctr</caption>
+                                <caption></caption>
                                 <image source="ctr.svg">
                                     <shortdescription>Diagram illustrating Counter (CTR) mode encryption with nonce and incrementing counter per block.</shortdescription>
                                     <description>
@@ -397,7 +397,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<subsubsection xml:id="galoiscounter-mode-gcm">
 							<title>Galois/Counter Mode (GCM)</title>
 							<figure>
-                                <caption>gcm</caption>
+                                <caption></caption>
                                 <image source="gcm.svg" >
                                     <shortdescription>Diagram of Galois/Counter Mode (GCM) showing parallel encryption via CTR and authentication tag generation.</shortdescription>
                                     <description>
@@ -465,7 +465,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<subsection xml:id="diffie-hellman-key-exchange">
 						<title>2.10.4. Diffie-Hellman Key Exchange</title>
 						<figure>
-                            <caption>dh</caption>
+                            <caption></caption>
                             <image source="dh.svg">
                                 <shortdescription>Diagram illustrating Diffie-Hellman key exchange using the paint mixing analogy with Alice and Bob.</shortdescription>
                                 <description>
@@ -516,7 +516,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					<subsection xml:id="blockchain">
 						<title>2.10.6. Blockchain</title>
 						<figure>
-							<caption>btc</caption>
+							<caption></caption>
 							<image source="btc.svg" decorative="yes"/>
 						</figure>
 						<p>
