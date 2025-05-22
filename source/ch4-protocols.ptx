@@ -4,8 +4,8 @@
   <title>Protocols</title>
 
   <introduction>
-				<p>
-				Protocols can be though of as rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
+				<p><idx>protocol</idx>
+				A <term>protocol</term> is a set of rules. Protocols can be thorough as rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
 					<url href="https://datatracker.ietf.org/doc/html/rfc2616">Some of the earliest web protocols are detailed in RFCs.</url> More often than not, large protocols have working groups and associations developing, such as the 802.11 group at the 
 					<url href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers (IEEE)</url> which handles WiFi protocols. These groups publish papers detailing how the protocols work.
 			
@@ -229,11 +229,13 @@
 						<title>4.3.1. TCP</title>
 
 						<p><idx>TCP</idx><idx>transmission control protocol</idx>
-
-						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.^[
-							<url href="index.html#_footnotedef_5">5</url>{#_footnoteref_5 .footnote}]^
-					
+						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.
 						</p>
+							<note>
+								<p>
+								For an interesting example of how you can change but still follow a protocol, check out <url href="https://en.wikipedia.org/wiki/SYN_cookies">SYN cookies</url>.
+								</p>
+							</note>
 
 					</paragraphs>
 					<paragraphs xml:id="udp">
