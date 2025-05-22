@@ -10,8 +10,6 @@
 					<url href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers (IEEE)</url> which handles WiFi protocols. These groups publish papers detailing how the protocols work.
 			
 				</p>
-				<!--</div attr= class="paragraph">-->
-				<!-- div attr= class="paragraph"-->
 				<p>
 				This chapter will give a brief description of important protocols following the TCP/IP layering model. It is important to note that some of these protocols may reach across layers to accomplish tasks. In this case they will be grouped according to which layer they largely function within.
 			</p>
@@ -39,7 +37,7 @@
 					</paragraphs>
 					<paragraphs xml:id="wifi">
 						<title>4.1.2. Wifi</title>
-						<!-- div attr= class="paragraph"-->
+
 						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
 					</p>
@@ -193,7 +191,6 @@
 					</paragraphs>
 					<paragraphs xml:id="ipsec">
 						<title>4.2.4. IPsec</title>
-						<!-- div attr= class="paragraph"-->
 
 						<p><idx>IPsec</idx><idx>internet protocol security</idx> 
 
@@ -264,7 +261,6 @@
 						It is important to know some commonly used ports as the services running on these ports may be subject to an attack. When scanning a machine, only necessary ports should be open.
 					</p>
 
-						<!--</div attr= class="paragraph">-->
 					<table>
 						<title>Common Port Numbers and Their Usage</title>
 						<tabular>
