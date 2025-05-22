@@ -36,7 +36,7 @@
 				<section xml:id="general-principles-and-techniques">
 					<title>7.1. General Principles and Techniques</title>
 
-					<paragraphs xml:id="least-privilege">
+					<subsection xml:id="least-privilege">
 						<title>7.1.1. Least Privilege</title>
 
 						<p>
@@ -47,8 +47,8 @@
 						Least privilege is also an important concept for compliance purposes. For example, laws may require and audit of all accounts that have Internet access. By limiting accounts that have Internet access to only the accounts of actors that require Internet access to complete their tasks, it makes it easier to be in compliance.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="multi-factor-authentication-mfa">
+					</subsection>
+					<subsection xml:id="multi-factor-authentication-mfa">
 						<title>7.1.2. Multi-factor Authentication (MFA)</title>
 
 						<p>
@@ -62,8 +62,8 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="mac-dac-rbac-and-abac">
+					</subsection>
+					<subsection xml:id="mac-dac-rbac-and-abac">
 						<title>7.1.3. MAC, DAC, RBAC, and ABAC</title>
 						<p>
 						There are several different authorization models that can be used. Mandatory Access Control (MAC) requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security. Discretional Access Control (DAC) simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised. Role-Based Access Control (RBAC) builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC. Attribute-Based access control (ABAC) is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context. These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."
@@ -131,11 +131,14 @@
 							</tabular>
 						</table>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="physical-access">
 					<title>7.2. Physical Access</title>
-
+					<introduction>
+				<p>
+					An organization’s building is a large ongoing investment and is often an unexpected security asset or weakness. Most technical security controls can be completely bypassed or disabled if physical security is not taken into account. As such, steps must be taken to assure that physical access is limited to protect not only the building and its contents but also the data that is created and stored there.
+				</p>
 					<figure>
 						<caption></caption>
 						<image source="castle.jpg" decorative="yes"/>
@@ -146,12 +149,10 @@
 						<url href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</url>, via Wikimedia Commons
 				
 					</p>
+				</introduction>
 
-					<p>
-					An organization’s building is a large ongoing investment and is often an unexpected security asset or weakness. Most technical security controls can be completely bypassed or disabled if physical security is not taken into account. As such, steps must be taken to assure that physical access is limited to protect not only the building and its contents but also the data that is created and stored there.
-				</p>
 
-					<paragraphs xml:id="gates">
+					<subsection xml:id="gates">
 						<title>7.2.1. Gates</title>
 
 						<p>
@@ -162,8 +163,8 @@
 						Security gates can be manned or unmanned and designed to support vehicular or pedestrian traffic. In general an unmanned security gate is not going to be as effective as a manned security gate. Likewise, vehicular gates will be less effective against foot traffic (especially unmanned vehicular gates) than gates or checkpoints designed for individuals. A thorough risk assessment is often the first step in planning where to put gates and what types of gates to use.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="biometrics">
+					</subsection>
+					<subsection xml:id="biometrics">
 						<title>7.2.2. Biometrics</title>
 
 						<figure>
@@ -185,8 +186,8 @@
 						Biometric traits are often broken into two categories: physiological and behavioral. Physiological traits can be facial structure, fingerprints, palm prints, hand structure, iris patterns, or even the sequence of someone’s DNA. Behavioral traits include voice, signature, and even keystroke patterns.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="key-cards">
+					</subsection>
+					<subsection xml:id="key-cards">
 						<title>7.2.3. Key Cards</title>
 
 						<p>
@@ -228,16 +229,16 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="security-guards">
+					</subsection>
+					<subsection xml:id="security-guards">
 						<title>7.2.4. Security Guards</title>
 
 						<p>
 						The most versatile assets in any organization are human assets and the same is true of security guards. Security guards can be used to verify IDs, enforce rules, stopped forced entry, and take actions as necessary. Given the expensive nature of human resources, security guards should be employed in critical locations where risk is high. They may also benefit greatly from staff awareness training even if their job description may be different from the other employees you are training.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="cameras">
+					</subsection>
+					<subsection xml:id="cameras">
 						<title>7.2.5. Cameras</title>
 
 						<figure>
@@ -277,8 +278,8 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="mantraps">
+					</subsection>
+					<subsection xml:id="mantraps">
 						<title>7.2.6. Mantraps</title>
 
 						<figure xml:id="fig-mantrap">
@@ -295,12 +296,12 @@
 						A mantrap is a physical access control that requires one person at a time enter through a door. Also known as air locks, sally ports, or access control vestibules, mantraps are used to prevent tailgating, or following another person through a secured door. These devices are often used with keycards to ensure that only people who are supposed to have access to a building can get in.
 					</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="network-access">
 					<title>7.3. Network Access</title>
 
-					<paragraphs xml:id="active-directory">
+					<subsection xml:id="active-directory">
 						<title>7.3.1. Active Directory</title>
 
 						<p>
@@ -319,24 +320,24 @@
 						For many environments, AD is the mechanism used for authentication, authorization, and accounting. As many services have migrated to the web, the need to access AD from anywhere has become increasingly important. This has kindled the growth of Azure Active Directory, a cloud-based version of active directory. Increasingly we are seeing deployments that utilize cloud-based resources instead of local DCs.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="privileged-identity-management-pim">
+					</subsection>
+					<subsection xml:id="privileged-identity-management-pim">
 						<title>7.3.2. Privileged Identity Management (PIM)</title>
 
 						<p>
 						Privileged Identity Management (PIM) is a method of managing access to resources such as locations, commands, audit reports, and services. PIM aims to provide more granular access control. By recording more information about access it allows for better reporting regarding suspicious behavior and anomalies. PIM is used in the Windows operating system and for many Microsoft Azure services.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="privileged-access-management-pam">
+					</subsection>
+					<subsection xml:id="privileged-access-management-pam">
 						<title>7.3.3. Privileged Access Management (PAM)</title>
 
 						<p>
 						Privileged Access Management (PAM) is a framework for safeguarding identities with advanced capabilities, such as superusers in a *NIX system. PAM is common in the Linux world, where it is used to control how administrators log in. PAM supports many more features than the older "become root and perform admin tasks" model. With PAM passwords can be set to expire, better auditing can be put in place, and privilege escalation can be made temporary.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="identity-and-access-management-iam">
+					</subsection>
+					<subsection xml:id="identity-and-access-management-iam">
 						<title>7.3.4. Identity and Access Management (IAM)</title>
 
 						<p>
@@ -346,8 +347,8 @@
 						<p>
 						IAM often makes use of PIM and PAM to accomplish these goals. A well-implemented, thorough IAM framework can work across operating systems and handle many different types of resources.
 					</p>
-					</paragraphs>
-					<paragraphs xml:id="unix-file-permissions">
+					</subsection>
+					<subsection xml:id="unix-file-permissions">
 						<title>7.3.5. Unix File Permissions</title>
 
 						<p>
@@ -383,8 +384,8 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="acls">
+					</subsection>
+					<subsection xml:id="acls">
 						<title>7.3.6. ACLs</title>
 
 						<p>
@@ -405,8 +406,8 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="ssh-keys">
+					</subsection>
+					<subsection xml:id="ssh-keys">
 						<title>7.3.7. SSH Keys</title>
 
 						<p>
@@ -422,8 +423,8 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="sessions-and-cookies">
+					</subsection>
+					<subsection xml:id="sessions-and-cookies">
 						<title>7.3.8. Sessions and Cookies</title>
 						<p>
 						HTTP sessions can also be used to control access to a resource. This is often employed in web applications. Upon successful sign-in, a user is given a cookie with a cryptographically tamper-resistant session ID. Every request the user makes to that site will include that cookie. Eventually the session will time out and the user will make a request that is denied based on their session ID no longer being valid. Typically the website will redirect them from the protected resource to a login page where they can log in again.
@@ -433,8 +434,8 @@
 						Website cookies may also be used to store user preferences or the current state of the application. A cookie could list the items currently in a users shopping cart or specify whether or not the user prefers dark mode. Cookies have been a target of scrutiny as they can be used in attacks. If cookies can be accessed by an outside application or by a separate malicious tab in a web browser, then can be used to gain access to a users session.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="single-sign-on-sso">
+					</subsection>
+					<subsection xml:id="single-sign-on-sso">
 						<title>7.3.9. Single Sign On (SSO)</title>
 
 						<p>
@@ -504,8 +505,8 @@
 							<url href="https://commons.wikimedia.org/wiki/File:OpenIDvs.Pseudo-AuthenticationusingOAuth.svg">CC0 1.0</url>
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="kerberos">
+					</subsection>
+					<subsection xml:id="kerberos">
 						<title>7.3.10. Kerberos</title>
 
 						<p>
@@ -515,47 +516,47 @@
 						<p>
 						Kerberos makes use of many different services and concepts to perform its duties. Some of these services may run on the same machine and they are almost always abbreviated:
 					</p>
-
-						<dl>
-							<dt>Authentication Server (AS)</dt>
-							<dd>
-								<p>
-						performs the authentication step with clients
+					<p>
+						<ul>
+							
+							<li>
+								<p><idx>authentication server</idx><idx>AS</idx>
+						<term>Authentication Server (AS)</term>: performs the authentication step with clients
 					</p>
-							</dd>
-							<dt>Ticket-Granting Service (TGS)</dt>
-							<dd>
-								<p>
-						service which creates and signs tickets
+							</li>
+							
+							<li>
+								<p><idx>ticket-granting service</idx><idx>TGS</idx>
+						<term>Ticket-Granting Service (TGS)</term>: service which creates and signs tickets
 					</p>
-							</dd>
-							<dt>Ticket-Granting Tickets (TGT)</dt>
-							<dd>
-								<p>
-						time stamped and encrypted (with the TGS secret key) ticket that grants the ability to create tickets and sessions for services
+							</li>
+							
+							<li>
+								<p><idx>ticket-granting tickets</idx><idx>TGT</idx>
+						<term>Ticket-Granting Tickets (TGT)</term>: time stamped and encrypted (with the TGS secret key) ticket that grants the ability to create tickets and sessions for services
 					</p>
-							</dd>
-							<dt>Key Distribution Center (KDC)</dt>
-							<dd>
-								<p>
-						runs the TGS and grants TGTs
+							</li>
+							
+							<li>
+								<p><idx>key distribution center</idx><idx>KDC</idx>
+						<term>Key Distribution Center (KDC)</term>: runs the TGS and grants TGTs
 					</p>
-							</dd>
-							<dt>Service Principle Name (SPN)</dt>
-							<dd>
-								<p>
-						name of a service that uses Kerberos authentication
+							</li>
+							
+							<li>
+								<p><idx>service principle name</idx><idx>SPN</idx>
+						<term>Service Principle Name (SPN)</term>: name of a service that uses Kerberos authentication
 					</p>
-							</dd>
-						</dl>
-
+							</li>
+						</ul>
+					</p>
 						<p>
 						To sign in and client reaches out to the AS which gets a TGT from the TGS running on the KDC and gives it to the client. The client gets the SPN of the service it wants to utilize and sends it along with the TGT to the TGS. Assuming the client has permission to access the service the TGS issues a ticket and session to the client. The ticket is then used to connect to the service.
 					</p>
-
-						<p>
+						<example>
+						<title>
 						Golden Ticket
-					</p>
+						</title>>
 
 						<p>
 						A dangerous attack against Kerberos authentication exists and goes by the name 
@@ -572,9 +573,10 @@
 							<url href="https://blog.quest.com/what-is-krbtgt-and-why-should-you-change-the-password/">so a common remediation strategy is to change the password</url>. Ultimately the administrator will need to determine how the KRBTGT password hash was obtained in the first place.
 					
 						</p>
+					</example>
 
-					</paragraphs>
-					<paragraphs xml:id="tokenization">
+					</subsection>
+					<subsection xml:id="tokenization">
 						<title>7.3.11. Tokenization</title>
 
 						<p>
@@ -584,7 +586,7 @@
 						<p>
 						Imagine you don’t want your credit card number exposed to merchants. One solution would be if you used a payment service that issued you a new credit card number for each transaction. This credit card number would only be valid for a single transaction and would be billed to your regular credit card (which the payment service would have access to). In this case the token is the one-time-use credit card number and the sensitive information is your actual credit card number. Payment services like ApplePay and GoogleWallet do exactly this.
 					</p>
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="lab-linux-file-permissions">
 					<title>7.4. Lab: Linux File Permissions</title>
