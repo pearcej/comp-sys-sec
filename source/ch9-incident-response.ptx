@@ -27,11 +27,14 @@
 						</figure>
 
 						<p>
-						In the 1940s and 1950s MIT scientists developed large-scale computing laboratories. In 1958 MITRE was formed as a private corporation from the personnel and equipment in these labs. Currently, MITRE is a federally funded research and development center.
+							<idx>MITRE</idx>
+						In the 1940s and 1950s MIT scientists developed large-scale computing laboratories. In 1958 
+						<term>MITRE</term> was formed as a private corporation from the personnel and equipment in these labs. Currently, MITRE is a federally funded research and development center.
 					</p>
 
 						<p>
-						As mentioned previously, MITRE maintains the CVE DB. MITRE has also developed the ATT&amp;CK framework for analyzing incidents. We will go through each step of the framework at the end of this chapter.
+							<idx>ATT&amp;CK</idx>
+						As mentioned previously, MITRE maintains the CVE DB. MITRE has also developed the <term>ATT&amp;CK</term> framework for analyzing incidents. We will go through each step of the framework at the end of this chapter.
 					</p>
 
 					</subsection>
@@ -39,7 +42,10 @@
 						<title>NIST</title>
 
 						<p>
-						NIST stands for National Institute of Standards and Technology. It is a federally supported through the US Department of Commerce and posits itself as an institute to promote American innovation. NIST develops standards, guidelines, and best practices in technical fields.
+							<idx>NIST</idx>
+							<idx>National Institute of Standards and Technology</idx>
+						<term>NIST</term> stands for 
+						<term>National Institute of Standards and Technology</term>. It is a federally supported through the US Department of Commerce and posits itself as an institute to promote American innovation. NIST develops standards, guidelines, and best practices in technical fields.
 					</p>
 
 						<p>
@@ -81,7 +87,9 @@
 						<title>OWASP</title>
 
 						<p>
-						The Open Web Application Security Project (OWASP) is an international non-profit organization focused on web application security. They have an active online community with tools, forums, videos, and news posts. Their most popular resource is the 
+							<idx>open Web Application Security Project</idx>
+							<idx>OWASP</idx>
+						The <term>Open Web Application Security Project</term> (<term>OWASP</term>) is an international non-profit organization focused on web application security. They have an active online community with tools, forums, videos, and news posts. Their most popular resource is the 
 							<url href="https://owasp.org/Top10">OWASP Top 10</url>, an annual listing of the most popular web application vulnerabilities.
 					
 						</p>
@@ -89,10 +97,12 @@
 					</subsection>
 				</section>
 				<section xml:id="soc">
-					<title>9.2. SOC</title>
+					<title>SOC</title>
 
 					<p>
-					A security operations center (SOC) is a dedicated team of security experts working within the business they are protecting. Incident response and recovery is the job of the SOC. SOCs also set up preventative infrastructure, monitor the environment, respond to possible threats, manage logs, and maintain compliance.
+						<idx>security operations center</idx>
+						<idx>SOC</idx>
+					A <term>security operations center</term> (<term>SOC</term>) is a dedicated team of security experts working within the business they are protecting. Incident response and recovery is the job of the SOC. SOCs also set up preventative infrastructure, monitor the environment, respond to possible threats, manage logs, and maintain compliance.
 				</p>
 
 					<p>
@@ -106,14 +116,17 @@
 					<title>Incidents</title>
 					<introduction>
 					<p>
-					Incidents are part of working at an SOC, they will occur. The best SOCs may spot them before they’re an issue (or an incident even) and have practice how to respond and recovery. The goal is to maintain continuity of services provided even if an incident occurs.
+						<idx>incidents</idx>
+					<term>Incidents</term> are part of working at an SOC, they will occur. The best SOCs may spot them before they’re an issue (or an incident even) and have practice how to respond and recovery. The goal is to maintain continuity of services provided even if an incident occurs.
 				</p>
 				</introduction>
 					<subsection xml:id="precursors">
 						<title>Precursors</title>
 	
 						<p>
-						Typically before an incident takes place, there are warning signs or precursors telling you that an incident is going to occur. Precursors may be obvious like threats from APTs, criminal organizations, or Hacktivist. They can also be subtle, such as patterns of recon in web server logs or evidence of transient port scans. Finally a precursor may be the discovery of a new exploit which leads to an uptick in malicious actor activity for everyone. In all cases, it’s important to keep an eye out for precursors. If an incident is caught in this phase it is much easier to handle.
+							<idx>precursors</idx>
+						Typically before an incident takes place, there are warning signs or 
+						<term>precursors</term> telling you that an incident is going to occur. Precursors may be obvious like threats from APTs, criminal organizations, or Hacktivist. They can also be subtle, such as patterns of recon in web server logs or evidence of transient port scans. Finally a precursor may be the discovery of a new exploit which leads to an uptick in malicious actor activity for everyone. In all cases, it’s important to keep an eye out for precursors. If an incident is caught in this phase it is much easier to handle.
 					</p>
 
 					</subsection>
@@ -121,7 +134,8 @@
 						<title>Indicators</title>
 
 						<p>
-						The next level up from a precursor is an indicator. An indicator is an alert showing that an incident has been detected. These may be raised by the IDS/IPS, endpoint management system, malware scanners, network devices, or even a user report.
+							<idx>indicator</idx>
+						The next level up from a precursor is an <term>indicator</term>. An indicator is an alert showing that an incident has been detected. These may be raised by the IDS/IPS, endpoint management system, malware scanners, network devices, or even a user report.
 					</p>
 
 						<p>
@@ -134,14 +148,25 @@
 					<title>Response</title>
 					<introduction>
 					<p>
-					In the response phase, the SOC deals with an incident to mitigate the harm it causes. Every incident is different, but the governing principles and steps are the same.
+						<idx>response</idx>
+					In the <term>response</term> phase, the SOC deals with an incident to mitigate the harm it causes. Every incident is different, but the governing principles and steps are the same.
 					</p>
 					</introduction>
 					<subsection xml:id="business-continuity">
 						<title>Business Continuity</title>
 
 						<p>
-						The concept of continuity is central to the steps taken to respond to an incident. Remember that the goal is to keep things running and keep services available. Business Continuity has three main parts: Business Continuity Planning (BCP), Business Impact Analysis (BIA), and Disaster Recovery Planning (DRP).
+							<idx>continuity</idx>
+							<idx>Business Continuity Planning</idx>
+							<idx>BCP</idx>
+							<idx>Business Impact Analysi</idx>
+							<idx>BIA</idx>
+							<idx>Disaster Recovery Planning</idx>
+							<idx>DRP</idx>
+						The concept of <term>continuity</term> is central to the steps taken to respond to an incident. Remember that the goal is to keep things running and keep services available. Business Continuity has three main parts: 
+						<term>Business Continuity Planning</term> (<term>BCP</term>), 
+						<term>Business Impact Analysis</term> (<term>BIA</term>), and 
+						<term>Disaster Recovery Planning</term> (<term>DRP</term>).
 					</p>
 
 						<p>
@@ -353,7 +378,8 @@
 						<title>Recovery</title>
 
 						<p>
-						Recovery can be a long process, but it is the core of responding to an incident. If it is possible to remove malware from a machine, that action is taken in this step. Breached accounts are also disabled.
+							<idx>recovery</idx>
+						<term>Recovery</term> can be a long process, but it is the core of responding to an incident. If it is possible to remove malware from a machine, that action is taken in this step. Breached accounts are also disabled.
 					</p>
 
 						<p>
@@ -365,7 +391,8 @@
 						<title>Remediation</title>
 
 						<p>
-						Remediation is focused on making sure that an incident can’t happen again. Remediation may entail patches, firewall changes, IoC database updates, or even adding more layers of security. The goal is to ensure that all assets are safe.
+							<idx>remediation</idx>
+						<term>Remediation</term> is focused on making sure that an incident can’t happen again. Remediation may entail patches, firewall changes, IoC database updates, or even adding more layers of security. The goal is to ensure that all assets are safe.
 					</p>
 
 					</subsection>
@@ -373,7 +400,8 @@
 						<title>Reporting</title>
 
 						<p>
-						Reporting is a critical step. It is important to collect timestamped logs as well as accounts of how the incident plans were rolled out. This can help you determine if the plans should be changed and can help you know what to look for in the future. In the best case scenario good reporting lets you catch future precursors before they become incidents.
+							<idx>remediation</idx>
+						<term>Reporting</term> is a critical step. It is important to collect timestamped logs as well as accounts of how the incident plans were rolled out. This can help you determine if the plans should be changed and can help you know what to look for in the future. In the best case scenario good reporting lets you catch future precursors before they become incidents.
 					</p>
 
 						<p>
@@ -386,8 +414,9 @@
 					<title>MITRE ATT&amp;CK Framework</title>
 					<introduction>
 					<p>
+						<idx>MITRE ATT&amp;CK framework</idx>
 					In the  <xref ref="ch3-malware">Malware</xref> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
-						<url href="https://attack.mitre.org">MITRE ATT&amp;CK framework</url>. ATT&amp;CK has 14 sections that cover adversarial tactics, techniques, and common knowledge. Each section is separated into different matrices that have their own sub-techniques.
+						<url href="https://attack.mitre.org"><term>MITRE ATT&amp;CK framework</term></url>. ATT&amp;CK has 14 sections that cover adversarial tactics, techniques, and common knowledge. Each section is separated into different matrices that have their own sub-techniques.
 					</p>
 		
 					<p>
@@ -398,7 +427,8 @@
 						<title>Reconnaissance</title>
 
 						<p>
-						Reconnaissance is the act of collecting information about a target. This typically involves vulnerability scanning, network mapping, and phishing. Attackers are generally looking for weak links and a way in to the company. Understanding how reconnaissance is performed can help a security team pick up on the precursors to an incident.
+							<idx>reconnaissance</idx>
+						<term>Reconnaissance</term> is the act of collecting information about a target. This typically involves vulnerability scanning, network mapping, and phishing. Attackers are generally looking for weak links and a way in to the company. Understanding how reconnaissance is performed can help a security team pick up on the precursors to an incident.
 					</p>
 
 					</subsection>
@@ -406,7 +436,8 @@
 						<title>Resource Development</title>
 
 						<p>
-						Resource development involves acquiring infrastructure from which to deploy an attack. This may involve impersonation or custom tailoring exploits based on the results of the previous reconnaissance. In the resource development phase, all the actions needed to set the stage for an attack are performed.
+							<idx>resource development</idx>
+						<term>Resource development</term> involves acquiring infrastructure from which to deploy an attack. This may involve impersonation or custom tailoring exploits based on the results of the previous reconnaissance. In the resource development phase, all the actions needed to set the stage for an attack are performed.
 					</p>
 
 					</subsection>
@@ -414,7 +445,8 @@
 						<title>Initial Access</title>
 
 						<p>
-						Initial access refers to the first breach of security. There are many ways for this to occur, but some common ones are phishing, someone clicks on a link in an email, or through a compromised accounts. Attackers may find it easier to exploit the underlying software a corporation uses as is the case in a supply chain attack. There are even instances of attackers leaving rogue flash drives in common areas or attacking WiFi networks from nearby cars.
+							<idx>initial access</idx>
+						<term>Initial access</term> refers to the first breach of security. There are many ways for this to occur, but some common ones are phishing, someone clicks on a link in an email, or through a compromised accounts. Attackers may find it easier to exploit the underlying software a corporation uses as is the case in a supply chain attack. There are even instances of attackers leaving rogue flash drives in common areas or attacking WiFi networks from nearby cars.
 					</p>
 
 						<p>
@@ -426,7 +458,8 @@
 						<title>Execution</title>
 
 						<p>
-						Execution involves running the commands or scripts needed to perform the rest of the attack. Much of this may be automated through PowerShell or BASH scripts. These scripts will exploit vulnerability, setup tasks to run, download and install software, and possibly even give attackers a foothold for internal spearphishing.
+							<idx>execution</idx>
+						<term>Execution</term> involves running the commands or scripts needed to perform the rest of the attack. Much of this may be automated through PowerShell or BASH scripts. These scripts will exploit vulnerability, setup tasks to run, download and install software, and possibly even give attackers a foothold for internal spearphishing.
 					</p>
 
 					</subsection>
@@ -434,7 +467,8 @@
 						<title>Persistence</title>
 
 						<p>
-						Persistence is the act of setting up a system or systems to continue to run the malware that has been implanted. This may involve autostart execution of scripts, init scripts on a Linux system, creating new accounts, scheduling tasks to run, or even implanting the code within or in place of another executable or macro-enabled document. With persistence, the attacker can be sure that even if the machine is restarted or not fully wiped the malicious code will run again.
+							<idx>persistence</idx>
+						<term>Persistence</term> is the act of setting up a system or systems to continue to run the malware that has been implanted. This may involve autostart execution of scripts, init scripts on a Linux system, creating new accounts, scheduling tasks to run, or even implanting the code within or in place of another executable or macro-enabled document. With persistence, the attacker can be sure that even if the machine is restarted or not fully wiped the malicious code will run again.
 					</p>
 
 					</subsection>
@@ -453,7 +487,9 @@
 						<title>Defense Evasion</title>
 
 						<p>
-						It is important to note that while this is occurring, malware scanners, endpoint management software, and possibly even members of the SOC will be actively working to detect and remove malware. An attacker will take steps, typically automated, to make it had to detect their presence. This may involve disabling malware scanners, clearing logs, deploying in a container, running within an already running process, and other methods of obfuscation. Defense evasion makes the job of the security team that much harder.
+							<idx>defense evasion</idx>
+						It is important to note that while this is occurring, malware scanners, endpoint management software, and possibly even members of the SOC will be actively working to detect and remove malware. An attacker will take steps, typically automated, to make it had to detect their presence. This may involve disabling malware scanners, clearing logs, deploying in a container, running within an already running process, and other methods of obfuscation. 
+						<term>Defense evasion</term> makes the job of the security team that much harder.
 					</p>
 
 					</subsection>
@@ -477,7 +513,8 @@
 						<title>Lateral Movement</title>
 
 						<p>
-						Lateral movement refers to moving across internal systems without any major change in privilege. This may refer to a compromised user account being used to compromise other user accounts. The more accounts an attacker has access to, the more effectively they can learn about the environment. Having access to multiple accounts also gives the attacker more options for persistence, credential access, and internal spearphishing.
+							<idx>lateral movement</idx>
+						<term>Lateral movement</term> refers to moving across internal systems without any major change in privilege. This may refer to a compromised user account being used to compromise other user accounts. The more accounts an attacker has access to, the more effectively they can learn about the environment. Having access to multiple accounts also gives the attacker more options for persistence, credential access, and internal spearphishing.
 					</p>
 
 					</subsection>
@@ -493,7 +530,10 @@
 						<title>Command and Control</title>
 
 						<p>
-						Command and Control (C2 or C&amp;C) refers to the process of setting up a channel between the compromised internal systems and an external system. This channel can be used to get data off the compromised machines and/or for putting malware on the machines. A C2 channel allows the operator to send interact with the compromised machines and even automate much of the work.
+							<idx>Command and Control</idx>
+							<idx>C2</idx>
+							<idx>C&amp;C</idx>
+						<term>Command and Control</term> (<term>C2</term> or <term>C&amp;C</term>) refers to the process of setting up a channel between the compromised internal systems and an external system. This channel can be used to get data off the compromised machines and/or for putting malware on the machines. A C2 channel allows the operator to send interact with the compromised machines and even automate much of the work.
 					</p>
 
 						<p>
@@ -505,7 +545,9 @@
 						<title>Exfiltration</title>
 
 						<p>
-						Getting the data off of a machine can be difficult for an adversary as large transfers may trigger alarms. Web services that are already used, Google Drive, Dropbox, etc., may be employed to make exfiltration look like regular traffic. In the case of a physical breach, USB drives may be employed. Finally radio protocols like Bluetooth, cellular, or local WiFi may also be used if the attacker is in close proximity to the device.
+							<idx>exfiltration</idx>
+						Getting the data off of a machine can be difficult for an adversary as large transfers may trigger alarms. Web services that are already used, Google Drive, Dropbox, etc., may be employed to make 
+						<term>exfiltration</term> look like regular traffic. In the case of a physical breach, USB drives may be employed. Finally radio protocols like Bluetooth, cellular, or local WiFi may also be used if the attacker is in close proximity to the device.
 					</p>
 
 					</subsection>
