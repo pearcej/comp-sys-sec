@@ -5,9 +5,9 @@
 <!-- settings. -->
 <docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- A unique name for the book in a catalog; for example, see https://pretextbook.org/catalog.html and https://runestone.academy/ns/books/index. It contains a simple lowercase string with no dashes or other special characters. See https://pretextbook.org/doc/guide/html/sec-publishing-to-runestone-academy.html for more information. -->
-  <document-id>changeme</document-id>
+  <document-id>comp-sys-sec</document-id>
   <!-- A brief description for the book in a catalog; see the links above. The @shelf is used only when publishing to Runestone; see https://runestone.academy/ns/books/index for a list of valid values. You must copy these @shelf names exactly, including capitalization. -->
-  <blurb shelf="AP Computer Science"> A simple string (no markup is allowed) to describe your book. </blurb>
+  <blurb shelf="Computer Science">This work is designed as an introduction to the applied topic of computer security. Students will learn ways of preventing, identifying, understanding, and recovering from attacks against computer systems. This text also presents the evolution of computer security, the main threats, attacks and mechanisms, applied computer operation and security protocols, main data transmission and storage protection methods, cryptography, network systems availability, recovery, and business continuation procedures. Some sections that are related to legal issue are US-centric.</blurb>
 
 
   <!-- The next three lines are likely for mature projects only: -->
