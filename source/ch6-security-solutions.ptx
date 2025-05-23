@@ -66,7 +66,10 @@
 					</figure>
 
 					<p>
-					Given that a single security solution is never 100% effective it makes sense to approach security in layers and use multiple systems. There is often a lot of overlap between solutions and while that may seem inefficient in other fields, in cybersecurity we consider it a benefit. By using multiple solutions, sometimes referred to as multi-layered security or defense in depth, you can build a more robust protection against breaches.
+						<idx>multi-layered security</idx>
+						<idx>defense in depth</idx>
+					Given that a single security solution is never 100% effective it makes sense to approach security in layers and use multiple systems. There is often a lot of overlap between solutions and while that may seem inefficient in other fields, in cybersecurity we consider it a benefit. By using multiple solutions, sometimes referred to as 
+					<term>multi-layered security</term> or <term>defense in depth</term>, you can build a more robust protection against breaches.
 				</p>
 
 					<p>
@@ -83,7 +86,7 @@
 
 				</section>
 				<section xml:id="network-solutions">
-					<title>6.3. Network Solutions</title>
+					<title>Network Solutions</title>
 					<introduction>
 				<p>
 					Many products are available for handling network traffic. They are typically marketed as either stand-alone devices, software to install on internal devices, or a subscription service that routes traffic through an external appliance. In the age of cloud computing network security as a service is becoming increasingly popular.
@@ -92,16 +95,18 @@
 					
 
 					<subsection xml:id="firewall">
-						<title>6.3.1. Firewall</title>
+						<title>Firewall</title>
 
 						<p>
 						A firewall is a service/software/device that blocks unwanted traffic and permits wanted traffic. Typically a firewall is a barrier between and private network and the Internet.
 					</p>
 
 						<p>
+							<idx>nftables</idx>
+							<idx>Windows Defender Firewall</idx>
 						Software like 
-							<url href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page">nftables</url> can be used to build a firewall on a Linux router for many interior clients. Interior clients may also run host-based firewalls such as 
-							<url href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security">Windows Defender Firewall</url>. Finally hardware solutions for plug-in firewall devices are available from many vendors including Palo Alto and Cisco. Any combination of these solutions may be used.
+							<url href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page"><term>nftables</term></url> can be used to build a firewall on a Linux router for many interior clients. Interior clients may also run host-based firewalls such as 
+							<url href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security"><term>Windows Defender Firewall</term></url>. Finally hardware solutions for plug-in firewall devices are available from many vendors including Palo Alto and Cisco. Any combination of these solutions may be used.
 					
 						</p>
 
@@ -112,24 +117,31 @@
 						</p>
 
 						<p>
-						Next-Gen Firewalls (NGFW) perform the same functions of a standard firewall, but also employ an integrated intrusion prevention system (IPS) to mitigate threats. The firewall is a perfect place to perform these actions as it can easily close of connections. NGFW often tout artificial intelligence threat monitoring and automatic threat intelligence updating (typically updating attack signatures). A NGFW can also easily be built on a Linux device by making use of 
+							<idx>Next-Gen Firewalls</idx>
+							<idx>NGFW</idx>
+							<idx>intrusion prevention system</idx>
+							<idx>IPS</idx>
+						<term>Next-Gen Firewalls</term> (<term>NGFW</term>) perform the same functions of a standard firewall, but also employ an integrated 
+						<term>intrusion prevention system</term> (<term>IPS</term>) to mitigate threats. The firewall is a perfect place to perform these actions as it can easily close of connections. NGFW often tout artificial intelligence threat monitoring and automatic threat intelligence updating (typically updating attack signatures). A NGFW can also easily be built on a Linux device by making use of 
 							<url href="https://www.snort.org/">an IPS</url> in conjunction with a netfilter firewall.
 					
 						</p>
 
 						<p>
 						Network infrastructure may also make use of a special space 
-							<em>outside</em> of a firewall called the Demilitarized Zone (DMZ). Servers that need to be directly connected to the Internet are often put in the DMZ so they don’t have a deal with restrictive firewall rules. These servers may be used to detect malicious activity, monitor incoming traffic, or to handle basic requests such as serving static web pages.
+							<em>outside</em> of a firewall called the 
+							<term>Demilitarized Zone</term> (<term>DMZ</term>). Servers that need to be directly connected to the Internet are often put in the DMZ so they don’t have a deal with restrictive firewall rules. These servers may be used to detect malicious activity, monitor incoming traffic, or to handle basic requests such as serving static web pages.
 					
 						</p>
 
 						<p>
-						The largest firewall in the world is the Chinese Great Firewall, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
+							<idx>Great Firewall</idx>
+						The largest firewall in the world is the Chinese <term>Great Firewall</term>, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
 					</p>
 
 					</subsection>
 					<subsection xml:id="proxy">
-						<title>6.3.2. Proxy</title>
+						<title>Proxy</title>
 						<figure xml:id="fig-tls-proxy">
 						<caption></caption>
 						<image source="tls-proxy.svg">
@@ -143,7 +155,8 @@
 						</figure>
 
 						<p>
-						A proxy typically sits between the users and an external network. Proxies and receive and send requests on behalf of a user, allowing for full control over the traffic going out and coming back in.
+							<idx>proxy</idx>
+						A <term>proxy</term> typically sits between the users and an external network. Proxies and receive and send requests on behalf of a user, allowing for full control over the traffic going out and coming back in.
 					</p>
 
 						<p>
@@ -158,7 +171,8 @@
 						</p>
 
 						<p>
-						Reverse proxies take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
+							<idx>reverse proxies</idx>
+						<term>Reverse proxies</term> take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
 					</p>
 
 					</subsection>
