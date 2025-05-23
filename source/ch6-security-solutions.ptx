@@ -235,7 +235,8 @@
 					<p>
 						<idx>Endpoint Detection and Response</idx>
 						<idx>EDR</idx>
-					<term>Endpoint Detection and Response</term> (<term>EDR</term>) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a host-based incident prevention system (HBIPS), software that runs on the endpoint to monitor and collect data.
+					<term>Endpoint Detection and Response</term> (<term>EDR</term>) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a 
+					<term>host-based incident prevention system</term> (<term>HBIPS</term>), software that runs on the endpoint to monitor and collect data.
 				</p>
 
 					<p>
@@ -244,10 +245,15 @@
 
 				</section>
 				<section xml:id="data-loss-prevention">
-					<title>6.5. Data Loss Prevention</title>
+					<title>Data Loss Prevention</title>
 
 					<p>
-					Data loss prevention (DLP) solutions aim to stop the exfiltration of sensitive data. This could be personally identifying information (PI), medical records, social security numbers (SSNs), credit card numbers, etc. Typically DLP either functions on the endpoint and server, data at rest, or on the network, data in motion.
+						<idx>Data loss prevention</idx>
+						<idx>DLP</idx>
+						<idx>personally identifying information</idx>
+						<idx>PI</idx>
+					<term>Data loss prevention</term> (<term>DLP</term>) solutions aim to stop the exfiltration of sensitive data. This could be 
+					<term>personally identifying information</term> (<term>PI</term>), medical records, social security numbers (SSNs), credit card numbers, etc. Typically DLP either functions on the endpoint and server, data at rest, or on the network, data in motion.
 				</p>
 
 					<p>
@@ -256,28 +262,36 @@
 
 				</section>
 				<section xml:id="idsips">
-					<title>6.6. IDS/IPS</title>
+					<title>IDS/IPS</title>
 
 					<p>
-					Intrusion Detection Systems and Intrusion Prevention Systems are systems that monitor network traffic to detect/prevent attacks. These systems may look for known exploits, such as SQL injection patterns, in the traffic and trigger an alert when detected. An intrusion 
+						<idx>Intrusion Detection Systems</idx>
+						<idx>Intrusion Prevention Systems</idx>
+					<term>Intrusion Detection Systems</term> and <term>Intrusion Prevention Systems</term> are systems that monitor network traffic to detect/prevent attacks. These systems may look for known exploits, such as SQL injection patterns, in the traffic and trigger an alert when detected. An intrusion 
 						<em>prevention</em> system will take it one step further and actually shut down the connection or kill the offending process.
 				
 					</p>
 
 					<p>
-					These systems employ exploit signatures or IDs that are indicators of compromise (IoCs), anomalies, or strange behaviors. The power of an IDS/IPS often comes from how up-to-date it’s signature database is. There are many solutions in the category including Splunk, QRadar, CrowdStrike, and SolarWinds.
+						<idx>indicators of compromise</idx>
+						<idx>IoCs</idx>
+					These systems employ exploit signatures or IDs that are 
+					<term>indicators of compromise</term> (<term>IoCs</term>), anomalies, or strange behaviors. The power of an IDS/IPS often comes from how up-to-date it’s signature database is. There are many solutions in the category including Splunk, QRadar, CrowdStrike, and SolarWinds.
 				</p>
 
 				</section>
 				<section xml:id="email-solutions">
-					<title>6.7. Email Solutions</title>
+					<title>Email Solutions</title>
 	
 					<p>
 					The original protocols used to send/receive email were simple and not designed for the challenges we face today. SPAM and phishing emails are unfortunately common and can be addressed with email client add-ons that scan for viruses or use patterns to identify phishing emails. Many of these tools are already built into Google’s GMail or Microsoft's Exchange.
 				</p>
 
 					<p>
-					Another large challenge is verifying the sender of an email. Currently three common methods exist: Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM), and Domain-base Message Authentication, Reporting, and Conformance (DMARC).
+					Another large challenge is verifying the sender of an email. Currently three common methods exist: 
+					<term>Sender Policy Framework</term> (<term>SPF</term>), 
+					<term>DomainKeys Identified Mail</term> (<term>DKIM</term>), and 
+					<term>Domain-base Message Authentication, Reporting, and Conformanc</term>e (<term>DMARC</term>).
 				</p>
 
 					<p>
