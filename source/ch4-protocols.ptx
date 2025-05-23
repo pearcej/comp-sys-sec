@@ -16,10 +16,10 @@
   </introduction>
 
 				<section xml:id="network-access-layer">
-					<title>4.1. Network Access Layer</title>
+					<title> Network Access Layer</title>
 
-					<paragraphs xml:id="arp">
-						<title>4.1.1. ARP</title>
+					<subsection xml:id="arp">
+						<title>ARP</title>
 						<p><idx>ARP</idx><idx>address resolution protocol</idx>
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) is used on the local ethernet segment to resolve IP addresses to MAC addresses. Since this protocol functions at the ethernet segment level, security was not a primary concern. Unfortunately this means that ARP communications can be easily spoofed to cause a MitM scenario. A malicious actor simply sends out several ARP packets, 
 							<em>gratuitous ARP</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
@@ -34,9 +34,9 @@
 						There is a protocol designed to mitigate the issues with ARP. 
 						<term>Dynamic ARP Inspection</term> (<term>DAI</term>) reaches across layers to work with the DHCP lease database and drop packets that are not using the MAC address used when a DHCP lease was granted. While this can solve many of the issues associated with ARP it is also a good practice to use secure higher-level protocols such as HTTPS just in case.
 					</p>
-					</paragraphs>
-					<paragraphs xml:id="wifi">
-						<title>4.1.2. Wifi</title>
+					</subsection>
+					<subsection xml:id="wifi">
+						<title>Wifi</title>
 
 						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
@@ -65,14 +65,14 @@
 					</p>
 					</li>
 					</ul>
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="internet-layer-protocols">
-					<title>4.2. Internet Layer Protocols</title>
+					<title>Internet Layer Protocols</title>
 
 
-					<paragraphs xml:id="ip">
-						<title>4.2.1. IP</title>
+					<subsection xml:id="ip">
+						<title>IP</title>
 
 						<p>
 							<idx>IP</idx><idx>internet protocol</idx> 
@@ -108,9 +108,9 @@
 					</p>
 				</example>
 
-					</paragraphs>
-					<paragraphs xml:id="icmp">
-						<title>4.2.2. ICMP</title>
+					</subsection>
+					<subsection xml:id="icmp">
+						<title>ICMP</title>
 
 
 						<p><idx>ICMP</idx><idx>internet control message protocol</idx> 
@@ -163,9 +163,9 @@
 							<url href="https://nmap.org/book/man-host-discovery.html">another way to detect them.</url>
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="nat">
-						<title>4.2.3. NAT</title>
+					</subsection>
+					<subsection xml:id="nat">
+						<title>NAT</title>
 
 
 						<figure xml:id="fig-nat-router">
@@ -182,9 +182,9 @@
 						<term>Network address translation</term> (<term>NAT</term>) is primarily used to allow local IP address to share a public IPv4 address. Given the lack of IPv4 address space many devices have to share a single address. As mentioned when discussing IPv6, NAT routers often also include security features such as a stateful firewall as the complexity of the hardware required to perform NAT is equivalent to what would be needed for a firewall.
 
 					</p>
-					</paragraphs>
-					<paragraphs xml:id="ipsec">
-						<title>4.2.4. IPsec</title>
+					</subsection>
+					<subsection xml:id="ipsec">
+						<title>IPsec</title>
 
 						<p><idx>IPsec</idx><idx>internet protocol security</idx> 
 
@@ -213,14 +213,14 @@
 							</ul>
 						</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="transport-layer-protocols">
-					<title>4.3. Transport Layer Protocols</title>
+					<title>Transport Layer Protocols</title>
 
 
-					<paragraphs xml:id="tcp">
-						<title>4.3.1. TCP</title>
+					<subsection xml:id="tcp">
+						<title>TCP</title>
 
 						<p><idx>TCP</idx><idx>transmission control protocol</idx>
 						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.
@@ -231,9 +231,9 @@
 								</p>
 							</note>
 
-					</paragraphs>
-					<paragraphs xml:id="udp">
-						<title>4.3.2. UDP</title>
+					</subsection>
+					<subsection xml:id="udp">
+						<title>UDP</title>
 
 
 						<p><idx>UDP</idx><idx>user datagram protocol</idx>
@@ -241,9 +241,9 @@
 						<term>User Datagram Protocol</term> (<term>UDP</term>) is a connectionless protocol designed for instances where TCP may have too much latency. UDP achieves this performance boost by not having handshaking or flow control. The result is a speedy protocol that sometimes drops datagrams. UDP is often used as the basis for gaming or streaming protocols where the timing of the packets is more important that whether or not they all arrive. UDP does still employ checksums so you can be sure of the integrity of any UDP packets that you do receive.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="common-ports-and-services">
-						<title>4.3.3. Common Ports and Services</title>
+					</subsection>
+					<subsection xml:id="common-ports-and-services">
+						<title>Common Ports and Services</title>
 
 	
 
@@ -407,14 +407,14 @@
 
 					</p>
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="application-layer-protocols">
-					<title>4.4. Application Layer Protocols</title>
+					<title>Application Layer Protocols</title>
 
 
-					<paragraphs xml:id="dhcp">
-						<title>4.4.1. DHCP</title>
+					<subsection xml:id="dhcp">
+						<title>DHCP</title>
 
 						<p><idx>DHCP</idx><idx>dynamic host configuration protocol</idx> 
 							<idx>DNS</idx><idx>domain name servers</idx> 
@@ -431,9 +431,9 @@
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) messages and does not make use of authentication, meaning that once an attacker is on the same Ethernet segment as the victim machines all bets are off.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="http">
-						<title>4.4.2. HTTP</title>
+					</subsection>
+					<subsection xml:id="http">
+						<title>HTTP</title>
 
 
 						<p><idx>request</idx>
@@ -505,9 +505,9 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="ssltls">
-						<title>4.4.3. SSL/TLS</title>
+					</subsection>
+					<subsection xml:id="ssltls">
+						<title>SSL/TLS</title>
 
 
 						<figure xml:id="fig-tls-handshake">
@@ -527,9 +527,9 @@
 						<term>Transport Layer Security</term> (<term>TLS</term>) is a protocol that allows cleartext protocols used on the web to be encrypted. It is a general purpose protocol, designed as a layer through which other protocols communicate. Some protocols typically wrapped in TLS include HTTP, SMTP, IMAP, VoIP, and many VPN protocols. TLS uses a handshake to exchange certificate information as shown in the diagram. It should be noted that at the time of writing TLS 1.3 is the most current version, but only half of websites support it. TLS 1.2, the most common version, is still considered safe if best practices are followed and TLS 1.1 or lower is considered depreciated.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="https">
-						<title>4.4.4. HTTPS</title>
+					</subsection>
+					<subsection xml:id="https">
+						<title>HTTPS</title>
 
 
 						<figure xml:id="fig-https-indicator">
@@ -558,26 +558,26 @@
 						<term>Hypertext Transfer Protocol Secure</term> (<term>HTTPS</term>) solves the problem of unencrypted traffic by wrapping HTTP requests in TLS. HTTPS traffic uses port 443 and is typically signified in a browser with a lock icon in the upper left-hand corner. By clicking on the icon users can learn more about the certificates being used for communication. Utilizing a robust PKI HTTPS allows for safe HTTP communication between client and server.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="rdp">
-						<title>4.4.5. RDP</title>
+					</subsection>
+					<subsection xml:id="rdp">
+						<title>RDP</title>
 
 						<p><idx>RDP</idx><idx>remote desktop protocol</idx>
 
 						<term>Remote Desktop Protocol</term> (<term>RDP</term>) is build into Windows and is typically used to control a machine remotely. It works over port 3389 via TCP or UDP. While RDP can be quite useful for performing remote administration on a remote machine, it can also be a large security hole if a bad actor gains access. RDP use in ransomware attacks is on the rise as ransomware programs may use RDP to find other machines to attack.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="telnet">
-						<title>4.4.6. Telnet</title>
+					</subsection>
+					<subsection xml:id="telnet">
+						<title>Telnet</title>
 
 						<p><idx>telnet</idx>
 
 						<term>Telnet</term> is an antiquated remote administration tool that gives access to a shell via a cleartext channel. Telnet runs on port 23 and while still occasionally in use it should largely be phased out. You will still find telnet in embedded applications and legacy systems. You may also see the client being used to inspect other types of traffic. For example, you can use a telnet client to submit HTTP requests or send email via SMTP.
 					</p>
-					</paragraphs>
-					<paragraphs xml:id="ssh">
-						<title>4.4.7. SSH</title>
+					</subsection>
+					<subsection xml:id="ssh">
+						<title>SSH</title>
 
 
 						<p><idx>SSH</idx><idx>secure shell</idx> 
@@ -585,9 +585,9 @@
 						<term>Secure Shell</term> (<term>SSH</term>) is the most widely deployed remote administration tool. SSH provides access to a shell via an encrypted connection. SSH supports many options including SOCKS5 proxies, port forwarding, and the usage of multiple authentication schemes: password, key, hardware device, etc. SSH uses TCP on port 22.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="ldap">
-						<title>4.4.8. LDAP</title>
+					</subsection>
+					<subsection xml:id="ldap">
+						<title>LDAP</title>
 
 						<figure xml:id="fig-ldap">
 						<caption></caption>
@@ -610,9 +610,9 @@
 						(<term>LDAPS</term>) was developed. LDAP uses TCP and UPD over port 389 and LDAPS uses TCP over port 636.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="dns">
-						<title>4.4.9. DNS</title>
+					</subsection>
+					<subsection xml:id="dns">
+						<title>DNS</title>
 
 
 						<p><idx>DNS</idx><idx>domain name system</idx> 
@@ -630,9 +630,9 @@
 					
 						</p>
 
-					</paragraphs>
-					<paragraphs xml:id="dnssec">
-						<title>4.4.10. DNSSEC</title>
+					</subsection>
+					<subsection xml:id="dnssec">
+						<title>DNSSEC</title>
 
 
 						<p><idx>DNSSEC</idx><idx>domain name system security Extensions</idx> 
@@ -640,9 +640,9 @@
 						<term>Domain Name System Security Extensions</term> (<term>DNSSEC</term>) is a suite of extension specifications designed to authenticate responses to domain name lookups. This can help prevent MitM attacks by checking the digital signature of the responding server. While this is certainly helpful, it is important to note that DNSSEC does not provide confidentiality. DNS resolutions can still be monitored by anyone who has access to the traffic.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="imappop3">
-						<title>4.4.11. IMAP/POP3</title>
+					</subsection>
+					<subsection xml:id="imappop3">
+						<title>IMAP/POP3</title>
 
 
 						<p>
@@ -652,9 +652,9 @@
 						<term>Internet Message Access Protocol</term> (<term>IMAP</term>) and <term>Post Office Protocol 3</term> (<term>POP3</term>) are two protocols used to retrieve email from a server. IMAP is the more recent protocol which supports saving mail on the sever and folders. POP3 is more primitive, supporting only the retrieval (and subsequent deletion from the server) of emails. Both protocols use cleartext and are now commonly run over TLS. POP3 defaults to TCP port 110 or 995 if using TLS. IMAP defaults to TCP port 143 or 993 if using TLS. In the age of webmail it is easy to forget about these protocols, but a security specialist must keep them in mind as they may still be used in support of corporate devices.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="smtp">
-						<title>4.4.12. SMTP</title>
+					</subsection>
+					<subsection xml:id="smtp">
+						<title>SMTP</title>
 
 
 						<p>
@@ -666,9 +666,9 @@
 							<em>actually</em> come from those domains. This is largely used to combat spam, which continues to be a problem.
 					
 						</p>
-					</paragraphs>
-					<paragraphs xml:id="ntp">
-						<title>4.4.13. NTP</title>
+					</subsection>
+					<subsection xml:id="ntp">
+						<title>NTP</title>
 
 
 						<p>
@@ -677,9 +677,9 @@
 						<term>Network Time Protocol</term> (<term>NTP</term>)  uses UDP over port 123 to sync the system time with a time server. NTP servers are layered in stratums, with the lowest stratums being closest to the most accurate sources of time, atomic clocks, GPS, etc. NTP is important as many protocols, including several key exchanges, require system clocks to be in sync. System clocks are also used to check when certificates expire and used in logs to indicate when something happened. Without an accurate, synchronized system clock many things will fail in surprising ways.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="ftp">
-						<title>4.4.14. FTP</title>
+					</subsection>
+					<subsection xml:id="ftp">
+						<title>FTP</title>
 
 
 						<p>
@@ -701,9 +701,9 @@
 						<term>Secure FTP</term> (<term>SFTP</term>) is recommended. SFTP uses an SSH connection to send and receive files over an encrypted channel. SFTP also supports all SSH authentication methods.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="snmp">
-						<title>4.4.15. SNMP</title>
+					</subsection>
+					<subsection xml:id="snmp">
+						<title>SNMP</title>
 
 						<figure xml:id="fig-snmp">
 						<caption></caption>
@@ -725,10 +725,10 @@
 					</p>
 
 
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="lab-scanning-with-nmap">
-					<title>4.5. Lab: Scanning with nmap</title>
+					<title>Lab: Scanning with nmap</title>
 
           
 					<p>
@@ -980,7 +980,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 
 				</section>
 				<section xml:id="protocols-review">
-					<title>4.6. Review Questions</title>
+					<title>Review Questions</title>
 
 					<p>
 						<ol>
