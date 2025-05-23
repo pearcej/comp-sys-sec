@@ -10,7 +10,7 @@
   </introduction>
 
 				<section xml:id="why-do-we-need-cryptography">
-					<title>2.1. Why do we need cryptography?</title>
+					<title>Why do we need cryptography?</title>
 					<p>
 					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, <em>and</em> accounting (AAA).
 					</p>
@@ -42,7 +42,7 @@
 			</example>
 				</section>
 				<section xml:id="terminology">
-					<title>2.2. Terminology</title>
+					<title>Terminology</title>
 
 					<p>
 					Going forward, it is important to address some common cryptography terms as they will be used frequently:
@@ -139,7 +139,7 @@
 			</example>
 				</section>
 				<section xml:id="keys">
-					<title>2.3. Keys</title>
+					<title>Keys</title>
 					<p>
 					Typically a series of random bytes can be used as a key to either encrypt or decrypt data. A key is used by a cryptographic algorithm to change plaintext to ciphertext. Keys may also be asymmetric in that they can only be used to perform 
 						<em>one</em> of the operations (either encryption or decryption).
@@ -153,7 +153,7 @@
 					</p>
 				</section>
 				<section xml:id="mathematical-foundation">
-					<title>2.4. Mathematical Foundation</title>
+					<title>Mathematical Foundation</title>
 					<p>
 					Cryptography relies largely on the concept of one-way or trap door functions. That is a process that is hard to compute in one direction, but easy to compute in the other. For example it is much easier for a computer to multiply large numbers than to determine the factors of large numbers. This is the foundation of the RSA algorithm. 
 						<url href="https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html">A simplified version of the algorithm</url> is shown below:
@@ -206,7 +206,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				</p>
 				</section>
 				<section xml:id="hashes">
-					<title>2.5. Hashes</title>
+					<title>Hashes</title>
 					<figure>
                         <caption></caption>
                         <image source="hash.svg" >
@@ -256,7 +256,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</p>
 				</section>
 				<section xml:id="symmetric-encryption">
-					<title>2.6. Symmetric Encryption</title>
+					<title>Symmetric Encryption</title>
 					<figure>
                         <caption></caption>
                         <image source="symmetric.svg" >
@@ -291,7 +291,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
                 </section>
                 
 				<section xml:id="asymmetric-encryption">
-					<title>2.7. Asymmetric Encryption</title>
+					<title>Asymmetric Encryption</title>
 					<figure>
                         <caption></caption>
                         <image source="asymmetric.svg">
@@ -312,20 +312,20 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</p>
 				</section>
 				<section xml:id="stream-ciphers">
-					<title>2.8. Stream Ciphers</title>
+					<title>Stream Ciphers</title>
 					<p>
 					Stream ciphers encode data one symbol at a time and produces one ciphertext symbol for each cleartext symbol. Given that you can often use some sort of block encryption with a significantly small block size, stream encryption is not used as often. Technically the OTP example, when used one symbol at a time, is a stream cipher. The keys come in one symbol at a time, the cleartext comes in one symbol at a time, and an operation is performed (addition in the case of the example) to create the ciphertext. Given a suitable keysize and a well-researched algorithm, stream ciphers can be just as secure as block ciphers. That being said a stream cipher is usually more consistent in its runtime characteristics and typically consumes less memory Unfortunately there are not as many well-researched algorithms and widely used stream ciphers.
 				</p>
 				</section>
 				<section xml:id="block-ciphers">
-					<title>2.9. Block Ciphers</title>
+					<title>Block Ciphers</title>
 					<introduction>
 					<p>
 					Block ciphers takes the data in, in blocks and use cipher blocks of the same size to perform the encryption. It is very popular and there are many secure algorithms to choose from. Unfortunately if the input data doesn’t fit neatly into blocks of the same size, padding may be required, which takes up more space/memory and reduces the speed of the cipher. As such the block encryption is often less performant than stream encryption.
 				</p>
 					</introduction>
 					<subsection xml:id="block-cipher-modes-of-operation">
-						<title>2.9.1. Block Cipher Modes of Operation</title>
+						<title>Block Cipher Modes of Operation</title>
 						<introduction>
 						<p>
 						There are several ways you can create your cipher blocks and depending on how you do it, various attacks are possible:
@@ -439,15 +439,15 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 
 				</section>
 				<section xml:id="encryption-examples">
-					<title>2.10. Encryption Examples</title>
+					<title>Encryption Examples</title>
 					<subsection xml:id="rsa">
-						<title>2.10.1. RSA</title>
+						<title>RSA</title>
 						<p>
 						RSA is an asymmetric encryption standard developed in 1977 that is still very popular. Its trapdoor function is based on the difficulty of factoring large numbers. The name RSA comes from the names of the authors of the system: Ron Rivest, Adi Shamir, and Leonard Adleman.
 					</p>
 					</subsection>
 					<subsection xml:id="advanced-encryption-standard-aes">
-						<title>2.10.2. Advanced Encryption Standard (AES)</title>
+						<title>Advanced Encryption Standard (AES)</title>
 						<p>
 						AES is a symmetric block cipher developed in 1998 to supersede the less secure Data Encryption Standard (DES). AES works on 128 bit blocks of data, performing multiple rounds of substitution-permutation to encrypt data. You will find AES used to encrypt network traffic (as is the case in a virtual private network), data stored to disk (disk encryption), or computer game data that is saved to storage. AES is a 
 							<em>very</em> common cipher.
@@ -455,7 +455,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						</p>
 					</subsection>
 					<subsection xml:id="elliptic-curve-cryptography-ecc">
-						<title>2.10.3. Elliptic-curve Cryptography (ECC)</title>
+						<title>Elliptic-curve Cryptography (ECC)</title>
 						<p>
 						ECC is an asymmetric encryption scheme that is quite fast and easy to computer. It is rapidly becoming the go to choice for digital signatures and key exchanges, gaining adopting starting in 2004. ECC is based on the geometry of a pre-determined set of curves (some examples can be found 
 							<url href="http://www.secg.org/sec2-v2.pdf">here</url>), which can be used to create a trapdoor function.
@@ -463,7 +463,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						</p>
 					</subsection>
 					<subsection xml:id="diffie-hellman-key-exchange">
-						<title>2.10.4. Diffie-Hellman Key Exchange</title>
+						<title>Diffie-Hellman Key Exchange</title>
 						<figure>
                             <caption></caption>
                             <image source="dh.svg">
@@ -485,7 +485,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</p>
 					</subsection>
 					<subsection xml:id="digital-certificates">
-						<title>2.10.5. Digital Certificates</title>
+						<title>Digital Certificates</title>
 						<p>
 						A digital certificate is a set of credentials used to identify a company or an individual. Since asymmetric encryption requires know a party’s public key, a digital certificate includes that key as well as an ID of the owner. The question then becomes how do you trust that the public key is 
 							<em>actually</em> for the alleged owner? That’s where the issuing authority comes in. A 
@@ -514,7 +514,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						</p>
 					</subsection>
 					<subsection xml:id="blockchain">
-						<title>2.10.6. Blockchain</title>
+						<title>Blockchain</title>
 						<figure>
 							<caption></caption>
 							<image source="btc.svg" decorative="yes"/>
@@ -528,7 +528,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</p>
 					</subsection>
 					<subsection xml:id="trusted-platform-module-tpm">
-						<title>2.10.7. Trusted Platform Module (TPM) / Hardware Security Module (HSM)</title>
+						<title>Trusted Platform Module (TPM) / Hardware Security Module (HSM)</title>
 						<p>
 						These modules provide hardware specifically for use with encryption. HSMs are removable modules while TPMs are motherboard chips. Many ciphers rely on a reliable source of entropy (randomness) which these modules provide. They can also significantly increase the speed at which cryptographic algorithms run by moving the operations to specialized hardware. Lastly, these modules can be used to store keys 
 							<em>and</em> make them only accessible via the module. This can add an extra layer of security to prevent the keys from being easily copied.
@@ -536,7 +536,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						</p>
 					</subsection>
 					<subsection xml:id="steganography">
-						<title>2.10.8. Steganography </title>
+						<title>Steganography </title>
 						<p>
 						Steganography is the process of hiding data in something such that to a casual observer it cannot be detected. Data can be hidden in audio, images, or even 
 							<url href="https://dl.packetstormsecurity.net/crypt/snow/description.html">plain text!</url>. The hidden data can also be encrypted if an additional layer of security is required. In the field of security, malicious code may be hidden inside other files using steganographic techniques. This makes it more difficult for tools to find them when searching storage.
@@ -545,7 +545,7 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 					</subsection>
 				</section>
 				<section xml:id="lab-hash-it-out">
-					<title>2.11. Lab: Hash it Out</title>
+					<title>Lab: Hash it Out</title>
 					<p><idx>hash</idx> 
 					A 
 						<term>hash</term> is a one-way cryptographic function that produces a 
@@ -781,7 +781,7 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 
 				</section>
 				<section xml:id="cryptography-review">
-					<title>2.12. Review Questions</title>
+					<title>Review Questions</title>
 					<p>
 						<ol>
 							<li>
