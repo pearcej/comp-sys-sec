@@ -65,9 +65,29 @@
 					</subsection>
 					<subsection xml:id="mac-dac-rbac-and-abac">
 						<title>MAC, DAC, RBAC, and ABAC</title>
-						<p>
-						There are several different authorization models that can be used. Mandatory Access Control (MAC) requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security. Discretional Access Control (DAC) simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised. Role-Based Access Control (RBAC) builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC. Attribute-Based access control (ABAC) is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context. These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."
-					</p>
+						<introduction>
+								<p>There are several different authorization models that can be used.</p>
+						</introduction>
+						<subsubsection>
+							<title>MAC</title>
+							<p><idx>mandatory access control</idx> <term>Mandatory Access Control</term> <idx>MAC</idx><term>(MAC)</term> requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security.</p>
+						</subsubsection>
+						<subsubsection xml:id="dac">
+							<title>DAC</title>
+							<p><idx>discretional access control</idx> <term>Discretional Access Control</term> <idx>DAC</idx><term>(DAC)</term> simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised.</p>
+						</subsubsection>
+		
+						<subsubsection xml:id="rbac">
+							<title>RBAC</title>
+							<p><idx>role-based access control</idx><term>Role-Based Access Control</term><idx>RBAC</idx> <term>(RBAC)</term> builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC.</p>
+						</subsubsection>
+						<subsubsection xml:id="subsubsec-abac">
+							<title>ABAC</title>
+							<p><idx>attribute-based access control</idx><term>Attribute-Based access control</term> <idx>ABAC</idx><term>(ABAC)</term> is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context.</p> 
+						</subsubsection>
+					
+						<conclusion>
+							<p>These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."</p>
 <p>
 						<table>
 							<title>Comparison between DAC, MAC, RBAC, and ABAC</title>
@@ -129,6 +149,7 @@
 							</tabular>
 						</table><fn>Khalaf, Emad. (2017). A Survey of Access Control and Data Encryption for Database Security. journal of King Abdulaziz University Engineering Sciences. 28. 19-30. 10.4197/Eng.28-1.2. Reproduced under license: CC BY-NC 4.0</fn>
 					</p>
+						</conclusion>
 					</subsection>
 				</section>
 				<section xml:id="physical-access">
@@ -153,7 +174,7 @@
 					<subsection xml:id="gates">
 						<title>Gates</title>
 						<p>
-						It is easier to manage the physical security of a location when the amount of entry points are limited. Convenience and safety dictate that even with such considerations multiple points of ingress are still needed. A security gate is the most basic tool available the ensure that only authorized actors gain access.
+						It is easier to manage the physical security of a location when the amount of entry points are limited. Convenience and safety dictate that even with such considerations multiple points of ingress are still needed. A <idx>security gate</idx><term>security gate</term> is the most basic tool available the ensure that only authorized actors gain access.
 					</p>
 
 						<p>
@@ -175,11 +196,11 @@
 						</p>
 
 						<p>
-						Biometric security devices identify people based on on or more physical characteristics. This has the great advantage of convenience. A person may occasionally forget to bring their ID card in to work, but they will never forget to bring their fingertip or iris! Similarly, since the items being used for identification are attached to the people that using them, biometric characteristics are difficult to steal or impersonate.
+						<idx>biometric security</idx><term>Biometric security</term> devices identify people based on on or more physical characteristics. This has the great advantage of convenience. A person may occasionally forget to bring their ID card in to work, but they will never forget to bring their fingertip or iris! Similarly, since the items being used for identification are attached to the people that using them, biometric characteristics are difficult to steal or impersonate.
 					</p>
 
 						<p>
-						Biometric traits are often broken into two categories: physiological and behavioral. Physiological traits can be facial structure, fingerprints, palm prints, hand structure, iris patterns, or even the sequence of someone’s DNA. Behavioral traits include voice, signature, and even keystroke patterns.
+						<idx>biometric traits</idx><term>Biometric traits</term> are often broken into two categories: physiological and behavioral. Physiological traits can be facial structure, fingerprints, palm prints, hand structure, iris patterns, or even the sequence of someone’s DNA. Behavioral traits include voice, signature, and even keystroke patterns.
 					</p>
 
 					</subsection>
@@ -187,7 +208,7 @@
 						<title>Key Cards</title>
 
 						<p>
-						Many security measures employ key cards for access to rooms. A key card uses the same form factor as a credit card, making it easy for employees to carry in their wallets or ID holders. Key cards may utilize magnetic stripes or chips (in a similar fashion to credit cards), radio frequency identification (RFID), or near field communication (NFC).
+						Many security measures employ key cards for access to rooms. A <idx>key card</idx><term>key card</term> uses the same form factor as a credit card, making it easy for employees to carry in their wallets or ID holders. Key cards may utilize magnetic stripes or chips (in a similar fashion to credit cards), radio frequency identification (RFID), or near field communication (NFC).
 					</p>
 
 						<p>
@@ -289,7 +310,7 @@
 						</figure>
 
 						<p>
-						A mantrap is a physical access control that requires one person at a time enter through a door. Also known as air locks, sally ports, or access control vestibules, mantraps are used to prevent tailgating, or following another person through a secured door. These devices are often used with keycards to ensure that only people who are supposed to have access to a building can get in.
+						A <idx>mantrap</idx><term>mantrap</term> is a physical access control that requires one person at a time enter through a door. Also known as air locks, sally ports, or access control vestibules, mantraps are used to prevent tailgating, or following another person through a secured door. These devices are often used with keycards to ensure that only people who are supposed to have access to a building can get in.
 					</p>
 
 					</subsection>
@@ -301,15 +322,15 @@
 						<title>Active Directory</title>
 
 						<p>
-						Active Directory (AD) is a directory service typically used in Windows networks to control and track resources. AD is a Microsoft technology that enables centralized network management. It has proven to be very scalable and is commonly deployed in the enterprise environment (corporations, universities, schools, etc.)
+						<idx>active directory</idx><term>Active Directory</term> <idx>AD</idx><term>(AD)</term> is a directory service typically used in Windows networks to control and track resources. AD is a Microsoft technology that enables centralized network management. It has proven to be very scalable and is commonly deployed in the enterprise environment (corporations, universities, schools, etc.)
 					</p>
 			
-						<p>
-						Active Directory relies upon the Lightweight Directory Access Protocol (LDAP) for its communications. While AD is probably the largest deployed user of LDAP other implementations for various operating systems exist, including Apple OpenDirectory, RH Directory Server, and OpenLDAP. LDAP is often used by internal applications and process.
+					<p>
+						Active Directory relies upon the <idx>lightweight directory access</idx><term>Lightweight Directory Access Protocol</term> <idx>LDAP</idx><term>(LDAP)</term> for its communications. While AD is probably the largest deployed user of LDAP other implementations for various operating systems exist, including Apple OpenDirectory, RH Directory Server, and OpenLDAP. LDAP is often used by internal applications and process.
 					</p>
 
 						<p>
-						The cornerstone of an AD environment is the Domain Controller (DC). DCs stores directory information about Users, Groups, Computers, Policies, and more. They respond to auth requests for the domain (network) they are supporting. A standard network will have multiple DCs with fail-over in place in case something goes wrong.
+						The cornerstone of an AD environment is the <idx>domain controller</idx><term>Domain Controller</term> <idx>DC</idx><term>(DC)</term>. DCs stores directory information about Users, Groups, Computers, Policies, and more. They respond to auth requests for the domain (network) they are supporting. A standard network will have multiple DCs with fail-over in place in case something goes wrong.
 					</p>
 
 						<p>
@@ -321,7 +342,7 @@
 						<title>Privileged Identity Management (PIM)</title>
 
 						<p>
-						Privileged Identity Management (PIM) is a method of managing access to resources such as locations, commands, audit reports, and services. PIM aims to provide more granular access control. By recording more information about access it allows for better reporting regarding suspicious behavior and anomalies. PIM is used in the Windows operating system and for many Microsoft Azure services.
+						<idx>privileged identity management</idx><term>Privileged Identity Management</term> (PIM) is a method of managing access to resources such as locations, commands, audit reports, and services. PIM aims to provide more granular access control. By recording more information about access it allows for better reporting regarding suspicious behavior and anomalies. PIM is used in the Windows operating system and for many Microsoft Azure services.
 					</p>
 
 					</subsection>
@@ -329,7 +350,7 @@
 						<title>Privileged Access Management (PAM)</title>
 
 						<p>
-						Privileged Access Management (PAM) is a framework for safeguarding identities with advanced capabilities, such as superusers in a *NIX system. PAM is common in the Linux world, where it is used to control how administrators log in. PAM supports many more features than the older "become root and perform admin tasks" model. With PAM passwords can be set to expire, better auditing can be put in place, and privilege escalation can be made temporary.
+						<idx>privileged access management</idx><term>Privileged Access Management</term> <idx>PAM</idx><term>(PAM)</term> is a framework for safeguarding identities with advanced capabilities, such as superusers in a *NIX system. PAM is common in the Linux world, where it is used to control how administrators log in. PAM supports many more features than the older "become root and perform admin tasks" model. With PAM passwords can be set to expire, better auditing can be put in place, and privilege escalation can be made temporary.
 					</p>
 
 					</subsection>
@@ -337,7 +358,7 @@
 						<title>Identity and Access Management (IAM)</title>
 
 						<p>
-						Identity and Access Management is a framework for managing digital identities. IAM manages the user database, logs when users sign in and out, manages the creation of groups or roles, and allows for the assignment and removal of access privileges. Many different groups offer IAM frameworks, the most famous of which may be Amazon Web Systems (AWS) which use it for controlling access to the infrastructure as a service (IaaS) technologies they offer.
+						<idx>identity and access management</idx><term>Identity and Access Management</term> is a framework for managing digital identities. IAM manages the user database, logs when users sign in and out, manages the creation of groups or roles, and allows for the assignment and removal of access privileges. Many different groups offer IAM frameworks, the most famous of which may be Amazon Web Systems (AWS) which use it for controlling access to the infrastructure as a service (IaaS) technologies they offer.
 					</p>
 
 						<p>
@@ -348,7 +369,7 @@
 						<title>Unix File Permissions</title>
 
 						<p>
-						From its inception, Unix was designed to be a multi-user environment, and as such, a lot of attention was paid to file permissions. Every file in a Unix system has an owner and a group. Each file also has permissions for owner, group, and all users. Permissions are set using octal numbers where each bit represents read (bit 0: 1), write (bit 1: 2), or execute (bit 2: 4) permission.
+						From its inception, <idx>unix</idx><term>Unix</term> was designed to be a multi-user environment, and as such, a lot of attention was paid to file permissions. Every file in a Unix system has an owner and a group. Each file also has permissions for owner, group, and all users. Permissions are set using octal numbers where each bit represents read (bit 0: 1), write (bit 1: 2), or execute (bit 2: 4) permission.
 					</p>
 
 						<figure xml:id="fig-permissions">
@@ -385,7 +406,7 @@
 						<title>ACLs</title>
 
 						<p>
-						Access Control Lists (ACL) are used to permit or deny access based on a characteristic. They tend to be based on a simple characteristic and either deny access to anyone not on the list, 
+						<idx>access controll lists</idx><term>Access Control Lists</term><idx>ACL</idx> <term>(ACL)</term> are used to permit or deny access based on a characteristic. They tend to be based on a simple characteristic and either deny access to anyone not on the list, 
 							<em>allowlist</em>, or deny access to anyone who 
 							<em>is</em> on the list, 
 							<em>denylist</em>.
@@ -407,7 +428,7 @@
 						<title>SSH Keys</title>
 
 						<p>
-						Secure Shell Server (SSH) supports the use of asymmetric encryption keys for authentication. Most severs support RSA, DSA, and ECDSA keys, with RSA being the most common. An SSH server maintains a list of authorized keys, typically in 
+						<idx>secure shell server</idx><term>Secure Shell Server</term><idx>SSH</idx> <term>(SSH)</term> supports the use of asymmetric encryption keys for authentication. Most severs support RSA, DSA, and ECDSA keys, with RSA being the most common. An SSH server maintains a list of authorized keys, typically in 
 							<c>~/.ssh/authorized_keys</c>, that can be used to connect to the server. When a client connects, the SSH server issues a challenge asking the client to sign a random piece of data using their private key. If the private key matches the public key stored in the 
 							<c>authorized_keys</c> file, the user is logged in.
 					
@@ -423,11 +444,11 @@
 					<subsection xml:id="sessions-and-cookies">
 						<title>Sessions and Cookies</title>
 						<p>
-						HTTP sessions can also be used to control access to a resource. This is often employed in web applications. Upon successful sign-in, a user is given a cookie with a cryptographically tamper-resistant session ID. Every request the user makes to that site will include that cookie. Eventually the session will time out and the user will make a request that is denied based on their session ID no longer being valid. Typically the website will redirect them from the protected resource to a login page where they can log in again.
+						<idx>http sessions</idx><term>HTTP sessions</term> can also be used to control access to a resource. This is often employed in web applications. Upon successful sign-in, a user is given a cookie with a cryptographically tamper-resistant session ID. Every request the user makes to that site will include that cookie. Eventually the session will time out and the user will make a request that is denied based on their session ID no longer being valid. Typically the website will redirect them from the protected resource to a login page where they can log in again.
 					</p>
 
 						<p>
-						Website cookies may also be used to store user preferences or the current state of the application. A cookie could list the items currently in a users shopping cart or specify whether or not the user prefers dark mode. Cookies have been a target of scrutiny as they can be used in attacks. If cookies can be accessed by an outside application or by a separate malicious tab in a web browser, then can be used to gain access to a users session.
+						<idx>website cookies</idx><term>Website cookies</term> may also be used to store user preferences or the current state of the application. A cookie could list the items currently in a users shopping cart or specify whether or not the user prefers dark mode. Cookies have been a target of scrutiny as they can be used in attacks. If cookies can be accessed by an outside application or by a separate malicious tab in a web browser, then can be used to gain access to a users session.
 					</p>
 
 					</subsection>
@@ -506,7 +527,7 @@
 						<title>Kerberos</title>
 
 						<p>
-						Kerberos is an authentication protocol for client server connections. It was developed by MIT in the 1980s and is most largely deployed on Windows networks, but many Linux distributions support using it for authentication as well. Kerberos makes extensive use of time-based tickets and as such all client participating must have their clocks in sync. When functioning correctly, Kerberos allows for full authentication on an untrusted network.
+						<idx>kerberos</idx><term>Kerberos</term> is an authentication protocol for client server connections. It was developed by MIT in the 1980s and is most largely deployed on Windows networks, but many Linux distributions support using it for authentication as well. Kerberos makes extensive use of time-based tickets and as such all client participating must have their clocks in sync. When functioning correctly, Kerberos allows for full authentication on an untrusted network.
 					</p>
 
 						<p>
@@ -576,7 +597,7 @@
 						<title>Tokenization</title>
 
 						<p>
-						Tokenization may be used as part of an access control scheme to protect sensitive information. Information that would be highly valuable if compromised is replaced with a random token known to the parties involved in the transaction. In a typically scenario once the tokens have been established, only the token is sent out over an untrusted network.
+						<idx>tokenization</idx><term>Tokenization</term> may be used as part of an access control scheme to protect sensitive information. Information that would be highly valuable if compromised is replaced with a random token known to the parties involved in the transaction. In a typically scenario once the tokens have been established, only the token is sent out over an untrusted network.
 					</p>
 
 						<p>
