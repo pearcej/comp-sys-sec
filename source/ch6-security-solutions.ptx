@@ -288,6 +288,13 @@
 				</p>
 
 					<p>
+						<idx>Sender Policy Framework</idx>
+						<idx>SPF</idx>
+						<idx>DomainKeys Identified Mail</idx>
+						<idx>DKIM</idx>
+						<idx>Domain-base Message Authentication, Reporting, and Conformanc</idx>
+						<idx>DMARC</idx>
+					
 					Another large challenge is verifying the sender of an email. Currently three common methods exist: 
 					<term>Sender Policy Framework</term> (<term>SPF</term>), 
 					<term>DomainKeys Identified Mail</term> (<term>DKIM</term>), and 
@@ -314,7 +321,7 @@
 	
 				</section>
 				<section xml:id="siem">
-					<title>6.8. SIEM</title>
+					<title>SIEM</title>
 					<figure xml:id="fig-seim">
 					<caption></caption>
 					<image source="seim.svg">
@@ -331,12 +338,15 @@
 					</image>
 					</figure>
 					<p>
-					Security and Information Event management is a system for real-time monitoring of security information. Typically a SIEM system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
+						<idx>Security and Information Event management</idx>
+						<idx>SIEM</idx>
+					<term>Security and Information Event management</term> is a system for real-time monitoring of security information. Typically a 
+					<term>SIEM</term> system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
 				</p>
 
 				</section>
 				<section xml:id="lab-exploiting-log4j">
-					<title>6.9. Lab: Exploiting log4j</title>
+					<title>Lab: Exploiting log4j</title>
 
 					<p>
 					In this lab we will examine the log4j vulnerability, 
