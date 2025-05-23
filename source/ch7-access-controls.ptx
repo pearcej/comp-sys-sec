@@ -68,67 +68,67 @@
 						<p>
 						There are several different authorization models that can be used. Mandatory Access Control (MAC) requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security. Discretional Access Control (DAC) simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised. Role-Based Access Control (RBAC) builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC. Attribute-Based access control (ABAC) is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context. These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."
 					</p>
-
+<p>
 						<table>
-							<title>Table 2. Comparison between DAC, MAC, RBAC, and ABAC</title>
-								<col width="19%" />
+							<title>Comparison between DAC, MAC, RBAC, and ABAC</title>
+							<col width="19%" />
 							<col width="19%" />
 							<col width="19%" />
 							<col width="19%" />
 							<col width="19%" />
 							<tabular>
-								<row header="yes">
+								<row header="yes" bottom="major">
 									<cell halign="left">Factors</cell>
 									<cell halign="left">DAC</cell>
 									<cell halign="left">MAC</cell>
 									<cell halign="left">RBAC</cell>
 									<cell halign="left">ABAC</cell>
 								</row>
-								<row class="odd">
-									<cell halign="left">Access Control to Information</cell>
-									<cell halign="left">Through owner of data</cell>
-									<cell halign="left">Through fixed rules</cell>
-									<cell halign="left">Through roles</cell>
-									<cell halign="left">Through attributes</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Access Control</line><line>to Information</line></cell>
+									<cell halign="left"><line>Through owner</line><line>of data</line></cell>
+									<cell halign="left"><line>Through</line><line>fixed rules</line></cell>
+									<cell halign="left"><line>Through</line><line>roles</line></cell>
+									<cell halign="left"><line>Through</line><line>attributes</line></cell>
 								</row>
-								<row class="even">
-									<cell halign="left">Access Control Based on</cell>
-									<cell halign="left">Discretion of owner of data</cell>
-									<cell halign="left">Cla ssification of users and data</cell>
-									<cell halign="left">Cla ssification of roles</cell>
-									<cell halign="left">Evaluation of attributes</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Access Control</line><line>Based on</line></cell>
+									<cell halign="left"><line>Discretion of</line><line>owner of data</line></cell>
+									<cell halign="left"><line>Classification</line><line>of users and data</line></cell>
+									<cell halign="left"><line>Classification</line><line>of roles</line></cell>
+									<cell halign="left"><line>Evaluation</line><line>of attributes</line></cell>
 								</row>
-								<row>
-									<cell halign="left">Flexibility fo Accessing Information</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Flexibility of</line><line>Accessing Information</line></cell>
 									<cell halign="left">High</cell>
 									<cell halign="left">Low</cell>
 									<cell halign="left">High</cell>
 									<cell halign="left">Very high</cell>
 								</row>
-								<row class="even">
-									<cell halign="left">Access Revocation Complexity</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Access Revocation </line><line>Complexity</line></cell>
 									<cell halign="left">Very complex</cell>
 									<cell halign="left">Very easy</cell>
 									<cell halign="left">Very easy</cell>
 									<cell halign="left">Very easy</cell>
 								</row>
-								<row class="odd">
-									<cell halign="left">Support for Multilevel Database System</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Support for</line><line>Multilevel</line><line>Database System</line></cell>
 									<cell halign="left">No</cell>
 									<cell halign="left">Yes</cell>
 									<cell halign="left">Yes</cell>
 									<cell halign="left">Yes</cell>
 								</row>
-								<row>
-									<cell halign="left">Used in</cell>
-									<cell halign="left">Initial Unix system</cell>
-									<cell halign="left">The U.S. Department of Defense</cell>
-									<cell halign="left">ATLAS experiment in CERN</cell>
-									<cell halign="left">The Federal government</cell>
+								<row bottom="minor">
+									<cell halign="left"><line>Used</line><line>in</line></cell>
+									<cell halign="left"><line>The initial</line><line>Unix system</line></cell>
+									<cell halign="left"><line>The U.S.</line><line>Department</line><line>of Defense</line></cell>
+									<cell halign="left"><line>The ATLAS</line><line>experiment</line><line>in CERN</line></cell>
+									<cell halign="left"><line>The U.S.</line><line>Federal</line><line>government</line></cell>
 								</row>
 							</tabular>
-						</table>
-
+						</table><fn>Khalaf, Emad. (2017). A Survey of Access Control and Data Encryption for Database Security. journal of King Abdulaziz University Engineering Sciences. 28. 19-30. 10.4197/Eng.28-1.2. Reproduced under license: CC BY-NC 4.0</fn>
+					</p>
 					</subsection>
 				</section>
 				<section xml:id="physical-access">
@@ -397,8 +397,8 @@
 					</p>
 
 						<p>
-						Filesystem ACLs apply the same concept to files. Linux uses fileystem ACLs to permit or deny access in a more nuanced way than possible with 
-							<url href="index.html#_unix_file_permissions">Unix File Permissions</url>.
+						Filesystem ACLs apply the same concept to files. Linux uses filesystem ACLs to permit or deny access in a more nuanced way than possible with 
+							<xref ref="unix-file-permissions">Unix File Permissions</xref>.
 					
 						</p>
 
