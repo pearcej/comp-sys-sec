@@ -3,15 +3,15 @@
 <chapter xml:id="ch6-security-solutions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Security Solutions</title>
 
+
+
+				<section xml:id="false-positives-negatives">
+					<title>False Positives / Negatives</title>
   <introduction>
 				<p>
 				To help combat security breaches, many different vendors offer security solutions. These may be hardware or software designed to help mitigate a security threat. Security solutions may be created in-house, created custom by a third party, or outsourced and offered as a service. When evaluating solutions it is important to have a plan and understand the features and possible pitfalls of that product.
 			</p>
   </introduction>
-
-				<section xml:id="false-positives-negatives">
-					<title>False Positives / Negatives</title>
-
 					<p><idx>false positive</idx>
 					When a security solution detects a threat, but no threat exists, that is a 
 						<term>false positive</term>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
