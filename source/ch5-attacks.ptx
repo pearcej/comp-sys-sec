@@ -4,13 +4,15 @@
   <title>Attacks</title>
 
 				<section xml:id="interception-attacks">
-					<title>5.1. Interception Attacks</title>
+					<title>Interception Attacks</title>
+					<introduction>
 					<p>
 					Interception attacks rely on the ability to intercept network communications. This may be due to the nature of the network being used or sometimes other methods may leveraged to better position the attacker. These attacks generally involve forging fictitious messages, recording transmitted data, or altering the contents of messages while on a network. This family of attacks places all parts of the CIA triad at risk.
 				</p>
+				</introduction>
 
-					<paragraphs xml:id="mitm">
-						<title>5.1.1. MitM</title>
+					<subsection xml:id="mitm">
+						<title>MitM</title>
 
 						<figure xml:id="fig-mitm">
 						<caption></caption>
@@ -40,9 +42,9 @@
 						In the above example the MitM allows the first message to pass unmolested, but tampers with the exchange of the public key. By passing it’s own public key to Bob, the MitM has to ability to decrypt the messages that Bob sends and can still use Alice’s public key to re-encrypt the messages at pass them to her. You can see how if two public keys are exchanged in this manner it would be possible to set up a MitM attack where despite encryption all messages can be seen.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="mitb">
-						<title>5.1.2. MitB</title>
+					</subsection>
+					<subsection xml:id="mitb">
+						<title>MitB</title>
 	
 						<p>
 						MitB stands for man in the browser and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
@@ -61,9 +63,9 @@
 						As you can see the attacker ended up with $10,000 and the victim simply thought they authorized a payment of $1,000 to someone else. These attacks can be difficult to detect because they take place within the browser and are opportunistic.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="replay-attacks">
-						<title>5.1.3. Replay Attacks</title>
+					</subsection>
+					<subsection xml:id="replay-attacks">
+						<title>Replay Attacks</title>
 
 						<p>
 						This family of attacks typically involves a MitM making a copy of the transmission and 
@@ -78,9 +80,9 @@
 						</p>
 						</example>
 
-					</paragraphs>
-					<paragraphs xml:id="ssl-circumvention">
-						<title>5.1.4. SSL Circumvention</title>
+					</subsection>
+					<subsection xml:id="ssl-circumvention">
+						<title>SSL Circumvention</title>
 
 						<figure xml:id="fig-ssl-mitm">
 						<caption></caption>
@@ -95,35 +97,34 @@
 						<p>
 						If you think about the intercepted key exchange given in the above MitM example, a similar attack can allow attackers to view SSL traffic. The attacker gives the victim a bogus certificate authority (CA) certificate which the victim installs. This is often accomplished via a trojan. Then the attacker places themselves in the middle of an uninitiated secure connection. During the key exchange the attacker creates a custom certificate signed by a bogus CA for the connection between attacker and victim. The attacker also makes an actual HTTPS connection to the service and proxies data for the victim. All of the victims data will show up in plaintext for the attacker but the connection will appear to be secure for the victim. This is used in the 
 							<url href="https://www.telerik.com/fiddler">Fiddler</url> debugging proxy to decrypt HTTPS traffic and is also used in some network appliances that perform deep packet inspection.
-					
 						</p>
 						<p>
 						Another MitM attack on SSL is simply to maintain or downgrade to an HTTP connection with the victim and proxy data to an actual HTTPS connection with the server. Most servers will upgrade an insecure connection, but by intercepting that exchange the attacker can continue to monitor the victim’s traffic.
 					</p>
 						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="network-layer-attacks">
-					<title>5.2. Network Layer Attacks</title>
+					<title>Network Layer Attacks</title>
 					
-					<paragraphs xml:id="mac-spoofing-mac-cloning">
-						<title>5.2.1. MAC Spoofing/MAC Cloning</title>
+					<subsection xml:id="mac-spoofing-mac-cloning">
+						<title>MAC Spoofing/MAC Cloning</title>
 						
 						<p>
 						Most networks expect that a MAC address will correspond to the unique numbers on a network interface controller (NIC), but it is actually quite easy to change. Virtual networking necessitates the ability to use a different MAC address and this feature is built into most modern operating systems. MAC spoofing is when an attacker sets their MAC address to the MAC address of another machine on the network in an effort to initiate an attack. For example, them may set themselves up as a gateway to launch a MitM attack.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="mac-flooding">
-						<title>5.2.2. MAC Flooding</title>
+					</subsection>
+					<subsection xml:id="mac-flooding">
+						<title>MAC Flooding</title>
 
 						<p>
 						Switches are tasked with keeping track of which MAC addresses correspond to which ports on the switch. They use this to make sure that traffic is only routed where it needs to go. Given that MAC addresses can be changed, an attacker could flood a switch with packets from many different MAC addresses and possibly overflow the MAC-port routing table. Some switches may default to hub-like functionality and send frames to all ports in an effort to keep traffic flowing. This then allows an attacker to capture traffic from other machines on the network.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="arp-poisoning">
-						<title>5.2.3. ARP Poisoning</title>
+					</subsection>
+					<subsection xml:id="arp-poisoning">
+						<title>ARP Poisoning</title>
 						
 						<figure xml:id="fig-arp-spoofing">
 						<caption></caption>
@@ -142,16 +143,15 @@
 						<p>
 						An attacker may also use ARP packets to impersonate another machine on the network, such as a gateway router. By repeatedly sending out ARP packets, 
 							<em>gratuitous arp</em>, redirecting packets bound for the gateway’s IP to the attackers MAC address an attacker can set up a MitM scenario. This is particularly difficult because depending on the TTL of the ARP cache it may take up to 20 minutes for normal network operations to resume.
-					
 						</p>
 						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="internet-layer-attacks">
-					<title>5.3. Internet Layer Attacks</title>
+					<title>Internet Layer Attacks</title>
 					
-					<paragraphs xml:id="ip-spoofing">
-						<title>5.3.1. IP Spoofing</title>
+					<subsection xml:id="ip-spoofing">
+						<title>IP Spoofing</title>
 						
 						<figure xml:id="fig-ip-header">
 						<caption></caption>
@@ -186,20 +186,19 @@
 								<url href="https://www.imperva.com/learn/ddos/smurf-attack-ddos/?redirect=Incapsula">Imperva Incapsula</url> used under 
 								<url href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA 4.0</url>
 							</p>
-							<p>
-								The Smurf attack is a great example of how spoofed IP addresses can lead to major problems. The Smurf attack is an early type of Distributed Denial of Service attack. An attacker would create an ICMP echo request with the victims IP address as the source address. This echo request would be directed at a broadcast IP address for a subnet. Many of the clients on the subnet would respond the echo request, flooding the victim with responses. The asymmetric nature of this attack, a single packet prompting possibly hundreds of responses, made it particularly hard to deal with. Using a Smurf attack, an attacker could keep a victim 
+							<p><idx>Smurf attack</idx>
+								The <term>Smurf attack</term> is a great example of how spoofed IP addresses can lead to major problems. The Smurf attack is an early type of Distributed Denial of Service attack. An attacker would create an ICMP echo request with the victims IP address as the source address. This echo request would be directed at a broadcast IP address for a subnet. Many of the clients on the subnet would respond the echo request, flooding the victim with responses. The asymmetric nature of this attack, a single packet prompting possibly hundreds of responses, made it particularly hard to deal with. Using a Smurf attack, an attacker could keep a victim 
 								<em>pinned down</em> with minimal bandwidth required on their end. Modern clients no longer respond to ICMP echo requests directed at the broadcast, mitigating the risk of this kind of attack.
-					
 							</p>
 						</example>
 						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="name-resolution-attacks">
-					<title>5.4. Name Resolution Attacks</title>
+					<title>Name Resolution Attacks</title>
 					
-					<paragraphs xml:id="dns-cache-poisoning">
-						<title>5.4.1. DNS Cache Poisoning</title>
+					<subsection xml:id="dns-cache-poisoning">
+						<title>DNS Cache Poisoning</title>
 						
 						<p>
 						A DNS resolved can be tricked into caching incorrect information and serving it to other clients. In this scenario an attacker assumes the role of the authoritative DNS server by responding to a DNS query with a forged source IP. One of the reasons this is possible is because DNS query responses are often single, unauthenticated packets. Once the server has the invalid DNS cache entry it will continue to direct users to the incorrect IP address for the TTL of the entry. 
@@ -207,18 +206,17 @@
 					
 						</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="llmnr-hijacking">
-						<title>5.4.2. LLMNR Hijacking</title>
+					</subsection>
+					<subsection xml:id="llmnr-hijacking">
+						<title>LLMNR Hijacking</title>
 						<p>
 						In this scenario an attacker responds to a Link-Local Multicast Name Resolution (LLMNR) broadcast and impersonates an authentication server. The unexpecting victim fills in their credentials, which are promptly stolen. This attack can be mitigated by disabling LLMNR on the network.
 					</p>
-						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="web-based-attacks">
-					<title>5.5. Web-based Attacks</title>
-
+					<title>Web-based Attacks</title>
+					<introduction>
 					<p>
 					The world wide web and the protocols/formats/languages it uses (HTTP, HTML, JavaScript, etc.) were 
 						<em>not</em> originally designed with security in mind. By default, web pages trust the content they receive to not be malicious. Scripts, commands, cookies, etc. are implicitly trusted. Web technologies have become so popular that they are a common target for attackers and developers must use tokens, sanitize data, and check inputs if they want those technologies to be secure.
@@ -285,9 +283,9 @@
 							</li>
 						</ul>
 					</p>
-
-					<paragraphs xml:id="xss">
-						<title>5.5.1. XSS</title>
+					</introduction>
+					<subsection xml:id="xss">
+						<title>XSS</title>
 						
 						<p>
 						Cross-Site scripting refers to the process by which a bad actor can inject a script into a website. Recall that many websites take inputs from forms and may later display that data on another page. If that data isn’t just data, but actually a JavaScript script, that script may run on the page that displays it.
@@ -321,9 +319,9 @@
 						
 						</example>
 					
-					</paragraphs>
-					<paragraphs xml:id="csrf">
-						<title>5.5.2. CSRF</title>
+					</subsection>
+					<subsection xml:id="csrf">
+						<title>CSRF</title>
 						
 						<p>
 						Cross-Site Request Forgery (CSRF) involves using an victims already authenticated session in a request that is not part of that session. Imagine you are logged into Twitter. An attacker sends you a form link in GMail, that when clicked on posts a tweet that says, "I’m a CSRF victim." Assuming Twitter accepts the form submission you will now have a tweet in your timeline that states "I’m a CSRF victim."
@@ -337,9 +335,9 @@
 						CSRF tokens are yet another example of how web applications require proactive security as opposed to being secure by design. Most web apps are employing them, but it can be easy for a developer to forget.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="ssrf">
-						<title>5.5.3. SSRF</title>
+					</subsection>
+					<subsection xml:id="ssrf">
+						<title>SSRF</title>
 						
 						<figure xml:id="fig-ssrf-attack">
 						<caption></caption>
@@ -355,9 +353,9 @@
 						Web systems often communicate with internal servers the retrieve information. These may be API servers, databases, or messaging servers. If an attacker can fool a web server into passing a malicious request to its internal server, the attacker and abuse the internal trust of the system. This is referred to a server-side request forgery (SSRF). Once again, this kind of attack is mitigated with input validation, which needs to be included in the application.
 						</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="session-hijacking">
-						<title>5.5.4. Session Hijacking</title>
+					</subsection>
+					<subsection xml:id="session-hijacking">
+						<title>Session Hijacking</title>
 						
 						<p>
 						Session hijacking may involve other methods of compromise, but the end goal is to "steal" a session between the victim and another server. Imagine the following scenario: A person logs in to their personal banking website, which issues them a cookie which proves they are authenticated. A bad actor is monitoring the connections through an XSS exploit that forwards all connection cookies to them. The bad actor uses the cookie that was issued to make a transfer from the user’s bank account to the bad actors bank account.
@@ -367,9 +365,9 @@
 						Depending on the method used, session hijacking may be prevented through use of a better session key or by requiring transport layer security (TLS) to connect. In the above scenario the only way to prevent session hijacking would be to repair the initial XSS vulnerability.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="sql-injection">
-						<title>5.5.5. SQL Injection</title>
+					</subsection>
+					<subsection xml:id="sql-injection">
+						<title>SQL Injection</title>
 						
 						<p>
 						As mentioned in the SSRF section, almost all web systems are supported by other servers running internally. One of the most common scenarios is to have a web server which reaches out to an internal database. Relational databases utilize structured query language (SQL) so a web application may generate many different SQL queries during its regular operations. If a user input is placed directly into the query, it can be possible to make the result function in a way that was not intended or yield secret information from the database.
@@ -401,25 +399,25 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						In this second case, a user could login without needing a valid password.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="xml-injection">
-						<title>5.5.6. XML Injection</title>
+					</subsection>
+					<subsection xml:id="xml-injection">
+						<title>XML Injection</title>
 						
 						<p>
 						XML stands for extensible markup language, and it is often used to transfer messages. XML can be an important part of a web systems infrastructure and as such if unsanitized user inputs are allowed to generate XML the is used in the system many things can go wrong. Using XML injection an attacker may be able to retrieve secret files or create admin accounts. XML injection can be mitigated by input validation or possibly disabling the resolution of external entities in the framework being used.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="ldap-injection">
-						<title>5.5.7. LDAP Injection</title>
+					</subsection>
+					<subsection xml:id="ldap-injection">
+						<title>LDAP Injection</title>
 						
 						<p>
 						Finally, Lightweight Directory Access Protocol (LDAP) is often used to store information about users. As such, it can be found behind many web applications. LDAP also supports complex queries in a similar fashion to SQL. An unsantized user input can lead to a LDAP query with unexpected results.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="directory-traversal">
-						<title>5.5.8. Directory Traversal</title>
+					</subsection>
+					<subsection xml:id="directory-traversal">
+						<title>Directory Traversal</title>
 						
 						<p>
 						A poorly designed web server may be subject to a directory traversal attack. Recall that web servers are designed to serve static content from a particular directory, 
@@ -433,9 +431,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						This can be addressed with file permissions, access controls, and filtering incoming requests. It is important to note that there is more than one way to specify a path in an HTTP request, including using URL encoding, so all possible malicious inputs must be sanitized.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="url-hijacking-typosquating">
-						<title>5.5.9. URL Hijacking/Typosquating</title>
+					</subsection>
+					<subsection xml:id="url-hijacking-typosquating">
+						<title>URL Hijacking/Typosquating</title>
 						
 						<p>
 						An unfortunately common, broad-based attack is to buy a domain with a similar name to a very popular domain. When users mistype the popular domain they end up at the malicious actor’s website. For example, imagine if someone registered 
@@ -447,9 +445,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						These sites could be used for ad revenue, phishing credentials, or even possibly to distribute malware. A mitigation that several browsers implement is to keep a list of malicious websites and warn users before they visit them.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="domain-hijacking">
-						<title>5.5.10. Domain Hijacking</title>
+					</subsection>
+					<subsection xml:id="domain-hijacking">
+						<title>Domain Hijacking</title>
 						
 						<p>
 						Domain names expire after a certain period of time and the registrant may forget to renew. In these rare occasions an attacker may actually gain control of a popular domain name, google.com for example, and route traffic to their site. The malicious activities are the same as for typosquating, but the attacker does not need to rely on the users making a mistake.
@@ -459,9 +457,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						It is also possible to hijack a domain by logging into the domain registration system using stolen/compromised credentials. In this scenario an attacker could still modify a record to point to their server, but wouldn’t have to rely on the company forgetting to renew.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="zone-transfer-attacks">
-						<title>5.5.11. Zone Transfer Attacks</title>
+					</subsection>
+					<subsection xml:id="zone-transfer-attacks">
+						<title>Zone Transfer Attacks</title>
 						
 						<p>
 						On the subject of the domain name system, zone transfer attacks may leak sensitive information about domains. DNS is a distributed system by design and is used for resolving domain names into IP addresses. Due to the distributed nature of the system, protocols were built in for having a single domain served by multiple servers. These servers pass information to each other using a DNS zone transfer.
@@ -472,29 +470,29 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 							<url href="https://digi.ninja/projects/zonetransferme.php">In such a situation an attacker can use the leaked information in the recon phase of an attack.</url>
 						</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="clickjacking">
-						<title>5.5.12. Clickjacking</title>
+					</subsection>
+					<subsection xml:id="clickjacking">
+						<title>Clickjacking</title>
 						
 						<p>
 						A website may be designed in such a way that the interface is confusing to the user and they inadvertently click on an advertisement or malicious link. This is common practice on low integrity websites such as streaming sites, torrent trackers, and adult websites. It is often complicated by a poor ad screening or even purposefully making ads that look similar to the content.
 					</p>
 						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="outcomes">
-					<title>5.6. Outcomes</title>
+					<title>Outcomes</title>
 					
-					<paragraphs xml:id="remote-code-execution-rce">
-						<title>5.6.1. Remote Code Execution (RCE)</title>
+					<subsection xml:id="remote-code-execution-rce">
+						<title>Remote Code Execution (RCE)</title>
 						
 						<p>
 						One of the most dangerous outcomes of an attack is Remote or Arbitrary Code Execution. RCE gives the attacker the ability to execute any instructions they want on the compromised machine. Often the attacker will start a shell with administrative privileges so they can do whatever they want. Imagine SSHing into a remote Linux machine and elevating your privileges to root. This is essentially the type of power that can result from RCE. Attackers may also use the RCE to attack the availability of a computing resource by causing a program to terminate. In this situation the RCE is being used as part of a denial of service (DoS) attack.
 					</p>
 
-					</paragraphs>
-					<paragraphs xml:id="privilege-escalation">
-						<title>5.6.2. Privilege Escalation</title>
+					</subsection>
+					<subsection xml:id="privilege-escalation">
+						<title>Privilege Escalation</title>
 						
 						<blockquote>
 							<p>
@@ -521,16 +519,15 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 							<url href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4034">CVE-2021-4034</url>, a local privilege escalation vulnerability recently discovered in the Linux 
 							<c>pkexec</c> command. 
 							<c>pkexec</c> runs with elevated privileges and does not safely parse command line arguments. As such it can be exploited to give a regular user a root shell. This would be an example of local, vertical privilege escalation.
-					
 						</p>
 						
 						<p>
 						Privilege escalation is typically broken into two categories: horizontal and vertical. Horizontal privilege escalation gives similar access to resources, ie. moving from one user account to another. Vertical privilege escalation gives higher level access, ie. moving from a user account to an admin account. The five main ways privilege escalation is achieved are credential exploitation, vulnerabilities/exploits, misconfigurations, malware, and social engineering.
 					</p>
 						
-					</paragraphs>
-					<paragraphs xml:id="denial-of-service-dos">
-						<title>5.6.3. Denial of Service (DoS)</title>
+					</subsection>
+					<subsection xml:id="denial-of-service-dos">
+						<title>Denial of Service (DoS)</title>
 						
 						<p>
 						A denial of service attack (Dos) attempts to keep a system from working by overwhelming it with requests. A distributed denial of service attack (DDoS) does the same thing by utilizing many different machines. Typically the attacking nodes for a DDoS attack are members of a botnet, machines that have been exploited previously and are under the attackers control.
@@ -548,8 +545,8 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 							
 							
 							<p><idx>Buffer Overflows/Exploits</idx><term>Buffer Overflows/Exploits</term> Poorly designed software may fail when it receives unexpected data. This could be something as simple as sending more data than a buffer can hold, or 
-									<url href="https://en.wikipedia.org/wiki/WinNuke">setting the urgent pointer (URG) on a packet destined for port 139 of a Windows system</url>.</p>
-
+									<url href="https://en.wikipedia.org/wiki/WinNuke">setting the urgent pointer (URG) on a packet destined for port 139 of a Windows system</url>.
+								</p>
 
 						<example>
 							<title>Remote Shells</title>
@@ -572,10 +569,10 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 							</p>
 						</example>
 						
-					</paragraphs>
+					</subsection>
 				</section>
 				<section xml:id="lab-mitm-with-scapy">
-					<title>5.7. Lab: MitM with Scapy</title>
+					<title>Lab: MitM with Scapy</title>
 					
 					<p>
 						In this lab we will use a fake SSH server, 
@@ -585,7 +582,7 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 					</p>
 					
 					<table>
-						<title>Table 1. IP Addresses Used</title>
+						<title>IP Addresses Used</title>
 						<tabular halign="center">
 						<col width="50%" />
 							<row header="yes">
@@ -742,7 +739,6 @@ bf9ebe42a108:~#</pre>
 									<em>password</em>). Type in the password twice and it will be reset to whatever you typed. What you type will not be echoed to the screen. You should now be able to ssh from victim to server with the password you typed in.
 						</p>
 					</note>
-					
 					
 					<p>
 					In the third terminal we’ll start by 
@@ -1106,8 +1102,7 @@ why not?
 					
 				</section>
 				<section xml:id="attacks-review">
-					<title>5.8. Review Questions</title>
-
+					<title>Review Questions</title>
 					<p>
 						<ol>
 							<li>
