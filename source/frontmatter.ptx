@@ -22,8 +22,8 @@
     <copyright>
       <year>2025<ndash />present</year>
       <holder>Dr. Jan Pearce</holder>
-      <shortlicense> This work is licensed under the Creative Commons Non-Commercial Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/"> CreativeCommons.org</url>. All product names, logos, and brands are property of their respective owners. All company, product and service names used in this text are for identification purposes only. Use of these names, logos, and brands does not imply endorsement. 			
-				Images used in this text are created by the original author, Ryan Tolboom, and licensed under CC-BY-NC-SA except where otherwise noted.
+      <shortlicense> This work is licensed under the Creative Commons Non-Commercial Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/"> CreativeCommons.org</url>. All product names, logos, and brands are property of their respective owners. All company, product and service names used in this text are for identification purposes only. Use of these names, logos, and brands does not imply endorsement. 
+		Many images used in this text are created by the original author, Ryan Tolboom, and licensed under CC-BY-NC-SA except where otherwise noted.
 	
       </shortlicense>
     </copyright>
@@ -34,11 +34,13 @@
     <titlepage-items/>
   </titlepage>
 
-  <colophon xml:id="front-colophon">
+  <colophon xml:id="repository-and-license">
+	<title>Repository and License</title>
+	
     <colophon-items/>
   </colophon>
-			<preface xml:id="acknowledgements">
-				<title>Acknowledgements</title>
+	<preface xml:id="acknowledgements">
+	<title>Acknowledgements</title>
    <p>
     I am grateful to Ryan Tolboom for his work in creating the original web version of this text, and to the Fund for the Improvement of Postsecondary Education (FIPSE) of the U.S. Department of Education for the Open Textbooks Pilot grant awarded to Middlesex College for the Open Textbook Collaborative which funded the first version of this text. The original author thanked the New Jersey Institute of Technology (NJIT) Open Access Textbooks (OAT) project and the <url href="https://middlesexcc.libguides.com/OTCProject">Open Textbook Collaborative Project (OTC)</url> for making this text possible, and I am grateful as well.
 			</p>
@@ -57,10 +59,10 @@
       Finally, I would like to thank my husband, Bob Fairchild, for his patience and for being my best friend.
     </p>
 
-				<p>
-				The original author also acknowledged the contributions and hard work of: Karl Giannoglou, Jacob Jones, Raymond Vasquez, Justine Krawiec, Alison Cole, Ricky Hernandez, and Jake Caceres.
-				</p>
-			</preface>
+	<p>
+		The original author also acknowledged the contributions and hard work of: Karl Giannoglou, Jacob Jones, Raymond Vasquez, Justine Krawiec, Alison Cole, Ricky Hernandez, and Jake Caceres.
+	</p>
+		</preface>
 
   			<preface xml:id="instructional-notes">
 				<title>Instructional Notes</title>
@@ -265,8 +267,7 @@
         <paragraphs xml:id="example-schedule">
 					<title>Example Schedule</title>
 					<p>
-					A sample schedule utilizing these resources in a 15 week semester is shown below:
-
+					A sample schedule utilizing these resources in a 15 week semester is shown below:</p>
           <table>
   <title>Example Schedule</title>
   <tabular halign="center" break="yes" width="100%">
@@ -418,6 +419,12 @@
   </tabular>
 
 </table>
+<p>
+	
+
+  <note>
+    <p> This book was authored in <pretext />. </p>
+</note>
 				</p>
         </paragraphs>
 				</preface>
