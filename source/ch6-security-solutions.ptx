@@ -10,11 +10,11 @@
   </introduction>
 
 				<section xml:id="false-positives-negatives">
-					<title>6.1. False Positives / Negatives</title>
+					<title>False Positives / Negatives</title>
 
-					<p>
+					<p><idx>false positive</idx>
 					When a security solution detects a threat, but no threat exists, that is a 
-						<em>false positive</em>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
+						<term>false positive</term>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
 				
 					</p>
 
@@ -23,7 +23,7 @@
 				</p>
 
 					<example>
-						<p>Webroot Antivirus</p>
+						<title>Webroot Antivirus</title>
 					
 
 					<p>
