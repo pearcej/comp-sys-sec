@@ -39,8 +39,8 @@
 					<subsection xml:id="least-privilege">
 						<title>7.1.1. Least Privilege</title>
 
-						<p>
-						The principle of least privilege states that an actor should only be given access to resources as necessary and with the permissions necessary to complete their task. These resources may be processes, programs, or even user accounts. This principle reduces an attack surface and helps stop the spread of malware as a single compromised account will not have access to all of the resources.
+						<p><idx>least privilege</idx>
+						The principle of <term>least privilege</term> states that an actor should only be given access to resources as necessary and with the permissions necessary to complete their task. These resources may be processes, programs, or even user accounts. This principle reduces an attack surface and helps stop the spread of malware as a single compromised account will not have access to all of the resources.
 					</p>
 
 						<p>
@@ -51,8 +51,8 @@
 					<subsection xml:id="multi-factor-authentication-mfa">
 						<title>7.1.2. Multi-factor Authentication (MFA)</title>
 
-						<p>
-						Multi-factor authentication is a technique that requires actors to provide two or more pieces of information to be used as identification. Some examples of identification would be usernames and passwords, token codes, a physical token, or biometric data. Typically it is suggested to use "something you have and something you know" for example the code in an SMS message to your phone (you have your phone) and a password (you know your password).
+						<p><idx>Multi-factor authentication</idx><idx>MFA</idx>
+						<term>Multi-factor authentication</term> is a technique that requires actors to provide two or more pieces of information to be used as identification. Some examples of identification would be usernames and passwords, token codes, a physical token, or biometric data. Typically it is suggested to use "something you have and something you know" for example the code in an SMS message to your phone (you have your phone) and a password (you know your password).
 					</p>
 
 						<p>
@@ -70,10 +70,8 @@
 					</p>
 
 						<table>
-							<title>Table 2. Comparison between DAC, MAC, RBAC, and ABAC^[
-								<url href="index.html#_footnotedef_6">6</url>{#_footnoteref_6 .footnote}]^
-							</title>
-							<col width="19%" />
+							<title>Table 2. Comparison between DAC, MAC, RBAC, and ABAC</title>
+								<col width="19%" />
 							<col width="19%" />
 							<col width="19%" />
 							<col width="19%" />
@@ -100,7 +98,7 @@
 									<cell halign="left">Cla ssification of roles</cell>
 									<cell halign="left">Evaluation of attributes</cell>
 								</row>
-								<row class="odd">
+								<row>
 									<cell halign="left">Flexibility fo Accessing Information</cell>
 									<cell halign="left">High</cell>
 									<cell halign="left">Low</cell>
@@ -121,7 +119,7 @@
 									<cell halign="left">Yes</cell>
 									<cell halign="left">Yes</cell>
 								</row>
-								<row class="even">
+								<row>
 									<cell halign="left">Used in</cell>
 									<cell halign="left">Initial Unix system</cell>
 									<cell halign="left">The U.S. Department of Defense</cell>
@@ -154,7 +152,6 @@
 
 					<subsection xml:id="gates">
 						<title>7.2.1. Gates</title>
-
 						<p>
 						It is easier to manage the physical security of a location when the amount of entry points are limited. Convenience and safety dictate that even with such considerations multiple points of ingress are still needed. A security gate is the most basic tool available the ensure that only authorized actors gain access.
 					</p>
@@ -166,7 +163,6 @@
 					</subsection>
 					<subsection xml:id="biometrics">
 						<title>7.2.2. Biometrics</title>
-
 						<figure>
 							<caption></caption>
 							<image source="biometric.jpg" decorative="yes"/>

@@ -4,8 +4,8 @@
   <title>Protocols</title>
 
   <introduction>
-				<p>
-				Protocols can be though of as rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
+				<p><idx>protocol</idx>
+				A <term>protocol</term> is a set of rules. Protocols in computing are typically thorough rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
 					<url href="https://datatracker.ietf.org/doc/html/rfc2616">Some of the earliest web protocols are detailed in RFCs.</url> More often than not, large protocols have working groups and associations developing, such as the 802.11 group at the 
 					<url href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers (IEEE)</url> which handles WiFi protocols. These groups publish papers detailing how the protocols work.
 			
@@ -41,36 +41,30 @@
 						<p><idx>wifi protocols</idx>
 						The <term>Wifi protocols</term> we are most concerned with are the security standards used to encrypt data. By the nature of a wireless protocol, information sent on the network is available to anyone with an antenna. These Wifi security standards are the only thing protecting your network traffic from being viewing by anyone within your transmitting range. There are currently four standards:
 					</p>
-						
-						
-							<p>WEP</p>
-
+						<ul>
+							<li>
 								<p><idx>WEP</idx><idx>wireless equivalent privacy</idx>
 
 						<term>Wireless Equivalent Privacy</term> (<term>WEP</term>) is depreceated and should not be used. It was developed in 1999 and uses an RC4 stream and 24-bit encryption. Several attacks have been developed that can crack WEP within a matter of seconds.
 					</p>
-							
-							<p>WPA</p>
-							
-
-								<p><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
+					</li>
+					<li>
+						<p><idx>WPA</idx><idx>TKIP</idx><idx>temporal key integrity protocol</idx><idx>WPA</idx><idx>Wifi protected access</idx>
 						<term>Wifi Protected Access</term> (<term>WPA</term>) utilized 
 						<term>Temporal Key Integrity Protocol</term> (<term>TKIP</term>) to change the keys being used. This 128-bit encryption method has also been cracked and the protocol should not be used.
 					</p>
-							
-							<p>WPA2</p>
-							
-								<p><idx>WPA2</idx>
+					</li>
+					<li>
+					<p><idx>WPA2</idx>
 						<term>Wifi Protected Access 2</term> (<term>WPA2</term>) makes use of AES encryption and is currently the most popular standard. WPA2 is still considered secure.
 					</p>
-							
-							<p>WPA3</p>
-							
-								<p><idx>WPA3</idx>
+					</li>
+					<li>
+						<p><idx>WPA3</idx>
 						<term>Wifi Protected Access 3</term> (<term>WPA3</term>) was developed in 2018 and is currently considered state-of-the-art. Many networks are beginning the transition from WPA2 to WPA3.
 					</p>
-
-
+					</li>
+					</ul>
 					</paragraphs>
 				</section>
 				<section xml:id="internet-layer-protocols">
@@ -91,10 +85,9 @@
 						<p><idx>IP addresses</idx><idx>IPv4</idx> <idx>IPv6</idx>
 						Most people are familiar with <term>IP addresses</term>, the unique number given to a host participating in an IP network. Currently there are two main versions of the IP protocol, <term>IPv4</term> and <term>IPv6</term>, and one of the major differences is in how man IP addresses are available. IPv4 supports 32 bit addresses and IPv6 supports 128 bit addresses. To give an idea of how big of a change that is, we have currently allocated all possible IPv4 addresses, but with IPv6 we could give an address to every grain of sand on the beaches of earth and still not run out.
 					</p>
-						<p>
-						IPv6 Security Implications
-						</p>
 
+				<example>
+					<p>IPv6 Security Implications</p>	
 
 						<p><idx>network address translation</idx><idx>NAT</idx>
 						From a security standpoint, the way addresses are used in IPv4 vs IPv6 has big consequences. Since there aren’t enough IPv4 addresses a typical internet user is assigned a local address that gets translated to an external IPv4 address when they route their packets through their router. This is referred to as 
@@ -113,6 +106,7 @@
 						<p>
 						As a computer security specialist it is important to test not only IPv4 connectivity, but also IPv6 to ensure that your network is configured appropriately.
 					</p>
+				</example>
 
 					</paragraphs>
 					<paragraphs xml:id="icmp">
@@ -175,7 +169,7 @@
 
 
 						<figure xml:id="fig-nat-router">
-						<caption>nat</caption>
+						<caption></caption>
 						<image source="nat.svg">
 							<shortdescription>A diagram illustrating how a NAT router enables multiple devices on a private network to share a single public IP address to access the internet.</shortdescription>
 							<description>
@@ -229,11 +223,13 @@
 						<title>4.3.1. TCP</title>
 
 						<p><idx>TCP</idx><idx>transmission control protocol</idx>
-
-						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.^[
-							<url href="index.html#_footnotedef_5">5</url>{#_footnoteref_5 .footnote}]^
-					
+						<term>Transmission Control Protocol</term> (<term>TCP</term>) is at the heart of most networks. It provides for reliable communication via a three way hand shake, breaks large data segments into packets, ensures data integrity, and provides flow control for those packets. This all comes at a cost of course, and this connection-oriented protocol typically has higher latency than its counterparts. Given the complex nature of TCP is has often been targeted for attacks. TCP stacks are constantly adapting and changing (within the parameters of the protocol) to avoid DoS and MitM attacks.
 						</p>
+							<note>
+								<p>
+								For an interesting example of how you can change but still follow a protocol, check out <url href="https://en.wikipedia.org/wiki/SYN_cookies">SYN cookies</url>.
+								</p>
+							</note>
 
 					</paragraphs>
 					<paragraphs xml:id="udp">
@@ -515,7 +511,7 @@
 
 
 						<figure xml:id="fig-tls-handshake">
-						<caption>tls</caption>
+						<caption></caption>
 						<image source="tls.svg">
 							<shortdescription>A sequence diagram illustrating the key steps in a simplified TLS handshake between a client and a server.</shortdescription>
 							<description>
@@ -537,7 +533,7 @@
 
 
 						<figure xml:id="fig-https-indicator">
-						<caption>https</caption>
+						<caption></caption>
 						<image source="https.png">
 							<shortdescription>An icon depicting a green padlock next to "https://" text, symbolizing a secure HTTPS web connection.</shortdescription>
 							<description>
@@ -594,7 +590,7 @@
 						<title>4.4.8. LDAP</title>
 
 						<figure xml:id="fig-ldap">
-						<caption>ldap</caption>
+						<caption></caption>
 						<image source="ldap.svg">
 							<shortdescription>Diagram illustrating an example LDAP directory tree structure.</shortdescription>
 							<description>
@@ -710,7 +706,7 @@
 						<title>4.4.15. SNMP</title>
 
 						<figure xml:id="fig-snmp">
-						<caption>snmp</caption>
+						<caption></caption>
 						<image source="snmp.png">
 							<shortdescription>Diagram illustrating the typical SNMP message exchange mechanism between an NMS Management Station and an SNMP Agent.</shortdescription>
 							<description>

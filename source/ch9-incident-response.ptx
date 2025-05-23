@@ -21,7 +21,7 @@
 						<title>9.1.1. MITRE</title>
 
 						<figure xml:id="fig-mitre">
-						<caption>mitre</caption>
+						<caption></caption>
 						<image source="mitre.svg">
 							<shortdescription>The logo of The MITRE Corporation.</shortdescription>
 							<description>
@@ -394,8 +394,7 @@
 					<title>9.5. MITRE ATT&amp;CK Framework</title>
 					<introduction>
 					<p>
-					In the 
-						<url href="index.html#_malware">Malware</url> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
+					In the  <xref ref="ch3-malware">Malware</xref> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
 						<url href="https://attack.mitre.org">MITRE ATT&amp;CK framework</url>. ATT&amp;CK has 14 sections that cover adversarial tactics, techniques, and common knowledge. Each section is separated into different matrices that have their own sub-techniques.
 				
 					</p>
@@ -558,8 +557,8 @@
 							</li>
 							<li>
 								<p>
-									<em>How does the ATT&amp;CK framework differ from the Cyber Killchain Framework? You may need to refer to the 
-										<url href="index.html#_malware">Malware</url> chapter.
+									<em>How does the ATT&amp;CK framework differ from the Cyber Killchain Framework? You may need to refer to the <em>
+										<xref ref="ch3-malware">Malware</xref> chapter for this question.</em>
 									</em>
 								</p>
 							</li>

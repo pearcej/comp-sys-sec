@@ -12,18 +12,28 @@
 					<paragraphs xml:id="mitm">
 						<title>5.1.1. MitM</title>
 
-						<figure>
-							<image source="mitm.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-mitm">
+						<caption></caption>
+						<image source="mitm.svg">
+							<shortdescription>Diagram illustrating a Man-in-the-Middle (MitM) attack where an attacker intercepts communication between a user and a web server.</shortdescription>
+							<description>
+							<p>The diagram shows three entities: a "User" depicted on the left, a "Man in the Middle" in the center, and a "Web Server" on the right. An "Old Connection" is shown as a dashed grey line with arrows at both ends, directly connecting the "User" and the "Web Server", representing their original, direct communication path. Below this, a "New Connection" illustrates the MitM attack. This path shows a solid black line with an arrow from the "User" pointing to the "Man in the Middle", and another solid black line with an arrow from the "Man in the Middle" pointing to the "Web Server". This indicates that the "Man in the Middle" is positioned to intercept and potentially alter the communication flowing between the "User" and the "Web Server".</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
 						A man in the middle attack (MitM) is a blanket term applied when an attacker is intercepting communication. A typical attack involves eavesdropping and possibly modifying messages between two parties. Encryption can be used to mitigate the attack, making it impossible for an attacker to decrypt the messages they are intercepting. That being said, particular attention must be paid to the handshaking/key exchange protocol to be sure that an attacker does not gain access to the key(s) being used. What follows is an example of MitM being used to intercept and modify the public key exchange:
 					</p>
 
-						<figure>
-							<image source="mitm-keys.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-mitm-keys">
+						<caption></caption>
+						<image source="mitm-keys.svg">
+							<shortdescription>Diagram illustrating a Man-in-the-Middle (MitM) attack during a public key exchange, where the attacker substitutes their own public key.</shortdescription>
+							<description>
+							<p>The diagram depicts a sequence of communications involving "Bob" on the left, "Alice" on the right, and a "MitM" (Man-in-the-Middle) attacker positioned centrally. Initially, Bob requests Alice's public key by sending a message, "Send me your public key so I can send a secret," indicated by an arrow from Bob to Alice. Alice attempts to respond with her public key, "My public key is ABCD"; however, this message, shown as an arrow from Alice towards Bob, is intercepted by the MitM attacker. The attacker then deceives Bob by sending their own public key, "My public key is WXGZ," as if it came from Alice (arrow from MitM to Bob). Consequently, when Bob sends his "Secret (encrypted w/WXGZ)," believing he is communicating securely with Alice, the message (arrow from Bob towards Alice) is actually intercepted by the MitM. The MitM, possessing the corresponding private key to WXGZ, can decrypt this secret. Finally, the diagram shows the MitM forwarding a message "Secret (encrypted w/ABCD)" to Alice (arrow from MitM to Alice), implying the attacker has decrypted Bob's original secret, possibly altered it, and then re-encrypted it using Alice's genuine public key (ABCD) to complete the deception and maintain the flow of communication.</p>
+							</description>
+						</image>
 						</figure>
 
 						<p>
@@ -38,11 +48,15 @@
 						MitB stands for man in the browser and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
 					</p>
 
-						<figure>
-							<image source="mitb.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-mitb">
+						<caption></caption>
+						<image source="mitb.svg">
+							<shortdescription>Diagram illustrating a Man-in-the-Browser (MitB) attack where malware on a user's workstation alters a financial transaction without the user's knowledge.</shortdescription>
+							<description>
+							<p>The diagram shows a Man-in-the-Browser attack involving a "User," their "Workstation," a "Browser" (represented by a Chrome-like icon), an "Attacker" (icon of a figure in a hat and trench coat), and a "Web Server." The attack unfolds as follows: First, malware is downloaded to the "User's" "Workstation," indicated by an arrow from the "User" to the "Workstation." The "User" then attempts a transaction; an arrow from the "Workstation" to the "Browser" shows an "approved $1,000" payment, and a corresponding arrow from the "Browser" back to the "Workstation" shows "transfer $1,000," representing the user's intended action and what they believe is happening. However, due to the malware, the "Browser" is compromised. An "Attacker" is depicted above the "Browser" with a bidirectional arrow, signifying control or interaction. The compromised "Browser" then communicates with the "Web Server." An arrow from the "Browser" to the "Web Server" shows a modified request for an "approved $10,000 to Attacker," and a corresponding arrow from the "Web Server" back to the "Browser" indicates "transfer $10,000 to Attacker." This illustrates that the attacker, through the malware in the browser, has secretly changed the transaction details, redirecting a larger sum of money to themselves, while the user remains unaware of the alteration.</p>
+							</description>
+						</image>
 						</figure>
-
 						<p>
 						As you can see the attacker ended up with $10,000 and the victim simply thought they authorized a payment of $1,000 to someone else. These attacks can be difficult to detect because they take place within the browser and are opportunistic.
 					</p>
@@ -68,9 +82,14 @@
 					<paragraphs xml:id="ssl-circumvention">
 						<title>5.1.4. SSL Circumvention</title>
 
-						<figure>
-							<image source="ssl-mitm.svg"/>
-							<caption>MitM preventing HTTPS upgrade and skimming passwords</caption>
+						<figure xml:id="fig-ssl-mitm">
+						<caption></caption>
+						<image source="ssl-mitm.svg">
+							<shortdescription>Sequence diagram illustrating an SSL Man-in-the-Middle attack where an attacker intercepts communications, prevents an HTTPS upgrade for the victim, and captures plaintext credentials.</shortdescription>
+							<description>
+							<p>The diagram shows interactions between a "Victim," an "Attacker," and a "Server" to illustrate an SSL circumvention attack. The Victim initiates a connection by sending a "GET http://njit.edu" request, which is intercepted by the Attacker. The Attacker forwards this GET request to the Server. The Server responds with a "301 Moved" redirect, typically indicating a move to HTTPS. The Attacker receives this redirect but does not forward it to the Victim. Instead, the Attacker initiates its own "GET https://njit.edu" request to the Server, establishing a secure HTTPS connection. The Server responds to the Attacker with "200 OK (HTTPS)". The Attacker then sends a "200 OK (HTTP)" response back to the Victim, deceiving the Victim into believing they are communicating over a standard HTTP connection with the server and that no HTTPS upgrade occurred. Subsequently, the Victim sends their credentials, "POST http://njit.edu username=admin password=admin," over this unencrypted HTTP connection to the Attacker. The Attacker, having captured the plaintext credentials, can then forward this POST request, potentially over a secure HTTPS connection ("POST https://njit.edu username=admin password=admin"), to the legitimate Server. This allows the attacker to intercept sensitive information while the victim believes their session is normal, albeit unencrypted as presented by the attacker.</p>
+							</description>
+						</image>
 						</figure>
 						
 						<p>
@@ -106,11 +125,20 @@
 					<paragraphs xml:id="arp-poisoning">
 						<title>5.2.3. ARP Poisoning</title>
 						
-						<figure>
-							<image source="arp.svg"/>
-							<caption><url href="https://commons.wikimedia.org/wiki/File:ARP_Spoofing.svg">ARP Spoofing</url> by 0x5534C, see page for license via Wikimedia Commons</caption>
+						<figure xml:id="fig-arp-spoofing">
+						<caption></caption>
+						<image source="arp.svg">
+							<shortdescription>Diagram comparing network routing under normal operation with routing subject to ARP cache poisoning, where a malicious user intercepts traffic.</shortdescription>
+							<description>
+							<p>The diagram is divided into two sections. The top section, titled "Routing under normal operation," depicts a standard network setup. A "LAN User" is shown connected to a "Hub/switch," which in turn connects to a "LAN Gateway." The "LAN Gateway" then provides access to the "Internet." Black bidirectional arrows indicate the normal flow of communication between these components.
+							</p>
+							<p>The bottom section, titled "Routing subject to ARP cache poisoning," illustrates how this normal flow is disrupted by an attack. The same "LAN User," "Hub/switch," "LAN Gateway," and "Internet" are present. However, a "Malicious User" is now also connected to the "Hub/switch." Red arrows show that traffic from the "LAN User," instead of going directly to the "LAN Gateway" via the "Hub/switch," is now rerouted. Specifically, traffic from the "LAN User" goes to the "Hub/switch" and is then directed to the "Malicious User." Subsequently, traffic from the "Malicious User" is sent back through the "Hub/switch" and then on to the "LAN Gateway" and the "Internet." This demonstrates the malicious user successfully inserting themselves into the communication path between the LAN User and the LAN Gateway, enabling them to intercept or manipulate the data.</p>
+							</description>
+						</image>
 						</figure>
 						
+						<p><url href="https://commons.wikimedia.org/wiki/File:ARP_Spoofing.svg">ARP Spoofing</url> by 0x5534C, see page for license via Wikimedia Commons</p>
+
 						<p>
 						An attacker may also use ARP packets to impersonate another machine on the network, such as a gateway router. By repeatedly sending out ARP packets, 
 							<em>gratuitous arp</em>, redirecting packets bound for the gateway’s IP to the attackers MAC address an attacker can set up a MitM scenario. This is particularly difficult because depending on the TTL of the ARP cache it may take up to 20 minutes for normal network operations to resume.
@@ -125,9 +153,14 @@
 					<paragraphs xml:id="ip-spoofing">
 						<title>5.3.1. IP Spoofing</title>
 						
-						<figure>
-							<image source="ip-header.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-ip-header">
+						<caption></caption>
+						<image source="ip-header.svg">
+							<shortdescription>Diagram illustrating the structure of an IP packet header, with fields humorously annotated to highlight the concept of IP spoofing.</shortdescription>
+							<description>
+							<p>The diagram displays the format of an IP packet header, noted as being 32 bits wide. The header is broken down into several fields across multiple rows. The first row shows fields for "Vers" (Version), "IHL" (Internet Header Length), "TOS" (Type of Service), and "Total Length." The second row contains "Identification," "Flags," and "Fragment Offset." The third row lists "Time to Live," "Protocol," and "Header Checksum." Following these standard fields, the diagram humorously labels the source address field as "Totally legitimate source address, I'm not lying I swear," and the destination address field as "Victim, err I mean Destination address," alluding to the vulnerability of IP spoofing. Below these address fields, sections for "Options (up to 40 bytes)" and finally "Data (up to 65536 bytes)" are indicated, representing the remainder of the IP packet.</p>
+							</description>
+						</image>
 						</figure>
 						
 						<p>
@@ -138,9 +171,14 @@
 						<example>
 							<title>Smurf Attack</title>
 
-							<figure>
-							<image source="smurf.png"/>
-								<caption></caption>
+							<figure xml:id="fig-smurf-attack">
+							<caption></caption>
+							<image source="smurf.png">
+								<shortdescription>Diagram illustrating a Smurf attack, where an attacker uses a broadcast network to flood a target with ICMP echo replies by spoofing the target's IP address.</shortdescription>
+								<description>
+								<p>The diagram depicts the mechanics of a Smurf attack. On the left, an "Attacker" sends an "Echo request with spoofed source IP" to a central network device, likely a router, with the spoofed source IP address being that of the "Target," who is also shown on the left, below the attacker. The network device then broadcasts this malicious echo request to an "IP broadcast network," represented on the right as a collection of multiple computer systems. Each system on this broadcast network, upon receiving the echo request, sends an ICMP echo reply. Because the original request's source IP was spoofed to be the Target's IP, all these numerous echo replies are directed from the broadcast network, through the central network device, and converge upon the unsuspecting "Target," overwhelming it with traffic. Multiple red arrows illustrate this flood of replies overwhelming the Target.</p>
+								</description>
+							</image>
 							</figure>
 
 							<p>
@@ -303,9 +341,14 @@
 					<paragraphs xml:id="ssrf">
 						<title>5.5.3. SSRF</title>
 						
-						<figure>
-							<image source="ssrf.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-ssrf-attack">
+						<caption></caption>
+						<image source="ssrf.svg">
+							<shortdescription>Diagram illustrating a Server-Side Request Forgery (SSRF) attack where an attacker tricks a web server into making requests to an internal network resource.</shortdescription>
+							<description>
+							<p>The diagram shows an "Attacker" located on the "Internet," a public-facing web server labeled "example.com" that appears to bridge the "Internet" and an "Intranet," and an internal server identified by the IP address "10.0.0.1" within the "Intranet." The attack begins when the "Attacker" sends a specially crafted GET request to "example.com." This request includes a URL parameter, such as "content=http://10.0.0.1/secret," which points to a resource on the internal server. The vulnerable "example.com" server processes this parameter and, as a result, makes a "Request" on behalf of the attacker to the internal "10.0.0.1" server for the "/secret" resource. The internal server "10.0.0.1" then sends a "Response" containing the requested data back to "example.com." Finally, "example.com" relays this "Response: secret" back to the "Attacker" on the Internet. This flow demonstrates how the attacker exploits the SSRF vulnerability in "example.com" to access and exfiltrate data from an internal system that would otherwise be inaccessible from the public Internet.</p>
+							</description>
+						</image>
 						</figure>
 						
 						<p>
@@ -463,9 +506,14 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						— Anonymous
 					</p>
 						
-						<figure>
-							<image source="escalation.svg"/>
-							<caption></caption>
+						<figure xml:id="fig-privilege-escalation">
+						<caption></caption>
+						<image source="escalation.svg">
+							<shortdescription>Diagram illustrating the concept of privilege escalation using steps of increasing height representing different user access levels.</shortdescription>
+							<description>
+							<p>The diagram uses a step-like visual metaphor to represent different levels of user privileges and the process of escalating those privileges. Three vertical rectangular blocks of increasing height are shown side-by-side. The shortest block on the left is labeled "User," representing the lowest privilege level. To its right is a taller block labeled "Admin," indicating a higher level of privileges. The tallest block, on the far right, is labeled "Super Admin," signifying the highest level of access. A prominent black arrow originates from the bottom left of the diagram, extending diagonally upwards and to the right across the tops of these blocks. This arrow visually represents the act of escalation, moving from a lower privilege status (User) towards progressively higher and more powerful access levels (Admin and Super Admin).</p>
+							</description>
+						</image>
 						</figure>
 						
 						<p>
@@ -569,9 +617,14 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<c>docker-compose up</c> command which will show the output of everything running in the background, one for the victim which will show an SSH session with the server, and one for the attacker which we will use to make the attack.
 					</p>
 					
-					<figure>
-						<image source="scapy.svg"/>
-						<caption></caption>
+					<figure xml:id="fig-scapy-lab-setup">
+					<caption></caption>
+					<image source="scapy.svg">
+						<shortdescription>Illustration of three terminal windows representing a lab setup involving Docker Compose, a victim machine, and an attacker machine using Scapy.</shortdescription>
+						<description>
+						<p>The diagram displays three stylized representations of terminal windows, each associated with a different role in a network security lab. The top-left window, titled "docker-compose up," shows the command "$ docker-compose up" being entered, indicating the initiation of services or an environment using Docker Compose. The top-right window, labeled "victim," shows the command "$ ssh server," suggesting the victim machine is establishing an SSH connection to a server. Positioned below these two, the third window is titled "attacker." Inside this window, the command "$ scapy" is shown, followed by the Scapy interactive prompt ">>>", indicating that the attacker is using the Scapy tool for packet manipulation. Together, these windows depict the initial command setup for an exercise or demonstration involving these three components.</p>
+						</description>
+					</image>
 					</figure>
 					
 					<p>
@@ -646,7 +699,14 @@ server_1    | Server listening on :: port 22.</pre>
 						</li>
 					 </ol>
 					</p>
-					
+					<note>
+						<p>
+							If you receive the error 
+									<c>failed to create network scapy_testnet: Error response from daemon:</c> 
+										<c>Pool overlaps with other one on this address space</c> 
+									check to see if you have other containers running and stop them. You may also need to run docker network prune to remove the old networks Docker built.
+						</p>
+					</note>
 					<p>
 					In the second terminal run 
 						<c>docker-compose run victim bash</c> and then from the prompt we’ll SSH to server using the password "password":
