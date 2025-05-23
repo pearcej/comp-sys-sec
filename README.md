@@ -12,26 +12,18 @@ How to use this book
 
 - The generic version of this book is located at [https://runestone.academy/ns/books/published/comp-sys-sec/index.html?mode=browsing](https://runestone.academy/ns/books/published/comp-sys-sec/index.html?mode=browsing).
 - Instructors who wish to use this book go to [https://runestone.academy/](https://runestone.academy/) and make an account using "comp-sys-sec" as the base book.
-- Those wishing to report bugs or suggest improvements can do so at [https://github.com/pearcej/complex/issues](https://github.com/pearcej/comp-sys-sec/issues).
+- Those wishing to report bugs or suggest improvements can do so at [https://github.com/pearcej/comp-sys-sec/issues](https://github.com/pearcej/comp-sys-sec/issues).
 
 Licensing
 =========
 
-.. raw:: html
-
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-  <img alt="Creative Commons License" style="border-width:0"
-  src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
-  <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><em>
-  On Complexity</em></span> by Jan Pearce is licensed under a <a rel="license"
-  href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+This book is licensed under the [Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0) license.
 
 
 More about this book
 ====================
 
-This book is build with PreTeXt, we used the [PreTeXt](https://pretextbook.org/) authoring system.  The source code for this book is available at [https://github.com/pearcej/comp-sys-sec](https://github.com/pearcej/comp-sys-sec). Contributions are welcome!  If you find a bug, or have a suggestion for improvement, please open an issue on the GitHub repository.
+This book is built with the [PreTeXt](https://pretextbook.org/) authoring system.  The source code for this book is available at [https://github.com/pearcej/comp-sys-sec](https://github.com/pearcej/comp-sys-sec). Contributions are welcome!  If you find a bug, or have a suggestion for improvement, please open an issue on the GitHub repository.
 If you would like to contribute, please fork the repository and submit a pull request.  If you are not familiar with GitHub, please see the [GitHub documentation](https://docs.github.com/en/get-started/quickstart) for help.
 
 To compile the book as an accessible website, run `pretext build web` in a terminal from any directory of this project.
