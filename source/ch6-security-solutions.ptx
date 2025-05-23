@@ -10,11 +10,11 @@
   </introduction>
 
 				<section xml:id="false-positives-negatives">
-					<title>6.1. False Positives / Negatives</title>
+					<title>False Positives / Negatives</title>
 
-					<p>
+					<p><idx>false positive</idx>
 					When a security solution detects a threat, but no threat exists, that is a 
-						<em>false positive</em>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
+						<term>false positive</term>. Depending on the complexity of the solution it may utilize a set of rules, indicators of compromise, or possibly even artificial intelligence to trigger its warning system. In the case of a solution that creates a lot of false positives, it can be tiring for a team to go through each alert. Eventually teams are conditioned to ignore the alerts, making the security solution useless.
 				
 					</p>
 
@@ -23,7 +23,7 @@
 				</p>
 
 					<example>
-						<p>Webroot Antivirus</p>
+						<title>Webroot Antivirus</title>
 					
 
 					<p>
@@ -45,7 +45,7 @@
 
 				</section>
 				<section xml:id="layered-security">
-					<title>6.2. Layered Security</title>
+					<title>Layered Security</title>
 
 					<figure xml:id="fig-layers">
 					<caption></caption>
@@ -66,7 +66,10 @@
 					</figure>
 
 					<p>
-					Given that a single security solution is never 100% effective it makes sense to approach security in layers and use multiple systems. There is often a lot of overlap between solutions and while that may seem inefficient in other fields, in cybersecurity we consider it a benefit. By using multiple solutions, sometimes referred to as multi-layered security or defense in depth, you can build a more robust protection against breaches.
+						<idx>multi-layered security</idx>
+						<idx>defense in depth</idx>
+					Given that a single security solution is never 100% effective it makes sense to approach security in layers and use multiple systems. There is often a lot of overlap between solutions and while that may seem inefficient in other fields, in cybersecurity we consider it a benefit. By using multiple solutions, sometimes referred to as 
+					<term>multi-layered security</term> or <term>defense in depth</term>, you can build a more robust protection against breaches.
 				</p>
 
 					<p>
@@ -83,7 +86,7 @@
 
 				</section>
 				<section xml:id="network-solutions">
-					<title>6.3. Network Solutions</title>
+					<title>Network Solutions</title>
 					<introduction>
 				<p>
 					Many products are available for handling network traffic. They are typically marketed as either stand-alone devices, software to install on internal devices, or a subscription service that routes traffic through an external appliance. In the age of cloud computing network security as a service is becoming increasingly popular.
@@ -92,16 +95,18 @@
 					
 
 					<subsection xml:id="firewall">
-						<title>6.3.1. Firewall</title>
+						<title>Firewall</title>
 
 						<p>
 						A firewall is a service/software/device that blocks unwanted traffic and permits wanted traffic. Typically a firewall is a barrier between and private network and the Internet.
 					</p>
 
 						<p>
+							<idx>nftables</idx>
+							<idx>Windows Defender Firewall</idx>
 						Software like 
-							<url href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page">nftables</url> can be used to build a firewall on a Linux router for many interior clients. Interior clients may also run host-based firewalls such as 
-							<url href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security">Windows Defender Firewall</url>. Finally hardware solutions for plug-in firewall devices are available from many vendors including Palo Alto and Cisco. Any combination of these solutions may be used.
+							<url href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page"><term>nftables</term></url> can be used to build a firewall on a Linux router for many interior clients. Interior clients may also run host-based firewalls such as 
+							<url href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security"><term>Windows Defender Firewall</term></url>. Finally hardware solutions for plug-in firewall devices are available from many vendors including Palo Alto and Cisco. Any combination of these solutions may be used.
 					
 						</p>
 
@@ -112,24 +117,32 @@
 						</p>
 
 						<p>
-						Next-Gen Firewalls (NGFW) perform the same functions of a standard firewall, but also employ an integrated intrusion prevention system (IPS) to mitigate threats. The firewall is a perfect place to perform these actions as it can easily close of connections. NGFW often tout artificial intelligence threat monitoring and automatic threat intelligence updating (typically updating attack signatures). A NGFW can also easily be built on a Linux device by making use of 
+							<idx>Next-Gen Firewalls</idx>
+							<idx>NGFW</idx>
+							<idx>intrusion prevention system</idx>
+							<idx>IPS</idx>
+						<term>Next-Gen Firewalls</term> (<term>NGFW</term>) perform the same functions of a standard firewall, but also employ an integrated 
+						<term>intrusion prevention system</term> (<term>IPS</term>) to mitigate threats. The firewall is a perfect place to perform these actions as it can easily close of connections. NGFW often tout artificial intelligence threat monitoring and automatic threat intelligence updating (typically updating attack signatures). A NGFW can also easily be built on a Linux device by making use of 
 							<url href="https://www.snort.org/">an IPS</url> in conjunction with a netfilter firewall.
 					
 						</p>
 
 						<p>
 						Network infrastructure may also make use of a special space 
-							<em>outside</em> of a firewall called the Demilitarized Zone (DMZ). Servers that need to be directly connected to the Internet are often put in the DMZ so they don’t have a deal with restrictive firewall rules. These servers may be used to detect malicious activity, monitor incoming traffic, or to handle basic requests such as serving static web pages.
+							<em>outside</em> of a firewall called the 
+							<term>Demilitarized Zone</term> (<term>DMZ</term>). Servers that need to be directly connected to the Internet are often put in the DMZ so they don’t have a deal with restrictive firewall rules. These servers may be used to detect malicious activity, monitor incoming traffic, or to handle basic requests such as serving static web pages.
 					
 						</p>
 
 						<p>
-						The largest firewall in the world is the Chinese Great Firewall, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
+							<idx>Great Firewall</idx>
+						The largest firewall in the world is the Chinese 
+						<term>Great Firewall</term>, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
 					</p>
 
 					</subsection>
 					<subsection xml:id="proxy">
-						<title>6.3.2. Proxy</title>
+						<title>Proxy</title>
 						<figure xml:id="fig-tls-proxy">
 						<caption></caption>
 						<image source="tls-proxy.svg">
@@ -143,7 +156,8 @@
 						</figure>
 
 						<p>
-						A proxy typically sits between the users and an external network. Proxies and receive and send requests on behalf of a user, allowing for full control over the traffic going out and coming back in.
+							<idx>proxy</idx>
+						A <term>proxy</term> typically sits between the users and an external network. Proxies and receive and send requests on behalf of a user, allowing for full control over the traffic going out and coming back in.
 					</p>
 
 						<p>
@@ -158,15 +172,18 @@
 						</p>
 
 						<p>
-						Reverse proxies take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
+							<idx>reverse proxies</idx>
+						<term>Reverse proxies</term> take requests from an external source and pass it to an internal service. This helps prevent clients from having direct access to internal services. Reverse proxies can utilize caching and validate requests as well. A reverse proxy can also be configured to work with a firewall. Whereas it used to be common practice to place a server in a demilitarized zone (DMZ) outside of a firewall, it is now far more common to employ a reverse proxy to reach that server.
 					</p>
 
 					</subsection>
 					<subsection xml:id="load-balancer">
-						<title>6.3.3. Load Balancer</title>
+						<title>Load Balancer</title>
 
 						<p>
-						A common application for reverse proxies is to act as a load balancer for traffic. Load balancers distribute work, in the form of external client requests, among the internal resources, typically servers.
+							<idx>load balancer</idx>
+						A common application for reverse proxies is to act as a 
+						<term>load balancer</term> for traffic. Load balancers distribute work, in the form of external client requests, among the internal resources, typically servers.
 					</p>
 
 						<p>
@@ -175,10 +192,12 @@
 
 					</subsection>
 					<subsection xml:id="vpn">
-						<title>6.3.4. VPN</title>
+						<title>VPN</title>
 
 						<p>
-						A virtual private network (VPN) is used to encrypt internet traffic between two networks or a client and a network. VPNs have become standard procedure for linking remote offices or connecting remote workers. Given the growth of working from home, almost all users have become familiar with what a VPN is and what it does.
+							<idx>virtual private network</idx>
+							<idx>VPN</idx>
+						A <term>virtual private network</term> (<term>VPN</term>) is used to encrypt internet traffic between two networks or a client and a network. VPNs have become standard procedure for linking remote offices or connecting remote workers. Given the growth of working from home, almost all users have become familiar with what a VPN is and what it does.
 					</p>
 
 						<p>
@@ -199,19 +218,27 @@
 
 					</subsection>
 					<subsection xml:id="tap">
-						<title>6.3.5. TAP</title>
+						<title>TAP</title>
 
 						<p>
-						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network terminal access point (TAP) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
+							<idx>terminal access point</idx>
+							<idx>TAP</idx>
+						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network 
+						<term>terminal access point</term> (<term>TAP</term>) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
 					</p>
 
 					</subsection>
 				</section>
 				<section xml:id="edr">
-					<title>6.4. EDR</title>
+					<title>EDR</title>
 
 					<p>
-					Endpoint Detection and Response (EDR) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a host-based incident prevention system (HBIPS), software that runs on the endpoint to monitor and collect data.
+						<idx>Endpoint Detection and Response</idx>
+						<idx>EDR</idx>
+						<idx>host-based incident prevention system</idx>
+						<idx>HBIPS</idx>
+					<term>Endpoint Detection and Response</term> (<term>EDR</term>) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a 
+					<term>host-based incident prevention system</term> (<term>HBIPS</term>), software that runs on the endpoint to monitor and collect data.
 				</p>
 
 					<p>
@@ -220,10 +247,15 @@
 
 				</section>
 				<section xml:id="data-loss-prevention">
-					<title>6.5. Data Loss Prevention</title>
+					<title>Data Loss Prevention</title>
 
 					<p>
-					Data loss prevention (DLP) solutions aim to stop the exfiltration of sensitive data. This could be personally identifying information (PI), medical records, social security numbers (SSNs), credit card numbers, etc. Typically DLP either functions on the endpoint and server, data at rest, or on the network, data in motion.
+						<idx>Data loss prevention</idx>
+						<idx>DLP</idx>
+						<idx>personally identifying information</idx>
+						<idx>PI</idx>
+					<term>Data loss prevention</term> (<term>DLP</term>) solutions aim to stop the exfiltration of sensitive data. This could be 
+					<term>personally identifying information</term> (<term>PI</term>), medical records, social security numbers (SSNs), credit card numbers, etc. Typically DLP either functions on the endpoint and server, data at rest, or on the network, data in motion.
 				</p>
 
 					<p>
@@ -232,28 +264,43 @@
 
 				</section>
 				<section xml:id="idsips">
-					<title>6.6. IDS/IPS</title>
+					<title>IDS/IPS</title>
 
 					<p>
-					Intrusion Detection Systems and Intrusion Prevention Systems are systems that monitor network traffic to detect/prevent attacks. These systems may look for known exploits, such as SQL injection patterns, in the traffic and trigger an alert when detected. An intrusion 
+						<idx>Intrusion Detection Systems</idx>
+						<idx>Intrusion Prevention Systems</idx>
+					<term>Intrusion Detection Systems</term> and <term>Intrusion Prevention Systems</term> are systems that monitor network traffic to detect/prevent attacks. These systems may look for known exploits, such as SQL injection patterns, in the traffic and trigger an alert when detected. An intrusion 
 						<em>prevention</em> system will take it one step further and actually shut down the connection or kill the offending process.
 				
 					</p>
 
 					<p>
-					These systems employ exploit signatures or IDs that are indicators of compromise (IoCs), anomalies, or strange behaviors. The power of an IDS/IPS often comes from how up-to-date it’s signature database is. There are many solutions in the category including Splunk, QRadar, CrowdStrike, and SolarWinds.
+						<idx>indicators of compromise</idx>
+						<idx>IoCs</idx>
+					These systems employ exploit signatures or IDs that are 
+					<term>indicators of compromise</term> (<term>IoCs</term>), anomalies, or strange behaviors. The power of an IDS/IPS often comes from how up-to-date it’s signature database is. There are many solutions in the category including Splunk, QRadar, CrowdStrike, and SolarWinds.
 				</p>
 
 				</section>
 				<section xml:id="email-solutions">
-					<title>6.7. Email Solutions</title>
+					<title>Email Solutions</title>
 	
 					<p>
 					The original protocols used to send/receive email were simple and not designed for the challenges we face today. SPAM and phishing emails are unfortunately common and can be addressed with email client add-ons that scan for viruses or use patterns to identify phishing emails. Many of these tools are already built into Google’s GMail or Microsoft's Exchange.
 				</p>
 
 					<p>
-					Another large challenge is verifying the sender of an email. Currently three common methods exist: Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM), and Domain-base Message Authentication, Reporting, and Conformance (DMARC).
+						<idx>Sender Policy Framework</idx>
+						<idx>SPF</idx>
+						<idx>DomainKeys Identified Mail</idx>
+						<idx>DKIM</idx>
+						<idx>Domain-base Message Authentication, Reporting, and Conformanc</idx>
+						<idx>DMARC</idx>
+					
+					Another large challenge is verifying the sender of an email. Currently three common methods exist: 
+					<term>Sender Policy Framework</term> (<term>SPF</term>), 
+					<term>DomainKeys Identified Mail</term> (<term>DKIM</term>), and 
+					<term>Domain-base Message Authentication, Reporting, and Conformanc</term>e (<term>DMARC</term>).
 				</p>
 
 					<p>
@@ -276,7 +323,7 @@
 	
 				</section>
 				<section xml:id="siem">
-					<title>6.8. SIEM</title>
+					<title>SIEM</title>
 					<figure xml:id="fig-seim">
 					<caption></caption>
 					<image source="seim.svg">
@@ -293,12 +340,15 @@
 					</image>
 					</figure>
 					<p>
-					Security and Information Event management is a system for real-time monitoring of security information. Typically a SIEM system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
+						<idx>Security and Information Event management</idx>
+						<idx>SIEM</idx>
+					<term>Security and Information Event management</term> is a system for real-time monitoring of security information. Typically a 
+					<term>SIEM</term> system presents a dashboard showing events and has the ability to generate reports or create tickets. It may be separate device, software on an internal device, or even a third party service. Some examples of popular SIEMs are QRadar, Splunk, and Azure Sentinel.
 				</p>
 
 				</section>
 				<section xml:id="lab-exploiting-log4j">
-					<title>6.9. Lab: Exploiting log4j</title>
+					<title>Lab: Exploiting log4j</title>
 
 					<p>
 					In this lab we will examine the log4j vulnerability, 
@@ -523,7 +573,7 @@ root@3971c61303c8:/(1)</pre>
 
 				</section>
 				<section xml:id="security-solutions-review">
-					<title>6.10. Review Questions</title>
+					<title>Review Questions</title>
 					<p>
 						<ol>
 							<li>
