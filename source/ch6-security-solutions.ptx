@@ -45,7 +45,7 @@
 
 				</section>
 				<section xml:id="layered-security">
-					<title>6.2. Layered Security</title>
+					<title>Layered Security</title>
 
 					<figure xml:id="fig-layers">
 					<caption></caption>
@@ -235,6 +235,8 @@
 					<p>
 						<idx>Endpoint Detection and Response</idx>
 						<idx>EDR</idx>
+						<idx>host-based incident prevention system</idx>
+						<idx>HBIPS</idx>
 					<term>Endpoint Detection and Response</term> (<term>EDR</term>) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a 
 					<term>host-based incident prevention system</term> (<term>HBIPS</term>), software that runs on the endpoint to monitor and collect data.
 				</p>
