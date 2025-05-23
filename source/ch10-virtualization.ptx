@@ -3,20 +3,17 @@
 <chapter xml:id="ch10-virtualization" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Virtualization</title>
 
+				<section xml:id="methods">
+					<title>Methods</title>
   <introduction>
 				<p>
 				Information Technology has seen massive growth in the adoption of virtualization as the underpinning of dynamic and robust systems. This shift from bare-metal resources to virtual resources provides its own unique security challenges and considerations. As the field changes, it is important for anyone working in cybersecurity to not only understand how these systems work, but also be able to approach their implementation with a security-first mindset.
 			</p>
-  </introduction>
-
-				<section xml:id="methods">
-					<title>10.1. Methods</title>
-					<introduction>
-					<p>
-                    <idx><h>Virtualization</h></idx><term>Virtualization</term> is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, <idx><h>emulating</h></idx><term>emulating</term> the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in <idx><h>isolated environments</h></idx><term>isolated environments</term> without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:</p>
+ 					<p>
+                    <idx><h>virtualization</h></idx><term>Virtualization</term> is the act of using virtual computing resources as opposed to the actual resources directly. For example, you may run a program on a virtual version of a computer, <idx><h>emulating</h></idx><term>emulating</term> the processor, memory, etc., instead of running the program directly on the actual hardware. This offers some advantages in that you can limit the resources the program uses or run multiple programs in <idx><h>isolated environments</h></idx><term>isolated environments</term> without needing to significantly change the program itself. There are a few ways that virtual computing is typically accomplished:</p>
 			</introduction>
 					<subsection xml:id="virtual-machines">
-						<title>10.1.1. Virtual Machines</title>
+						<title>Virtual Machines</title>
 
 						<figure xml:id="fig-vm">
 						<caption></caption>
@@ -49,7 +46,7 @@
 
 					</subsection>
 					<subsection xml:id="containers">
-						<title>10.1.2. Containers</title>
+						<title>Containers</title>
 						<p>
 						A <idx>container</idx> <term>container</term> simplifies the VM by using the same operating system kernel as the host. This is accomplished by using special features of the Linux kernel to isolate the container. 
 							<url href="https://man7.org/linux/man-pages/man7/namespaces.7.html">Linux namespaces</url> controlled by 
@@ -62,11 +59,10 @@
 
 					</subsection>
 					<subsection xml:id="container-orchestration-systems">
-						<title>10.1.3. Container Orchestration Systems</title>
+						<title>Container Orchestration Systems</title>
 						<p>
 						Containers also make it easier to restart or scale applications. Container orchestration systems leverage this by monitoring containers and bringing them up or down as needed. The most popular container orchestration system is 
 							<url href="https://kubernetes.io/">Kubernetes</url>, developed by Google to manage web applications.
-					
 						</p>
 	
 						<p>
@@ -75,7 +71,7 @@
 
 					</subsection>
 					<subsection xml:id="iaas">
-						<title>10.1.4. IaaS</title>
+						<title>IaaS</title>
 
 						<p>
 						<idx><h>IaaS</h></idx><term>IaaS</term> stands for infrastructure as a service and it refers to purchasing VMs or container resources from a provider. Some popular IaaS companies are Amazon Web Systems, Microsoft Azure, and Linode. Each has some basic security tools and default policies in place to help keep the purchased resources secure, but ultimately most of the security responsibility for making sure the resources are secure lies with the group purchasing the resource.
@@ -83,7 +79,7 @@
 
 					</subsection>
 					<subsection xml:id="paas">
-						<title>10.1.5. PaaS</title>
+						<title>PaaS</title>
 
 						<p>
 						<idx><h>PaaS</h></idx> <term>PaaS</term> stands for platform as a service and refers to a higher-level service that deploys an application in an already established environment running on an IaaS service. Heroku is a great example of this type of service.
@@ -99,10 +95,9 @@
 
 					</subsection>
 					<subsection xml:id="saas">
-						<title>10.1.6. SaaS</title>
-
-						<p>
-						Software as a service <idx><h>SaaS</h></idx>(<term>SaaS</term>) is a methodology that we are quite used to. SaaS takes a web application and makes it available for a subscription. Some examples would be Webex, Dropbox, Google Workspace, etc. SaaS is a popular way to monitize software.
+						<title>SaaS</title>
+						<p><idx>Software as a service</idx> 
+						<term>Software as a service</term> <idx><h>SaaS</h></idx>(<term>SaaS</term>) is a methodology that we are quite used to. SaaS takes a web application and makes it available for a subscription. Some examples would be Webex, Dropbox, Google Workspace, etc. SaaS is a popular way to monitize software.
 					</p>
 
 						<p>
@@ -112,45 +107,44 @@
 					</subsection>
 				</section>
 				<section xml:id="cloud-computing">
-					<title>10.2. Cloud Computing</title>
+					<title>Cloud Computing</title>
 					<introduction>
-					<p>
-					IaaS ushered in a shift from on-premises deployments of software to deployments 
-						<em>in the cloud</em> or on a IaaS resource. Information technology has seen a shift to the cloud and back again with all kinds of mixed options in between. A business may choose any of these models depending on their needs.
-				
+					<p><idx>infrastructure as a service</idx><idx>IaaS</idx>
+					<term>Infrastructure as a Service (IaaS)</term> ushered in a shift from on-premises deployments of software to deployments 
+						<em>in the cloud</em> or on an IaaS resource. Information technology has seen a shift to the cloud and back again with all kinds of mixed options in between. A business may choose any of these models depending on their needs.
 					</p>
 					</introduction>
 					<subsection xml:id="public">
-						<title>10.2.1. Public</title>
+						<title>Public</title>
 
 						<p>
-						<idx><h>Public cloud</h></idx> <term>Public cloud</term> infrastructure consists of providers like <idx><h>AWS</h></idx><term>AWS</term> who host huge data centers throughout the world and welcome anyone who can afford it to use their resources. Public cloud providers claim to be secure and may even allow for audits (typically through a third party) to meet compliance requests. Ultimately the security of the underlying public cloud infrastructure lies in the hands of the provider, something that not all companies are comfortable with.
+						<idx><h>public cloud</h></idx> <term>Public cloud</term> infrastructure consists of providers like Amazon Web Service (AWS) who host huge data centers throughout the world and welcome anyone who can afford it to use their resources. Public cloud providers claim to be secure and may even allow for audits (typically through a third party) to meet compliance requests. Ultimately the security of the underlying public cloud infrastructure lies in the hands of the provider, something that not all companies are comfortable with.
 					</p>
 
 					</subsection>
 					<subsection xml:id="private">
-						<title>10.2.2. Private</title>
+						<title>Private</title>
 
 						<p>
-						<idx><h>Private cloud</h></idx> <term>Private cloud</term> takes the virtualization and automation technologies used by public cloud providers and hosts them internally. By utilizing technologies like 
+						<idx><h>private cloud</h></idx> <term>Private cloud</term> takes the virtualization and automation technologies used by public cloud providers and hosts them internally. By utilizing technologies like 
 							<url href="https://www.redhat.com/en/topics/openstack">OpenStack</url> a company can take full control of their deployment and run their own cloud. This has some disadvantages for companies that may lack the servers, space, and utilities, but for companies that were already self-hosted, migrated to the public cloud, and now would like more control, private cloud is an excellent choice.
 					
 						</p>
 
 					</subsection>
 					<subsection xml:id="hybrid">
-						<title>10.2.3. Hybrid</title>
+						<title>Hybrid</title>
 
 						<p>
-						<idx><h>Hybrid cloud</h></idx><term>Hybrid cloud</term> uses both models, public and private, and hosts some things on public IaaS services and other on internal, private IaaS services. This can be the best of both worlds, assuming the applications being supported leverage the full advantages of their environment.
+						<idx><h>hybrid cloud</h></idx><term>Hybrid cloud</term> uses both models, public and private, and hosts some things on public IaaS services and other on internal, private IaaS services. This can be the best of both worlds, assuming the applications being supported leverage the full advantages of their environment.
 					</p>
 
 					</subsection>
 					<subsection xml:id="multi-cloud">
-						<title>10.2.4. Multi-Cloud</title>
+						<title>Multi-Cloud</title>
 
 						<p>
-						<idx><h>Multi-cloud</h></idx><term>Multi-cloud</term> typically refers to utilizing more than one cloud provider. This may be required for applications that wish to remain available even if their cloud provider fails. Multi-cloud also avoids the issue of vendor lock-in, where the application is only set up to run on one provider.
+						<idx><h>multi-cloud</h></idx><term>Multi-cloud</term> typically refers to utilizing more than one cloud provider. This may be required for applications that wish to remain available even if their cloud provider fails. Multi-cloud also avoids the issue of vendor lock-in, where the application is only set up to run on one provider.
 					</p>
 
 						<p>
@@ -160,11 +154,11 @@
 					</subsection>
 				</section>
 				<section xml:id="serverless-solutions">
-					<title>10.3. Serverless Solutions</title>
-
+					<title>Serverless Solutions</title>
+	
 					<p>
 					One interesting outcome of the move to virtualized technologies is the advent of 
-					<idx> serverless</idx> <em>serverless</em>  solutions. A cloud user might not want to have to admin an entire Linux server, or even a Linux container just to run their application. They may be willing to design the application to work directly within a system that the cloud provider creates. </p>
+					<idx> serverless solutions</idx> <term>serverless solutions</term> . A cloud user might not want to have to admin an entire Linux server, or even a Linux container just to run their application. They may be willing to design the application to work directly within a system that the cloud provider creates. </p>
 					<example>
 					<p>
 						<url href="https://aws.amazon.com/lambda/">Amazon Lambda</url> is an example of such a system. Users create functions which run seemingly on their own, without worrying about the underlying systems supporting them. From a security standpoint, this places a lot of trust in the provider.
@@ -173,7 +167,7 @@
 
 				</section>
 				<section xml:id="cs-of-cloud-native-security">
-					<title>10.4. 4C’s of Cloud Native Security</title>
+					<title>4C’s of Cloud Native Security</title>
 
 					<p>
 					When reflecting on how to secure an application running in the cloud, a common tactic is to look at the four Cs involved:
@@ -199,7 +193,7 @@
 						</li>
 						
 						<li>
-							<p> <idx><h>Cloud</h></idx>
+							<p> <idx><h>cloud</h></idx>
 					<term>Cloud</term>: Is the cloud provider you are using secure? If they have are compromised everything within them is compromised. Can you trust this computing base?
 				</p>
 						</li>
@@ -207,11 +201,11 @@
 				</p>
 				</section>
 				<section xml:id="lab-malicious-containers">
-					<title>10.5. Lab: Malicious Containers</title>
+					<title>Lab: Malicious Containers</title>
 
 					<p>
 					While containers have made it much easier to deploy software, they have also made it easier to deploy 
-						<em>malicious</em> software. Imagine that we have an internal company website, written in <term>PHP</term> and deployed in a Docker container. Given the layered nature of the Docker build system, this application is 
+						<em>malicious</em> software. Imagine that we have an internal company website, written in PHP and deployed in a Docker container. Given the layered nature of the Docker build system, this application is 
 						<em>trusting</em> that the images it is building from are secure. Take a look at the following 
 						<c>Dockerfile</c> to see just how easy it is to slip something malicious into the image:
 				
@@ -284,7 +278,6 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 					</p>
 					<question>
 						
-					
 					<p>
 					What’s for lunch?
 				</p>
@@ -295,7 +288,6 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 				</p>
 					<question>
 						
-					
 					<p>
 					Notice of the time off request on the main page doesn’t work? From your shell, create a new web page on the server named timeoff.html with the text GRANTED. What command did you use to make the new file? What happens now when you click on the time off link?
 			
@@ -304,7 +296,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 
 				</section>
 				<section xml:id="virtualization-review">
-					<title>10.6. Review Questions</title>
+					<title>Review Questions</title>
 
 					<p>
 						<ol>
