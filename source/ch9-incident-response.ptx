@@ -396,7 +396,6 @@
 					<p>
 					In the  <xref ref="ch3-malware">Malware</xref> chapter we covered Lockheed Martin’s Cyber Killchain attack analysis framework. Cyber killchain is not the only analysis framework available, a popular alternative is the 
 						<url href="https://attack.mitre.org">MITRE ATT&amp;CK framework</url>. ATT&amp;CK has 14 sections that cover adversarial tactics, techniques, and common knowledge. Each section is separated into different matrices that have their own sub-techniques.
-				
 					</p>
 		
 					<p>
