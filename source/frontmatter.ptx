@@ -20,7 +20,7 @@
     </website>
 
     <copyright>
-      <year>2025<ndash />2025</year>
+      <year>2025<ndash />present</year>
       <holder>Dr. Jan Pearce</holder>
       <shortlicense> This work is licensed under the Creative Commons Non-Commercial Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/"> CreativeCommons.org</url>. All product names, logos, and brands are property of their respective owners. All company, product and service names used in this text are for identification purposes only. Use of these names, logos, and brands does not imply endorsement. 			
 				Images used in this text are created by the original author, Ryan Tolboom, and licensed under CC-BY-NC-SA except where otherwise noted.
@@ -43,7 +43,7 @@
     I am grateful to Ryan Tolboom for his work in creating the original web version of this text, and to the Fund for the Improvement of Postsecondary Education (FIPSE) of the U.S. Department of Education for the Open Textbooks Pilot grant awarded to Middlesex College for the Open Textbook Collaborative which funded the first version of this text. The original author thanked the New Jersey Institute of Technology (NJIT) Open Access Textbooks (OAT) project and the <url href="https://middlesexcc.libguides.com/OTCProject">Open Textbook Collaborative Project (OTC)</url> for making this text possible, and I am grateful as well.
 			</p>
    <p> 
-      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College students who served as the first editors of this work and who helped to make this version more interactive.
+      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College student interns, Elijah Babayemi, Colin Flaherty, Austin Gatewood, and Tristan Razote, who served as the first editors of this work and who helped to make this version more interactive. You can see their contibutions as well as those of others at <url href="https://github.com/pearcej/comp-sys-sec/forks">github.com/pearcej/comp-sys-sec/forks</url>.
     </p>
 
     <p>
@@ -67,6 +67,9 @@
 
 				<p>
 				The text, labs, and review questions in this book are designed as an introduction to the applied topic of computer security. With these resources students will learn ways of preventing, identifying, understanding, and recovering from attacks against computer systems. This text also presents the evolution of computer security, the main threats, attacks and mechanisms, applied computer operation and security protocols, main data transmission and storage protection methods, cryptography, network systems availability, recovery, and business continuation procedures.
+			</p>
+			<p>
+				Many of the labs in this text are designed to run in Docker. Each of these can be run in a Github Codespace or in a local Docker installation. When Docker is required, instructions are given for both alternatives.
 			</p>
 
 				<paragraphs xml:id="learning-outcomes">
