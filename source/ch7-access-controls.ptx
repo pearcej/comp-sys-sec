@@ -34,10 +34,10 @@
   </introduction>
 
 				<section xml:id="general-principles-and-techniques">
-					<title>7.1. General Principles and Techniques</title>
+					<title>General Principles and Techniques</title>
 
 					<subsection xml:id="least-privilege">
-						<title>7.1.1. Least Privilege</title>
+						<title>Least Privilege</title>
 
 						<p><idx>least privilege</idx>
 						The principle of <term>least privilege</term> states that an actor should only be given access to resources as necessary and with the permissions necessary to complete their task. These resources may be processes, programs, or even user accounts. This principle reduces an attack surface and helps stop the spread of malware as a single compromised account will not have access to all of the resources.
@@ -49,7 +49,7 @@
 
 					</subsection>
 					<subsection xml:id="multi-factor-authentication-mfa">
-						<title>7.1.2. Multi-factor Authentication (MFA)</title>
+						<title>Multi-factor Authentication (MFA)</title>
 
 						<p><idx>Multi-factor authentication</idx><idx>MFA</idx>
 						<term>Multi-factor authentication</term> is a technique that requires actors to provide two or more pieces of information to be used as identification. Some examples of identification would be usernames and passwords, token codes, a physical token, or biometric data. Typically it is suggested to use "something you have and something you know" for example the code in an SMS message to your phone (you have your phone) and a password (you know your password).
@@ -64,7 +64,7 @@
 
 					</subsection>
 					<subsection xml:id="mac-dac-rbac-and-abac">
-						<title>7.1.3. MAC, DAC, RBAC, and ABAC</title>
+						<title>MAC, DAC, RBAC, and ABAC</title>
 						<p>
 						There are several different authorization models that can be used. Mandatory Access Control (MAC) requires all objects (files, directories, devices, etc.) to have a security label that identifies who can access it and how. This is a particularly stringent form of access control which requires a great deal of effort to implement and maintain, but results in a high level of security. Discretional Access Control (DAC) simplifies things by allowing owners of objects to determine which permissions groups/users should be given to that object. This offers great flexibility and ease of implementation, but can result in a less secure environment if the owner of the object is compromised. Role-Based Access Control (RBAC) builds off of DAC uses a core set of roles within a system to determine who has different levels of access to objects. RBAC is a common and flexible model which can be intelligently used to implement DAC or MAC. Attribute-Based access control (ABAC) is a newer model that builds off of RBAC and uses more general attributes instead of just roles. ABAC can determine who has different levels of access to objects based on the attributes of the object, the user, the action, or even an external context. These attributes can be used together in any way that can be codified into a rule. For example, "Give Fred read access to non-classified documents in this folder from 9:00AM to 5:00PM."
 					</p>
@@ -132,7 +132,7 @@
 					</subsection>
 				</section>
 				<section xml:id="physical-access">
-					<title>7.2. Physical Access</title>
+					<title>Physical Access</title>
 					<introduction>
 				<p>
 					An organization’s building is a large ongoing investment and is often an unexpected security asset or weakness. Most technical security controls can be completely bypassed or disabled if physical security is not taken into account. As such, steps must be taken to assure that physical access is limited to protect not only the building and its contents but also the data that is created and stored there.
@@ -151,7 +151,7 @@
 
 
 					<subsection xml:id="gates">
-						<title>7.2.1. Gates</title>
+						<title>Gates</title>
 						<p>
 						It is easier to manage the physical security of a location when the amount of entry points are limited. Convenience and safety dictate that even with such considerations multiple points of ingress are still needed. A security gate is the most basic tool available the ensure that only authorized actors gain access.
 					</p>
@@ -162,7 +162,7 @@
 
 					</subsection>
 					<subsection xml:id="biometrics">
-						<title>7.2.2. Biometrics</title>
+						<title>Biometrics</title>
 						<figure>
 							<caption></caption>
 							<image source="biometric.jpg" decorative="yes"/>
@@ -184,7 +184,7 @@
 
 					</subsection>
 					<subsection xml:id="key-cards">
-						<title>7.2.3. Key Cards</title>
+						<title>Key Cards</title>
 
 						<p>
 						Many security measures employ key cards for access to rooms. A key card uses the same form factor as a credit card, making it easy for employees to carry in their wallets or ID holders. Key cards may utilize magnetic stripes or chips (in a similar fashion to credit cards), radio frequency identification (RFID), or near field communication (NFC).
@@ -227,7 +227,7 @@
 
 					</subsection>
 					<subsection xml:id="security-guards">
-						<title>7.2.4. Security Guards</title>
+						<title>Security Guards</title>
 
 						<p>
 						The most versatile assets in any organization are human assets and the same is true of security guards. Security guards can be used to verify IDs, enforce rules, stopped forced entry, and take actions as necessary. Given the expensive nature of human resources, security guards should be employed in critical locations where risk is high. They may also benefit greatly from staff awareness training even if their job description may be different from the other employees you are training.
@@ -235,7 +235,7 @@
 
 					</subsection>
 					<subsection xml:id="cameras">
-						<title>7.2.5. Cameras</title>
+						<title>Cameras</title>
 
 						<figure>
 							<caption></caption>
@@ -276,7 +276,7 @@
 
 					</subsection>
 					<subsection xml:id="mantraps">
-						<title>7.2.6. Mantraps</title>
+						<title>Mantraps</title>
 
 						<figure xml:id="fig-mantrap">
 						<caption></caption>
@@ -295,10 +295,10 @@
 					</subsection>
 				</section>
 				<section xml:id="network-access">
-					<title>7.3. Network Access</title>
+					<title>Network Access</title>
 
 					<subsection xml:id="active-directory">
-						<title>7.3.1. Active Directory</title>
+						<title>Active Directory</title>
 
 						<p>
 						Active Directory (AD) is a directory service typically used in Windows networks to control and track resources. AD is a Microsoft technology that enables centralized network management. It has proven to be very scalable and is commonly deployed in the enterprise environment (corporations, universities, schools, etc.)
@@ -318,7 +318,7 @@
 
 					</subsection>
 					<subsection xml:id="privileged-identity-management-pim">
-						<title>7.3.2. Privileged Identity Management (PIM)</title>
+						<title>Privileged Identity Management (PIM)</title>
 
 						<p>
 						Privileged Identity Management (PIM) is a method of managing access to resources such as locations, commands, audit reports, and services. PIM aims to provide more granular access control. By recording more information about access it allows for better reporting regarding suspicious behavior and anomalies. PIM is used in the Windows operating system and for many Microsoft Azure services.
@@ -326,7 +326,7 @@
 
 					</subsection>
 					<subsection xml:id="privileged-access-management-pam">
-						<title>7.3.3. Privileged Access Management (PAM)</title>
+						<title>Privileged Access Management (PAM)</title>
 
 						<p>
 						Privileged Access Management (PAM) is a framework for safeguarding identities with advanced capabilities, such as superusers in a *NIX system. PAM is common in the Linux world, where it is used to control how administrators log in. PAM supports many more features than the older "become root and perform admin tasks" model. With PAM passwords can be set to expire, better auditing can be put in place, and privilege escalation can be made temporary.
@@ -334,7 +334,7 @@
 
 					</subsection>
 					<subsection xml:id="identity-and-access-management-iam">
-						<title>7.3.4. Identity and Access Management (IAM)</title>
+						<title>Identity and Access Management (IAM)</title>
 
 						<p>
 						Identity and Access Management is a framework for managing digital identities. IAM manages the user database, logs when users sign in and out, manages the creation of groups or roles, and allows for the assignment and removal of access privileges. Many different groups offer IAM frameworks, the most famous of which may be Amazon Web Systems (AWS) which use it for controlling access to the infrastructure as a service (IaaS) technologies they offer.
@@ -345,7 +345,7 @@
 					</p>
 					</subsection>
 					<subsection xml:id="unix-file-permissions">
-						<title>7.3.5. Unix File Permissions</title>
+						<title>Unix File Permissions</title>
 
 						<p>
 						From its inception, Unix was designed to be a multi-user environment, and as such, a lot of attention was paid to file permissions. Every file in a Unix system has an owner and a group. Each file also has permissions for owner, group, and all users. Permissions are set using octal numbers where each bit represents read (bit 0: 1), write (bit 1: 2), or execute (bit 2: 4) permission.
@@ -382,7 +382,7 @@
 
 					</subsection>
 					<subsection xml:id="acls">
-						<title>7.3.6. ACLs</title>
+						<title>ACLs</title>
 
 						<p>
 						Access Control Lists (ACL) are used to permit or deny access based on a characteristic. They tend to be based on a simple characteristic and either deny access to anyone not on the list, 
@@ -404,7 +404,7 @@
 
 					</subsection>
 					<subsection xml:id="ssh-keys">
-						<title>7.3.7. SSH Keys</title>
+						<title>SSH Keys</title>
 
 						<p>
 						Secure Shell Server (SSH) supports the use of asymmetric encryption keys for authentication. Most severs support RSA, DSA, and ECDSA keys, with RSA being the most common. An SSH server maintains a list of authorized keys, typically in 
@@ -421,7 +421,7 @@
 
 					</subsection>
 					<subsection xml:id="sessions-and-cookies">
-						<title>7.3.8. Sessions and Cookies</title>
+						<title>Sessions and Cookies</title>
 						<p>
 						HTTP sessions can also be used to control access to a resource. This is often employed in web applications. Upon successful sign-in, a user is given a cookie with a cryptographically tamper-resistant session ID. Every request the user makes to that site will include that cookie. Eventually the session will time out and the user will make a request that is denied based on their session ID no longer being valid. Typically the website will redirect them from the protected resource to a login page where they can log in again.
 					</p>
@@ -432,7 +432,7 @@
 
 					</subsection>
 					<subsection xml:id="single-sign-on-sso">
-						<title>7.3.9. Single Sign On (SSO)</title>
+						<title>Single Sign On (SSO)</title>
 
 						<p>
 						Given the ubiquitous nature of web applications, maintaining separate usernames and passwords can be difficult for users. A recent trend has been to support Single Sign On, where one identity provider is used to confirm that users are who they claim to be. There are a few protocols that make this possible, including SAML and OAuth.
@@ -503,7 +503,7 @@
 
 					</subsection>
 					<subsection xml:id="kerberos">
-						<title>7.3.10. Kerberos</title>
+						<title>Kerberos</title>
 
 						<p>
 						Kerberos is an authentication protocol for client server connections. It was developed by MIT in the 1980s and is most largely deployed on Windows networks, but many Linux distributions support using it for authentication as well. Kerberos makes extensive use of time-based tickets and as such all client participating must have their clocks in sync. When functioning correctly, Kerberos allows for full authentication on an untrusted network.
@@ -573,7 +573,7 @@
 
 					</subsection>
 					<subsection xml:id="tokenization">
-						<title>7.3.11. Tokenization</title>
+						<title>Tokenization</title>
 
 						<p>
 						Tokenization may be used as part of an access control scheme to protect sensitive information. Information that would be highly valuable if compromised is replaced with a random token known to the parties involved in the transaction. In a typically scenario once the tokens have been established, only the token is sent out over an untrusted network.
@@ -585,7 +585,7 @@
 					</subsection>
 				</section>
 				<section xml:id="lab-linux-file-permissions">
-					<title>7.4. Lab: Linux File Permissions</title>
+					<title>Lab: Linux File Permissions</title>
 
 					<p>
 					In this lab we are going to explore UNIX style file permissions and determine what they can do and why they are limited. Finally we will see how Linux ACLs provide more flexibility in assigning permissions.
@@ -818,7 +818,7 @@ other::---</pre>
 
 				</section>
 				<section xml:id="access-controls-review">
-					<title>7.5. Review Questions</title>
+					<title>Review Questions</title>
 
 					<p>
 						<ol>
