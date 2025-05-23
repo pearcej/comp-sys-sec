@@ -129,7 +129,8 @@
 						<title>MAC Flooding</title>
 
 						<p>
-						Switches are tasked with keeping track of which MAC addresses correspond to which ports on the switch. They use this to make sure that traffic is only routed where it needs to go. Given that MAC addresses can be changed, an attacker could flood a switch with packets from many different MAC addresses and possibly overflow the MAC-port routing table. Some switches may default to hub-like functionality and send frames to all ports in an effort to keep traffic flowing. This then allows an attacker to capture traffic from other machines on the network.
+							<idx>switches</idx>
+						<term>Switches</term> are tasked with keeping track of which MAC addresses correspond to which ports on the switch. They use this to make sure that traffic is only routed where it needs to go. Given that MAC addresses can be changed, an attacker could flood a switch with packets from many different MAC addresses and possibly overflow the MAC-port routing table. Some switches may default to hub-like functionality and send frames to all ports in an effort to keep traffic flowing. This then allows an attacker to capture traffic from other machines on the network.
 					</p>
 
 					</subsection>
