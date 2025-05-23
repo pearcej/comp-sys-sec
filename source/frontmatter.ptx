@@ -4,6 +4,8 @@
 <!-- works. -->
 
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+	<title>Prefaces</title>
+
   <bibinfo>
   
     <author>
@@ -13,7 +15,7 @@
     </author>
     <date>
       <today />
-    </date>
+    </date>git 
 
     <website>
       <url href="https://github.com/pearcej/comp-sys-sec">Repository on Gibhub</url>

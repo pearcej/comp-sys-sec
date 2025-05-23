@@ -2,15 +2,12 @@
 
 <chapter xml:id="ch2-cryptography" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Cryptography</title>
-
-  <introduction>
+<section xml:id="why-do-we-need-cryptography">
+		<title>Why do we need cryptography?</title>
 	<p>
 		This chapter is meant to serve as a brief and gentle introduction to the cryptographic concepts often encountered in the field of security. It is by no means exhaustive but it should provide a basis for a better understanding of why protocols are designed the way they are. Cryptography is a method of scrambling data into non-readable text. It allows us to transform data into a secure form so that unauthorized users cannot view it.
 	</p>
-  </introduction>
-
-				<section xml:id="why-do-we-need-cryptography">
-					<title>Why do we need cryptography?</title>
+	
 					<p>
 					Cryptography is used to set up secure channels of communication, but it can also be used to provide non-repudiation of actions, basically leaving digital footprints that show someone did something. This means that cryptography allows us to provide authentication, authorization, <em>and</em> accounting (AAA).
 					</p>
@@ -24,11 +21,9 @@
 						<idx>non-repudiation</idx><term>non-repudiation</term> as it can show that only one person was capable of sending a particular message. Lastly cryptography also allows us to perform authentication 
 						<em>without</em> storing passwords in plaintext. This is critical in an age where data breaches are increasingly common.
 					</p>
-				
+				<p>
 					<example xml:id="case-study-equifax">
       				<title>Case Study: Equifax</title>
-					<p>
-					</p>
 					<p>
 						<url href="https://www.ftc.gov/enforcement/cases-proceedings/refunds/equifax-data-breach-settlement">In September of 2017, Equifax announced a data breach the exposed the personal information of 147 million people.</url> The original attack made use of an exploit in an outdated version of 
 						<url href="https://struts.apache.org/">Apache Struts</url> which was being used as part of Equifax’s system for handling credit disputes from customers. Once the attackers had gained access to internal Equifax servers, the began gathering as much information as they could from internal databases.
@@ -38,8 +33,8 @@
 					<p>
 					What is particularly egregious about this data breach is that passwords in many databases were stored in plaintext. This means that the attackers were able to try the passwords and usernames on other services. While it is important that users use different passwords for different services it is far more disturbing that a company as large as Equifax did not have the policies in place to use cryptography to mitigate the risks from such an enormous breach.
 				</p>
-
 			</example>
+		</p>
 				</section>
 				<section xml:id="terminology">
 					<title>Terminology</title>

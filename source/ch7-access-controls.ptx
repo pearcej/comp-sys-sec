@@ -3,6 +3,10 @@
 <chapter xml:id="ch7-access-controls" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assess Controls</title>
 
+
+				<section xml:id="general-principles-and-techniques">
+					<title>General Principles and Techniques</title>
+					
   <introduction>
 
 				<p>
@@ -32,9 +36,6 @@
 			</p>
 
   </introduction>
-
-				<section xml:id="general-principles-and-techniques">
-					<title>General Principles and Techniques</title>
 
 					<subsection xml:id="least-privilege">
 						<title>Least Privilege</title>

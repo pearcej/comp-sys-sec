@@ -3,7 +3,9 @@
 <chapter xml:id="ch4-protocols" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Protocols</title>
 
-  <introduction>
+				<section xml:id="network-access-layer">
+					<title> Network Access Layer</title>
+						  <introduction>
 				<p><idx>protocol</idx>
 				A <term>protocol</term> is a set of rules. Protocols in computing are typically thorough rules that dictate communication. A protocol may include information about the syntax used, error correction, synchronization, or any other aspect of how communication occurs in the context of that situation. In computer security it is important to have a thorough understanding of common protocols as their weaknesses often determine how and if an attack will occur. Protocols exist for both hardware and software and have been developed via individuals and organizations. Early networking protocols were often developed on mailing lists using Requests for Comments (RFCs). You may still see RFCs being crafted, referred to, or actively worked on. 
 					<url href="https://datatracker.ietf.org/doc/html/rfc2616">Some of the earliest web protocols are detailed in RFCs.</url> More often than not, large protocols have working groups and associations developing, such as the 802.11 group at the 
@@ -14,12 +16,9 @@
 				This chapter will give a brief description of important protocols following the TCP/IP layering model. It is important to note that some of these protocols may reach across layers to accomplish tasks. In this case they will be grouped according to which layer they largely function within.
 			</p>
   </introduction>
-
-				<section xml:id="network-access-layer">
-					<title> Network Access Layer</title>
-
 					<subsection xml:id="arp">
 						<title>ARP</title>
+
 						<p><idx>ARP</idx><idx>address resolution protocol</idx>
 						<term>Address Resolution Protocol</term> (<term>ARP</term>) is used on the local ethernet segment to resolve IP addresses to MAC addresses. Since this protocol functions at the ethernet segment level, security was not a primary concern. Unfortunately this means that ARP communications can be easily spoofed to cause a MitM scenario. A malicious actor simply sends out several ARP packets, 
 							<em>gratuitous ARP</em>, saying that traffic for a certain IP address should be sent to them. Since the MAC to IP address table is cached in several places, it can take a long time for all the caches to invalidate and resolve an issue caused by malicious ARP frames.
