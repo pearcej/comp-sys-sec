@@ -136,7 +136,8 @@
 
 						<p>
 							<idx>Great Firewall</idx>
-						The largest firewall in the world is the Chinese <term>Great Firewall</term>, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
+						The largest firewall in the world is the Chinese 
+						<term>Great Firewall</term>, started in 1998 as a way to prevent outside influence in China. It is a system used to block IPs, hijack DNS queries, throttle traffic, and perform MitM decryption. The Great Firewall is made of proxies and firewalls performing packet-inspection and content filtering. VPNs are often employed within China to circumvent the great firewall and the great firewall is continually updated to attempt to detect and shut down this traffic.
 					</p>
 
 					</subsection>
@@ -177,10 +178,12 @@
 
 					</subsection>
 					<subsection xml:id="load-balancer">
-						<title>6.3.3. Load Balancer</title>
+						<title>Load Balancer</title>
 
 						<p>
-						A common application for reverse proxies is to act as a load balancer for traffic. Load balancers distribute work, in the form of external client requests, among the internal resources, typically servers.
+							<idx>load balancer</idx>
+						A common application for reverse proxies is to act as a 
+						<term>load balancer</term> for traffic. Load balancers distribute work, in the form of external client requests, among the internal resources, typically servers.
 					</p>
 
 						<p>
@@ -189,10 +192,12 @@
 
 					</subsection>
 					<subsection xml:id="vpn">
-						<title>6.3.4. VPN</title>
+						<title>VPN</title>
 
 						<p>
-						A virtual private network (VPN) is used to encrypt internet traffic between two networks or a client and a network. VPNs have become standard procedure for linking remote offices or connecting remote workers. Given the growth of working from home, almost all users have become familiar with what a VPN is and what it does.
+							<idx>virtual private network</idx>
+							<idx>VPN</idx>
+						A <term>virtual private network</term> (<term>VPN</term>) is used to encrypt internet traffic between two networks or a client and a network. VPNs have become standard procedure for linking remote offices or connecting remote workers. Given the growth of working from home, almost all users have become familiar with what a VPN is and what it does.
 					</p>
 
 						<p>
@@ -213,19 +218,24 @@
 
 					</subsection>
 					<subsection xml:id="tap">
-						<title>6.3.5. TAP</title>
+						<title>TAP</title>
 
 						<p>
-						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network terminal access point (TAP) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
+							<idx>terminal access point</idx>
+							<idx>TAP</idx>
+						Sometimes it is necessary for a network or security engineer to monitor what is happening on a particular network segment. In this case a network 
+						<term>terminal access point</term> (<term>TAP</term>) can be employed. A TAP creates a copy of network traffic and forwards it to a particular port on a switch or router.
 					</p>
 
 					</subsection>
 				</section>
 				<section xml:id="edr">
-					<title>6.4. EDR</title>
+					<title>EDR</title>
 
 					<p>
-					Endpoint Detection and Response (EDR) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a host-based incident prevention system (HBIPS), software that runs on the endpoint to monitor and collect data.
+						<idx>Endpoint Detection and Response</idx>
+						<idx>EDR</idx>
+					<term>Endpoint Detection and Response</term> (<term>EDR</term>) is used to secure endpoints: servers, workstations, desktops, mobile devices, etc. EDR is typically implemented as a host-based incident prevention system (HBIPS), software that runs on the endpoint to monitor and collect data.
 				</p>
 
 					<p>
