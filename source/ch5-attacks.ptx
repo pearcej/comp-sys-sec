@@ -7,7 +7,8 @@
 					<title>Interception Attacks</title>
 					<introduction>
 					<p>
-					Interception attacks rely on the ability to intercept network communications. This may be due to the nature of the network being used or sometimes other methods may leveraged to better position the attacker. These attacks generally involve forging fictitious messages, recording transmitted data, or altering the contents of messages while on a network. This family of attacks places all parts of the CIA triad at risk.
+						<idx>interception attacks</idx>
+					<term>Interception attacks</term> rely on the ability to intercept network communications. This may be due to the nature of the network being used or sometimes other methods may leveraged to better position the attacker. These attacks generally involve forging fictitious messages, recording transmitted data, or altering the contents of messages while on a network. This family of attacks places all parts of the CIA triad at risk.
 				</p>
 				</introduction>
 
@@ -25,7 +26,9 @@
 						</figure>
 
 						<p>
-						A man in the middle attack (MitM) is a blanket term applied when an attacker is intercepting communication. A typical attack involves eavesdropping and possibly modifying messages between two parties. Encryption can be used to mitigate the attack, making it impossible for an attacker to decrypt the messages they are intercepting. That being said, particular attention must be paid to the handshaking/key exchange protocol to be sure that an attacker does not gain access to the key(s) being used. What follows is an example of MitM being used to intercept and modify the public key exchange:
+							<idx>man in the middle attack</idx>
+							<idx>MitM</idx>
+						A <term>man in the middle attack</term> (<term>MitM</term>) is a blanket term applied when an attacker is intercepting communication. A typical attack involves eavesdropping and possibly modifying messages between two parties. Encryption can be used to mitigate the attack, making it impossible for an attacker to decrypt the messages they are intercepting. That being said, particular attention must be paid to the handshaking/key exchange protocol to be sure that an attacker does not gain access to the key(s) being used. What follows is an example of MitM being used to intercept and modify the public key exchange:
 					</p>
 
 						<figure xml:id="fig-mitm-keys">
@@ -47,7 +50,9 @@
 						<title>MitB</title>
 	
 						<p>
-						MitB stands for man in the browser and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
+							<idx>MitB</idx>
+							<idx>man in the browser</idx>
+						<term>MitB</term> stands for <term>man in the browser</term> and is typically caused by a trojan installing malware that allows the attacker to intercept/modify communications between the browser and the server. This can be used to capture data on forms, modify input, or modify the response from the server. Often the software used in MitB attacks lays dormant until the victim browses to a targeted website. What follows is an example of how a MitB attack can be used to modify an online banking request to send money:
 					</p>
 
 						<figure xml:id="fig-mitb">
@@ -65,9 +70,9 @@
 
 					</subsection>
 					<subsection xml:id="replay-attacks">
-						<title>Replay Attacks</title>
+						<title><term>Replay Attacks</term></title>
 
-						<p>
+						<p><idx>replay attacks</idx>
 						This family of attacks typically involves a MitM making a copy of the transmission and 
 							<em>replaying</em> it to impersonate the victim. Logon credentials, simple hashes, and specific commands are sometimes susceptible to this type of attack. The solution is to use timestamps, nonces (random number for that particular session), rotating keys, or a counter to make sure commands cannot be executed outside of context.
 					
@@ -111,7 +116,12 @@
 						<title>MAC Spoofing/MAC Cloning</title>
 						
 						<p>
-						Most networks expect that a MAC address will correspond to the unique numbers on a network interface controller (NIC), but it is actually quite easy to change. Virtual networking necessitates the ability to use a different MAC address and this feature is built into most modern operating systems. MAC spoofing is when an attacker sets their MAC address to the MAC address of another machine on the network in an effort to initiate an attack. For example, them may set themselves up as a gateway to launch a MitM attack.
+							<idx>network interface controller</idx>
+							<idx>NIC</idx>
+							<idx>MAC spoofing</idx>
+						Most networks expect that a MAC address will correspond to the unique numbers on a 
+						<term>network interface controller</term> (<term>NIC</term>), but it is actually quite easy to change. Virtual networking necessitates the ability to use a different MAC address and this feature is built into most modern operating systems. 
+						<term>MAC spoofing</term> is when an attacker sets their MAC address to the MAC address of another machine on the network in an effort to initiate an attack. For example, them may set themselves up as a gateway to launch a MitM attack.
 					</p>
 						
 					</subsection>
@@ -210,7 +220,10 @@
 					<subsection xml:id="llmnr-hijacking">
 						<title>LLMNR Hijacking</title>
 						<p>
-						In this scenario an attacker responds to a Link-Local Multicast Name Resolution (LLMNR) broadcast and impersonates an authentication server. The unexpecting victim fills in their credentials, which are promptly stolen. This attack can be mitigated by disabling LLMNR on the network.
+							<idx>Link-Local Multicast Name Resolution</idx>
+							<idx>LLMNR</idx>
+						In this scenario an attacker responds to a 
+						<term>Link-Local Multicast Name Resolution</term> (<term>LLMNR</term>) broadcast and impersonates an authentication server. The unexpecting victim fills in their credentials, which are promptly stolen. This attack can be mitigated by disabling LLMNR on the network.
 					</p>
 					</subsection>
 				</section>
@@ -224,7 +237,10 @@
 					</p>
 					
 					<p>
-						<url href="https://owasp.org/">The Open Web Application Security Project (OWASP)</url> is a great source of resources for web application security. They maintain a top 10 list of web application security risks. As of 2021, the 
+						<idx>Open Web Application Security Project</idx>
+						<idx>OWASP</idx>
+						<url href="https://owasp.org/">The 
+							<term>Open Web Application Security Project</term> (<term>OWASP</term>)</url> is a great source of resources for web application security. They maintain a top 10 list of web application security risks. As of 2021, the 
 						<url href="https://owasp.org/www-project-top-ten/">OWASP top 10</url> is:
 				
 					</p>
@@ -288,7 +304,8 @@
 						<title>XSS</title>
 						
 						<p>
-						Cross-Site scripting refers to the process by which a bad actor can inject a script into a website. Recall that many websites take inputs from forms and may later display that data on another page. If that data isn’t just data, but actually a JavaScript script, that script may run on the page that displays it.
+							<idx>Cross-Site scripting</idx>
+						<term>Cross-Site scripting</term> refers to the process by which a bad actor can inject a script into a website. Recall that many websites take inputs from forms and may later display that data on another page. If that data isn’t just data, but actually a JavaScript script, that script may run on the page that displays it.
 					</p>
 						
 						<p>
@@ -324,7 +341,9 @@
 						<title>CSRF</title>
 						
 						<p>
-						Cross-Site Request Forgery (CSRF) involves using an victims already authenticated session in a request that is not part of that session. Imagine you are logged into Twitter. An attacker sends you a form link in GMail, that when clicked on posts a tweet that says, "I’m a CSRF victim." Assuming Twitter accepts the form submission you will now have a tweet in your timeline that states "I’m a CSRF victim."
+							<idx>Cross-Site Request Forgery</idx>
+							<idx>CSRF</idx>
+						<term>Cross-Site Request Forgery</term> (<term>CSRF</term>) involves using an victims already authenticated session in a request that is not part of that session. Imagine you are logged into Twitter. An attacker sends you a form link in GMail, that when clicked on posts a tweet that says, "I’m a CSRF victim." Assuming Twitter accepts the form submission you will now have a tweet in your timeline that states "I’m a CSRF victim."
 					</p>
 						
 						<p>
@@ -350,7 +369,10 @@
 						</figure>
 						
 						<p>
-						Web systems often communicate with internal servers the retrieve information. These may be API servers, databases, or messaging servers. If an attacker can fool a web server into passing a malicious request to its internal server, the attacker and abuse the internal trust of the system. This is referred to a server-side request forgery (SSRF). Once again, this kind of attack is mitigated with input validation, which needs to be included in the application.
+							<idx>server-side request forgery</idx>
+							<idx>SSRF</idx>
+						Web systems often communicate with internal servers the retrieve information. These may be API servers, databases, or messaging servers. If an attacker can fool a web server into passing a malicious request to its internal server, the attacker and abuse the internal trust of the system. This is referred to a 
+						<term>server-side request forgery</term> (<term>SSRF</term>). Once again, this kind of attack is mitigated with input validation, which needs to be included in the application.
 						</p>
 						
 					</subsection>
@@ -358,7 +380,8 @@
 						<title>Session Hijacking</title>
 						
 						<p>
-						Session hijacking may involve other methods of compromise, but the end goal is to "steal" a session between the victim and another server. Imagine the following scenario: A person logs in to their personal banking website, which issues them a cookie which proves they are authenticated. A bad actor is monitoring the connections through an XSS exploit that forwards all connection cookies to them. The bad actor uses the cookie that was issued to make a transfer from the user’s bank account to the bad actors bank account.
+							<idx>session hijacking</idx>
+						<term>Session hijacking</term> may involve other methods of compromise, but the end goal is to "steal" a session between the victim and another server. Imagine the following scenario: A person logs in to their personal banking website, which issues them a cookie which proves they are authenticated. A bad actor is monitoring the connections through an XSS exploit that forwards all connection cookies to them. The bad actor uses the cookie that was issued to make a transfer from the user’s bank account to the bad actors bank account.
 					</p>
 						
 						<p>
@@ -404,7 +427,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>XML Injection</title>
 						
 						<p>
-						XML stands for extensible markup language, and it is often used to transfer messages. XML can be an important part of a web systems infrastructure and as such if unsanitized user inputs are allowed to generate XML the is used in the system many things can go wrong. Using XML injection an attacker may be able to retrieve secret files or create admin accounts. XML injection can be mitigated by input validation or possibly disabling the resolution of external entities in the framework being used.
+							<idx>XML</idx>
+							<idx>extensible markup language</idx>
+						<term>XML</term> stands for <term>extensible markup language</term>, and it is often used to transfer messages. XML can be an important part of a web systems infrastructure and as such if unsanitized user inputs are allowed to generate XML the is used in the system many things can go wrong. Using XML injection an attacker may be able to retrieve secret files or create admin accounts. XML injection can be mitigated by input validation or possibly disabling the resolution of external entities in the framework being used.
 					</p>
 						
 					</subsection>
@@ -412,7 +437,7 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>LDAP Injection</title>
 						
 						<p>
-						Finally, Lightweight Directory Access Protocol (LDAP) is often used to store information about users. As such, it can be found behind many web applications. LDAP also supports complex queries in a similar fashion to SQL. An unsantized user input can lead to a LDAP query with unexpected results.
+						Finally, <em>Lightweight Directory Access Protocol</em> (LDAP) is often used to store information about users. As such, it can be found behind many web applications. LDAP also supports complex queries in a similar fashion to SQL. An unsantized user input can lead to a LDAP query with unexpected results.
 					</p>
 						
 					</subsection>
@@ -420,7 +445,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>Directory Traversal</title>
 						
 						<p>
-						A poorly designed web server may be subject to a directory traversal attack. Recall that web servers are designed to serve static content from a particular directory, 
+							<idx>directory traversal attack</idx>
+						A poorly designed web server may be subject to a 
+						<term>directory traversal attack</term>. Recall that web servers are designed to serve static content from a particular directory, 
 							<c>/var/www</c> for example. Now suppose that an attacker submitted a 
 							<c>GET</c> request for 
 							<c>http://www.example.com/../../etc/shadow</c>. It is possible that the web server may actually go up two directories and serve that file.
@@ -433,7 +460,7 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						
 					</subsection>
 					<subsection xml:id="url-hijacking-typosquating">
-						<title>URL Hijacking/Typosquating</title>
+						<title>URL Typosquating</title>
 						
 						<p>
 						An unfortunately common, broad-based attack is to buy a domain with a similar name to a very popular domain. When users mistype the popular domain they end up at the malicious actor’s website. For example, imagine if someone registered 
@@ -462,7 +489,9 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>Zone Transfer Attacks</title>
 						
 						<p>
-						On the subject of the domain name system, zone transfer attacks may leak sensitive information about domains. DNS is a distributed system by design and is used for resolving domain names into IP addresses. Due to the distributed nature of the system, protocols were built in for having a single domain served by multiple servers. These servers pass information to each other using a DNS zone transfer.
+							<idx>zone transfer attacks</idx>
+						On the subject of the domain name system, 
+						<term>zone transfer attacks</term> may leak sensitive information about domains. DNS is a distributed system by design and is used for resolving domain names into IP addresses. Due to the distributed nature of the system, protocols were built in for having a single domain served by multiple servers. These servers pass information to each other using a DNS zone transfer.
 					</p>
 						
 						<p>
@@ -487,7 +516,10 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>Remote Code Execution (RCE)</title>
 						
 						<p>
-						One of the most dangerous outcomes of an attack is Remote or Arbitrary Code Execution. RCE gives the attacker the ability to execute any instructions they want on the compromised machine. Often the attacker will start a shell with administrative privileges so they can do whatever they want. Imagine SSHing into a remote Linux machine and elevating your privileges to root. This is essentially the type of power that can result from RCE. Attackers may also use the RCE to attack the availability of a computing resource by causing a program to terminate. In this situation the RCE is being used as part of a denial of service (DoS) attack.
+							<idx>Remote or Arbitrary Code Execution</idx>
+							<idx>RCE</idx>
+						One of the most dangerous outcomes of an attack is 
+						<term>Remote or Arbitrary Code Execution</term>. <term>RCE</term> gives the attacker the ability to execute any instructions they want on the compromised machine. Often the attacker will start a shell with administrative privileges so they can do whatever they want. Imagine SSHing into a remote Linux machine and elevating your privileges to root. This is essentially the type of power that can result from RCE. Attackers may also use the RCE to attack the availability of a computing resource by causing a program to terminate. In this situation the RCE is being used as part of a denial of service (DoS) attack.
 					</p>
 
 					</subsection>
@@ -515,7 +547,8 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						</figure>
 						
 						<p>
-						Privilege escalation involves gaining access to protected resources through unintended means. An example would be 
+							<idx>Privilege escalation</idx>
+						<term>Privilege escalation</term> involves gaining access to protected resources through unintended means. An example would be 
 							<url href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4034">CVE-2021-4034</url>, a local privilege escalation vulnerability recently discovered in the Linux 
 							<c>pkexec</c> command. 
 							<c>pkexec</c> runs with elevated privileges and does not safely parse command line arguments. As such it can be exploited to give a regular user a root shell. This would be an example of local, vertical privilege escalation.
@@ -530,7 +563,12 @@ $statement = "SELECT * FROM users WHERE name='" + $userName + "' AND password='"
 						<title>Denial of Service (DoS)</title>
 						
 						<p>
-						A denial of service attack (Dos) attempts to keep a system from working by overwhelming it with requests. A distributed denial of service attack (DDoS) does the same thing by utilizing many different machines. Typically the attacking nodes for a DDoS attack are members of a botnet, machines that have been exploited previously and are under the attackers control.
+							<idx>denial of service attack</idx>
+							<idx>Dos</idx>
+							<idx>distributed denial of service attack</idx>
+							<idx>DDoS</idx>
+						A <term>denial of service attack</term> (<term>Dos</term>) attempts to keep a system from working by overwhelming it with requests. A 
+						<term>distributed denial of service attack</term> (<term>DDoS</term>) does the same thing by utilizing many different machines. Typically the attacking nodes for a DDoS attack are members of a botnet, machines that have been exploited previously and are under the attackers control.
 					</p>
 						
 						<p>
