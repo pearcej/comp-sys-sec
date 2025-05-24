@@ -541,16 +541,17 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 				</section>
 				<section xml:id="lab-hash-it-out">
 					<title>Lab: Hash it Out</title>
+					<introduction>
+
 					<p><idx>hash</idx> 
-					A 
-						<term>hash</term> is a one-way cryptographic function that produces a 
+					A <term>hash</term> is a one-way cryptographic function that produces a 
 						<em>unique</em> set of characters for a given 
 						<em>message</em>. In a perfect world, given a hash you should 
 						<em>not</em> be able to determine what the original message was, but given a hash and the original message you can check that the hash matches the message. Before we dive into the uses of a hash, lets try to further understand it by looking at a simple and consequently poor hashing algorithm.</p>
 						<note><p>The following algorithm is so poor that it may be a stretch even to call it a hashing algorithm. That being said, it is being used as a tool to explain what hashes are.</p></note>
-					<p>
-						<term>Anagram Hash</term>
-					</p>
+					</introduction>
+					<subsection xml:id="anagram-hash">
+						<title>Anagram Hash</title>
 					<p>
 					Let’s assume we wanted to hash the message "Hello from Karl" so that we can have a string of characters the uniquely represent that phrase. One way to do it would be to strip all the punctuation in the message, make everything lowercase, and then arrange all the letters alphabetically. "Hello from Karl" becomes "aefhklllmoorr". You can think of it like saying, "There is one 'a' in the message, one 'e' in the message, one 'f' in the message', one 'k' in the message, three 'l’s in the message…​" Now our hash, "aefhklllmoorr", can be used to uniquely identify the phrase.
 				</p>
@@ -575,37 +576,82 @@ cleartext = (11**29)%91 = 72 (decrypted using N and d)
 						<p>
 					Now that we understand what hashes do and to some extant how they are possible, lets look at a much more useful hash function.
 				</p>
+				</subsection>
+				<subsection xml:id="md5">
+					<title>MD5</title>
+					<introduction>
 					<p>
-						<term>MD5</term>
+						Many of the labs in this book need to run in an isolated environment inside of a Docker container. A <term>Docker container</term> image is an standalone, executable package of software that includes everything needed to run the application: code, runtime, system tools, system libraries and settings.
+	
 					</p>
-					<p>
-					For this section, we are going to be using Docker and a terminal. 
-						<url href="https://docs.docker.com/get-docker/">Please follow these directions for installing Docker.</url> For Windows you can use the 
-						<url href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701">Windows Terminal app</url> and in MacOS you can use the preinstalled Terminal app. Gray boxes show the commands as typed into the terminal with typical output where possible. Your prompt (the part shown before the command) may differ depending on your OS.
 				
+					<p>
+						For this lab and for all of those that require Docker containers, you can choose to use a Github codespace or to use a local Docker installation. There are advantages to each. Each Github codespace you create is hosted by GitHub in a Docker container, running on a virtual machine. Github codespaces are easy to set up and use, but you may be charged for the time you spend using them if you use too much time, so you need to remember to shut them down or delete them when you have finished with them. Local Docker installations are free, but they require space on your harddrive as well as more setup and configuration. 
+					</p>
+
+					</introduction>
+					<subsubsection xml:id="MD3-codespace">
+						<title>MD5 in a Github Codespace</title>
+						<p>
+							Go <url href="https://github.com/pearcej/security-hash">github.com/pearcej/security-hash</url>. Then:
+							<ol>
+								<li>
+									<p>
+										Fork this codespace into your own Github repository.
+									</p>
+								</li>
+								<li>
+									<p>
+										Navigate to your repository on GitHub.
+									</p>
+								</li>
+								<li>
+									<p>
+										Click the green Code button and select Codespaces.
+									</p>
+								</li>
+								<li>
+									<p>
+										Click "Create codespace on main".
+									</p>
+								</li>
+								<li>
+									<p>
+										Wait for the codespace to be created.
+									</p>
+								</li>
+							</ol>
+						Next, follow the directions in <xref ref="md5-hash" /> but be sure to either stop or delete this codespace when you are doneby clicking the "Stop" button or the "Delete" button in the Codespaces tab of your repository.
+						</p>
+					</subsubsection>
+					
+					<subsubsection xml:id="md5-local">
+						<title>MD5 in a Local Docker Container</title>
+					<p>
+					For a local installation, you neeed Docker and a terminal. 
+					<url href="https://docs.docker.com/get-docker/">Please follow these directions for installing Docker.</url> For Windows you can use the 
+						<url href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701">Windows Terminal app</url> and in MacOS you can use the preinstalled Terminal app. Boxes show the commands to be typed into the terminal with typical output where possible. Your prompt (the part shown before the command) may differ depending on your OS.
 					</p>
 					<p>
-					Start by running a BASH shell on a custom Linux container:
+					Start by running a <c>bash</c> shell in the terminal on a custom Linux container:
 				</p>
-					<pre>ryan@R90VJ3MK:/windir/c/Users/rxt1077/it230/docs$ docker run -it ryantolboom/hash (1)
-root@8e0962021f85:/(2)</pre>
-					<table>
-						<title></title>
-						<tabular>
-							<row>
-								<cell halign="left">
-									<term>1</term>
-								</cell>
-								<cell halign="left">Here we are using the Docker run command interactively (-it) as this container runs bash by default</cell>
-							</row>
-							<row>
-								<cell halign="left">
-									<term>2</term>
-								</cell>
-								<cell halign="left">Notice the new prompt showing that we are root on this container</cell>
-							</row>
-						</tabular>
-					</table>
+					<pre>ryan@R90VJ3MK:/windir/c/Users/rxt1077/it230/docs$ docker run -it ryantolboom/hash
+root@8e0962021f85:/</pre>
+
+		<note>
+		<p>
+			Here we are using the Docker <c>run</c> command interactively (<c>-it</c>) as this container runs <c>bash</c> by default.
+		</p>
+	</note>
+	<note>
+		<p>
+			Notice the new prompt in the terminal showing that we are root on this container.
+		</p>
+	</note>
+					</subsubsection>
+					</subsection>
+					<subsection xml:id="md5-hash">
+						<title>MD5 Hash</title>
 					<p>
 					MD5 is a message-digest algorithm that produces significantly better hashes than our Anagram algorithm. Most Linux distributions include a simple utility for creating an MD5 hash based on a file’s contents. This command is named md5sum. Typically this is used to detect if a file has been tampered with. A website may provide links to download software as well as an MD5 hash of the files so that you know what you’ve downloaded is correct. Similarly a security system may keep md5sums (MD5 hashes) of certain critical files to determine if they have been tampered with by malware. Let’s practice taking the md5sum of the 
 						<c>/etc/passwd</c> file:
@@ -613,36 +659,22 @@ root@8e0962021f85:/(2)</pre>
 					</p>
 
 					<pre>root@8e0962021f85:/# md5sum /etc/passwd
-9911b793a6ca29ad14ab9cb40671c5d7  /etc/passwd (1)</pre>
+9911b793a6ca29ad14ab9cb40671c5d7  /etc/passwd</pre>
+<note>
+	<p>
+		The first part of this line is the MD5 hash, the second part is the file name.
+	</p>
+</note>
 
-					<table>
-						<title></title>
-						<tabular>
-							<row>
-								<cell halign="left">
-									<term>1</term>
-								</cell>
-								<cell halign="left">The first part of this line is the MD5 hash, the second part is the file name</cell>
-							</row>
-						</tabular>
-					</table>
 					<p>
 					Now we’ll make a file with 
-						<em>your</em> first name in it and store it in /tmp/name.txt:
+						<em>your</em> first name in it and store it in <c>/tmp/name.txt</c>:
 				
 					</p>
-					<pre>root@8e0962021f85:/# echo "&lt;your_name&gt;" &gt;&gt; /tmp/name.txt (1)</pre>
-					<table>
-						<title></title>
-						<tabular>
-							<row>
-								<cell halign="left">
-									<term>1</term>
-								</cell>
-								<cell halign="left">Substitute your actual first name for &lt;your_name&gt;</cell>
-							</row>
-						</tabular>
-					</table>
+					<pre>root@8e0962021f85:/# echo "&lt;your_name&gt;" &gt;&gt; /tmp/name.txt</pre>
+					<note>
+						<p>Substitute your actual first name for &lt;your_name&gt;</p>
+					</note>
 					
                     <question>
                     <p>
@@ -680,20 +712,11 @@ irc:*:19219:0:99999:7:::
 gnats:*:19219:0:99999:7:::
 nobody:*:19219:0:99999:7:::
 _apt:*:19219:0:99999:7:::
-karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:19255:0:99999:7::: (1)</pre>
-					<table>
-						<title></title>
-						<tabular>
-							<row>
-								<cell halign="left">
-									<term>1</term>
-								</cell>
-								<cell halign="left">As you can see here the 
-									<c>karl</c> user has a long hash immediately after their username
-								</cell>
-							</row>
-						</tabular>
-					</table>
+karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:19255:0:99999:7:::</pre>
+						<note>
+							<p>As you can see here the <c>karl</c> user has a long hash immediately after their username.
+							</p>
+						</note>
 					<p>
 					One of the problems with hashes are that if people choose simple passwords, they can be easily cracked by a program that takes a wordlist of common passwords, generates their hashes, and then checks to see if the hash is the same. While a hash may be a one-way function, it is still subject to this type of attack. We’re use a program called 
 						<url href="https://www.openwall.com/john/">John the Ripper</url> and do exactly that.
@@ -738,7 +761,7 @@ Session completed</pre>
 					<pre>root@7f978dd90746:/# cat /etc/shadow | grep karl
 karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:19255:0:99999:7:::</pre>
 					<p>
-					The first part of the shadow line is the username, karl. The next part of the shadown line, immediately following the first colon, is the hash information. The characters in between the first set of 
+					The first part of the shadow line is the username, karl. The next part of the shadow line, immediately following the first colon, is the hash information. The characters in between the first set of 
 						<c>$</c> is the version of the hashing algorithm being used, 
 						<c>y</c> for yescrypt in our case. The characters in between the second set of 
 						<c>$</c> are the parameters passed to yescrypt which will always be 
@@ -757,27 +780,28 @@ karl:$y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9:1
 						<c>/etc/shadow</c>:
 				
 					</p>
-					<pre>root@7f978dd90746:/# crypt &lt;karl's password&gt; '$y$j9T$oR2ZofMTuH3dpEGbw6c/y.' (1)
+					<pre>root@7f978dd90746:/# crypt &lt;karl's password&gt; '$y$j9T$oR2ZofMTuH3dpEGbw6c/y.'
 $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
-					<table>
-						<title></title>
-						<tabular>
-							<row>
-								<cell halign="left">
-									<term>1</term>
-								</cell>
-								<cell halign="left">Don’t forget to use the actual password you cracked and put the hash info in single quotes</cell>
-							</row>
-						</tabular>
-					</table>
+					<note>
+						<p>
+							Don’t forget to use the actual password you cracked and put the hash info in single quotes
+						</p>
+					</note>
 					
                     <question><p>Submit a screenshot with your lab showing that the output of the
 						<c>crypt</c> command matches the hash in /etc/shadow</p></question>
-
+						<note>
+						<p>
+							If you chose to use a Github codespace, don't forget to stop or delete the codespace by clicking the "Stop" button or the "Delete" button in the Codespaces tab of your repository.
+						</p>
+					</note>
+									
+					</subsection>
 				</section>
 				<section xml:id="cryptography-review">
 					<title>Review Questions</title>
 					<p>
+
 						<ol>
 							<li>
 								<p>
