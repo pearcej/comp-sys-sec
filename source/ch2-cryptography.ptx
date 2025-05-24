@@ -790,6 +790,11 @@ $y$j9T$oR2ZofMTuH3dpEGbw6c/y.$TwfvHgCl4sIp0b28YTepJ3YVvl/3UyWKeLCmDV1tAd9</pre>
 					
                     <question><p>Submit a screenshot with your lab showing that the output of the
 						<c>crypt</c> command matches the hash in /etc/shadow</p></question>
+						<note>
+						<p>
+							If you chose to use a Github codespace, don't forget to stop or delete the codespace by clicking the "Stop" button or the "Delete" button in the Codespaces tab of your repository.
+						</p>
+					</note>
 									
 					</subsection>
 				</section>

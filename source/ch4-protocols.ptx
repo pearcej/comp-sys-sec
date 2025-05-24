@@ -137,25 +137,18 @@
 						<pre>traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
  1  ryan.njitdm.campus.njit.edu (172.24.80.1)  0.217 ms  0.200 ms  0.252 ms
  2  ROOter.lan (192.168.2.1)  5.790 ms  5.765 ms  6.275 ms
- 3  * * * (1)
+ 3  * * *
  4  B4307.NWRKNJ-LCR-21.verizon-gni.net (130.81.27.166)  19.166 ms  19.144 ms  21.097 ms
- 5  * * * (1)
+ 5  * * *
  6  0.ae1.GW7.EWR6.ALTER.NET (140.222.2.227)  12.376 ms  14.634 ms 0.ae2.GW7.EWR6.ALTER.NET (140.222.2.229)  9.805 ms
  7  209.85.149.208 (209.85.149.208)  9.782 ms  10.331 ms  9.192 ms
- 8  * * * (1)
+ 8  * * *
  9  dns.google (8.8.8.8)  11.313 ms  9.761 ms  9.758 ms</pre>
-
-						<table>
-							<title></title>
-							<tabular>
-								<row class="odd">
-									<cell halign="left">
-										<em>1</em>
-									</cell>
-									<cell halign="left">Notice these routers not responding to ICMP packets</cell>
-								</row>
-							</tabular>
-						</table>
+ <note>
+	<p>
+		Notice these routers not responding to ICMP packets.
+	</p>
+ </note>
 
 						<p>
 						Despite the usefulness of ICMP, ICMP packets from external sources are often ignored. Network engineers use ICMP to troubleshoot their own networks, but it would be a security issue to allow outside parties to do the same. As such, do not expect all external hosts to respond to pings. They may still be up, but you’ll need to figure out 
@@ -260,140 +253,114 @@
 						<title>Common Port Numbers and Their Usage</title>
 						<tabular>
 						
-
 						<row>
 							<cell><em>Port Number</em></cell>
 							<cell><em>L4 Protocol</em></cell>
 							<cell><em>Usage</em></cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>20</cell>
 							<cell>TCP</cell>
 							<cell>File Transfer Protocol (FTP) Data Transfer</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>21</cell>
 							<cell>TCP</cell>
 							<cell>FTP Command Control</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>22</cell>
 							<cell>TCP</cell>
 							<cell>Secure Shell (SSH)</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>23</cell>
 							<cell>TCP</cell>
 							<cell>Telnet Remote Login Service</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>25</cell>
 							<cell>TCP</cell>
 							<cell>Simple Mail Transfer Protocol (SMTP) E-Mail</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>53</cell>
 							<cell>TCP, UDP</cell>
 							<cell>Domain Name System (DNS)</cell>
 						</row>
-						<line/>
-
 						<row>
 							<cell>67, 68</cell>
 							<cell>UDP</cell>
 							<cell>Dynamic Host Configuration Protocol (DHCP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>69</cell>
 							<cell>UDP</cell>
 							<cell>Trivial File Transfer Protocol (TFTP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>80</cell>
 							<cell>TCP</cell>
 							<cell>Hypertext Transfer Protocol (HTTP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>110</cell>
 							<cell>TCP</cell>
 							<cell>Post Office Protocol (POP3) E-Mail</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>119</cell>
 							<cell>TCP, UDP</cell>
 							<cell>Network News Transfer Protocol (NNTP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>123</cell>
 							<cell>UDP</cell>
 							<cell>Network Time Protocol (NTP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>137–139</cell>
 							<cell>TCP, UDP</cell>
 							<cell>NetBIOS</cell>
 						</row>
-						<line/>
+						
 
 						<row>
 							<cell>143</cell>
 							<cell>TCP</cell>
 							<cell>Internet Message Access Protocol (IMAP) E-Mail</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>161, 162</cell>
 							<cell>TCP, UDP</cell>
 							<cell>Simple Network Management Protocol (SNMP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>194</cell>
 							<cell>TCP, UDP</cell>
 							<cell>Internet Relay Chat (IRC)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>389</cell>
 							<cell>TCP, UDP</cell>
 							<cell>Lightweight Directory Access Protocol (LDAP)</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>443</cell>
 							<cell>TCP</cell>
 							<cell>HTTP Secure (HTTPS) — HTTP over TLS/SSL</cell>
 						</row>
-						<line/>
-
+					
 						<row>
 							<cell>3389</cell>
 							<cell>TCP, UDP</cell>
@@ -729,17 +696,64 @@
 				<section xml:id="lab-scanning-with-nmap">
 					<title>Lab: Scanning with nmap</title>
 
-          
+					<introduction>
 					<p>
-					For this lab we will start by downloading and extracting the files required. Download 
-						<url href="https://github.com/rxt1077/it230/raw/main/labs/nmap.zip">nmap.zip</url> and extract it to a directory you can access from the shell. Open a shell in that directory (it should have a 
+					For this lab, we need to use Docker, so you can again choose a Github Codespace or a local Docker installation. 
+					</p>			
+				</introduction>
+				<subsection xml:id="nmap-codespace">
+					<title>Using nmap in a Github Codespace</title>
+					<p>
+						Go <url href="https://github.com/pearcej/security-nmap">github.com/pearcej/security-nmap</url>. Then:
+							<ol>
+								<li>
+									<p>
+										Fork this codespace into your own Github repository.
+									</p>
+								</li>
+								<li>
+									<p>
+										Navigate to your repository on GitHub.
+									</p>
+								</li>
+								<li>
+									<p>
+										Click the green Code button and select Codespaces.
+									</p>
+								</li>
+								<li>
+									<p>
+										Click "Create codespace on main".
+									</p>
+								</li>
+								<li>
+									<p>
+										Wait for the codespace to be created.
+									</p>
+								</li>
+							</ol>
+						Next, follow the directions in <xref ref="lab-instructions-for-nmap" /> but be sure to either stop or delete this codespace when you are done by clicking the "Stop" button or the "Delete" button in the Codespaces tab of your repository.
+					</p>
+					
+				</subsection>
+				<subsection xml:id="nmap-local">
+					<title>Using nmap in a local Docker installation</title>
+					<p>
+					Start by downloading and extracting the files required. Download 
+						<url href="https://github.com/rxt1077/it230/raw/main/labs/nmap.zip">nmap.zip</url> and extract it to a directory you can access from the shell. 
+					</p>
+					</subsection>
+					<subsection xml:id="lab-instructions-for-nmap">
+						<title>Lab Instructions for nmap</title>
+					<p>
+						
+						Open a shell in that directory (it should have a 
 						<c>docker-compose.yml</c> in it and a 
 						<c>victim</c> and 
 						<c>scanner</c> directory). Since we will be simulating multiple machines in this lab, we will make use of Docker Compose which was already installed with Docker. Docker Compose reads a 
 						<c>docker-compose.yml</c> file which should already be in your 
 						<c>nmap</c> directory. Run 
 						<c>docker-compose up --build --detach</c> to build and run the images in the background:
-				
 					</p>
 
 					<pre>PS C:\Users\rxt1077\temp\nmap&gt; docker-compose up --build --detach
@@ -797,22 +811,17 @@ Recreating nmap_victim_1 ... done</pre>
 
 					<pre>PS C:\Users\rxt1077\temp\nmap&gt; docker-compose run scanner bash
 Creating nmap_scanner_run ... done
-root@7b6d733cc03a:/(1)</pre>
+root@7b6d733cc03a:/</pre>
 
-					<table>
-						<title></title>
-						<tabular>
-							<row class="odd">
-								<cell halign="left">
-									<em>1</em>
-								</cell>
-								<cell halign="left">Notice the prompt change. We are now 
+	<note>
+		<p>
+			Notice the prompt change. We are now 
 									<em>inside</em> the 
 									<c>scanner</c> container running BASH.
-								</cell>
-							</row>
-						</tabular>
-					</table>
+		</p>
+	</note>
+
+
 
 					<p>
 					Lets use the Linux 
@@ -973,10 +982,15 @@ Nmap done: 1 IP address (1 host up) scanned in 28.39 seconds</pre>
 					<p>
 					When you are all done poking around, you can exit the shell and run 
 						<c>docker-compose down</c> to stop 
-						<c>victim</c> from running in the background.
-				
-					</p>
+						<c>victim</c> from running in the background.					</p>
+						<note>
+							
 
+										<p>
+							If you chose to use a Github codespace, don't forget to stop or delete the codespace by clicking the "Stop" button or the "Delete" button in the Codespaces tab of your repository.
+						</p>
+						</note>
+					</subsection>
 				</section>
 				<section xml:id="protocols-review">
 					<title>Review Questions</title>
