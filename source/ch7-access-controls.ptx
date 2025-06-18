@@ -707,7 +707,7 @@ drwxr-xr-x 2 root root 4096 Oct 28 01:28 carol</pre>
 					<p>
 					Files owners and a groups are set with the 
 						<c>chown</c> command, following the format 
-						<c>chown &lt;user&gt;.&lt;group&gt; &lt;filename&gt;</c>. Let’s try to use this command to make the home directories of alice, bob, and carol private. Do this by running each of the following commands:
+						<c>chown &lt;user&gt;:&lt;group&gt; &lt;filename&gt;</c>. Let’s try to use this command to make the home directories of alice, bob, and carol private. Do this by running each of the following commands:
 				
 					</p>
 
@@ -735,9 +735,15 @@ drwxr-xr-x 2 carol carol 4096 Oct 28 01:28 carol</pre>
 					When a user is added to a UNIX system with the 
 						<c>useradd</c> command a group with their name is created. This allows us to pass a group to 
 						<c>chown</c> that only they will have access to. While this is a good start, others still have the ability to read and execute these directories, meaning 
-						<em>anyone</em> can view the contents. To prove this, lets assume the role of dave switching to the user dave by typing <c>su dave </c> and then do an 
+						<em>anyone</em> can view the contents. To prove this, lets assume the role of dave switching to the user dave.</p>
+<note>
+	<p>
+		If you are working in a Github Codespace, you will need to prepend many of these commands with <c>sudo</c> to run them as the root user For example, in a Github Codespace, you would run <c>sudo su dave</c> to switch to the user dave. If you are working in a local Docker container, you can simply run <c>su dave</c> to switch to the user dave since you are already running as the root user. <em>Recall that the <c>sudo</c> command stands for "superuser do".</em>
+	</p>
+</note>						
+						<p>After switching to the user dave, then do an 
 						<c>ls</c> on each of the directories as follows:
-				
+			
 					</p>
 
 					<pre>root@11ce9e5ee80e:/home# su dave (1)
@@ -749,7 +755,7 @@ $ exit</pre>
 						<note>
 								<p>
 									(1) The <em>switch user</em> or <c>su</c> command allows us to assume the role of anyone, often it is used to assume the role of the
-									<em>superuser</em> by using it without a username as <c>su</c>. In this case we are using <c>su dave</c> to assume the role of dave, who is a regular user.
+									<em>superuser</em> by using it without a username as <c>su</c>. In this case we are using <c>su dave</c> or <c>sudo su dave</c> to assume the role of dave, who is a regular user.
 								</p>
 					</note>
 
