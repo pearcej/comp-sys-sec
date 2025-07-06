@@ -61,67 +61,33 @@
 					<p>
 					One of the most basic examples of encryption is the Caesar cipher, or substitution cipher. It is easy to understand, compute, and trivial to crack. Let’s create a table that maps every letter in the alphabet to a different letter:
 				</p>
-					<table>
-						<title></title>
-						<tabular>
-							<row header="yes">
-								<cell halign="left">A</cell>
-								<cell halign="left">B</cell>
-								<cell halign="left">C</cell>
-								<cell halign="left">D</cell>
-								<cell halign="left">E</cell>
-								<cell halign="left">F</cell>
-								<cell halign="left">G</cell>
-								<cell halign="left">H</cell>
-								<cell halign="left">I</cell>
-								<cell halign="left">J</cell>
-								<cell halign="left">K</cell>
-								<cell halign="left">L</cell>
-								<cell halign="left">M</cell>
-								<cell halign="left">N</cell>
-								<cell halign="left">O</cell>
-								<cell halign="left">P</cell>
-								<cell halign="left">Q</cell>
-								<cell halign="left">R</cell>
-								<cell halign="left">S</cell>
-								<cell halign="left">T</cell>
-								<cell halign="left">U</cell>
-								<cell halign="left">V</cell>
-								<cell halign="left">W</cell>
-								<cell halign="left">X</cell>
-								<cell halign="left">Y</cell>
-								<cell halign="left">Z</cell>
-							</row>
-							<row>
-								<cell halign="left">J</cell>
-								<cell halign="left">G</cell>
-								<cell halign="left">T</cell>
-								<cell halign="left">Q</cell>
-								<cell halign="left">X</cell>
-								<cell halign="left">Y</cell>
-								<cell halign="left">A</cell>
-								<cell halign="left">U</cell>
-								<cell halign="left">C</cell>
-								<cell halign="left">R</cell>
-								<cell halign="left">V</cell>
-								<cell halign="left">I</cell>
-								<cell halign="left">F</cell>
-								<cell halign="left">H</cell>
-								<cell halign="left">O</cell>
-								<cell halign="left">K</cell>
-								<cell halign="left">L</cell>
-								<cell halign="left">E</cell>
-								<cell halign="left">D</cell>
-								<cell halign="left">B</cell>
-								<cell halign="left">W</cell>
-								<cell halign="left">S</cell>
-								<cell halign="left">Z</cell>
-								<cell halign="left">M</cell>
-								<cell halign="left">N</cell>
-								<cell halign="left">P</cell>
-							</row>
-						</tabular>
-					</table>
+						<table>
+  							<title>Caesar Cipher Substitution Table (A–M)</title>
+  							<tabular>
+    							<row header="yes">
+      								<cell>A</cell> <cell>B</cell> <cell>C</cell> <cell>D</cell> <cell>E</cell> <cell>F</cell> <cell>G</cell>
+      								<cell>H</cell> <cell>I</cell> <cell>J</cell> <cell>K</cell> <cell>L</cell> <cell>M</cell>
+    							</row>
+    							<row>
+      								<cell>J</cell> <cell>G</cell> <cell>T</cell> <cell>Q</cell> <cell>X</cell> <cell>Y</cell> <cell>A</cell>
+      								<cell>U</cell> <cell>C</cell> <cell>R</cell> <cell>V</cell> <cell>I</cell> <cell>F</cell>
+    							</row>
+  							</tabular>
+						</table>
+
+						<table>
+  							<title>Caesar Cipher Substitution Table (N–Z)</title>
+  							<tabular>
+    							<row header="yes">
+      								<cell>N</cell> <cell>O</cell> <cell>P</cell> <cell>Q</cell> <cell>R</cell> <cell>S</cell> <cell>T</cell>
+      								<cell>U</cell> <cell>V</cell> <cell>W</cell> <cell>X</cell> <cell>Y</cell> <cell>Z</cell>
+    							</row>
+    							<row>
+      								<cell>H</cell> <cell>O</cell> <cell>K</cell> <cell>L</cell> <cell>E</cell> <cell>D</cell> <cell>B</cell>
+     							 	<cell>W</cell> <cell>S</cell> <cell>Z</cell> <cell>M</cell> <cell>N</cell> <cell>P</cell>
+    							</row>
+  							</tabular>
+						</table>
 
 					<p>
 					Now creating a message is simple a matter of performing the substitutions. For example, 
