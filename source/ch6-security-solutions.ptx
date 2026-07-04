@@ -408,11 +408,11 @@ public class App {
         });
     }
 }</pre>
-					<question>
-					<p>
-					What port does our vulnerable app run on?
-				</p>
-				</question>
+</introduction>			
+	<exercise label = "fillin-port-number" xml:id="fillin-port-number"> <statement>
+	<p>What port does our vulnerable app run on? (don't include the word "Port")<var/></p></statement><setup><var>
+	<condition string="8080"><feedback><p>Right! Sounds great, doesn't it?</p></feedback></condition>
+	<condition string="^\s*default\s*$"><feedback><p>Incorrect. Check the code block above! Please try again.</p></feedback></condition></var></setup> </exercise>
 
 					<p>
 					Our attacker container has 
@@ -447,7 +447,6 @@ public class App {
 						<c>DB_PASSWORD</c>. As it isn’t uncommon to store secrets in environment variables on running containers, this should suffice to see just how devastating this exploit can be.
 				
 					</p>
-				</introduction>
 					<subsection xml:id="log4j-codespace">
 						<title>Exploiting log4j in a Github Codespace</title>
 						<p>
